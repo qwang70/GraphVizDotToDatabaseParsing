@@ -11,6 +11,7 @@ Both parse `test.dot` and generate `test.db`.
 There are two tables in test.db
 
 Table: tokens
+
 column name | data type 
 --- | --- 
 id | integer primary key
@@ -18,6 +19,7 @@ token_type | text
 token_val | text
 
 Table: token_tree
+
 column name | data type 
 ----------- | --------- 
 id          | integer
