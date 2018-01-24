@@ -8,15 +8,15 @@ import sys
 import argparse
 
 class Node(object):
-    def __init__(self, data):
-        self.data = data
+    def __init__(self, id):
+        self.id = id
         self.children = []
         self.parent = None
 
-    def setData(self, obj):
-        self.data = obj
-    def getData(self):
-        return self.data
+    def setId(self, obj):
+        self.id = obj
+    def getId(self):
+        return self.id
 
     def add_child(self, obj):
         self.children.append(obj)
@@ -31,12 +31,12 @@ class Node(object):
         return self.parent
 
 class DOTPrintListener(DOTListener):
-    def __init__(self):
+    def __init__(self, output_file):
         self.numToken = 0
         self.copyTree = None
         self.currNode = None
 
-        self.conn = sqlite3.connect('test.db')
+        self.conn = sqlite3.connect(output_file)
         self.c = self.conn.cursor()
         # create tokens table
         self.c.execute("DROP TABLE IF EXISTS tokens")
@@ -45,7 +45,9 @@ class DOTPrintListener(DOTListener):
         # create table for searching parent and children
         self.c.execute("DROP TABLE IF EXISTS token_tree")
         self.c.execute("CREATE TABLE token_tree(Id integer,parent_id integer, child_id integer)")
+
     def createNewNodeWhileEntering(self):
+        # initiate new node for self
         newNode = Node(self.numToken)
         if self.copyTree is None:
             self.copyTree = newNode
@@ -54,17 +56,20 @@ class DOTPrintListener(DOTListener):
             self.currNode.add_child(newNode)
         self.currNode = newNode
         self.numToken += 1
+
+    
     def reassignCurrNode(self):
+        # assign the current node to be its parent node
         assert self.currNode is not None
         self.currNode = self.currNode.getParent()
 
     def addToDB(self, ctx, type_val):
-        self.c.execute("INSERT INTO tokens VALUES(?,?, ?)", (self.currNode.data, type_val, ctx.getText()))
+        self.c.execute("INSERT INTO tokens VALUES(?, ?, ?)", (self.currNode.getId(), type_val, ctx.getText()))
         # assign parent id
         if self.currNode.getParent() is None: 
-            parent_data = None
+            parent_id = None
         else:
-            parent_data = self.currNode.getParent().getData()
+            parent_id = self.currNode.getParent().getId()
         # assign a list of child id
         if ctx.getChildCount() == 0:
             child = None
@@ -75,9 +80,10 @@ class DOTPrintListener(DOTListener):
                 # check whether the child is a terminal node
                 #if type(ctx.getChild(i)) is antlr4.tree.Tree.TerminalNodeImpl:
                 if type(ctx.getChild(i)) is TerminalNodeImpl:
+                    terminalCtx = ctx.getChild(i)
                     #self.c.execute("INSERT INTO tokens VALUES(?,?, ?)", (self.numToken, "symbol", ctx.getText()))
-                    self.c.execute("INSERT INTO tokens VALUES(?,?, ?)", (self.numToken, ctx.getText(), ctx.getText()))
-                    self.c.execute("INSERT INTO token_tree VALUES(?,?, ?)", (self.numToken, self.currNode.data, None))
+                    self.c.execute("INSERT INTO tokens VALUES(?, ?, ?)", (self.numToken, "terminal", terminalCtx.getText()))
+                    self.c.execute("INSERT INTO token_tree VALUES(?, ?, ?)", (self.numToken, self.currNode.id, None))
                     self.numToken += 1
                 else:
                     assert nodeChildIdx < ctx.getChildCount()
@@ -87,11 +93,11 @@ class DOTPrintListener(DOTListener):
                 child = None
             # get all combinations of parent and child index
             if child is None:
-                col_pair = [(self.currNode.getData(), parent_data, child)]
+                col_pair = [(self.currNode.getId(), parent_id, child)]
             else:
-                col_pair = [(self.currNode.getData(), parent_data, subchild.getData()) for subchild in child]
+                col_pair = [(self.currNode.getId(), parent_id, subchild.getId()) for subchild in child]
 
-            # write data into database token_tree
+            # write id into idbase token_tree
             self.c.executemany("INSERT INTO token_tree VALUES(?,?, ?)", col_pair)
         self.conn.commit()
 
@@ -239,20 +245,20 @@ def main():
         output_file = input_file.split(".")[0] + ".db"
     else:
         output_file = args.outfile
-    # parse dot/gv file and build database
+    # parse dot/gv file and build idbase
     input_stream = FileStream(input_file)
     lexer = DOTLexer(input_stream)
     stream = CommonTokenStream(lexer)
     parser = DOTParser(stream)
     tree = parser.graph()
-    printer = DOTPrintListener()
+    printer = DOTPrintListener(output_file)
     walker = ParseTreeWalker()
     walker.walk(printer, tree)
 
 if __name__ == '__main__':
-    parser = argparse.ArgumentParser(description='A GraphViz dot file to Sqlite database converter.')
+    parser = argparse.ArgumentParser(description='A GraphViz dot file to Sqlite idbase converter.')
     parser.add_argument('-outfile', 
-                        help='name of the output database file')
+                        help='name of the output idbase file')
     parser.add_argument('infile', 
                         help='name of the input dot/gv file')
 
