@@ -1,0 +1,134 @@
+id:0
+name:start
+attr:{'style': '"rounded,filled"', 'layer': 'all', 'label': '""', 'width': '0.2', 'fixedsize': 'true', 'shape': 'circle', 'fillcolor': 'black'}
+
+id:1
+name:readXml
+attr:{'style': '"rounded,filled"', 'layer': 'all', 'shape': 'box', 'fillcolor': '"darkslategray3"', 'label': '"Read XML"'}
+
+id:2
+name:retrieveNextCommType
+attr:{'style': '"rounded,filled"', 'layer': 'all', 'shape': 'box', 'fillcolor': '"darkslategray3"', 'label': '"Retrieve next\\nCommunication Type"'}
+
+id:3
+name:checkCommType
+attr:{'style': '"rounded,filled"', 'layer': 'all', 'shape': '"diamond"', 'fillcolor': '"orange"', 'label': '"Check whether\\nCommunication Type\\nexists"'}
+
+id:4
+name:createCommType
+attr:{'style': '"rounded,filled"', 'layer': 'all', 'shape': 'box', 'fillcolor': '"darkslategray3"', 'label': '"Create Communication Type"'}
+
+id:5
+name:createTemplate
+attr:{'style': '"rounded,filled"', 'layer': 'all', 'shape': 'box', 'fillcolor': '"darkslategray3"', 'label': '"Create Template"'}
+
+id:6
+name:error
+attr:{'style': '"rounded,filled"', 'layer': '"error"', 'shape': 'box', 'fillcolor': '"red"', 'label': '"Error"'}
+
+id:7
+name:end
+attr:{'style': '"rounded,filled"', 'layer': 'all', 'label': '""', 'width': '0.2', 'fixedsize': 'true', 'shape': 'doublecircle', 'fillcolor': '"black"'}
+
+{
+    "style": {
+        "\"rounded,filled\"": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+        ]
+    },
+    "layer": {
+        "all": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            7
+        ],
+        "\"error\"": [
+            6
+        ]
+    },
+    "label": {
+        "\"\"": [
+            0,
+            7
+        ],
+        "\"Read XML\"": [
+            1
+        ],
+        "\"Retrieve next\\nCommunication Type\"": [
+            2
+        ],
+        "\"Check whether\\nCommunication Type\\nexists\"": [
+            3
+        ],
+        "\"Create Communication Type\"": [
+            4
+        ],
+        "\"Create Template\"": [
+            5
+        ],
+        "\"Error\"": [
+            6
+        ]
+    },
+    "width": {
+        "0.2": [
+            0,
+            7
+        ]
+    },
+    "fixedsize": {
+        "true": [
+            0,
+            7
+        ]
+    },
+    "shape": {
+        "circle": [
+            0
+        ],
+        "box": [
+            1,
+            2,
+            4,
+            5,
+            6
+        ],
+        "\"diamond\"": [
+            3
+        ],
+        "doublecircle": [
+            7
+        ]
+    },
+    "fillcolor": {
+        "black": [
+            0
+        ],
+        "\"darkslategray3\"": [
+            1,
+            2,
+            4,
+            5
+        ],
+        "\"orange\"": [
+            3
+        ],
+        "\"red\"": [
+            6
+        ],
+        "\"black\"": [
+            7
+        ]
+    }
+}
