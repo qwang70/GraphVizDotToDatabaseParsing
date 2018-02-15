@@ -13,6 +13,7 @@ import json
 
 # class
 from GraphProperties import *
+from PowersetObj import *
 
 class TreeNode(object):
     def __init__(self, id):
@@ -327,9 +328,9 @@ def main():
 
 def createTypeHierachyGraph(propertyList):
     commonKeys, structuredDict = preprocessing(propertyList)
-    outputJson(structuredDict)
+    #outputJson(structuredDict)
 
-    #root = TypeHierachy(commonKeys)
+    root = TypeHierachy(structuredDict, propertyList)
 
 def outputJson(structuredDict):
     json_data = structuredDict.dumps(indent=4)

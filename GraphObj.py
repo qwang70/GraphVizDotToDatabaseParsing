@@ -23,6 +23,8 @@ class GraphObj(object):
 
     def printNode(self):
         print("id:{}\nname:{}\nattr:{}\n".format(self.get_id(), self.name, self.attr))
+    def getAttrVal(self, key):
+        return self.attr[key]
 
 
 class GraphNode(GraphObj):
