@@ -21,7 +21,8 @@ class TypeHierachy(object):
         # | {A (a1, a2), B (b1, b2)} | {C (c1, c2), B (b1, b3)} | => {A (a1, a2), B (b1), C (c1, c2)}
         numLevel = len(self.typeNodes[1])
         # iterate through levels
-        for level in range(2, numLevel):
+        for level in range(2, numLevel+1):
+            self.typeNodes[level] = []
             lastLevelNodes = self.typeNodes[level-1]
             # iterate through the first set
             for firstSet in range(len(lastLevelNodes)):
@@ -31,20 +32,22 @@ class TypeHierachy(object):
                     # get dictionaries
                     newValToEle = copy.deepcopy(lastLevelNodes[firstSet].typeValsToEleId)
                     valToEle2 = lastLevelNodes[secondSet].typeValsToEleId
-                    #print(valToEle1)
+                    
 
                     # get key sets union
                     for key, value in valToEle2.items():
                         if key not in newValToEle:
+                            # TODO: merge not override existing key
                             newValToEle[key] = value
                     # TODO: check if key nset no in pairs
-                    print(newValToEle)
-                    TypeNode(newValToEle, level, propertyList)
+                    self.typeNodes[level].append(\
+                        TypeNode(newValToEle, level, propertyList))
 
 
             # check combinatin of val of every pair of nodes
-        for i in range(len(self.typeNodes[1])):
-            print(self.typeNodes[1][i].typeValsToEleId)
+        for i in range(len(self.typeNodes)):
+            for j in range(len(self.typeNodes[i])):
+                print(self.typeNodes[i][j].typeValsToEleId)
             
 class TypeNode(object):
     """
@@ -59,12 +62,14 @@ class TypeNode(object):
     }
     =>
     {
-        {aa,bb}: 1
+    a: {aa:[1]} 
+    b: {
+        bb: [1]}
     }
     """
     def __init__(self, dictType, level, propertyList=None):
         self.propertyList = propertyList
-        self.typeValsToEleId = {}
+        self.typeValsToEleId = dictType 
         # typeVals
         if dictType is None: self.typeSet = set()
         else:
@@ -91,6 +96,7 @@ class TypeNode(object):
                     isSetAllEle = True
                 else:
                     allEleIds &= allEleInType
+        """
         # pack attribute value into a set
         for eleId in allEleIds:
             # get value from attribute list
@@ -101,7 +107,26 @@ class TypeNode(object):
                 self.typeValsToEleId[tuple(valSet)] = {eleId}
             else:
                 self.typeValsToEleId[tuple(valSet)] |= {eleId}
+        """
+        # delete elements that are not shared by all nodes
+        if mapping is not None:
+            for nodeType, typeVals in mapping.items():
+                for typeVal, eleIds in typeVals.items():
+                    idx = 0
+                    while idx < len(eleIds):
+                        print("in while", len(eleIds))
+                        if eleIds[idx] not in allEleIds:
+                            print("delete idx, eleIds", idx, eleIds)
+                            del eleIds[idx]
+                        else:
+                            idx += 1
+                    # if no ele of this type, delete the type
+                    if len(eleIds) == 0:
+                        del typeVal
+                
 
+                
+        
 class TypeEdge(object):
     def __init__(self, fromType, fromVal, toType, toVal, eleId):
         self.fromType = fromType
