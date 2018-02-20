@@ -21,34 +21,40 @@ class TypeHierachy(object):
         # build multiple level based on the information in the previous level
         # | {A (a1, a2), B (b1, b2)} | {C (c1, c2), B (b1, b3)} | => {A (a1, a2), B (b1), C (c1, c2)}
         numLevel = len(self.typeNodes[1])
+        baseLevelNodes = self.typeNodes[1]
         # iterate through levels
         for level in range(2, numLevel+1):
-            print("level " , level)
+            print("constructing level " , level)
+            # a set of forzenset representing currentSet in the list
+            setOfSets = set()
+
             self.typeNodes[level] = []
             lastLevelNodes = self.typeNodes[level-1]
             # iterate through the first set
             for firstSet in range(len(lastLevelNodes)):
                 # iterate through the second set
-                for secondSet in range(firstSet+1, len(lastLevelNodes)):
-                    #TODO: order the typeNodes through defining a comparison function
+                for secondSet in range(len(baseLevelNodes)):
                     # get dictionaries
-                    newValToEle = copy.deepcopy(lastLevelNodes[firstSet].typeValsToEleId)
-                    valToEle2 = lastLevelNodes[secondSet].typeValsToEleId
-                    
-
+                    newValToEle = copy.deepcopy(\
+                            lastLevelNodes[firstSet].typeValsToEleId)
+                    valToEle2 = baseLevelNodes[secondSet].typeValsToEleId
                     # get key sets union
                     for key, value in valToEle2.items():
                         if key not in newValToEle:
-                            # TODO: merge not override existing key
                             newValToEle[key] = value
-                    # TODO: check if key nset no in pairs
-                    self.typeNodes[level].append(\
-                        TypeNode(newValToEle, level, propertyList))
-            for j in range(len(self.typeNodes[level])):
-                print(self.typeNodes[level][j].typeValsToEleId)
 
+                    # check whether the type node has already added
+                    if(len(newValToEle.keys()) == level and \
+                            frozenset(newValToEle.keys()) not in setOfSets ):
+                        # add new type Node
+                        self.typeNodes[level].append(\
+                            TypeNode(newValToEle, level, propertyList))
+                        setOfSets.add(frozenset(newValToEle.keys()))
 
-            # check combinatin of val of every pair of nodes
+        self.printCombinations()
+
+    def printCombinations(self):
+        # check combinatin of val of every pair of nodes
         for i in range(len(self.typeNodes)):
             print("level {}".format(i))
             for j in range(len(self.typeNodes[i])):
