@@ -1,4 +1,5 @@
 import copy
+from objdict import ObjDict
 
 class TypeHierachy(object):
     def __init__(self,root, propertyList):
@@ -22,6 +23,7 @@ class TypeHierachy(object):
         numLevel = len(self.typeNodes[1])
         # iterate through levels
         for level in range(2, numLevel+1):
+            print("level " , level)
             self.typeNodes[level] = []
             lastLevelNodes = self.typeNodes[level-1]
             # iterate through the first set
@@ -42,10 +44,13 @@ class TypeHierachy(object):
                     # TODO: check if key nset no in pairs
                     self.typeNodes[level].append(\
                         TypeNode(newValToEle, level, propertyList))
+            for j in range(len(self.typeNodes[level])):
+                print(self.typeNodes[level][j].typeValsToEleId)
 
 
             # check combinatin of val of every pair of nodes
         for i in range(len(self.typeNodes)):
+            print("level {}".format(i))
             for j in range(len(self.typeNodes[i])):
                 print(self.typeNodes[i][j].typeValsToEleId)
             
@@ -82,7 +87,9 @@ class TypeNode(object):
         self.level = level
 
     def constructTypeValsToEleId(self, mapping):
+        # map key is type, map value is ObjDict of type values
         isSetAllEle = False
+        # check whether the map is empty
         if mapping is not None:
             # get eleId in node
             allEleIds = set()
@@ -108,22 +115,35 @@ class TypeNode(object):
             else:
                 self.typeValsToEleId[tuple(valSet)] |= {eleId}
         """
+        self.delElementNotShared(mapping, allEleIds)
+
+    def delElementNotShared(self, mapping, allEleIds):
         # delete elements that are not shared by all nodes
         if mapping is not None:
             for nodeType, typeVals in mapping.items():
+                # typeVal is an ObjDict
                 for typeVal, eleIds in typeVals.items():
+                    # eleIds is a list
                     idx = 0
                     while idx < len(eleIds):
-                        print("in while", len(eleIds))
                         if eleIds[idx] not in allEleIds:
-                            print("delete idx, eleIds", idx, eleIds)
                             del eleIds[idx]
                         else:
                             idx += 1
-                    # if no ele of this type, delete the type
-                    if len(eleIds) == 0:
-                        del typeVal
-                
+            self.delEmptyTypeVals(mapping)
+
+    def delEmptyTypeVals(self, mapping):
+        if mapping is not None:
+            for nodeType, typeVals in mapping.items():
+                # reconstruct objdict
+                newDict = ObjDict()
+                for typeVal, eleIds in typeVals.items():
+                    if(len(eleIds) != 0):
+                        newDict[typeVal] = eleIds
+                mapping[nodeType] = newDict
+
+
+                        
 
                 
         
