@@ -1,0 +1,8 @@
+digraph finite_state_machine {
+	rankdir=LR;
+	size="8,5"
+	node [shape = doublecircle, color = red]; LR_0 LR_3 LR_8;
+	node [shape = circle, color = red]; LR_2 LR_4;
+	node [shape = doublecircle, color = red]; LR_1 LR_5;
+	node [shape = circle, color = yellow]; LR_7 LR_6;
+}

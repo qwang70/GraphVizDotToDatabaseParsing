@@ -137,8 +137,8 @@ class DOTPrintListener(DOTListener):
     def exitGraph(self, ctx):
         self.addToDB(ctx, "graph")
         self.reassignCurrTreeNode()
-        for i in range(len(self.nodeProperties.elementList)):
-            self.nodeProperties.elementList[i].printNode()
+        # for i in range(len(self.nodeProperties.elementList)):
+        #    self.nodeProperties.elementList[i].printNode()
 
         # remove duplicates in the dictionary
 
@@ -330,7 +330,7 @@ def createTypeHierachyGraph(propertyList):
     commonKeys, structuredDict = preprocessing(propertyList)
     #outputJson(structuredDict)
 
-    root = TypeHierachy(structuredDict, propertyList)
+    root = TypeHierachy(structuredDict)
 
 def outputJson(structuredDict):
     json_data = structuredDict.dumps(indent=4)
@@ -348,9 +348,9 @@ def preprocessing(propertyList):
             if key not in structuredDict:
                 structuredDict[key] = ObjDict() 
             if val not in structuredDict[key]:
-                structuredDict[key][val] = [elem.get_id()]
+                structuredDict[key][val] = [elem.get_name()]
             else:
-                structuredDict[key][val].append(elem.get_id())
+                structuredDict[key][val].append(elem.get_name())
     return commonKeys, structuredDict
 
 if __name__ == '__main__':

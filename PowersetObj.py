@@ -2,21 +2,23 @@ import copy
 from objdict import ObjDict
 
 class TypeHierachy(object):
-    def __init__(self,root, propertyList):
+    def __init__(self,root):
         self.root = root
         # indexed by level
         self.typeNodes = {}
         self.typeEdges = {}
 
+        self.constructTypeHierachy()
+
+    def constructTypeHierachy(self):
         # empty set
         self.typeNodes[0] = [TypeNode(None, 0)]
 
         # one element in set
         self.typeNodes[1] = []
-        # self.typeEdges[1] = []
-        for nodeType, nodeVal in root.items():
+        for nodeType, nodeVal in self.root.items():
             self.typeNodes[1].append(
-                TypeNode({nodeType: nodeVal}, 1, propertyList))
+                TypeNode({nodeType: nodeVal}, 1))
 
         # build multiple level based on the information in the previous level
         # | {A (a1, a2), B (b1, b2)} | {C (c1, c2), B (b1, b3)} | => {A (a1, a2), B (b1), C (c1, c2)}
@@ -24,7 +26,6 @@ class TypeHierachy(object):
         baseLevelNodes = self.typeNodes[1]
         # iterate through levels
         for level in range(2, numLevel+1):
-            print("constructing level " , level)
             # a set of forzenset representing currentSet in the list
             setOfSets = set()
 
@@ -37,7 +38,8 @@ class TypeHierachy(object):
                     # get dictionaries
                     newValToEle = copy.deepcopy(\
                             lastLevelNodes[firstSet].typeValsToEleId)
-                    valToEle2 = baseLevelNodes[secondSet].typeValsToEleId
+                    valToEle2 = copy.deepcopy(\
+                            baseLevelNodes[secondSet].typeValsToEleId)
                     # get key sets union
                     for key, value in valToEle2.items():
                         if key not in newValToEle:
@@ -46,11 +48,12 @@ class TypeHierachy(object):
                     # check whether the type node has already added
                     if(len(newValToEle.keys()) == level and \
                             frozenset(newValToEle.keys()) not in setOfSets ):
-                        # add new type Node
-                        self.typeNodes[level].append(\
-                            TypeNode(newValToEle, level, propertyList))
-                        setOfSets.add(frozenset(newValToEle.keys()))
-
+                        # create new node
+                        newNode = TypeNode(newValToEle, level)
+                        if (len(newNode.typeValsToEleId) == level):
+                            # add new type Node
+                            self.typeNodes[level].append(newNode)
+                            setOfSets.add(frozenset(newValToEle.keys()))
         self.printCombinations()
 
     def printCombinations(self):
@@ -78,9 +81,10 @@ class TypeNode(object):
         bb: [1]}
     }
     """
-    def __init__(self, dictType, level, propertyList=None):
-        self.propertyList = propertyList
+    def __init__(self, dictType, level):
+        #self.propertyList = propertyList
         self.typeValsToEleId = dictType 
+        self.level = level
         # typeVals
         if dictType is None: self.typeSet = set()
         else:
@@ -90,7 +94,6 @@ class TypeNode(object):
         self.inEdges = {}
         self.outEdges = {}
 
-        self.level = level
 
     def constructTypeValsToEleId(self, mapping):
         # map key is type, map value is ObjDict of type values
@@ -109,19 +112,14 @@ class TypeNode(object):
                     isSetAllEle = True
                 else:
                     allEleIds &= allEleInType
-        """
-        # pack attribute value into a set
-        for eleId in allEleIds:
-            # get value from attribute list
-            valSet = set()
-            for attKey in self.typeSet:
-                valSet = valSet | {self.propertyList[eleId].getAttrVal(attKey)}
-            if tuple(valSet) not in self.typeValsToEleId:
-                self.typeValsToEleId[tuple(valSet)] = {eleId}
-            else:
-                self.typeValsToEleId[tuple(valSet)] |= {eleId}
-        """
         self.delElementNotShared(mapping, allEleIds)
+        self.delEmptyKeyValPair(mapping)
+
+    def delEmptyKeyValPair(self, mapping):
+        copyMap = copy.deepcopy(mapping)
+        for key, val in copyMap.items():
+            if(len(val) == 0):
+                del mapping[key]
 
     def delElementNotShared(self, mapping, allEleIds):
         # delete elements that are not shared by all nodes
