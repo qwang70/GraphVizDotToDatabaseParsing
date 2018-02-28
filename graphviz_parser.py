@@ -133,7 +133,6 @@ class DOTPrintListener(DOTListener):
     def enterGraph(self, ctx):
         self.createNewTreeNodeWhileEntering()
         
-        # ['DIGRAPH', 'EMPTY', 'GRAPH', 'STRICT', '__class__', '__delattr__', '__dict__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__gt__', '__hash__', '__init__', '__le__', '__lt__', '__module__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', '__weakref__', 'accept', 'addChild', 'addErrorTreeNode', 'addTokenTreeNode', 'children', 'copyFrom', 'depth', 'enterRule', 'exception', 'exitRule', 'getAltNumber', 'getChild', 'getChildCount', 'getChildren', 'getPayload', 'getRuleContext', 'getRuleIndex', 'getSourceInterval', 'getText', 'getToken', 'getTokens', 'getTypedRuleContext', 'getTypedRuleContexts', 'id_decl', 'invokingState', 'isEmpty', 'parentCtx', 'parser', 'removeLastChild', 'setAltNumber', 'start', 'stmt_list', 'stop', 'toString', 'toStringTree']
     def exitGraph(self, ctx):
         self.addToDB(ctx, "graph")
         self.reassignCurrTreeNode()
@@ -264,9 +263,13 @@ class DOTPrintListener(DOTListener):
     # Enter a parse tree produced by DOTParser#Node_id.
     def enterNode_id(self, ctx:DOTParser.Node_idContext):
         self.createNewTreeNodeWhileEntering()
-        #TODO: handle differently for node and edge stmt
         if self.nodeProperties.getIsTempAttr() == 1:
             self.nodeProperties.setCurrNodeName(ctx.getText())
+        elif self.edgeProperties.getIsTempAttr() == 1:
+            self.edgeProperties.setCurrLeftNodeName(ctx.getText())
+            self.edgeProperties.setIsTempAttr(2);
+        elif self.edgeProperties.getIsTempAttr() == 2:
+            self.edgeProperties.setCurrRightNodeName(ctx.getText())
 
     # Exit a parse tree produced by DOTParser#Node_id.
     def exitNode_id(self, ctx:DOTParser.Node_idContext):
@@ -330,7 +333,8 @@ def createTypeHierachyGraph(propertyList):
     commonKeys, structuredDict = preprocessing(propertyList)
     #outputJson(structuredDict)
 
-    root = TypeHierachy(structuredDict)
+    typeHierachy = TypeHierachy(structuredDict)
+    typeHierachy.visualize()
 
 def outputJson(structuredDict):
     json_data = structuredDict.dumps(indent=4)

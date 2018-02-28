@@ -1,24 +1,33 @@
 import copy
 from objdict import ObjDict
+import networkx as nx
+import matplotlib.pyplot as plt
 
 class TypeHierachy(object):
     def __init__(self,root):
         self.root = root
+        self.nodeId = 0
+        self.edgeId = 0
         # indexed by level
         self.typeNodes = {}
         self.typeEdges = {}
 
         self.constructTypeHierachy()
+        self.visualize()
 
     def constructTypeHierachy(self):
         # empty set
-        self.typeNodes[0] = [TypeNode(None, 0)]
+        self.typeNodes[0] = [TypeNode(None, 0, self.nodeId)]
+        self.nodeId += 1
 
         # one element in set
         self.typeNodes[1] = []
+        self.typeEdges[1] = []
         for nodeType, nodeVal in self.root.items():
-            self.typeNodes[1].append(
-                TypeNode({nodeType: nodeVal}, 1))
+            newNode = TypeNode({nodeType: nodeVal}, 1, self.nodeId)
+            self.typeNodes[1].append(newNode)
+            self.typeEdges[1].append((0, nodeId))
+            self.nodeId += 1
 
         # build multiple level based on the information in the previous level
         # | {A (a1, a2), B (b1, b2)} | {C (c1, c2), B (b1, b3)} | => {A (a1, a2), B (b1), C (c1, c2)}
@@ -30,6 +39,7 @@ class TypeHierachy(object):
             setOfSets = set()
 
             self.typeNodes[level] = []
+            self.typeEdges[level] = []
             lastLevelNodes = self.typeNodes[level-1]
             # iterate through the first set
             for firstSet in range(len(lastLevelNodes)):
@@ -49,11 +59,13 @@ class TypeHierachy(object):
                     if(len(newValToEle.keys()) == level and \
                             frozenset(newValToEle.keys()) not in setOfSets ):
                         # create new node
-                        newNode = TypeNode(newValToEle, level)
+                        newNode = TypeNode(newValToEle, level, self.nodeId)
                         if (len(newNode.typeValsToEleId) == level):
                             # add new type Node
                             self.typeNodes[level].append(newNode)
                             setOfSets.add(frozenset(newValToEle.keys()))
+                            self.typeEdges[1].append((lastLevelNodes[firstSet].nodeId, newNode.nodeId))
+                            self.nodeId += 1
         self.printCombinations()
 
     def printCombinations(self):
@@ -62,6 +74,19 @@ class TypeHierachy(object):
             print("level {}".format(i))
             for j in range(len(self.typeNodes[i])):
                 print(self.typeNodes[i][j].typeValsToEleId)
+
+    def visualize(self):
+        G=nx.cubical_graph()
+        pos=nx.spring_layout(G) # positions for all nodes
+        # print("visualize", len(self.typeEdges))
+        for i in range(2, len(self.typeEdges)):
+            for j in range(len(self.typeEdges[i])):
+                print(len(self.typeEdges[i]))
+                startTypeNode = self.typeEdges[i][j][0]
+                endTypeNode = self.typeEdges[i][j][1]
+                print(" ".join(list(startTypeNode.typeValsToEleId.keys())))
+
+
             
 class TypeNode(object):
     """
@@ -81,10 +106,11 @@ class TypeNode(object):
         bb: [1]}
     }
     """
-    def __init__(self, dictType, level):
+    def __init__(self, dictType, level, nodeId):
         #self.propertyList = propertyList
         self.typeValsToEleId = dictType 
         self.level = level
+        self.nodeId = nodeId
         # typeVals
         if dictType is None: self.typeSet = set()
         else:
@@ -145,11 +171,6 @@ class TypeNode(object):
                     if(len(eleIds) != 0):
                         newDict[typeVal] = eleIds
                 mapping[nodeType] = newDict
-
-
-                        
-
-                
         
 class TypeEdge(object):
     def __init__(self, fromType, fromVal, toType, toVal, eleId):
