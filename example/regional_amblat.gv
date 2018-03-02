@@ -1,0 +1,103 @@
+digraph{
+rankdir=BT
+node[fontname="Helvetica"]
+
+"AllOtherGreen" [shape=box color="#134d9c" style=rounded penwidth=0.4]
+node[shape=octagon color="#9f1684" fillcolor="#df77cb" style=filled]
+"1,2,3,4,5,6,7,8,9,10,11,12" [label="1,2,3,4,5,6,7,8,9,10,11,12\n(1)"]
+node[shape=box color="#134d9c" fillcolor="#68b5e3" style="rounded,filled"]
+"1,3,4,5,6,7,8,9,10,11,12" [label="1,3,4,5,6,7,8,9,10,11,12\n(2)"]
+"1,2,3,4,5,6,7,8,9,10,11" [label="1,2,3,4,5,6,7,8,9,10,11\n(2)"]
+"1,2,3,4,5,6,7,8,10,11,12" [label="1,2,3,4,5,6,7,8,10,11,12\n(240)"]
+"1,2,4,5,6,7,8,9,10,11,12" [label="1,2,4,5,6,7,8,9,10,11,12\n(2)"]
+"1,2,3,4,6,7,8,9,10,11,12" [label="1,2,3,4,6,7,8,9,10,11,12\n(2)"]
+"1,2,3,4,5,6,7,8,9,11,12" [label="1,2,3,4,5,6,7,8,9,11,12\n(3)"]
+"1,2,3,4,5,7,8,9,10,11,12" [label="1,2,3,4,5,7,8,9,10,11,12\n(3)"]
+"1,2,3,4,5,6,7,8,9,10,12" [label="1,2,3,4,5,6,7,8,9,10,12\n(2)"]
+"1,2,3,4,5,6,8,9,10,11,12" [label="1,2,3,4,5,6,8,9,10,11,12\n(2)"]
+"1,2,3,4,5,6,7,9,10,11,12" [label="1,2,3,4,5,6,7,9,10,11,12\n(2)"]
+"1,2,3,5,6,7,8,9,10,11,12" [label="1,2,3,5,6,7,8,9,10,11,12\n(23)"]
+"2,3,4,5,6,7,8,9,10,11,12" [label="2,3,4,5,6,7,8,9,10,11,12\n(2)"]
+
+edge[style=dotted penwidth=0.4]
+
+"AllOtherGreen" -> "1,3,4,5,6,7,8,9,10,11,12" [dir=back color="#134d9c",label=11]
+"AllOtherGreen" -> "1,2,3,4,5,6,7,8,9,10,11" [dir=back color="#134d9c",label=11]
+"AllOtherGreen" -> "1,2,3,4,5,6,7,8,10,11,12" [dir=back color="#134d9c",label=11]
+"AllOtherGreen" -> "1,2,4,5,6,7,8,9,10,11,12" [dir=back color="#134d9c",label=11]
+"AllOtherGreen" -> "1,2,3,4,6,7,8,9,10,11,12" [dir=back color="#134d9c",label=11]
+"AllOtherGreen" -> "1,2,3,4,5,6,7,8,9,11,12" [dir=back color="#134d9c",label=11]
+"AllOtherGreen" -> "1,2,3,4,5,7,8,9,10,11,12" [dir=back color="#134d9c",label=11]
+"AllOtherGreen" -> "1,2,3,4,5,6,7,8,9,10,12" [dir=back color="#134d9c",label=11]
+"AllOtherGreen" -> "1,2,3,4,5,6,8,9,10,11,12" [dir=back color="#134d9c",label=11]
+"AllOtherGreen" -> "1,2,3,4,5,6,7,9,10,11,12" [dir=back color="#134d9c",label=11]
+"AllOtherGreen" -> "1,2,3,5,6,7,8,9,10,11,12" [dir=back color="#134d9c",label=11]
+"AllOtherGreen" -> "2,3,4,5,6,7,8,9,10,11,12" [dir=back color="#134d9c",label=11]
+"1,2,3,4,5,6,7,8,9,10,11" -> "1,2,3,4,5,6,7,8,9,10,11,12" [arrowhead=none color="#0000FF" penwidth=2 style=solid]
+"1,2,3,4,5,6,7,8,9,10,12" -> "1,2,3,4,5,6,7,8,9,10,11,12" [arrowhead=none color="#0000FF" penwidth=2 style=solid]
+"1,2,3,4,5,6,7,8,9,11,12" -> "1,2,3,4,5,6,7,8,9,10,11,12" [arrowhead=none color="#0000FF" penwidth=2 style=solid]
+"1,2,3,4,5,6,7,8,10,11,12" -> "1,2,3,4,5,6,7,8,9,10,11,12" [arrowhead=none color="#0000FF" penwidth=2 style=solid]
+"1,2,3,4,5,6,7,9,10,11,12" -> "1,2,3,4,5,6,7,8,9,10,11,12" [arrowhead=none color="#0000FF" penwidth=2 style=solid]
+"1,2,3,4,5,6,8,9,10,11,12" -> "1,2,3,4,5,6,7,8,9,10,11,12" [arrowhead=none color="#0000FF" penwidth=2 style=solid]
+"1,2,3,4,5,7,8,9,10,11,12" -> "1,2,3,4,5,6,7,8,9,10,11,12" [arrowhead=none color="#0000FF" penwidth=2 style=solid]
+"1,2,3,4,6,7,8,9,10,11,12" -> "1,2,3,4,5,6,7,8,9,10,11,12" [arrowhead=none color="#0000FF" penwidth=2 style=solid]
+"1,2,3,5,6,7,8,9,10,11,12" -> "1,2,3,4,5,6,7,8,9,10,11,12" [arrowhead=none color="#0000FF" penwidth=2 style=solid]
+"1,2,4,5,6,7,8,9,10,11,12" -> "1,2,3,4,5,6,7,8,9,10,11,12" [arrowhead=none color="#0000FF" penwidth=2 style=solid]
+"1,3,4,5,6,7,8,9,10,11,12" -> "1,2,3,4,5,6,7,8,9,10,11,12" [arrowhead=none color="#0000FF" penwidth=2 style=solid]
+"2,3,4,5,6,7,8,9,10,11,12" -> "1,2,3,4,5,6,7,8,9,10,11,12" [arrowhead=none color="#0000FF" penwidth=2 style=solid]
+"AllOtherGreen" -> "1,2,3,4,5,6,7,8,9,10,11,12" [arrowhead=none color="#0000FF" penwidth=2 style=solid label=12]
+node[shape=plaintext fontsize=12 color=black fillcolor=white] 
+{rank=top Legend [label=< 
+ <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="2"> 
+<TR> 
+ <TD>1</TD> 
+ <TD>CEN.Midwest disjoint TZ.Pacific</TD> 
+ </TR> 
+<TR> 
+ <TD>2</TD> 
+ <TD>CEN.Midwest overlaps TZ.Eastern</TD> 
+ </TR> 
+<TR> 
+ <TD>3</TD> 
+ <TD>CEN.Midwest overlaps TZ.Mountain</TD> 
+ </TR> 
+<TR> 
+ <TD>4</TD> 
+ <TD>CEN.Northeast is_included_in TZ.Eastern</TD> 
+ </TR> 
+<TR> 
+ <TD>5</TD> 
+ <TD>CEN.South disjoint TZ.Pacific</TD> 
+ </TR> 
+<TR> 
+ <TD>6</TD> 
+ <TD>CEN.South overlaps TZ.Central</TD> 
+ </TR> 
+<TR> 
+ <TD>7</TD> 
+ <TD>CEN.South overlaps TZ.Eastern</TD> 
+ </TR> 
+<TR> 
+ <TD>8</TD> 
+ <TD>CEN.South overlaps TZ.Mountain</TD> 
+ </TR> 
+<TR> 
+ <TD>9</TD> 
+ <TD>CEN.USA equals TZ.USA</TD> 
+ </TR> 
+<TR> 
+ <TD>10</TD> 
+ <TD>CEN.West disjoint TZ.Central</TD> 
+ </TR> 
+<TR> 
+ <TD>11</TD> 
+ <TD>CEN.West disjoint TZ.Eastern</TD> 
+ </TR> 
+<TR> 
+ <TD>12</TD> 
+ <TD>CEN.West overlaps TZ.Mountain</TD> 
+ </TR> 
+</TABLE> 
+ >] } 
+Legend -> "AllOtherGreen" [style=invis]
+}

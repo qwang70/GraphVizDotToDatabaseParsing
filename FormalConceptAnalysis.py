@@ -23,15 +23,14 @@ class FCA(object):
         ctx_string = self.fca.to_csv()
         self.ctx = Context.fromstring(ctx_string,frmat='csv')
         #dot = self.ctx.lattice.graphviz(filename="fca", view=True)
-        self.createNodesGraphviz()
 
-    def createNodesGraphviz(self):
+    def createNodesGraphviz(self, filename):
         nodesdot = ""
         atoms = self.ctx.lattice.atoms
         for nid, atom in enumerate(atoms):
             nodesdot += "n{} [{}, label=\"{}\"]\n".format(\
                     nid, ", ".join(atom.intent),\
-                    "\n".join(atom.extent).replace('\"', '\\\"') )
+                    "\\n".join(atom.extent).replace('\"', '\\\"') )
                     #"\n".join(atom.intent).replace('\"', '\\\"'))
         dot =   \
         """
@@ -39,7 +38,7 @@ class FCA(object):
             {}
         }}
         """.format(nodesdot)
-        with open('nodetype.dot', 'w') as file:
+        with open(filename, 'w') as file:
             file.write(dot)
             
 

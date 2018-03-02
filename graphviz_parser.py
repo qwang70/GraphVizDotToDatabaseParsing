@@ -327,11 +327,17 @@ def main():
     walker = ParseTreeWalker()
     walker.walk(printer, tree)
 
+    propertyList = printer.getNodeProperties().getElementList()
+    if args.fca:
+        # fca
+        fca = FCA(propertyList)
+        fca.createNodesGraphviz( input_file.split(".")[0] + "_nodes.dot")
+
     # powerset formation
-    createTypeHierachyGraph(printer.getNodeProperties().getElementList())
+    createTypeHierachyGraph(propertyList)
 
 def createTypeHierachyGraph(propertyList):
-    FCA(propertyList)
+    # powerset construction
     commonKeys, structuredDict = preprocessing(propertyList)
     # outputJson(structuredDict)
 
@@ -364,6 +370,7 @@ if __name__ == '__main__':
                         help='name of the output idbase file')
     parser.add_argument('infile', 
                         help='name of the input dot/gv file')
+    parser.add_argument('-fca', action='store_true')
 
     args = parser.parse_args()
     main()
