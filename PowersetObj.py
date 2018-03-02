@@ -26,7 +26,7 @@ class TypeHierachy(object):
         for nodeType, nodeVal in self.root.items():
             newNode = TypeNode({nodeType: nodeVal}, 1, self.nodeId)
             self.typeNodes[1].append(newNode)
-            self.typeEdges[1].append((0, nodeId))
+            self.typeEdges[1].append((0, self.nodeId))
             self.nodeId += 1
 
         # build multiple level based on the information in the previous level

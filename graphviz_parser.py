@@ -14,6 +14,7 @@ import json
 # class
 from GraphProperties import *
 from PowersetObj import *
+from FormalConceptAnalysis import *
 
 class TreeNode(object):
     def __init__(self, id):
@@ -330,11 +331,11 @@ def main():
     createTypeHierachyGraph(printer.getNodeProperties().getElementList())
 
 def createTypeHierachyGraph(propertyList):
+    FCA(propertyList)
     commonKeys, structuredDict = preprocessing(propertyList)
-    #outputJson(structuredDict)
+    # outputJson(structuredDict)
 
-    typeHierachy = TypeHierachy(structuredDict)
-    typeHierachy.visualize()
+    # typeHierachy = TypeHierachy(structuredDict)
 
 def outputJson(structuredDict):
     json_data = structuredDict.dumps(indent=4)
