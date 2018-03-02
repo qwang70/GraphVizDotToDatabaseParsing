@@ -60,15 +60,9 @@ class DOTPrintListener(DOTListener):
         # GRAPH: 0, NODE: 1, EDGE: 2
         self.currAttrType = 0
 
-        self.conn = sqlite3.connect(output_file)
-        self.c = self.conn.cursor()
-        # create tokens table
-        self.c.execute("DROP TABLE IF EXISTS tokens")
-        self.c.execute("CREATE TABLE tokens(Id integer primary key,token_type text, token_val  text)")
-
-        # create table for searching parent and children
-        self.c.execute("DROP TABLE IF EXISTS token_tree")
-        self.c.execute("CREATE TABLE token_tree(Id integer,parent_id integer, child_id integer)")
+        # TODO: add to db
+        # self.conn = sqlite3.connect(output_file)
+        # self.c = self.conn.cursor()
 
     def getNodeProperties(self):
         return self.nodeProperties
@@ -76,67 +70,11 @@ class DOTPrintListener(DOTListener):
     def getEdgeProperties(self):
         return self.edgeProperties
 
-    def createNewTreeNodeWhileEntering(self):
-        # initiate new TreeNode for self
-        newTreeNode = TreeNode(self.numToken)
-        if self.copyTree is None:
-            self.copyTree = newTreeNode
-        else:
-            newTreeNode.setParent(self.currTreeNode)
-            self.currTreeNode.add_child(newTreeNode)
-        self.currTreeNode = newTreeNode
-        self.numToken += 1
-
-    
-    def reassignCurrTreeNode(self):
-        # assign the current TreeNode to be its parent TreeNode
-        assert self.currTreeNode is not None
-        self.currTreeNode = self.currTreeNode.getParent()
-
-    def addToDB(self, ctx, type_val):
-        self.c.execute("INSERT INTO tokens VALUES(?, ?, ?)", (self.currTreeNode.getId(), type_val, ctx.getText()))
-        # assign parent id
-        if self.currTreeNode.getParent() is None: 
-            parent_id = None
-        else:
-            parent_id = self.currTreeNode.getParent().getId()
-        # assign a list of child id
-        if ctx.getChildCount() == 0:
-            child = None
-        else:
-            child = []
-            TreeNodeChildIdx = 0
-            for i in range(ctx.getChildCount()):
-                # check whether the child is a terminal TreeNode
-                #if type(ctx.getChild(i)) is antlr4.tree.Tree.TerminalNodeImpl:
-                if type(ctx.getChild(i)) is TerminalNodeImpl:
-                    terminalCtx = ctx.getChild(i)
-                    #self.c.execute("INSERT INTO tokens VALUES(?,?, ?)", (self.numToken, "symbol", ctx.getText()))
-                    self.c.execute("INSERT INTO tokens VALUES(?, ?, ?)", (self.numToken, "terminal", terminalCtx.getText()))
-                    self.c.execute("INSERT INTO token_tree VALUES(?, ?, ?)", (self.numToken, self.currTreeNode.id, None))
-                    self.numToken += 1
-                else:
-                    assert TreeNodeChildIdx < ctx.getChildCount()
-                    child.append( self.currTreeNode.getChild(TreeNodeChildIdx) )
-                    TreeNodeChildIdx += 1
-            if len(child) == 0:
-                child = None
-            # get all combinations of parent and child index
-            if child is None:
-                col_pair = [(self.currTreeNode.getId(), parent_id, child)]
-            else:
-                col_pair = [(self.currTreeNode.getId(), parent_id, subchild.getId()) for subchild in child]
-
-            # write id into idbase token_tree
-            self.c.executemany("INSERT INTO token_tree VALUES(?,?, ?)", col_pair)
-        self.conn.commit()
-
     def enterGraph(self, ctx):
-        self.createNewTreeNodeWhileEntering()
+        pass
         
     def exitGraph(self, ctx):
-        self.addToDB(ctx, "graph")
-        self.reassignCurrTreeNode()
+        pass
         # for i in range(len(self.nodeProperties.elementList)):
         #    self.nodeProperties.elementList[i].printNode()
 
@@ -147,22 +85,20 @@ class DOTPrintListener(DOTListener):
 
     # Enter a parse tree produced by DOTParser#stmt_list.
     def enterStmt_list(self, ctx:DOTParser.Stmt_listContext):
-        self.createNewTreeNodeWhileEntering()
+        pass
 
     # Exit a parse tree produced by DOTParser#stmt_list.
     def exitStmt_list(self, ctx:DOTParser.Stmt_listContext):
-        self.addToDB(ctx, "stmt_list")
-        self.reassignCurrTreeNode()
+        pass
 
 
     # Enter a parse tree produced by DOTParser#stmt.
     def enterStmt(self, ctx:DOTParser.StmtContext):
-        self.createNewTreeNodeWhileEntering()
+        pass
 
     # Exit a parse tree produced by DOTParser#stmt.
     def exitStmt(self, ctx:DOTParser.StmtContext):
-        self.addToDB(ctx, "stmt")
-        self.reassignCurrTreeNode()
+        pass
 
 
     # Enter a parse tree produced by DOTParser#attr_stmt.
@@ -175,32 +111,26 @@ class DOTPrintListener(DOTListener):
             self.currAttrType = 1
         elif ctx.EDGE() is not None:
             self.currAttrType = 2
-        self.createNewTreeNodeWhileEntering()
 
     # Exit a parse tree produced by DOTParser#attr_stmt.
     def exitAttr_stmt(self, ctx:DOTParser.Attr_stmtContext):
-        self.addToDB(ctx, "attr_stmt")
-        self.reassignCurrTreeNode()
         self.currAttrType = 0
 
     # Enter a parse tree produced by DOTParser#attr_list.
     def enterAttr_list(self, ctx:DOTParser.Attr_listContext):
-        self.createNewTreeNodeWhileEntering()
+        pass
 
     # Exit a parse tree produced by DOTParser#attr_list.
     def exitAttr_list(self, ctx:DOTParser.Attr_listContext):
-        self.addToDB(ctx, "attr_list")
-        self.reassignCurrTreeNode()
+        pass
 
 
     # Enter a parse tree produced by DOTParser#a_list.
     def enterA_list(self, ctx:DOTParser.A_listContext):
-        self.createNewTreeNodeWhileEntering()
+        pass
 
     # Exit a parse tree produced by DOTParser#a_list.
     def exitA_list(self, ctx:DOTParser.A_listContext):
-        self.addToDB(ctx, "a_list")
-        self.reassignCurrTreeNode()
 
         for i in range(ctx.getChildCount()):
             # check whether the child is a terminal TreeNode
@@ -218,52 +148,43 @@ class DOTPrintListener(DOTListener):
                     
     # Enter a parse tree produced by DOTParser#edge_stmt.
     def enterEdge_stmt(self, ctx:DOTParser.Edge_stmtContext):
-        self.createNewTreeNodeWhileEntering()
         self.edgeProperties.addNewEdge()
         self.currAttrType = 2
 
     # Exit a parse tree produced by DOTParser#edge_stmt.
     def exitEdge_stmt(self, ctx:DOTParser.Edge_stmtContext):
-        self.addToDB(ctx, "edge_stmt")
-        self.reassignCurrTreeNode()
         self.edgeProperties.flushNewEdge()
         self.currAttrType = 0
 
 
     # Enter a parse tree produced by DOTParser#edgeRHS.
     def enterEdgeRHS(self, ctx:DOTParser.EdgeRHSContext):
-        self.createNewTreeNodeWhileEntering()
+        pass
 
     # Exit a parse tree produced by DOTParser#edgeRHS.
     def exitEdgeRHS(self, ctx:DOTParser.EdgeRHSContext):
-        self.addToDB(ctx, "edge_RHS")
-        self.reassignCurrTreeNode()
+        pass
 
     # Enter a parse tree produced by DOTParser#edgeop.
     def enterEdgeop(self, ctx:DOTParser.EdgeopContext):
-        self.createNewTreeNodeWhileEntering()
+        pass
 
     # Exit a parse tree produced by DOTParser#edgeop.
     def exitEdgeop(self, ctx:DOTParser.EdgeopContext):
-        self.addToDB(ctx, "edge_op")
-        self.reassignCurrTreeNode()
+        pass
 
     # Enter a parse tree produced by DOTParser#Node_stmt.
     def enterNode_stmt(self, ctx:DOTParser.Node_stmtContext):
-        self.createNewTreeNodeWhileEntering()
         self.nodeProperties.addNewNode()
         self.currAttrType = 1
 
     # Exit a parse tree produced by DOTParser#Node_stmt.
     def exitNode_stmt(self, ctx:DOTParser.Node_stmtContext):
-        self.addToDB(ctx, "Node_stmt")
-        self.reassignCurrTreeNode()
         self.nodeProperties.flushNewNode()
         self.currAttrType = 0
 
     # Enter a parse tree produced by DOTParser#Node_id.
     def enterNode_id(self, ctx:DOTParser.Node_idContext):
-        self.createNewTreeNodeWhileEntering()
         if self.nodeProperties.getIsTempAttr() == 1:
             self.nodeProperties.setCurrNodeName(ctx.getText())
         elif self.edgeProperties.getIsTempAttr() == 1:
@@ -274,42 +195,34 @@ class DOTPrintListener(DOTListener):
 
     # Exit a parse tree produced by DOTParser#Node_id.
     def exitNode_id(self, ctx:DOTParser.Node_idContext):
-        self.addToDB(ctx, "Node_id")
-        self.reassignCurrTreeNode()
+        pass
 
 
     # Enter a parse tree produced by DOTParser#port.
     def enterPort(self, ctx:DOTParser.PortContext):
-        self.createNewTreeNodeWhileEntering()
+        pass
 
     # Exit a parse tree produced by DOTParser#port.
     def exitPort(self, ctx:DOTParser.PortContext):
-        self.addToDB(ctx, "port")
-        self.reassignCurrTreeNode()
+        pass
 
 
     # Enter a parse tree produced by DOTParser#subgraph.
     def enterSubgraph(self, ctx:DOTParser.SubgraphContext):
-        self.createNewTreeNodeWhileEntering()
+        pass
 
     # Exit a parse tree produced by DOTParser#subgraph.
     def exitSubgraph(self, ctx:DOTParser.SubgraphContext):
-        self.addToDB(ctx, "subgraph")
-        self.reassignCurrTreeNode()
+        pass
 
 
     # Enter a parse tree produced by DOTParser#id_decl.
     def enterId_decl(self, ctx:DOTParser.Id_declContext):
-        self.createNewTreeNodeWhileEntering()
+        pass
 
     # Exit a parse tree produced by DOTParser#id_decl.
     def exitId_decl(self, ctx:DOTParser.Id_declContext):
-        self.addToDB(ctx, "id")
-        self.reassignCurrTreeNode()
-
-
-    def __del__(self):
-        self.conn.close()
+        pass
 
 def main():
     input_file = args.infile

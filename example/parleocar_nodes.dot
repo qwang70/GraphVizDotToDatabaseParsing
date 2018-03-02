@@ -1,0 +1,12 @@
+
+        graph{
+            n0 [shape=box, fontname=Helvetica, peripheries=1, style=filled, fillcolor="#CCFFCC", label="optimizeModels"]
+n1 [shape=box, fontname=Helvetica, style=filled, peripheries=2, fillcolor="#CCFFCC", label="calculate_Models"]
+n2 [rankdir=LR, fillcolor="#FFFFCC", fontname=Helvetica, peripheries=1, shape=record, style="rounded,filled", label="paleocar_models"]
+n3 [shape=box, fontname=Helvetica, peripheries=1, fillcolor="#FCFCFC", style="rounded,filled", label="calibration_years\nmin_width"]
+n4 [rankdir=LR, fontname=Helvetica, peripheries=1, style=filled, shape=record, fillcolor="#CCFFCC", label="print_message\nget_predictor_matrix\nget_reconstruction_matrix\nget_predlist\nget_carscores"]
+n5 [fontname=Helvetica, peripheries=1, width=0.2, style="rounded,filled", shape=circle, fillcolor="#FFFFFF", label="prediction_years_input_port\nprism_data_for_coordinates_input_port\nitrdb_input_port\ncalibration_years_input_port\nmin_width_input_port\nverbose_input_port\npaleocar_models_output_port"]
+n6 [shape=box, fillcolor="#FFFFCC", fontname=Helvetica, peripheries=1, style="rounded,filled", label="verbose\nitrdb\nprediction_years\nreconstruction_matrix\nprism_data_for_coordinates\npredictor_matrix\npredlist\ncarscores\nmax_preds\nlinear_models"]
+
+        }
+        

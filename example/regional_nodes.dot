@@ -1,0 +1,9 @@
+
+        graph{
+            n0 [fontname="helvetica", fillcolor="#EEEEEE", shape=box, style="filled,rounded", label="\"CEN.USA\nTZ.USA\""]
+n1 [fontname="helvetica", margin=0, shape=box, fillcolor=white, style=filled, label="Legend"]
+n2 [fontname="helvetica", fillcolor="#CCFFCC", shape=box, style=filled, label="\"CEN.Midwest\"\n\"CEN.South\"\n\"CEN.Northeast\"\n\"CEN.West\""]
+n3 [fontname="helvetica", fillcolor="#FFFFCC", style=filled, shape=note, label="\"TZ.Eastern\"\n\"TZ.Pacific\"\n\"TZ.Central\"\n\"TZ.Mountain\""]
+
+        }
+        
