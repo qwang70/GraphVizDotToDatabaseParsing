@@ -17,26 +17,46 @@ class FCA(object):
         self.fca = self.fca.fillna("") # with 0s rather than NaNs
         for elem in propertyList:
             currAttr = elem.getAttr() 
+            label = None
             for key, val in currAttr.items():
                 if key.lower() != "label":
                     self.fca.loc[[elem.get_name()], "{}={}".format(key,val)] = "X"
+                else:
+                    label = val
+            if label is not None:
+                self.fca = self.fca.rename(index={elem.get_name(): label})
         ctx_string = self.fca.to_csv()
         self.ctx = Context.fromstring(ctx_string,frmat='csv')
         #dot = self.ctx.lattice.graphviz(filename="fca", view=True)
+        #dot.render("testDot.dot")
 
     def createNodesGraphviz(self, filename):
         nodesdot = ""
         atoms = self.ctx.lattice.atoms
+        nid = 0
+        """
         for nid, atom in enumerate(atoms):
             nodesdot += "n{} [{}, label=\"{}\"]\n".format(\
                     nid, ", ".join(atom.intent),\
                     "\\n".join(atom.extent).replace('\"', '\\\"') )
-                    #"\n".join(atom.intent).replace('\"', '\\\"'))
+        """
+        for atom in atoms:
+            primaryNodeId = nid
+            nodesdot += "n{} [{}, label=\"\"];\n".format(\
+                    nid, ", ".join(atom.intent))
+            nid += 1
+            for nodeLabel in atom.extent:
+                nodesdot += "n{} [{}, label={}];\n".format(\
+                        nid, ", ".join(atom.intent), nodeLabel)
+                nodesdot += "n{} -> n{};\n".format(primaryNodeId, nid)
+                nid += 1
+                
         dot =   \
         """
-        graph{{
-            {}
-        }}
+digraph{{
+rankdir=TB
+{}
+}}
         """.format(nodesdot)
         with open(filename, 'w') as file:
             file.write(dot)

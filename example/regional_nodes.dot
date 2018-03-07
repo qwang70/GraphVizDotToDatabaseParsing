@@ -1,9 +1,59 @@
 
-        graph{
-            n0 [fontname="helvetica", fillcolor="#EEEEEE", shape=box, style="filled,rounded", label="\"CEN.USA\nTZ.USA\""]
-n1 [fontname="helvetica", margin=0, shape=box, fillcolor=white, style=filled, label="Legend"]
-n2 [fontname="helvetica", fillcolor="#CCFFCC", shape=box, style=filled, label="\"CEN.Midwest\"\n\"CEN.South\"\n\"CEN.Northeast\"\n\"CEN.West\""]
-n3 [fontname="helvetica", fillcolor="#FFFFCC", style=filled, shape=note, label="\"TZ.Eastern\"\n\"TZ.Pacific\"\n\"TZ.Central\"\n\"TZ.Mountain\""]
+digraph{
+rankdir=TB
+n0 [fontname="helvetica", fillcolor="#EEEEEE", shape=box, style="filled,rounded", label=""];
+n1 [fontname="helvetica", fillcolor="#EEEEEE", shape=box, style="filled,rounded", label="CEN.USA\nTZ.USA"];
+n0 -> n1;
+n2 [fontname="helvetica", shape=box, fillcolor=white, style=filled, margin=0, label=""];
+n3 [fontname="helvetica", shape=box, fillcolor=white, style=filled, margin=0, label=< 
+ <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4"> 
+<TR> <TD COLSPAN="2"><font face="Arial Black"> Nodes</font></TD> </TR> 
+<TR> 
+ <TD bgcolor="#CCFFCC" fontname="helvetica">CEN</TD> 
+ <TD>4</TD> 
+ </TR> 
+<TR> 
+ <TD bgcolor="#EEEEEE" fontname="helvetica">congruent</TD> 
+ <TD>1</TD> 
+ </TR> 
+<TR> 
+ <TD bgcolor="#FFFFCC" fontname="helvetica">TZ</TD> 
+ <TD>4</TD> 
+ </TR> 
+<TR> <TD COLSPAN="2"><font face = "Arial Black"> Edges </font></TD> </TR> 
+<TR> 
+ <TD><font color ="#FF0000">is_a (inferred)</font></TD><TD>1</TD>
+</TR>
+<TR> 
+ <TD><font color ="#000000">is_a (input)</font></TD><TD>7</TD>
+</TR>
+<TR> 
+ <TD><font color ="#0000FF">overlaps (input)</font></TD><TD>6</TD>
+</TR>
+<TR> 
+ <TD><font color ="#FF0000">overlaps (inferred)</font></TD><TD>1</TD>
+</TR>
+</TABLE> 
+ >];
+n2 -> n3;
+n4 [fontname="helvetica", shape=box, style=filled, fillcolor="#CCFFCC", label=""];
+n5 [fontname="helvetica", shape=box, style=filled, fillcolor="#CCFFCC", label="CEN.Midwest"];
+n4 -> n5;
+n6 [fontname="helvetica", shape=box, style=filled, fillcolor="#CCFFCC", label="CEN.South"];
+n4 -> n6;
+n7 [fontname="helvetica", shape=box, style=filled, fillcolor="#CCFFCC", label="CEN.Northeast"];
+n4 -> n7;
+n8 [fontname="helvetica", shape=box, style=filled, fillcolor="#CCFFCC", label="CEN.West"];
+n4 -> n8;
+n9 [fontname="helvetica", fillcolor="#FFFFCC", style=filled, shape=note, label=""];
+n10 [fontname="helvetica", fillcolor="#FFFFCC", style=filled, shape=note, label="TZ.Eastern"];
+n9 -> n10;
+n11 [fontname="helvetica", fillcolor="#FFFFCC", style=filled, shape=note, label="TZ.Pacific"];
+n9 -> n11;
+n12 [fontname="helvetica", fillcolor="#FFFFCC", style=filled, shape=note, label="TZ.Central"];
+n9 -> n12;
+n13 [fontname="helvetica", fillcolor="#FFFFCC", style=filled, shape=note, label="TZ.Mountain"];
+n9 -> n13;
 
-        }
+}
         
