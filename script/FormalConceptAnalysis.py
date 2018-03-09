@@ -1,6 +1,12 @@
 from concepts import Context
 import pandas as pd
 import numpy as np
+from fcaVisualize import *
+
+def graphviz(self, filename=None, directory=None, render=False, view=False, **kwargs):
+    """Return graphviz source for visualizing the lattice graph."""
+    return lattice(self, filename, directory, render, view, **kwargs)
+
 class FCA(object):
     def __init__(self, propertyList):
         # get objs and attrs
@@ -21,13 +27,13 @@ class FCA(object):
             for key, val in currAttr.items():
                 if key.lower() != "label":
                     self.fca.loc[[elem.get_name()], "{}={}".format(key,val)] = "X"
-                else:
+                elif val != "\"\"" and val != "\'\'":
                     label = val
             if label is not None:
                 self.fca = self.fca.rename(index={elem.get_name(): label})
         ctx_string = self.fca.to_csv()
         self.ctx = Context.fromstring(ctx_string,frmat='csv')
-        #dot = self.ctx.lattice.graphviz(filename="fca", view=True)
+        dot = graphviz(self.ctx.lattice, view=True)
         #dot.render("testDot.dot")
 
     def createNodesGraphviz(self, filename):
@@ -48,13 +54,14 @@ class FCA(object):
             for nodeLabel in atom.extent:
                 nodesdot += "n{} [{}, label={}];\n".format(\
                         nid, ", ".join(atom.intent), nodeLabel)
-                nodesdot += "n{} -> n{};\n".format(primaryNodeId, nid)
+                nodesdot += "n{} -- n{};\n".format(primaryNodeId, nid)
                 nid += 1
                 
         dot =   \
         """
-digraph{{
+graph{{
 rankdir=TB
+edge [style=dashed]
 {}
 }}
         """.format(nodesdot)

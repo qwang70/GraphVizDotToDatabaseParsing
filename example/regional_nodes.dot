@@ -1,11 +1,12 @@
 
-digraph{
+graph{
 rankdir=TB
-n0 [fontname="helvetica", fillcolor="#EEEEEE", shape=box, style="filled,rounded", label=""];
-n1 [fontname="helvetica", fillcolor="#EEEEEE", shape=box, style="filled,rounded", label="CEN.USA\nTZ.USA"];
-n0 -> n1;
-n2 [fontname="helvetica", shape=box, fillcolor=white, style=filled, margin=0, label=""];
-n3 [fontname="helvetica", shape=box, fillcolor=white, style=filled, margin=0, label=< 
+edge [style=dashed]
+n0 [style="filled,rounded", fillcolor="#EEEEEE", shape=box, fontname="helvetica", label=""];
+n1 [style="filled,rounded", fillcolor="#EEEEEE", shape=box, fontname="helvetica", label="CEN.USA\nTZ.USA"];
+n0 -- n1;
+n2 [fillcolor=white, style=filled, shape=box, margin=0, fontname="helvetica", label=""];
+n3 [fillcolor=white, style=filled, shape=box, margin=0, fontname="helvetica", label=< 
  <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4"> 
 <TR> <TD COLSPAN="2"><font face="Arial Black"> Nodes</font></TD> </TR> 
 <TR> 
@@ -35,25 +36,25 @@ n3 [fontname="helvetica", shape=box, fillcolor=white, style=filled, margin=0, la
 </TR>
 </TABLE> 
  >];
-n2 -> n3;
-n4 [fontname="helvetica", shape=box, style=filled, fillcolor="#CCFFCC", label=""];
-n5 [fontname="helvetica", shape=box, style=filled, fillcolor="#CCFFCC", label="CEN.Midwest"];
-n4 -> n5;
-n6 [fontname="helvetica", shape=box, style=filled, fillcolor="#CCFFCC", label="CEN.South"];
-n4 -> n6;
-n7 [fontname="helvetica", shape=box, style=filled, fillcolor="#CCFFCC", label="CEN.Northeast"];
-n4 -> n7;
-n8 [fontname="helvetica", shape=box, style=filled, fillcolor="#CCFFCC", label="CEN.West"];
-n4 -> n8;
-n9 [fontname="helvetica", fillcolor="#FFFFCC", style=filled, shape=note, label=""];
-n10 [fontname="helvetica", fillcolor="#FFFFCC", style=filled, shape=note, label="TZ.Eastern"];
-n9 -> n10;
-n11 [fontname="helvetica", fillcolor="#FFFFCC", style=filled, shape=note, label="TZ.Pacific"];
-n9 -> n11;
-n12 [fontname="helvetica", fillcolor="#FFFFCC", style=filled, shape=note, label="TZ.Central"];
-n9 -> n12;
-n13 [fontname="helvetica", fillcolor="#FFFFCC", style=filled, shape=note, label="TZ.Mountain"];
-n9 -> n13;
+n2 -- n3;
+n4 [fillcolor="#CCFFCC", style=filled, shape=box, fontname="helvetica", label=""];
+n5 [fillcolor="#CCFFCC", style=filled, shape=box, fontname="helvetica", label="CEN.Midwest"];
+n4 -- n5;
+n6 [fillcolor="#CCFFCC", style=filled, shape=box, fontname="helvetica", label="CEN.South"];
+n4 -- n6;
+n7 [fillcolor="#CCFFCC", style=filled, shape=box, fontname="helvetica", label="CEN.Northeast"];
+n4 -- n7;
+n8 [fillcolor="#CCFFCC", style=filled, shape=box, fontname="helvetica", label="CEN.West"];
+n4 -- n8;
+n9 [fillcolor="#FFFFCC", style=filled, shape=note, fontname="helvetica", label=""];
+n10 [fillcolor="#FFFFCC", style=filled, shape=note, fontname="helvetica", label="TZ.Eastern"];
+n9 -- n10;
+n11 [fillcolor="#FFFFCC", style=filled, shape=note, fontname="helvetica", label="TZ.Pacific"];
+n9 -- n11;
+n12 [fillcolor="#FFFFCC", style=filled, shape=note, fontname="helvetica", label="TZ.Central"];
+n9 -- n12;
+n13 [fillcolor="#FFFFCC", style=filled, shape=note, fontname="helvetica", label="TZ.Mountain"];
+n9 -- n13;
 
 }
         

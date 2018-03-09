@@ -1,6 +1,5 @@
 import copy
 from objdict import ObjDict
-import networkx as nx
 import matplotlib.pyplot as plt
 
 class TypeHierachy(object):
@@ -75,19 +74,6 @@ class TypeHierachy(object):
             for j in range(len(self.typeNodes[i])):
                 print(self.typeNodes[i][j].typeValsToEleId)
 
-    def visualize(self):
-        G=nx.cubical_graph()
-        pos=nx.spring_layout(G) # positions for all nodes
-        # print("visualize", len(self.typeEdges))
-        for i in range(2, len(self.typeEdges)):
-            for j in range(len(self.typeEdges[i])):
-                print(len(self.typeEdges[i]))
-                startTypeNode = self.typeEdges[i][j][0]
-                endTypeNode = self.typeEdges[i][j][1]
-                print(" ".join(list(startTypeNode.typeValsToEleId.keys())))
-
-
-            
 class TypeNode(object):
     """
         Record the shared elements by different node types.
