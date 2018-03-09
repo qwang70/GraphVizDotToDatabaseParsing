@@ -15,7 +15,6 @@ NAME_GETTERS = [lambda c: 'c%d' % c.index]
 
 def lattice(lattice, filename, directory, render, view, **kwargs):
     """Return graphviz source for visualizing the lattice graph."""
-    """
     dot = graphviz.Digraph(
         name=lattice.__class__.__name__,
         comment=repr(lattice),
@@ -25,34 +24,11 @@ def lattice(lattice, filename, directory, render, view, **kwargs):
         edge_attr=dict(dir='none', labeldistance='1.5', minlen='2'),
         **kwargs
     )
-    """
 
     sortkey = SORTKEYS[0]
 
     node_name = NAME_GETTERS[0]
 
-    dotConcepts = []
-    for concept in lattice._concepts:
-        dotConcept = ""
-        nodeLabel = '\n'.join(concept.objects).replace("\"", "")
-        nodeAttrs = "[label=\"{}\", {}]".format(nodeLabel, ",".join(concept.intent))
-        name = node_name(concept)
-        dotConcept += "{} {}\n".format(name, nodeAttrs)
-
-        # edges
-        for c in sorted(concept.lower_neighbors, key=sortkey):
-            dotConcept += "{} -> {}\n".format(name, node_name(c))
-        dotConcepts.append(dotConcept)
-    
-    # concatenation all elements
-    dot = """
-digraph{{
-rankdir=TB
-{}
-}}
-    """.format("\n".join(dotConcepts))
-
-    """
     for concept in lattice._concepts:
         # pack labels into a dicionary
         # if " appears in the label, replace it with empty string
@@ -63,26 +39,17 @@ rankdir=TB
             else:
                 node_attr[key] = val.replace("\"","")
         #node_attr['label'] = '\n'.join(concept.objects).replace("\"", "")
-        print("new node")
-        print(concept.objects)
-        print('\n'.join(concept.objects))
-
         #print(node_attribute)
         name = node_name(concept)
         dot.node(name, _attributes=node_attr)
 
         if concept.objects:
             dot.edge(name, name,
-                headlabel='\n'.join(concept.objects),
+                label='\t\n'.join(concept.objects),
                 labelangle='270', color='transparent')
 
         dot.edges((name, node_name(c))
             for c in sorted(concept.lower_neighbors, key=sortkey))
-        for o in ((name, node_name(c)) for c in sorted(concept.lower_neighbors, key=sortkey)):
-            print(o)
-    """
-    print(dot)
-    dot = graphviz.Source(dot)
     if render or view:
         dot.render(view=view)  # pragma: no cover
     return dot

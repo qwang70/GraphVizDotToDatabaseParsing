@@ -244,6 +244,7 @@ def main():
     if args.fca:
         # fca
         fca = FCA(propertyList)
+        fca.createHierachyGraphviz(input_file.split(".")[0] + "_hierachy.dot")
         fca.createNodesGraphviz( input_file.split(".")[0] + "_nodes.dot")
 
     # powerset formation

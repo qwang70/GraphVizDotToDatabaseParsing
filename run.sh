@@ -6,8 +6,11 @@ for filename in ${EXAMPLE_FOLDER}/*.gv; do
     echo $filename
     dotFileBaseName=$(echo $filename | cut -d"." -f1)
     echo $dotFileBaseName
-    dotFileName="${EXAMPLE_FOLDER}/${dotFileBaseName}_nodes.dot"
-    echo $dotFileName
-    dotFilePng="${EXAMPLE_FOLDER}/${dotFileBaseName}_nodes.png"
-    dot -Tpng $dotFileName -o $dotFilePng
+    dotNodeFileName="${dotFileBaseName}_nodes.dot"
+    echo $dotNodeFileName
+    dotNodeFilePng="${dotFileBaseName}_nodes.png"
+    dotHierachyFileName="${dotFileBaseName}_hierachy.dot"
+    dotHierachyFilePng="${dotFileBaseName}_hierachy.png"
+    dot -Tpng $dotNodeFileName -o $dotNodeFilePng
+    dot -Tpng $dotHierachyFileName -o $dotHierachyFilePng
 done

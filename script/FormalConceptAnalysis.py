@@ -33,8 +33,10 @@ class FCA(object):
                 self.fca = self.fca.rename(index={elem.get_name(): label})
         ctx_string = self.fca.to_csv()
         self.ctx = Context.fromstring(ctx_string,frmat='csv')
-        dot = graphviz(self.ctx.lattice, view=True)
-        #dot.render("testDot.dot")
+
+    def createHierachyGraphviz(self, filename):
+        dot = graphviz(self.ctx.lattice)
+        dot.render(filename)
 
     def createNodesGraphviz(self, filename):
         nodesdot = ""
