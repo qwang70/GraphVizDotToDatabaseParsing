@@ -65,7 +65,7 @@ class GraphEdge(GraphObj):
 
     def get_name(self):
         if self.directed:
-            return '{} -> {}'.format(self.left_node. self.right_node) 
+            return '{} -> {}'.format(self.left_node, self.right_node) 
         else:
             return '{} -- {}'.format(self.left_node, self.right_node) 
 

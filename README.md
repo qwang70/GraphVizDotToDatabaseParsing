@@ -1,27 +1,27 @@
 # GraphVizDotToDatabaseParsing
 
 - Parsing the dot file with Antlr4 and Python3
-- Generate a SQLite database from the Tree representation of the parsed dot file
 ```
-$ python3 graphviz_parser.py test.dot
-$ python3 graphviz_parser.py test.dot -outfile test.db
+$ python3 script/graphviz_parser.py -h
+usage: graphviz_parser.py [-h] [-outfile OUTFILE] [-fca] infile
+
+A GraphViz dot file to Sqlite idbase converter.
+
+positional arguments:
+  infile            name of the input dot/gv file
+
+optional arguments:
+  -h, --help        show this help message and exit
+  -outfile OUTFILE  name of the output idbase file
+  -fca
 ```
-Both parse `test.dot` and generate `test.db`.
+## Example
+```
+$ python3 script/graphviz_parser.py example/parleocar.gv -fca
+```
 
-There are two tables in test.db
+To run all the examples:
+```
+./run.sh
+```
 
-Table: tokens
-
-column name | data type 
---- | --- 
-id | integer primary key
-token_type | text
-token_val | text
-
-Table: token_tree
-
-column name | data type 
------------ | --------- 
-id          | integer
-parent_id   | integer
-child_id    | integer

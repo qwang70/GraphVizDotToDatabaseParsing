@@ -12,7 +12,7 @@ class FCA(object):
         # get objs and attrs
         index = [elem.get_name() for elem in propertyList]
         attrs = set()
-        attrs.add("no prop")
+        attrs.add("\'\'=\'\'")
         for elem in propertyList:
             currAttr = elem.getAttr() 
             for key, val in currAttr.items():
@@ -34,7 +34,7 @@ class FCA(object):
                 if label is not None:
                     self.fca = self.fca.rename(index={elem.get_name(): label})
             else:
-                self.fca.loc[[elem.get_name()], "no prop"] = "X"
+                self.fca.loc[[elem.get_name()], "\'\'=\'\'"] = "X"
         print(self.fca)
         if self.fca.empty:
             self.ctx = None
@@ -43,12 +43,12 @@ class FCA(object):
             self.ctx = Context.fromstring(ctx_string,frmat='csv')
 
     def createHierachyGraphviz(self, filename):
-        if not self.ctx:
+        if self.ctx is not None:
             dot = graphviz(self.ctx.lattice)
             dot.render(filename)
 
     def createNodesGraphviz(self, filename):
-        if not self.ctx:
+        if self.ctx is not None:
             nodesdot = ""
             atoms = self.ctx.lattice.atoms
             nid = 0
