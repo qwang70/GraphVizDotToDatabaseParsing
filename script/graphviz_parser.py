@@ -167,7 +167,10 @@ class DOTPrintListener(DOTListener):
 
     # Enter a parse tree produced by DOTParser#edgeop.
     def enterEdgeop(self, ctx:DOTParser.EdgeopContext):
-        pass
+        if ctx.getText() == "--":
+            self.edgeProperties.setDirected(False)
+        elif ctx.getText() == "->":
+            self.edgeProperties.setDirected(True)
 
     # Exit a parse tree produced by DOTParser#edgeop.
     def exitEdgeop(self, ctx:DOTParser.EdgeopContext):
@@ -240,15 +243,20 @@ def main():
     walker = ParseTreeWalker()
     walker.walk(printer, tree)
 
-    propertyList = printer.getNodeProperties().getElementList()
+    nodePropertyList = printer.getNodeProperties().getElementList()
+    edgePropertyList = printer.getEdgeProperties().getElementList()
+    for e in edgePropertyList:
+        e.printNode()
     if args.fca:
-        # fca
-        fca = FCA(propertyList)
+        # fca node
+        fca = FCA(edgePropertyList)
+        fca = FCA(nodePropertyList)
         fca.createHierachyGraphviz(input_file.split(".")[0] + "_hierachy.dot")
         fca.createNodesGraphviz( input_file.split(".")[0] + "_nodes.dot")
+        # fca edge 
 
     # powerset formation
-    createTypeHierachyGraph(propertyList)
+    # createTypeHierachyGraph(propertyList)
 
 def createTypeHierachyGraph(propertyList):
     # powerset construction

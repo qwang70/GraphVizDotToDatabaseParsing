@@ -74,21 +74,25 @@ class NodeProperties(GraphProperties):
 class EdgeProperties(GraphProperties):
     def __init__(self):
         GraphProperties.__init__(self)
-        self.currLeftNodeName = None
-        self.currRightNodeName = None
         self.currEdge = None
 
+    def setDirected(self, directed):
+        self.currEdge.set_directed(directed)
+
+    def getDirected(self):
+        return self.currEdge.get_directed()
+
     def setCurrLeftNodeName(self, obj):
-        self.currLeftNodeName = obj
+        self.currEdge.set_left_node_name(obj)
 
     def getCurrLeftNodeName(self):
-        return self.currLeftNodeName
+        return self.currEdge.get_left_node_name()
 
     def setCurrRightNodeName(self, obj):
-        self.currRightNodeName = obj
+        self.currEdge.set_right_node_name(obj)
 
     def getCurrRightNodeName(self):
-        return self.currRightNodeName
+        return self.currEdge.get_right_node_name()
 
     def addNewEdge(self):
         self.isTempAttr = 1

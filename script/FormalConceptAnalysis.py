@@ -12,6 +12,7 @@ class FCA(object):
         # get objs and attrs
         index = [elem.get_name() for elem in propertyList]
         attrs = set()
+        attrs.add("no prop")
         for elem in propertyList:
             currAttr = elem.getAttr() 
             for key, val in currAttr.items():
@@ -24,53 +25,57 @@ class FCA(object):
         for elem in propertyList:
             currAttr = elem.getAttr() 
             label = None
-            for key, val in currAttr.items():
-                if key.lower() != "label":
-                    self.fca.loc[[elem.get_name()], "{}={}".format(key,val)] = "X"
-                elif val != "\"\"" and val != "\'\'":
-                    label = val
-            if label is not None:
-                self.fca = self.fca.rename(index={elem.get_name(): label})
-        ctx_string = self.fca.to_csv()
-        self.ctx = Context.fromstring(ctx_string,frmat='csv')
+            if len(currAttr):
+                for key, val in currAttr.items():
+                    if key.lower() != "label":
+                        self.fca.loc[[elem.get_name()], "{}={}".format(key,val)] = "X"
+                    elif val != "\"\"" and val != "\'\'":
+                        label = val
+                if label is not None:
+                    self.fca = self.fca.rename(index={elem.get_name(): label})
+            else:
+                self.fca.loc[[elem.get_name()], "no prop"] = "X"
+        print(self.fca)
+        if self.fca.empty:
+            self.ctx = None
+        else:
+            ctx_string = self.fca.to_csv()
+            self.ctx = Context.fromstring(ctx_string,frmat='csv')
 
     def createHierachyGraphviz(self, filename):
-        dot = graphviz(self.ctx.lattice)
-        dot.render(filename)
+        if not self.ctx:
+            dot = graphviz(self.ctx.lattice)
+            dot.render(filename)
 
     def createNodesGraphviz(self, filename):
-        nodesdot = ""
-        atoms = self.ctx.lattice.atoms
-        nid = 0
-        """
-        for nid, atom in enumerate(atoms):
-            nodesdot += "n{} [{}, label=\"{}\"]\n".format(\
-                    nid, ", ".join(atom.intent),\
-                    "\\n".join(atom.extent).replace('\"', '\\\"') )
-        """
-        for atom in atoms:
-            primaryNodeId = nid
-            nodesdot += "n{} [{}, label=\"\"];\n".format(\
-                    nid, ", ".join(atom.intent))
-            nid += 1
-            for nodeLabel in atom.extent:
-                nodesdot += "n{} [{}, label={}];\n".format(\
-                        nid, ", ".join(atom.intent), nodeLabel)
-                nodesdot += "n{} -- n{};\n".format(primaryNodeId, nid)
+        if not self.ctx:
+            nodesdot = ""
+            atoms = self.ctx.lattice.atoms
+            nid = 0
+            """
+            for nid, atom in enumerate(atoms):
+                nodesdot += "n{} [{}, label=\"{}\"]\n".format(\
+                        nid, ", ".join(atom.intent),\
+                        "\\n".join(atom.extent).replace('\"', '\\\"') )
+            """
+            for atom in atoms:
+                primaryNodeId = nid
+                nodesdot += "n{} [{}, label=\"\"];\n".format(\
+                        nid, ", ".join(atom.intent))
                 nid += 1
-                
-        dot =   \
-        """
-graph{{
-rankdir=TB
-edge [style=dashed]
-{}
-}}
-        """.format(nodesdot)
-        with open(filename, 'w') as file:
-            file.write(dot)
-            
-
-
-
-
+                for nodeLabel in atom.extent:
+                    nodesdot += "n{} [{}, label={}];\n".format(\
+                            nid, ", ".join(atom.intent), nodeLabel)
+                    nodesdot += "n{} -- n{};\n".format(primaryNodeId, nid)
+                    nid += 1
+                    
+            dot =   \
+            """
+    graph{{
+    rankdir=TB
+    edge [style=dashed]
+    {}
+    }}
+            """.format(nodesdot)
+            with open(filename, 'w') as file:
+                file.write(dot)
