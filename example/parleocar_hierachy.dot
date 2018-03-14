@@ -1,41 +1,41 @@
-// <Lattice object of 7 atoms 19 concepts 3 coatoms at 0x1134e7908>
+// <Lattice object of 7 atoms 19 concepts 3 coatoms at 0x111e78d68>
 digraph Lattice {
 	node [label="" shape=circle style=filled width=.25]
 	edge [dir=none labeldistance=1.5 minlen=2]
-	c0 [fillcolor="" fontname=Helvetica peripheries="" rankdir=LR shape="" style="" width=0.2]
-	c1 [fillcolor="#CCFFCC" fontname=Helvetica peripheries=1 shape=box style=filled]
+	c0 ["''"="''" fillcolor="" fontname=Helvetica label=0 peripheries="" rankdir=LR shape="" style="" width=0.2]
+	c1 [fillcolor="#CCFFCC" fontname=Helvetica label=1 peripheries=1 shape=box style=filled]
 	c1 -> c1 [label=optimizeModels color=transparent labelangle=270]
 	c1 -> c0
-	c2 [fillcolor="#CCFFCC" fontname=Helvetica peripheries=2 shape=box style=filled]
+	c2 [fillcolor="#CCFFCC" fontname=Helvetica label=1 peripheries=2 shape=box style=filled]
 	c2 -> c2 [label=calculate_Models color=transparent labelangle=270]
 	c2 -> c0
-	c3 [fillcolor="#FFFFCC" fontname=Helvetica peripheries=1 rankdir=LR shape=record style="rounded,filled"]
+	c3 [fillcolor="#FFFFCC" fontname=Helvetica label=1 peripheries=1 rankdir=LR shape=record style="rounded,filled"]
 	c3 -> c3 [label="\"{<f0> paleocar_models |<f1> file\:.output/\{session_id\}/\{run_id\}/\{label\}_model.Rds}\"" color=transparent labelangle=270]
 	c3 -> c0
-	c4 [fillcolor="#CCFFCC" fontname=Helvetica shape=box style=filled]
+	c4 [fillcolor="#CCFFCC" fontname=Helvetica label=2 shape=box style=filled]
 	c4 -> c1
 	c4 -> c2
-	c5 [fillcolor="#FCFCFC" fontname=Helvetica peripheries=1 shape=box style="rounded,filled"]
+	c5 [fillcolor="#FCFCFC" fontname=Helvetica label=2 peripheries=1 shape=box style="rounded,filled"]
 	c5 -> c5 [label="calibration_years	
 min_width" color=transparent labelangle=270]
 	c5 -> c0
-	c6 [fillcolor="#CCFFCC" fontname=Helvetica peripheries=1 rankdir=LR shape=record style=filled]
+	c6 [fillcolor="#CCFFCC" fontname=Helvetica label=5 peripheries=1 rankdir=LR shape=record style=filled]
 	c6 -> c6 [label="\"{<f0> print_message |<f1> writing messages to the command line, if the variable is set.}\"	
 \"{<f0> get_predictor_matrix |<f1> create a matrix of tree ring chronologies for the calibration year.}\"	
 \"{<f0> get_reconstruction_matrix |<f1> get reconstruction matrix for chronologies for the prediction year.}\"	
 \"{<f0> get_predlist |<f1> create list of prediction values.}\"	
 \"{<f0> get_carscores |<f1> get the carscores for reconstruction of paleoclimate.}\"" color=transparent labelangle=270]
 	c6 -> c0
-	c7 [fillcolor="#CCFFCC" fontname=Helvetica peripheries=1 style=filled]
+	c7 [fillcolor="#CCFFCC" fontname=Helvetica label=6 peripheries=1 style=filled]
 	c7 -> c1
 	c7 -> c6
-	c8 [fontname=Helvetica peripheries=1 rankdir=LR shape=record]
+	c8 [fontname=Helvetica label=6 peripheries=1 rankdir=LR shape=record]
 	c8 -> c3
 	c8 -> c6
-	c9 [fillcolor="#CCFFCC" fontname=Helvetica style=filled]
+	c9 [fillcolor="#CCFFCC" fontname=Helvetica label=7 style=filled]
 	c9 -> c4
 	c9 -> c7
-	c10 [fillcolor="#FFFFFF" fontname=Helvetica peripheries=1 shape=circle style="rounded,filled" width=0.2]
+	c10 [fillcolor="#FFFFFF" fontname=Helvetica label=7 peripheries=1 shape=circle style="rounded,filled" width=0.2]
 	c10 -> c10 [label="prediction_years_input_port	
 prism_data_for_coordinates_input_port	
 itrdb_input_port	
@@ -44,7 +44,7 @@ min_width_input_port
 verbose_input_port	
 paleocar_models_output_port" color=transparent labelangle=270]
 	c10 -> c0
-	c11 [fillcolor="#FFFFCC" fontname=Helvetica peripheries=1 shape=box style="rounded,filled"]
+	c11 [fillcolor="#FFFFCC" fontname=Helvetica label=10 peripheries=1 shape=box style="rounded,filled"]
 	c11 -> c11 [label="verbose	
 itrdb	
 prediction_years	
@@ -56,28 +56,28 @@ carscores
 max_preds	
 linear_models" color=transparent labelangle=270]
 	c11 -> c0
-	c12 [fillcolor="#FFFFCC" fontname=Helvetica peripheries=1 style="rounded,filled"]
+	c12 [fillcolor="#FFFFCC" fontname=Helvetica label=11 peripheries=1 style="rounded,filled"]
 	c12 -> c3
 	c12 -> c11
-	c13 [fontname=Helvetica peripheries=1 shape=box style="rounded,filled"]
+	c13 [fontname=Helvetica label=12 peripheries=1 shape=box style="rounded,filled"]
 	c13 -> c5
 	c13 -> c11
-	c14 [fontname=Helvetica peripheries=1 shape=box]
+	c14 [fontname=Helvetica label=13 peripheries=1 shape=box]
 	c14 -> c1
 	c14 -> c13
-	c15 [fontname=Helvetica shape=box]
+	c15 [fontname=Helvetica label=14 shape=box]
 	c15 -> c4
 	c15 -> c14
-	c16 [fontname=Helvetica peripheries=1 style="rounded,filled"]
+	c16 [fontname=Helvetica label=20 peripheries=1 style="rounded,filled"]
 	c16 -> c10
 	c16 -> c12
 	c16 -> c13
-	c17 [fontname=Helvetica peripheries=1]
+	c17 [fontname=Helvetica label=26 peripheries=1]
 	c17 -> c7
 	c17 -> c8
 	c17 -> c14
 	c17 -> c16
-	c18 [fontname=Helvetica]
+	c18 [fontname=Helvetica label=27]
 	c18 -> c9
 	c18 -> c15
 	c18 -> c17

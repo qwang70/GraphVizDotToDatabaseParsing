@@ -1,12 +1,12 @@
-// <Lattice object of 4 atoms 9 concepts 2 coatoms at 0x10e3b6668>
+// <Lattice object of 4 atoms 9 concepts 2 coatoms at 0x104ba7710>
 digraph Lattice {
 	node [label="" shape=circle style=filled width=.25]
 	edge [dir=none labeldistance=1.5 minlen=2]
-	c0 [fillcolor="" fontname=helvetica margin=0 shape="" style=""]
-	c1 [fillcolor="#EEEEEE" fontname=helvetica shape=box style="filled,rounded"]
+	c0 ["''"="''" fillcolor="" fontname=helvetica label=0 margin=0 shape="" style=""]
+	c1 [fillcolor="#EEEEEE" fontname=helvetica label=1 shape=box style="filled,rounded"]
 	c1 -> c1 [label="\"CEN.USA\nTZ.USA\"" color=transparent labelangle=270]
 	c1 -> c0
-	c2 [fillcolor=white fontname=helvetica margin=0 shape=box style=filled]
+	c2 [fillcolor=white fontname=helvetica label=1 margin=0 shape=box style=filled]
 	c2 -> c2 [label=< 
  <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4"> 
 <TR> <TD COLSPAN="2"><font face="Arial Black"> Nodes</font></TD> </TR> 
@@ -38,28 +38,28 @@ digraph Lattice {
 </TABLE> 
  > color=transparent labelangle=270]
 	c2 -> c0
-	c3 [fillcolor="#CCFFCC" fontname=helvetica shape=box style=filled]
+	c3 [fillcolor="#CCFFCC" fontname=helvetica label=4 shape=box style=filled]
 	c3 -> c3 [label="\"CEN.Midwest\"	
 \"CEN.South\"	
 \"CEN.Northeast\"	
 \"CEN.West\"" color=transparent labelangle=270]
 	c3 -> c0
-	c4 [fillcolor="#FFFFCC" fontname=helvetica shape=note style=filled]
+	c4 [fillcolor="#FFFFCC" fontname=helvetica label=4 shape=note style=filled]
 	c4 -> c4 [label="\"TZ.Eastern\"	
 \"TZ.Pacific\"	
 \"TZ.Central\"	
 \"TZ.Mountain\"" color=transparent labelangle=270]
 	c4 -> c0
-	c5 [fontname=helvetica shape=box style=filled]
+	c5 [fontname=helvetica label=5 shape=box style=filled]
 	c5 -> c2
 	c5 -> c3
-	c6 [fontname=helvetica shape=box]
+	c6 [fontname=helvetica label=6 shape=box]
 	c6 -> c1
 	c6 -> c5
-	c7 [fontname=helvetica style=filled]
+	c7 [fontname=helvetica label=9 style=filled]
 	c7 -> c4
 	c7 -> c5
-	c8 [fontname=helvetica]
+	c8 [fontname=helvetica label=10]
 	c8 -> c6
 	c8 -> c7
 }

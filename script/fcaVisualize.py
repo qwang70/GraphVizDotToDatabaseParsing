@@ -33,13 +33,13 @@ def lattice(lattice, filename, directory, render, view, **kwargs):
         # pack labels into a dicionary
         # if " appears in the label, replace it with empty string
         node_attr = {}
+        node_attr["label"] = str(len(concept.extent))
         for key, val in (intent.split('=', maxsplit=1) for intent in concept.intent):
             if key in node_attr:
                 node_attr[key] = ""
             else:
                 node_attr[key] = val.replace("\"","")
         #node_attr['label'] = '\n'.join(concept.objects).replace("\"", "")
-        #print(node_attribute)
         name = node_name(concept)
         dot.node(name, _attributes=node_attr)
 

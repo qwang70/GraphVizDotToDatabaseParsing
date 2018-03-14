@@ -249,7 +249,7 @@ def main():
         e.printNode()
     if args.fca:
         # fca node
-        fca = FCA(edgePropertyList)
+        # fca = FCA(edgePropertyList)
         fca = FCA(nodePropertyList)
         fca.createHierachyGraphviz(input_file.split(".")[0] + "_hierachy.dot")
         fca.createNodesGraphviz( input_file.split(".")[0] + "_nodes.dot")
