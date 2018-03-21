@@ -53,16 +53,10 @@ class DOTPrintListener(DOTListener):
         # attribute list related
         self.nodeProperties = NodeProperties()
         self.edgeProperties = EdgeProperties()
-        #??
-        self.attrType = {}
 
         # mode
         # GRAPH: 0, NODE: 1, EDGE: 2
         self.currAttrType = 0
-
-        # TODO: add to db
-        # self.conn = sqlite3.connect(output_file)
-        # self.c = self.conn.cursor()
 
     def getNodeProperties(self):
         return self.nodeProperties
@@ -74,14 +68,21 @@ class DOTPrintListener(DOTListener):
         pass
         
     def exitGraph(self, ctx):
-        pass
-        # for i in range(len(self.nodeProperties.elementList)):
+        for edgeIdx in range(len(self.edgeProperties.elementList)):
+            edge = self.edgeProperties.elementList[edgeIdx]
+            count = 0
+            for node in self.nodeProperties.elementList:
+                if count >= 2:
+                    break
+                if edge.get_left_node_name() == node.get_name():
+                    edge.set_left_node_id ( node.get_id() )
+                    count += 1
+                if edge.get_right_node_name() == node.get_name():
+                    edge.set_right_node_id ( node.get_id() )
+                    count += 1
+            assert edge.get_left_node_id() != -1 and edge.get_right_node_id() != -1
+            self.edgeProperties.elementList[edgeIdx] = edge
         #    self.nodeProperties.elementList[i].printNode()
-
-        # remove duplicates in the dictionary
-
-        # find the most common element
-        # naively using the first one
 
     # Enter a parse tree produced by DOTParser#stmt_list.
     def enterStmt_list(self, ctx:DOTParser.Stmt_listContext):
@@ -245,14 +246,18 @@ def main():
 
     nodePropertyList = printer.getNodeProperties().getElementList()
     edgePropertyList = printer.getEdgeProperties().getElementList()
+
+    # TODO: add node to the property list/fca that appears in edge list, but not in the node list
     for e in edgePropertyList:
         e.printNode()
     if args.fca:
         # fca node
-        # fca = FCA(edgePropertyList)
-        fca = FCA(nodePropertyList)
-        fca.createHierachyGraphviz(input_file.split(".")[0] + "_hierachy.dot")
+        fca = FCA(nodePropertyList, edgePropertyList)
+        #fca.createNodesHierachyGraphviz(input_file.split(".")[0] + "_nodes_hierachy.dot")
+        #fca.createEdgesHierachyGraphviz(input_file.split(".")[0] + "_edges_hierachy.dot")
         fca.createNodesGraphviz( input_file.split(".")[0] + "_nodes.dot")
+        fca.createEdgesGraphviz( input_file.split(".")[0] + "_edges.dot")
+        fca.createGraphviz( input_file.split(".")[0] + "_full.dot")
         # fca edge 
 
     # powerset formation

@@ -1,4 +1,4 @@
-// <Lattice object of 7 atoms 19 concepts 3 coatoms at 0x1083a0eb8>
+// <Lattice object of 7 atoms 19 concepts 3 coatoms at 0x1123cb240>
 digraph Lattice {
 	node [label="" shape=circle style=filled width=.25]
 	edge [dir=none labeldistance=1.5 minlen=2]
@@ -12,21 +12,21 @@ digraph Lattice {
 		color=transparent
 		c1 [fillcolor="#CCFFCC" fontname=Helvetica label=1 peripheries=1 shape=box style=filled]
 	}
-	c1 -> c1 [label=optimizeModels color=transparent labelangle=270]
+	c1 -> c1 [label="5:optimizeModels" color=transparent labelangle=270]
 	c1 -> c0
 	subgraph cluster_2 {
 		style=filled
 		color=transparent
 		c2 [fillcolor="#CCFFCC" fontname=Helvetica label=1 peripheries=2 shape=box style=filled]
 	}
-	c2 -> c2 [label=calculate_Models color=transparent labelangle=270]
+	c2 -> c2 [label="6:calculate_Models" color=transparent labelangle=270]
 	c2 -> c0
 	subgraph cluster_3 {
 		style=filled
 		color=transparent
 		c3 [fillcolor="#FFFFCC" fontname=Helvetica label=1 peripheries=1 rankdir=LR shape=record style="rounded,filled"]
 	}
-	c3 -> c3 [label="\"{<f0> paleocar_models |<f1> file\:.output/\{session_id\}/\{run_id\}/\{label\}_model.Rds}\"" color=transparent labelangle=270]
+	c3 -> c3 [label="7:\"{<f0> paleocar_models |<f1> file\:.output/\{session_id\}/\{run_id\}/\{label\}_model.Rds}\"" color=transparent labelangle=270]
 	c3 -> c0
 	subgraph cluster_4 {
 		style=filled
@@ -40,19 +40,19 @@ digraph Lattice {
 		color=transparent
 		c5 [fillcolor="#FCFCFC" fontname=Helvetica label=2 peripheries=1 shape=box style="rounded,filled"]
 	}
-	c5 -> c5 [label="calibration_years	
-min_width" color=transparent labelangle=270]
+	c5 -> c5 [label="18:calibration_years	
+19:min_width" color=transparent labelangle=270]
 	c5 -> c0
 	subgraph cluster_6 {
 		style=filled
 		color=transparent
 		c6 [fillcolor="#CCFFCC" fontname=Helvetica label=5 peripheries=1 rankdir=LR shape=record style=filled]
 	}
-	c6 -> c6 [label="\"{<f0> print_message |<f1> writing messages to the command line, if the variable is set.}\"	
-\"{<f0> get_predictor_matrix |<f1> create a matrix of tree ring chronologies for the calibration year.}\"	
-\"{<f0> get_reconstruction_matrix |<f1> get reconstruction matrix for chronologies for the prediction year.}\"	
-\"{<f0> get_predlist |<f1> create list of prediction values.}\"	
-\"{<f0> get_carscores |<f1> get the carscores for reconstruction of paleoclimate.}\"" color=transparent labelangle=270]
+	c6 -> c6 [label="0:\"{<f0> print_message |<f1> writing messages to the command line, if the variable is set.}\"	
+1:\"{<f0> get_predictor_matrix |<f1> create a matrix of tree ring chronologies for the calibration year.}\"	
+2:\"{<f0> get_reconstruction_matrix |<f1> get reconstruction matrix for chronologies for the prediction year.}\"	
+3:\"{<f0> get_predlist |<f1> create list of prediction values.}\"	
+4:\"{<f0> get_carscores |<f1> get the carscores for reconstruction of paleoclimate.}\"" color=transparent labelangle=270]
 	c6 -> c0
 	subgraph cluster_7 {
 		style=filled
@@ -80,29 +80,29 @@ min_width" color=transparent labelangle=270]
 		color=transparent
 		c10 [fillcolor="#FFFFFF" fontname=Helvetica label=7 peripheries=1 shape=circle style="rounded,filled" width=0.2]
 	}
-	c10 -> c10 [label="prediction_years_input_port	
-prism_data_for_coordinates_input_port	
-itrdb_input_port	
-calibration_years_input_port	
-min_width_input_port	
-verbose_input_port	
-paleocar_models_output_port" color=transparent labelangle=270]
+	c10 -> c10 [label="20:prediction_years_input_port	
+21:prism_data_for_coordinates_input_port	
+22:itrdb_input_port	
+23:calibration_years_input_port	
+24:min_width_input_port	
+25:verbose_input_port	
+26:paleocar_models_output_port" color=transparent labelangle=270]
 	c10 -> c0
 	subgraph cluster_11 {
 		style=filled
 		color=transparent
 		c11 [fillcolor="#FFFFCC" fontname=Helvetica label=10 peripheries=1 shape=box style="rounded,filled"]
 	}
-	c11 -> c11 [label="verbose	
-itrdb	
-prediction_years	
-reconstruction_matrix	
-prism_data_for_coordinates	
-predictor_matrix	
-predlist	
-carscores	
-max_preds	
-linear_models" color=transparent labelangle=270]
+	c11 -> c11 [label="8:verbose	
+9:itrdb	
+10:prediction_years	
+11:reconstruction_matrix	
+12:prism_data_for_coordinates	
+13:predictor_matrix	
+14:predlist	
+15:carscores	
+16:max_preds	
+17:linear_models" color=transparent labelangle=270]
 	c11 -> c0
 	subgraph cluster_12 {
 		style=filled

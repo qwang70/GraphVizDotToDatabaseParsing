@@ -38,6 +38,9 @@ class GraphProperties():
         if self.getIsTempAttr() == 1:
             # if "node_id [attr_list] "
             update_method(key, val)
+        elif self.getIsTempAttr() == 2:
+            # if "edge_id [attr_list] "
+            update_method(key, val)
         else:
             # if "node [attr_list] "
             self.addCurrAttr(key, val)

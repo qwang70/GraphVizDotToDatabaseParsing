@@ -1,0 +1,35 @@
+
+digraph{
+rankdir=TB
+n0 [fontname=Helvetica, style=filled, fillcolor="#CCFFCC", peripheries=1, shape=box, label=1];
+n1 [fontname=Helvetica, style=filled, fillcolor="#CCFFCC", shape=box, peripheries=2, label=1];
+n2 [fillcolor="#FFFFCC", fontname=Helvetica, shape=record, peripheries=1, rankdir=LR, style="rounded,filled", label=1];
+n3 [fontname=Helvetica, fillcolor="#FCFCFC", peripheries=1, shape=box, style="rounded,filled", label=2];
+n4 [fontname=Helvetica, shape=record, style=filled, fillcolor="#CCFFCC", peripheries=1, rankdir=LR, label=5];
+n5 [fontname=Helvetica, peripheries=1, shape=circle, fillcolor="#FFFFFF", width=0.2, style="rounded,filled", label=7];
+n6 [fillcolor="#FFFFCC", fontname=Helvetica, peripheries=1, shape=box, style="rounded,filled", label=10];
+
+
+
+n6 -> n4 [ ""="", minlen=2, label=7 ];
+
+n4 -> n6 [ ""="", minlen=2, label=5 ];
+
+n3 -> n4 [ ""="", minlen=2, label=3 ];
+
+n1 -> n6 [ ""="", minlen=2, label=1 ];
+
+n6 -> n1 [ ""="", minlen=2, label=3 ];
+
+n0 -> n2 [ ""="", minlen=2, label=1 ];
+
+n6 -> n0 [ ""="", minlen=2, label=1 ];
+
+n5 -> n6 [ ""="", minlen=2, label=4 ];
+
+n5 -> n3 [ ""="", minlen=2, label=2 ];
+
+n2 -> n5 [ ""="", minlen=2, label=1 ];
+
+}
+            

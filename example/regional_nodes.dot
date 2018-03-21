@@ -2,59 +2,27 @@
     graph{
     rankdir=TB
     edge [style=dashed]
-    n0 [fontname="helvetica", fillcolor="#EEEEEE", style="filled,rounded", shape=box, label=""];
-n1 [fontname="helvetica", fillcolor="#EEEEEE", style="filled,rounded", shape=box, label="CEN.USA\nTZ.USA"];
+    n0 [style="filled,rounded", fontname="helvetica", shape=box, fillcolor="#EEEEEE", label=1];
+n1 [style="filled,rounded", fontname="helvetica", shape=box, fillcolor="#EEEEEE", label="CEN.USA\nTZ.USA"];
 n0 -- n1;
-n2 [style=filled, fontname="helvetica", fillcolor=white, margin=0, shape=box, label=""];
-n3 [style=filled, fontname="helvetica", fillcolor=white, margin=0, shape=box, label=< 
- <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4"> 
-<TR> <TD COLSPAN="2"><font face="Arial Black"> Nodes</font></TD> </TR> 
-<TR> 
- <TD bgcolor="#CCFFCC" fontname="helvetica">CEN</TD> 
- <TD>4</TD> 
- </TR> 
-<TR> 
- <TD bgcolor="#EEEEEE" fontname="helvetica">congruent</TD> 
- <TD>1</TD> 
- </TR> 
-<TR> 
- <TD bgcolor="#FFFFCC" fontname="helvetica">TZ</TD> 
- <TD>4</TD> 
- </TR> 
-<TR> <TD COLSPAN="2"><font face = "Arial Black"> Edges </font></TD> </TR> 
-<TR> 
- <TD><font color ="#FF0000">is_a (inferred)</font></TD><TD>1</TD>
-</TR>
-<TR> 
- <TD><font color ="#000000">is_a (input)</font></TD><TD>7</TD>
-</TR>
-<TR> 
- <TD><font color ="#0000FF">overlaps (input)</font></TD><TD>6</TD>
-</TR>
-<TR> 
- <TD><font color ="#FF0000">overlaps (inferred)</font></TD><TD>1</TD>
-</TR>
-</TABLE> 
- >];
+n2 [fillcolor="#CCFFCC", fontname="helvetica", shape=box, style=filled, label=4];
+n3 [fillcolor="#CCFFCC", fontname="helvetica", shape=box, style=filled, label="CEN.Midwest"];
 n2 -- n3;
-n4 [style=filled, fontname="helvetica", fillcolor="#CCFFCC", shape=box, label=""];
-n5 [style=filled, fontname="helvetica", fillcolor="#CCFFCC", shape=box, label="CEN.Midwest"];
-n4 -- n5;
-n6 [style=filled, fontname="helvetica", fillcolor="#CCFFCC", shape=box, label="CEN.South"];
-n4 -- n6;
-n7 [style=filled, fontname="helvetica", fillcolor="#CCFFCC", shape=box, label="CEN.Northeast"];
-n4 -- n7;
-n8 [style=filled, fontname="helvetica", fillcolor="#CCFFCC", shape=box, label="CEN.West"];
-n4 -- n8;
-n9 [style=filled, fontname="helvetica", shape=note, fillcolor="#FFFFCC", label=""];
-n10 [style=filled, fontname="helvetica", shape=note, fillcolor="#FFFFCC", label="TZ.Eastern"];
-n9 -- n10;
-n11 [style=filled, fontname="helvetica", shape=note, fillcolor="#FFFFCC", label="TZ.Pacific"];
-n9 -- n11;
-n12 [style=filled, fontname="helvetica", shape=note, fillcolor="#FFFFCC", label="TZ.Central"];
-n9 -- n12;
-n13 [style=filled, fontname="helvetica", shape=note, fillcolor="#FFFFCC", label="TZ.Mountain"];
-n9 -- n13;
+n4 [fillcolor="#CCFFCC", fontname="helvetica", shape=box, style=filled, label="CEN.South"];
+n2 -- n4;
+n5 [fillcolor="#CCFFCC", fontname="helvetica", shape=box, style=filled, label="CEN.Northeast"];
+n2 -- n5;
+n6 [fillcolor="#CCFFCC", fontname="helvetica", shape=box, style=filled, label="CEN.West"];
+n2 -- n6;
+n7 [shape=note, fontname="helvetica", style=filled, fillcolor="#FFFFCC", label=4];
+n8 [shape=note, fontname="helvetica", style=filled, fillcolor="#FFFFCC", label="TZ.Eastern"];
+n7 -- n8;
+n9 [shape=note, fontname="helvetica", style=filled, fillcolor="#FFFFCC", label="TZ.Pacific"];
+n7 -- n9;
+n10 [shape=note, fontname="helvetica", style=filled, fillcolor="#FFFFCC", label="TZ.Central"];
+n7 -- n10;
+n11 [shape=note, fontname="helvetica", style=filled, fillcolor="#FFFFCC", label="TZ.Mountain"];
+n7 -- n11;
 
     }
             

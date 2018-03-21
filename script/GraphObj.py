@@ -44,6 +44,8 @@ class GraphEdge(GraphObj):
         super().__init__(id, attr_list)
         self.left_node = None
         self.right_node = None
+        self.left_node_id = -1
+        self.right_node_id = -1
         self.directed = None
 
     def set_directed(self, directed):
@@ -62,6 +64,18 @@ class GraphEdge(GraphObj):
 
     def get_right_node_name(self):
         return self.right_node
+
+    def set_left_node_id(self, obj):
+        self.left_node_id = obj
+
+    def get_left_node_id(self):
+        return self.left_node_id
+
+    def set_right_node_id(self, obj):
+        self.right_node_id = obj
+
+    def get_right_node_id(self):
+        return self.right_node_id
 
     def get_name(self):
         if self.directed:
