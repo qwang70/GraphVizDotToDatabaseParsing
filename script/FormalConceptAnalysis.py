@@ -93,14 +93,13 @@ class FCA(object):
                         edgeLabel = splitIdx[2]
                         edgesdot += "n{} [ label=\"{}\"];\n".format(\
                                 nid, edgeLabel.replace("\"", "\\\""))
-                        edgesdot += "e{} -> n{} [dir=none];\n".format(primaryNodeId, nid)
+                        edgesdot += "e{} -> n{} [dir=none, style=dashed];\n".format(primaryNodeId, nid)
                         nid += 1
                     
             dot =   \
             """
     digraph{{
     rankdir=TB
-    edge [style=dashed]
     {}
     }}
             """.format(edgesdot)

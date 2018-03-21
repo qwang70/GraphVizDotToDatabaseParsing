@@ -1,7 +1,6 @@
 
     digraph{
     rankdir=TB
-    edge [style=dashed]
     
         subgraph cluster_0 {
                     style=filled;
@@ -10,61 +9,61 @@
                     e0 -> e0_end [ ""="", minlen=2, label=28 ];
         };
 n1 [ label="verbose -> print_message"];
-e0 -> n1 [dir=none];
+e0 -> n1 [dir=none, style=dashed];
 n2 [ label="get_predictor_matrix -> predictor_matrix"];
-e0 -> n2 [dir=none];
+e0 -> n2 [dir=none, style=dashed];
 n3 [ label="get_predictor_matrix -> max_preds"];
-e0 -> n3 [dir=none];
+e0 -> n3 [dir=none, style=dashed];
 n4 [ label="itrdb -> get_predictor_matrix"];
-e0 -> n4 [dir=none];
+e0 -> n4 [dir=none, style=dashed];
 n5 [ label="calibration_years -> get_predictor_matrix"];
-e0 -> n5 [dir=none];
+e0 -> n5 [dir=none, style=dashed];
 n6 [ label="min_width -> get_predictor_matrix"];
-e0 -> n6 [dir=none];
+e0 -> n6 [dir=none, style=dashed];
 n7 [ label="get_reconstruction_matrix -> reconstruction_matrix"];
-e0 -> n7 [dir=none];
+e0 -> n7 [dir=none, style=dashed];
 n8 [ label="itrdb -> get_reconstruction_matrix"];
-e0 -> n8 [dir=none];
+e0 -> n8 [dir=none, style=dashed];
 n9 [ label="prediction_years -> get_reconstruction_matrix"];
-e0 -> n9 [dir=none];
+e0 -> n9 [dir=none, style=dashed];
 n10 [ label="min_width -> get_reconstruction_matrix"];
-e0 -> n10 [dir=none];
+e0 -> n10 [dir=none, style=dashed];
 n11 [ label="get_predlist -> predlist"];
-e0 -> n11 [dir=none];
+e0 -> n11 [dir=none, style=dashed];
 n12 [ label="reconstruction_matrix -> get_predlist"];
-e0 -> n12 [dir=none];
+e0 -> n12 [dir=none, style=dashed];
 n13 [ label="get_carscores -> carscores"];
-e0 -> n13 [dir=none];
+e0 -> n13 [dir=none, style=dashed];
 n14 [ label="prism_data_for_coordinates -> get_carscores"];
-e0 -> n14 [dir=none];
+e0 -> n14 [dir=none, style=dashed];
 n15 [ label="predictor_matrix -> get_carscores"];
-e0 -> n15 [dir=none];
+e0 -> n15 [dir=none, style=dashed];
 n16 [ label="calculate_Models -> linear_models"];
-e0 -> n16 [dir=none];
+e0 -> n16 [dir=none, style=dashed];
 n17 [ label="predlist -> calculate_Models"];
-e0 -> n17 [dir=none];
+e0 -> n17 [dir=none, style=dashed];
 n18 [ label="carscores -> calculate_Models"];
-e0 -> n18 [dir=none];
+e0 -> n18 [dir=none, style=dashed];
 n19 [ label="max_preds -> calculate_Models"];
-e0 -> n19 [dir=none];
+e0 -> n19 [dir=none, style=dashed];
 n20 [ label="optimizeModels -> paleocar_models"];
-e0 -> n20 [dir=none];
+e0 -> n20 [dir=none, style=dashed];
 n21 [ label="linear_models -> optimizeModels"];
-e0 -> n21 [dir=none];
+e0 -> n21 [dir=none, style=dashed];
 n22 [ label="prediction_years_input_port -> prediction_years"];
-e0 -> n22 [dir=none];
+e0 -> n22 [dir=none, style=dashed];
 n23 [ label="prism_data_for_coordinates_input_port -> prism_data_for_coordinates"];
-e0 -> n23 [dir=none];
+e0 -> n23 [dir=none, style=dashed];
 n24 [ label="itrdb_input_port -> itrdb"];
-e0 -> n24 [dir=none];
+e0 -> n24 [dir=none, style=dashed];
 n25 [ label="calibration_years_input_port -> calibration_years"];
-e0 -> n25 [dir=none];
+e0 -> n25 [dir=none, style=dashed];
 n26 [ label="min_width_input_port -> min_width"];
-e0 -> n26 [dir=none];
+e0 -> n26 [dir=none, style=dashed];
 n27 [ label="verbose_input_port -> verbose"];
-e0 -> n27 [dir=none];
+e0 -> n27 [dir=none, style=dashed];
 n28 [ label="paleocar_models -> paleocar_models_output_port"];
-e0 -> n28 [dir=none];
+e0 -> n28 [dir=none, style=dashed];
 
     }
             

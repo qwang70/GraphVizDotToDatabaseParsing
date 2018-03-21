@@ -1,0 +1,70 @@
+
+    digraph{
+    rankdir=TB
+    
+        subgraph cluster_0 {
+                    style=filled;
+                    color=transparent;
+                    node [shape = none, label = ""];
+                    e0 -> e0_end [ style=dotted, color="#134d9c", penwidth=0.4, dir=back, minlen=2, label=12 ];
+        };
+n1 [ label="\"AllOtherGreen\" -> \"1,3,4,5,6,7,8,9,10,11,12\""];
+e0 -> n1 [dir=none, style=dashed];
+n2 [ label="\"AllOtherGreen\" -> \"1,2,3,4,5,6,7,8,9,10,11\""];
+e0 -> n2 [dir=none, style=dashed];
+n3 [ label="\"AllOtherGreen\" -> \"1,2,3,4,5,6,7,8,10,11,12\""];
+e0 -> n3 [dir=none, style=dashed];
+n4 [ label="\"AllOtherGreen\" -> \"1,2,4,5,6,7,8,9,10,11,12\""];
+e0 -> n4 [dir=none, style=dashed];
+n5 [ label="\"AllOtherGreen\" -> \"1,2,3,4,6,7,8,9,10,11,12\""];
+e0 -> n5 [dir=none, style=dashed];
+n6 [ label="\"AllOtherGreen\" -> \"1,2,3,4,5,6,7,8,9,11,12\""];
+e0 -> n6 [dir=none, style=dashed];
+n7 [ label="\"AllOtherGreen\" -> \"1,2,3,4,5,7,8,9,10,11,12\""];
+e0 -> n7 [dir=none, style=dashed];
+n8 [ label="\"AllOtherGreen\" -> \"1,2,3,4,5,6,7,8,9,10,12\""];
+e0 -> n8 [dir=none, style=dashed];
+n9 [ label="\"AllOtherGreen\" -> \"1,2,3,4,5,6,8,9,10,11,12\""];
+e0 -> n9 [dir=none, style=dashed];
+n10 [ label="\"AllOtherGreen\" -> \"1,2,3,4,5,6,7,9,10,11,12\""];
+e0 -> n10 [dir=none, style=dashed];
+n11 [ label="\"AllOtherGreen\" -> \"1,2,3,5,6,7,8,9,10,11,12\""];
+e0 -> n11 [dir=none, style=dashed];
+n12 [ label="\"AllOtherGreen\" -> \"2,3,4,5,6,7,8,9,10,11,12\""];
+e0 -> n12 [dir=none, style=dashed];
+
+        subgraph cluster_13 {
+                    style=filled;
+                    color=transparent;
+                    node [shape = none, label = ""];
+                    e13 -> e13_end [ style=solid, arrowhead=none, color="#0000FF", penwidth=2, minlen=2, label=13 ];
+        };
+n14 [ label="\"1,2,3,4,5,6,7,8,9,10,11\" -> \"1,2,3,4,5,6,7,8,9,10,11,12\""];
+e13 -> n14 [dir=none, style=dashed];
+n15 [ label="\"1,2,3,4,5,6,7,8,9,10,12\" -> \"1,2,3,4,5,6,7,8,9,10,11,12\""];
+e13 -> n15 [dir=none, style=dashed];
+n16 [ label="\"1,2,3,4,5,6,7,8,9,11,12\" -> \"1,2,3,4,5,6,7,8,9,10,11,12\""];
+e13 -> n16 [dir=none, style=dashed];
+n17 [ label="\"1,2,3,4,5,6,7,8,10,11,12\" -> \"1,2,3,4,5,6,7,8,9,10,11,12\""];
+e13 -> n17 [dir=none, style=dashed];
+n18 [ label="\"1,2,3,4,5,6,7,9,10,11,12\" -> \"1,2,3,4,5,6,7,8,9,10,11,12\""];
+e13 -> n18 [dir=none, style=dashed];
+n19 [ label="\"1,2,3,4,5,6,8,9,10,11,12\" -> \"1,2,3,4,5,6,7,8,9,10,11,12\""];
+e13 -> n19 [dir=none, style=dashed];
+n20 [ label="\"1,2,3,4,5,7,8,9,10,11,12\" -> \"1,2,3,4,5,6,7,8,9,10,11,12\""];
+e13 -> n20 [dir=none, style=dashed];
+n21 [ label="\"1,2,3,4,6,7,8,9,10,11,12\" -> \"1,2,3,4,5,6,7,8,9,10,11,12\""];
+e13 -> n21 [dir=none, style=dashed];
+n22 [ label="\"1,2,3,5,6,7,8,9,10,11,12\" -> \"1,2,3,4,5,6,7,8,9,10,11,12\""];
+e13 -> n22 [dir=none, style=dashed];
+n23 [ label="\"1,2,4,5,6,7,8,9,10,11,12\" -> \"1,2,3,4,5,6,7,8,9,10,11,12\""];
+e13 -> n23 [dir=none, style=dashed];
+n24 [ label="\"1,3,4,5,6,7,8,9,10,11,12\" -> \"1,2,3,4,5,6,7,8,9,10,11,12\""];
+e13 -> n24 [dir=none, style=dashed];
+n25 [ label="\"2,3,4,5,6,7,8,9,10,11,12\" -> \"1,2,3,4,5,6,7,8,9,10,11,12\""];
+e13 -> n25 [dir=none, style=dashed];
+n26 [ label="\"AllOtherGreen\" -> \"1,2,3,4,5,6,7,8,9,10,11,12\""];
+e13 -> n26 [dir=none, style=dashed];
+
+    }
+            

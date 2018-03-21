@@ -1,0 +1,64 @@
+
+    digraph{
+    rankdir=TB
+    
+        subgraph cluster_0 {
+                    style=filled;
+                    color=transparent;
+                    node [shape = none, label = ""];
+                    e0 -> e0_end [ arrowhead=normal, style=solid, penwidth=1, constraint=true, color="#FF0000", minlen=2, label=1 ];
+        };
+n1 [ label="\"TZ.Pacific\" -> \"CEN.West\""];
+e0 -> n1 [dir=none, style=dashed];
+
+        subgraph cluster_2 {
+                    style=filled;
+                    color=transparent;
+                    node [shape = none, label = ""];
+                    e2 -> e2_end [ style=dashed, penwidth=1, arrowhead=none, color="#FF0000", constraint=false, minlen=2, label=1 ];
+        };
+n3 [ label="\"CEN.Midwest\" -> \"TZ.Central\""];
+e2 -> n3 [dir=none, style=dashed];
+
+        subgraph cluster_4 {
+                    style=filled;
+                    color=transparent;
+                    node [shape = none, label = ""];
+                    e4 -> e4_end [ penwidth=1, arrowhead=none, style=dotted, constraint=false, color="#0000FF", minlen=2, label=6 ];
+        };
+n5 [ label="\"CEN.South\" -> \"TZ.Mountain\""];
+e4 -> n5 [dir=none, style=dashed];
+n6 [ label="\"CEN.West\" -> \"TZ.Mountain\""];
+e4 -> n6 [dir=none, style=dashed];
+n7 [ label="\"CEN.Midwest\" -> \"TZ.Mountain\""];
+e4 -> n7 [dir=none, style=dashed];
+n8 [ label="\"CEN.South\" -> \"TZ.Central\""];
+e4 -> n8 [dir=none, style=dashed];
+n9 [ label="\"CEN.Midwest\" -> \"TZ.Eastern\""];
+e4 -> n9 [dir=none, style=dashed];
+n10 [ label="\"CEN.South\" -> \"TZ.Eastern\""];
+e4 -> n10 [dir=none, style=dashed];
+
+        subgraph cluster_11 {
+                    style=filled;
+                    color=transparent;
+                    node [shape = none, label = ""];
+                    e11 -> e11_end [ arrowhead=normal, style=solid, penwidth=1, constraint=true, color="#000000", minlen=2, label=7 ];
+        };
+n12 [ label="\"CEN.South\" -> \"CEN.USA\nTZ.USA\""];
+e11 -> n12 [dir=none, style=dashed];
+n13 [ label="\"CEN.Midwest\" -> \"CEN.USA\nTZ.USA\""];
+e11 -> n13 [dir=none, style=dashed];
+n14 [ label="\"TZ.Eastern\" -> \"CEN.USA\nTZ.USA\""];
+e11 -> n14 [dir=none, style=dashed];
+n15 [ label="\"TZ.Central\" -> \"CEN.USA\nTZ.USA\""];
+e11 -> n15 [dir=none, style=dashed];
+n16 [ label="\"CEN.Northeast\" -> \"TZ.Eastern\""];
+e11 -> n16 [dir=none, style=dashed];
+n17 [ label="\"CEN.West\" -> \"CEN.USA\nTZ.USA\""];
+e11 -> n17 [dir=none, style=dashed];
+n18 [ label="\"TZ.Mountain\" -> \"CEN.USA\nTZ.USA\""];
+e11 -> n18 [dir=none, style=dashed];
+
+    }
+            
