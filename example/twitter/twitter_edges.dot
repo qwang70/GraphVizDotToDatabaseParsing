@@ -1,0 +1,53 @@
+
+    digraph{
+    rankdir=TB
+    
+        subgraph cluster_0 {
+                    style=filled;
+                    color=transparent;
+                    node [shape = none, label = ""];
+                    e0 -> e0_end [ ""="", minlen=2, label=20 ];
+        };
+n1 [ label="AccessTweets -> TweetRead"];
+e0 -> n1 [dir=none, style=dashed];
+n2 [ label="Static_Tweets -> AccessTweets"];
+e0 -> n2 [dir=none, style=dashed];
+n3 [ label="CountSentiments -> PositiveCount"];
+e0 -> n3 [dir=none, style=dashed];
+n4 [ label="CountSentiments -> NegativeCount"];
+e0 -> n4 [dir=none, style=dashed];
+n5 [ label="CountSentiments -> NeutralCount"];
+e0 -> n5 [dir=none, style=dashed];
+n6 [ label="TweetRead -> CountSentiments"];
+e0 -> n6 [dir=none, style=dashed];
+n7 [ label="Measures -> Explode"];
+e0 -> n7 [dir=none, style=dashed];
+n8 [ label="Measures -> Labels"];
+e0 -> n8 [dir=none, style=dashed];
+n9 [ label="Measures -> Sizes"];
+e0 -> n9 [dir=none, style=dashed];
+n10 [ label="Measures -> Colors"];
+e0 -> n10 [dir=none, style=dashed];
+n11 [ label="PositiveCount -> Measures"];
+e0 -> n11 [dir=none, style=dashed];
+n12 [ label="NegativeCount -> Measures"];
+e0 -> n12 [dir=none, style=dashed];
+n13 [ label="NeutralCount -> Measures"];
+e0 -> n13 [dir=none, style=dashed];
+n14 [ label="DrawPieChart -> Sentiment_Result"];
+e0 -> n14 [dir=none, style=dashed];
+n15 [ label="Explode -> DrawPieChart"];
+e0 -> n15 [dir=none, style=dashed];
+n16 [ label="Labels -> DrawPieChart"];
+e0 -> n16 [dir=none, style=dashed];
+n17 [ label="Sizes -> DrawPieChart"];
+e0 -> n17 [dir=none, style=dashed];
+n18 [ label="Colors -> DrawPieChart"];
+e0 -> n18 [dir=none, style=dashed];
+n19 [ label="Static_Tweets_input_port -> Static_Tweets"];
+e0 -> n19 [dir=none, style=dashed];
+n20 [ label="Sentiment_Result -> Sentiment_Result_output_port"];
+e0 -> n20 [dir=none, style=dashed];
+
+    }
+            

@@ -1,0 +1,68 @@
+
+    graph{
+    rankdir=TB
+    edge [style=dashed]
+    n0 [peripheries=1, shape=box, style=filled, fillcolor="#CCFFCC", fontname=Helvetica, label=1];
+n1 [peripheries=1, shape=box, style=filled, fillcolor="#CCFFCC", fontname=Helvetica, label=optimizeModels];
+n0 -- n1;
+n2 [peripheries=2, shape=box, style=filled, fillcolor="#CCFFCC", fontname=Helvetica, label=1];
+n3 [peripheries=2, shape=box, style=filled, fillcolor="#CCFFCC", fontname=Helvetica, label=calculate_Models];
+n2 -- n3;
+n4 [peripheries=1, shape=record, rankdir=LR, style="rounded,filled", fontname=Helvetica, fillcolor="#FFFFCC", label=1];
+n5 [peripheries=1, shape=record, rankdir=LR, style="rounded,filled", fontname=Helvetica, fillcolor="#FFFFCC", label="{<f0> paleocar_models |<f1> file\:.output/\{session_id\}/\{run_id\}/\{label\}_model.Rds}"];
+n4 -- n5;
+n6 [peripheries=1, shape=box, style="rounded,filled", fillcolor="#FCFCFC", fontname=Helvetica, label=2];
+n7 [peripheries=1, shape=box, style="rounded,filled", fillcolor="#FCFCFC", fontname=Helvetica, label=calibration_years];
+n6 -- n7;
+n8 [peripheries=1, shape=box, style="rounded,filled", fillcolor="#FCFCFC", fontname=Helvetica, label=min_width];
+n6 -- n8;
+n9 [peripheries=1, style=filled, shape=record, fillcolor="#CCFFCC", rankdir=LR, fontname=Helvetica, label=5];
+n10 [peripheries=1, style=filled, shape=record, fillcolor="#CCFFCC", rankdir=LR, fontname=Helvetica, label="{<f0> print_message |<f1> writing messages to the command line, if the variable is set.}"];
+n9 -- n10;
+n11 [peripheries=1, style=filled, shape=record, fillcolor="#CCFFCC", rankdir=LR, fontname=Helvetica, label="{<f0> get_predictor_matrix |<f1> create a matrix of tree ring chronologies for the calibration year.}"];
+n9 -- n11;
+n12 [peripheries=1, style=filled, shape=record, fillcolor="#CCFFCC", rankdir=LR, fontname=Helvetica, label="{<f0> get_reconstruction_matrix |<f1> get reconstruction matrix for chronologies for the prediction year.}"];
+n9 -- n12;
+n13 [peripheries=1, style=filled, shape=record, fillcolor="#CCFFCC", rankdir=LR, fontname=Helvetica, label="{<f0> get_predlist |<f1> create list of prediction values.}"];
+n9 -- n13;
+n14 [peripheries=1, style=filled, shape=record, fillcolor="#CCFFCC", rankdir=LR, fontname=Helvetica, label="{<f0> get_carscores |<f1> get the carscores for reconstruction of paleoclimate.}"];
+n9 -- n14;
+n15 [peripheries=1, width=0.2, fillcolor="#FFFFFF", shape=circle, style="rounded,filled", fontname=Helvetica, label=7];
+n16 [peripheries=1, width=0.2, fillcolor="#FFFFFF", shape=circle, style="rounded,filled", fontname=Helvetica, label=prediction_years_input_port];
+n15 -- n16;
+n17 [peripheries=1, width=0.2, fillcolor="#FFFFFF", shape=circle, style="rounded,filled", fontname=Helvetica, label=prism_data_for_coordinates_input_port];
+n15 -- n17;
+n18 [peripheries=1, width=0.2, fillcolor="#FFFFFF", shape=circle, style="rounded,filled", fontname=Helvetica, label=itrdb_input_port];
+n15 -- n18;
+n19 [peripheries=1, width=0.2, fillcolor="#FFFFFF", shape=circle, style="rounded,filled", fontname=Helvetica, label=calibration_years_input_port];
+n15 -- n19;
+n20 [peripheries=1, width=0.2, fillcolor="#FFFFFF", shape=circle, style="rounded,filled", fontname=Helvetica, label=min_width_input_port];
+n15 -- n20;
+n21 [peripheries=1, width=0.2, fillcolor="#FFFFFF", shape=circle, style="rounded,filled", fontname=Helvetica, label=verbose_input_port];
+n15 -- n21;
+n22 [peripheries=1, width=0.2, fillcolor="#FFFFFF", shape=circle, style="rounded,filled", fontname=Helvetica, label=paleocar_models_output_port];
+n15 -- n22;
+n23 [peripheries=1, shape=box, style="rounded,filled", fontname=Helvetica, fillcolor="#FFFFCC", label=10];
+n24 [peripheries=1, shape=box, style="rounded,filled", fontname=Helvetica, fillcolor="#FFFFCC", label=verbose];
+n23 -- n24;
+n25 [peripheries=1, shape=box, style="rounded,filled", fontname=Helvetica, fillcolor="#FFFFCC", label=itrdb];
+n23 -- n25;
+n26 [peripheries=1, shape=box, style="rounded,filled", fontname=Helvetica, fillcolor="#FFFFCC", label=prediction_years];
+n23 -- n26;
+n27 [peripheries=1, shape=box, style="rounded,filled", fontname=Helvetica, fillcolor="#FFFFCC", label=reconstruction_matrix];
+n23 -- n27;
+n28 [peripheries=1, shape=box, style="rounded,filled", fontname=Helvetica, fillcolor="#FFFFCC", label=prism_data_for_coordinates];
+n23 -- n28;
+n29 [peripheries=1, shape=box, style="rounded,filled", fontname=Helvetica, fillcolor="#FFFFCC", label=predictor_matrix];
+n23 -- n29;
+n30 [peripheries=1, shape=box, style="rounded,filled", fontname=Helvetica, fillcolor="#FFFFCC", label=predlist];
+n23 -- n30;
+n31 [peripheries=1, shape=box, style="rounded,filled", fontname=Helvetica, fillcolor="#FFFFCC", label=carscores];
+n23 -- n31;
+n32 [peripheries=1, shape=box, style="rounded,filled", fontname=Helvetica, fillcolor="#FFFFCC", label=max_preds];
+n23 -- n32;
+n33 [peripheries=1, shape=box, style="rounded,filled", fontname=Helvetica, fillcolor="#FFFFCC", label=linear_models];
+n23 -- n33;
+
+    }
+            

@@ -1,7 +1,7 @@
 #!/bin/bash
 EXAMPLE_FOLDER="example"
 SCRIPT_FOLDER="script"
-for filename in ${EXAMPLE_FOLDER}/*.gv; do
+for filename in ${EXAMPLE_FOLDER}/**/*.gv; do
     python3 ${SCRIPT_FOLDER}/graphviz_parser.py $filename -fca
     echo $filename
     dotFileBaseName=$(echo $filename | cut -d"." -f1)
@@ -19,6 +19,6 @@ for filename in ${EXAMPLE_FOLDER}/*.gv; do
     dot -Tpng $dotNodeFileName -o $dotNodeFilePng
     dot -Tpng $dotEdgeFileName -o $dotEdgeFilePng
     dot -Tpng $dotFullFileName -o $dotFullFilePng
-#dot -Tpng $dotNodeHierachyFileName -o $dotNodeHierachyFilePng
-#dot -Tpng $dotEdgeHierachyFileName -o $dotEdgeHierachyFilePng
+    dot -Tpng $dotNodeHierachyFileName -o $dotNodeHierachyFilePng
+    dot -Tpng $dotEdgeHierachyFileName -o $dotEdgeHierachyFilePng
 done

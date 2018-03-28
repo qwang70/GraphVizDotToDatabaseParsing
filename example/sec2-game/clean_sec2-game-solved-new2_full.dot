@@ -1,0 +1,27 @@
+
+digraph{
+rankdir=TB
+n0 [style="filled,rounded", fontsize=14, fillcolor="#AAFFAA", height=0.5, fontname=Courier, width=0.51, shape=box, label=3];
+n1 [fontsize=14, style=filled, width=0.45, shape=circle, fillcolor="#FFFFAA", fontname=Courier, height=0.45, label=4];
+n2 [fontsize=14, style=filled, fillcolor="#FFAAAA", height=0, shape=octagon, fontname=Courier, width=0, label=5];
+
+
+
+n1 -> n0 [ penwidth=2, constraint=true, style=dashed, fontsize=12, fontname=Helvetica, color="#777777", pensize=5, minlen=2, label=1 ];
+
+n1 -> n1 [ penwidth=2, color="#AAAA00", fontsize=12, dir=back, fontname=Helvetica, pensize=5, minlen=2, label=2 ];
+
+n2 -> n0 [ penwidth=2, fontsize=12, fontname=Helvetica, color="#CC0000", pensize=5, minlen=2, label=3 ];
+
+n1 -> n1 [ penwidth=2, color="#AAAA00", fontsize=12, fontname=Helvetica, pensize=5, minlen=2, label=2 ];
+
+n0 -> n1 [ penwidth=2, constraint=false, style=dashed, fontsize=12, fontname=Helvetica, color="#777777", pensize=5, minlen=2, label=1 ];
+
+n0 -> n0 [ penwidth=2, constraint=false, style=dashed, fontsize=12, fontname=Helvetica, color="#777777", pensize=5, minlen=2, label=2 ];
+
+n1 -> n0 [ penwidth=2, constraint=false, style=dashed, fontsize=12, fontname=Helvetica, color="#777777", pensize=5, minlen=2, label=1 ];
+
+n0 -> n2 [ penwidth=2, fontsize=12, fontname=Helvetica, color="#00BB00", pensize=5, minlen=2, label=5 ];
+
+}
+            

@@ -1,0 +1,32 @@
+// <Lattice object of 0 atoms 1 concepts 0 coatoms at 0x10c007588>
+digraph Lattice {
+	node [label="" shape=circle style=filled width=.25]
+	edge [dir=none labeldistance=1.5 minlen=2]
+	subgraph cluster_0 {
+		style=filled
+		color=transparent
+		c0
+		c0_end
+		c0 -> c0_end ["\"\""="" label=20]
+	}
+	c0 -> c0 [label="0:6:AccessTweets -> TweetRead	
+5:0:Static_Tweets -> AccessTweets	
+1:7:CountSentiments -> PositiveCount	
+1:8:CountSentiments -> NegativeCount	
+1:9:CountSentiments -> NeutralCount	
+6:1:TweetRead -> CountSentiments	
+2:11:Measures -> Explode	
+2:12:Measures -> Labels	
+2:10:Measures -> Sizes	
+2:13:Measures -> Colors	
+7:2:PositiveCount -> Measures	
+8:2:NegativeCount -> Measures	
+9:2:NeutralCount -> Measures	
+3:4:DrawPieChart -> Sentiment_Result	
+11:3:Explode -> DrawPieChart	
+12:3:Labels -> DrawPieChart	
+10:3:Sizes -> DrawPieChart	
+13:3:Colors -> DrawPieChart	
+14:5:Static_Tweets_input_port -> Static_Tweets	
+4:15:Sentiment_Result -> Sentiment_Result_output_port" color=transparent labelangle=270]
+}

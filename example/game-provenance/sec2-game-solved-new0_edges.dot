@@ -1,0 +1,145 @@
+
+    digraph{
+    rankdir=TB
+    
+        subgraph cluster_0 {
+                    style=filled;
+                    color=transparent;
+                    node [shape = none, label = ""];
+                    e0 -> e0_end [ penwidth=2, fontname=Helvetica, color="#777777", pensize=5, constraint=true, fontsize=12, style=dashed, minlen=2, label=1 ];
+        };
+n1 [ label="\"3:(a,a,b)\" -> \"4:(a,b)\""];
+e0 -> n1 [dir=none, style=dashed];
+
+        subgraph cluster_2 {
+                    style=filled;
+                    color=transparent;
+                    node [shape = none, label = ""];
+                    e2 -> e2_end [ penwidth=2, color="#AAAA00", fontname=Helvetica, taillabel="         oo", pensize=5, fontsize=12, minlen=2, label=1 ];
+        };
+n3 [ label="\"1:(a,a)\" -> \"3:(a,a,b)\""];
+e2 -> n3 [dir=none, style=dashed];
+
+        subgraph cluster_4 {
+                    style=filled;
+                    color=transparent;
+                    node [shape = none, label = ""];
+                    e4 -> e4_end [ penwidth=2, color="#AAAA00", fontname=Helvetica, pensize=5, fontsize=12, taillabel="oo   ", minlen=2, label=1 ];
+        };
+n5 [ label="\"1:(b,a)\" -> \"3:(b,a,b)\""];
+e4 -> n5 [dir=none, style=dashed];
+
+        subgraph cluster_6 {
+                    style=filled;
+                    color=transparent;
+                    node [shape = none, label = ""];
+                    e6 -> e6_end [ penwidth=2, taillabel="          oo", color="#AAAA00", fontname=Helvetica, pensize=5, fontsize=12, minlen=2, label=1 ];
+        };
+n7 [ label="\"3:(a,a,b)\" -> \"1:(b,a)\""];
+e6 -> n7 [dir=none, style=dashed];
+
+        subgraph cluster_8 {
+                    style=filled;
+                    color=transparent;
+                    node [shape = none, label = ""];
+                    e8 -> e8_end [ taillabel="    oo", penwidth=2, color="#AAAA00", fontname=Helvetica, pensize=5, fontsize=12, minlen=2, label=1 ];
+        };
+n9 [ label="\"3:(b,a,b)\" -> \"1:(b,a)\""];
+e8 -> n9 [dir=none, style=dashed];
+
+        subgraph cluster_10 {
+                    style=filled;
+                    color=transparent;
+                    node [shape = none, label = ""];
+                    e10 -> e10_end [ penwidth=2, fontname=Helvetica, taillabel=" 1  ", pensize=5, fontsize=12, color="#00BB00", minlen=2, label=1 ];
+        };
+n11 [ label="\"1:(a,b)\" -> \"2:(a,b)\""];
+e10 -> n11 [dir=none, style=dashed];
+
+        subgraph cluster_12 {
+                    style=filled;
+                    color=transparent;
+                    node [shape = none, label = ""];
+                    e12 -> e12_end [ penwidth=2, fontname=Helvetica, pensize=5, fontsize=12, taillabel="1   ", color="#00BB00", minlen=2, label=1 ];
+        };
+n13 [ label="\"1:(b,b)\" -> \"2:(b,b)\""];
+e12 -> n13 [dir=none, style=dashed];
+
+        subgraph cluster_14 {
+                    style=filled;
+                    color=transparent;
+                    node [shape = none, label = ""];
+                    e14 -> e14_end [ penwidth=2, taillabel="1  ", fontname=Helvetica, pensize=5, fontsize=12, color="#00BB00", minlen=2, label=1 ];
+        };
+n15 [ label="\"4:(a,b)\" -> \"5:(a,b)\""];
+e14 -> n15 [dir=none, style=dashed];
+
+        subgraph cluster_16 {
+                    style=filled;
+                    color=transparent;
+                    node [shape = none, label = ""];
+                    e16 -> e16_end [ penwidth=2, fontname=Helvetica, taillabel="2 ", pensize=5, fontsize=12, color="#00BB00", minlen=2, label=1 ];
+        };
+n17 [ label="\"1:(a,b)\" -> \"3:(a,b,b)\""];
+e16 -> n17 [dir=none, style=dashed];
+
+        subgraph cluster_18 {
+                    style=filled;
+                    color=transparent;
+                    node [shape = none, label = ""];
+                    e18 -> e18_end [ taillabel="2", penwidth=2, fontname=Helvetica, pensize=5, fontsize=12, color="#00BB00", minlen=2, label=1 ];
+        };
+n19 [ label="\"1:(b,b)\" -> \"3:(b,b,b)\""];
+e18 -> n19 [dir=none, style=dashed];
+
+        subgraph cluster_20 {
+                    style=filled;
+                    color=transparent;
+                    node [shape = none, label = ""];
+                    e20 -> e20_end [ taillabel="1 ", penwidth=2, color="#CC0000", fontname=Helvetica, pensize=5, fontsize=12, minlen=2, label=1 ];
+        };
+n21 [ label="\"3:(a,b,b)\" -> \"1:(b,b)\""];
+e20 -> n21 [dir=none, style=dashed];
+
+        subgraph cluster_22 {
+                    style=filled;
+                    color=transparent;
+                    node [shape = none, label = ""];
+                    e22 -> e22_end [ penwidth=2, color="#CC0000", fontname=Helvetica, taillabel="1", pensize=5, fontsize=12, minlen=2, label=1 ];
+        };
+n23 [ label="\"3:(a,b,b)\" -> \"4:(a,b)\""];
+e22 -> n23 [dir=none, style=dashed];
+
+        subgraph cluster_24 {
+                    style=filled;
+                    color=transparent;
+                    node [shape = none, label = ""];
+                    e24 -> e24_end [ penwidth=2, color="#CC0000", fontname=Helvetica, pensize=5, taillabel=" 1", fontsize=12, minlen=2, label=1 ];
+        };
+n25 [ label="\"3:(b,b,b)\" -> \"1:(b,b)\""];
+e24 -> n25 [dir=none, style=dashed];
+
+        subgraph cluster_26 {
+                    style=filled;
+                    color=transparent;
+                    node [shape = none, label = ""];
+                    e26 -> e26_end [ penwidth=2, fontname=Helvetica, color="#777777", constraint=false, pensize=5, fontsize=12, taillabel="", style=dashed, minlen=2, label=2 ];
+        };
+n27 [ label="\"4:(a,b)\" -> \"1:(b,a)\""];
+e26 -> n27 [dir=none, style=dashed];
+n28 [ label="\"4:(a,b)\" -> \"1:(b,b)\""];
+e26 -> n28 [dir=none, style=dashed];
+
+        subgraph cluster_29 {
+                    style=filled;
+                    color=transparent;
+                    node [shape = none, label = ""];
+                    e29 -> e29_end [ penwidth=2, fontname=Helvetica, color="#777777", constraint=false, pensize=5, fontsize=12, style=dashed, minlen=2, label=2 ];
+        };
+n30 [ label="\"1:(b,b)\" -> \"4:(a,b)\""];
+e29 -> n30 [dir=none, style=dashed];
+n31 [ label="\"1:(b,a)\" -> \"4:(a,b)\""];
+e29 -> n31 [dir=none, style=dashed];
+
+    }
+            

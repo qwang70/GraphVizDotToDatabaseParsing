@@ -1,0 +1,54 @@
+// <Lattice object of 3 atoms 6 concepts 2 coatoms at 0x11495ee80>
+digraph Lattice {
+	node [label="" shape=circle style=filled width=.25]
+	edge [dir=none labeldistance=1.5 minlen=2]
+	subgraph cluster_0 {
+		style=filled
+		color=transparent
+		c0 ["\"\""="" fillcolor="" fontname=Courier fontsize=14 height=0 label=0 shape=circle style="" width=0]
+	}
+	subgraph cluster_1 {
+		style=filled
+		color=transparent
+		c1 [fillcolor="#AAFFAA" fontname=Courier fontsize=14 height=0 label=3 shape=circle style="filled,rounded" width=0]
+	}
+	c1 -> c1 [label="0:\"a\"	
+1:\"d\"	
+2:\"e\"" color=transparent labelangle=270]
+	c1 -> c0
+	subgraph cluster_2 {
+		style=filled
+		color=transparent
+		c2 [fillcolor="#FFFFAA" fontname=Courier fontsize=14 height=0 label=4 shape=circle style=filled width=0]
+	}
+	c2 -> c2 [label="8:\"k\"	
+9:\"m\"	
+10:\"l\"	
+11:\"n\"" color=transparent labelangle=270]
+	c2 -> c0
+	subgraph cluster_3 {
+		style=filled
+		color=transparent
+		c3 [fillcolor="#FFAAAA" fontname=Courier fontsize=14 height=0 label=5 shape=circle style=filled width=0]
+	}
+	c3 -> c3 [label="3:\"b\"	
+4:\"f\"	
+5:\"h\"	
+6:\"c\"	
+7:\"g\"" color=transparent labelangle=270]
+	c3 -> c0
+	subgraph cluster_4 {
+		style=filled
+		color=transparent
+		c4 [fontname=Courier fontsize=14 height=0 label=9 shape=circle style=filled width=0]
+	}
+	c4 -> c2
+	c4 -> c3
+	subgraph cluster_5 {
+		style=filled
+		color=transparent
+		c5 [fontname=Courier fontsize=14 height=0 label=12 shape=circle width=0]
+	}
+	c5 -> c1
+	c5 -> c4
+}

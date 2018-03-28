@@ -1,0 +1,70 @@
+digraph {
+rankdir=TB
+nodesep=0.5
+ranksep=0.6
+node[shape=circle,fontname=Helvetica,fontsize=14]
+edge[fontname=Helvetica,fontsize=12, pensize = 5]
+
+edge [fontname=Helvetica,fontsize=12,penwidth=2]
+
+node [
+     style="filled,rounded",shape=box,
+     fillcolor="#AAFFAA",	
+     fontname=Courier,
+     fontsize=14,
+     height=0.5,width=0.51]
+
+"1:(a,b)"[label="a"]
+"1:(b,b)"[label="d"]
+"4:(a,b)"[label="e"]
+
+
+node [
+     shape=circle, style=filled,
+     fillcolor="#FFFFAA"	
+     fontname=Courier,
+     fontsize=14,
+     height=0.45,width=0.45]
+
+"1:(a,a)"[label="k"]
+"1:(b,a)"[label="m"]
+"3:(a,a,b)"[label="l"]
+"3:(b,a,b)"[label="n"]
+
+
+
+
+node [shape=octagon,
+     style=filled,
+     fillcolor="#FFAAAA",
+     fontname=Courier,fontsize=14,
+     height=0,width=0]
+
+"2:(a,b)"[label="b"]
+"2:(b,b)"[label="f"]
+"3:(a,b,b)"[label="c"]
+"3:(b,b,b)"[label="g"]
+"5:(a,b)"[label="h"]
+
+"3:(a,a,b)" -> "4:(a,b)" [color="#777777",style=dashed, constraint=true]
+"3:(b,a,b)" -> "1:(b,a)" [dir=back,color="#AAAA00" ]
+"1:(b,a)" -> "3:(b,a,b)" [dir=back,color="#AAAA00" ]
+"1:(a,a)" -> "3:(a,a,b)" [color="#AAAA00"]
+"3:(a,a,b)" -> "1:(b,a)" [color="#AAAA00" ]
+"1:(a,b)" -> "2:(a,b)" [color="#00BB00"]
+"1:(b,b)" -> "2:(b,b)" [color="#00BB00"]
+"4:(a,b)" -> "5:(a,b)" [color="#00BB00"]
+"4:(a,b)" -> "1:(b,a)" [color="#777777",style=dashed, constraint=false ]
+"4:(a,b)" -> "1:(b,b)" [color="#777777",style=dashed, constraint=false ]
+"1:(a,b)" -> "3:(a,b,b)" [color="#00BB00"]
+"1:(b,b)" -> "3:(b,b,b)" [color="#00BB00"]
+"3:(a,b,b)" -> "1:(b,b)" [color="#CC0000"]
+"3:(a,b,b)" -> "4:(a,b)" [color="#CC0000"]
+"3:(b,b,b)" -> "1:(b,b)" [color="#CC0000"]
+
+
+"1:(b,b)" -> "4:(a,b)"[constraint=false,color="#777777",style=dashed] // new: d -> e
+"1:(b,a)" -> "4:(a,b)" [constraint=false,color="#777777",style=dashed] // new: e <- m
+
+
+}

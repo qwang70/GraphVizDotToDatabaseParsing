@@ -1,0 +1,210 @@
+// <Lattice object of 14 atoms 22 concepts 4 coatoms at 0x10c30a710>
+digraph Lattice {
+	node [label="" shape=circle style=filled width=.25]
+	edge [dir=none labeldistance=1.5 minlen=2]
+	subgraph cluster_0 {
+		style=filled
+		color=transparent
+		c0
+		c0_end
+		c0 -> c0_end ["\"\""="" color="" constraint="" dir=back fontname=Helvetica fontsize=12 headlabel="" label=0 pensize=5 penwidth=2 style=dashed taillabel=""]
+	}
+	subgraph cluster_1 {
+		style=filled
+		color=transparent
+		c1
+		c1_end
+		c1 -> c1_end [color="#777777" constraint=true fontname=Helvetica fontsize=12 label=1 pensize=5 penwidth=2 style=dashed]
+	}
+	c1 -> c1 [label="5:2:\"3:(a,a,b)\" -> \"4:(a,b)\"" color=transparent labelangle=270]
+	c1 -> c0
+	subgraph cluster_2 {
+		style=filled
+		color=transparent
+		c2
+		c2_end
+		c2 -> c2_end [color="#AAAA00" dir=back fontname=Helvetica fontsize=12 headlabel="         oo" label=1 pensize=5 penwidth=2]
+	}
+	c2 -> c2 [label="6:4:\"3:(b,a,b)\" -> \"1:(b,a)\"" color=transparent labelangle=270]
+	c2 -> c0
+	subgraph cluster_3 {
+		style=filled
+		color=transparent
+		c3
+		c3_end
+		c3 -> c3_end [color="#AAAA00" dir=back fontname=Helvetica fontsize=12 headlabel="oo        " label=1 pensize=5 penwidth=2]
+	}
+	c3 -> c3 [label="4:6:\"1:(b,a)\" -> \"3:(b,a,b)\"" color=transparent labelangle=270]
+	c3 -> c0
+	subgraph cluster_4 {
+		style=filled
+		color=transparent
+		c4
+		c4_end
+		c4 -> c4_end [color="#AAAA00" fontname=Helvetica fontsize=12 label=1 pensize=5 penwidth=2 taillabel="         oo"]
+	}
+	c4 -> c4 [label="3:5:\"1:(a,a)\" -> \"3:(a,a,b)\"" color=transparent labelangle=270]
+	c4 -> c0
+	subgraph cluster_5 {
+		style=filled
+		color=transparent
+		c5
+		c5_end
+		c5 -> c5_end [color="#AAAA00" fontname=Helvetica fontsize=12 label=1 pensize=5 penwidth=2 taillabel="          oo"]
+	}
+	c5 -> c5 [label="5:4:\"3:(a,a,b)\" -> \"1:(b,a)\"" color=transparent labelangle=270]
+	c5 -> c0
+	subgraph cluster_6 {
+		style=filled
+		color=transparent
+		c6
+		c6_end
+		c6 -> c6_end [color="#00BB00" fontname=Helvetica fontsize=12 label=1 pensize=5 penwidth=2 taillabel=" 1  "]
+	}
+	c6 -> c6 [label="0:7:\"1:(a,b)\" -> \"2:(a,b)\"" color=transparent labelangle=270]
+	c6 -> c0
+	subgraph cluster_7 {
+		style=filled
+		color=transparent
+		c7
+		c7_end
+		c7 -> c7_end [color="#00BB00" fontname=Helvetica fontsize=12 label=1 pensize=5 penwidth=2 taillabel="1   "]
+	}
+	c7 -> c7 [label="1:8:\"1:(b,b)\" -> \"2:(b,b)\"" color=transparent labelangle=270]
+	c7 -> c0
+	subgraph cluster_8 {
+		style=filled
+		color=transparent
+		c8
+		c8_end
+		c8 -> c8_end [color="#00BB00" fontname=Helvetica fontsize=12 label=1 pensize=5 penwidth=2 taillabel="1  "]
+	}
+	c8 -> c8 [label="2:11:\"4:(a,b)\" -> \"5:(a,b)\"" color=transparent labelangle=270]
+	c8 -> c0
+	subgraph cluster_9 {
+		style=filled
+		color=transparent
+		c9
+		c9_end
+		c9 -> c9_end [color="#00BB00" fontname=Helvetica fontsize=12 label=1 pensize=5 penwidth=2 taillabel="2 "]
+	}
+	c9 -> c9 [label="0:9:\"1:(a,b)\" -> \"3:(a,b,b)\"" color=transparent labelangle=270]
+	c9 -> c0
+	subgraph cluster_10 {
+		style=filled
+		color=transparent
+		c10
+		c10_end
+		c10 -> c10_end [color="#00BB00" fontname=Helvetica fontsize=12 label=1 pensize=5 penwidth=2 taillabel="      2"]
+	}
+	c10 -> c10 [label="1:10:\"1:(b,b)\" -> \"3:(b,b,b)\"" color=transparent labelangle=270]
+	c10 -> c0
+	subgraph cluster_11 {
+		style=filled
+		color=transparent
+		c11
+		c11_end
+		c11 -> c11_end [color="#CC0000" fontname=Helvetica fontsize=12 label=1 pensize=5 penwidth=2 taillabel="1 "]
+	}
+	c11 -> c11 [label="9:1:\"3:(a,b,b)\" -> \"1:(b,b)\"" color=transparent labelangle=270]
+	c11 -> c0
+	subgraph cluster_12 {
+		style=filled
+		color=transparent
+		c12
+		c12_end
+		c12 -> c12_end [color="#CC0000" fontname=Helvetica fontsize=12 label=1 pensize=5 penwidth=2 taillabel=1]
+	}
+	c12 -> c12 [label="9:2:\"3:(a,b,b)\" -> \"4:(a,b)\"" color=transparent labelangle=270]
+	c12 -> c0
+	subgraph cluster_13 {
+		style=filled
+		color=transparent
+		c13
+		c13_end
+		c13 -> c13_end [color="#CC0000" fontname=Helvetica fontsize=12 label=1 pensize=5 penwidth=2 taillabel=" 1"]
+	}
+	c13 -> c13 [label="10:1:\"3:(b,b,b)\" -> \"1:(b,b)\"" color=transparent labelangle=270]
+	c13 -> c0
+	subgraph cluster_14 {
+		style=filled
+		color=transparent
+		c14
+		c14_end
+		c14 -> c14_end [color="#AAAA00" dir=back fontname=Helvetica fontsize=12 label=2 pensize=5 penwidth=2]
+	}
+	c14 -> c2
+	c14 -> c3
+	subgraph cluster_15 {
+		style=filled
+		color=transparent
+		c15
+		c15_end
+		c15 -> c15_end [color="#777777" constraint=false fontname=Helvetica fontsize=12 label=2 pensize=5 penwidth=2 style=dashed taillabel=""]
+	}
+	c15 -> c15 [label="2:4:\"4:(a,b)\" -> \"1:(b,a)\"	
+2:1:\"4:(a,b)\" -> \"1:(b,b)\"" color=transparent labelangle=270]
+	c15 -> c0
+	subgraph cluster_16 {
+		style=filled
+		color=transparent
+		c16
+		c16_end
+		c16 -> c16_end [color="#CC0000" fontname=Helvetica fontsize=12 label=3 pensize=5 penwidth=2]
+	}
+	c16 -> c11
+	c16 -> c12
+	c16 -> c13
+	subgraph cluster_17 {
+		style=filled
+		color=transparent
+		c17
+		c17_end
+		c17 -> c17_end [color="#AAAA00" fontname=Helvetica fontsize=12 label=4 pensize=5 penwidth=2]
+	}
+	c17 -> c4
+	c17 -> c5
+	c17 -> c14
+	subgraph cluster_18 {
+		style=filled
+		color=transparent
+		c18
+		c18_end
+		c18 -> c18_end [color="#777777" constraint=false fontname=Helvetica fontsize=12 label=4 pensize=5 penwidth=2 style=dashed]
+	}
+	c18 -> c18 [label="1:2:\"1:(b,b)\" -> \"4:(a,b)\"	
+4:2:\"1:(b,a)\" -> \"4:(a,b)\"" color=transparent labelangle=270]
+	c18 -> c15
+	subgraph cluster_19 {
+		style=filled
+		color=transparent
+		c19
+		c19_end
+		c19 -> c19_end [color="#777777" fontname=Helvetica fontsize=12 label=5 pensize=5 penwidth=2 style=dashed]
+	}
+	c19 -> c1
+	c19 -> c18
+	subgraph cluster_20 {
+		style=filled
+		color=transparent
+		c20
+		c20_end
+		c20 -> c20_end [color="#00BB00" fontname=Helvetica fontsize=12 label=5 pensize=5 penwidth=2]
+	}
+	c20 -> c6
+	c20 -> c7
+	c20 -> c8
+	c20 -> c9
+	c20 -> c10
+	subgraph cluster_21 {
+		style=filled
+		color=transparent
+		c21
+		c21_end
+		c21 -> c21_end [fontname=Helvetica fontsize=12 label=17 pensize=5 penwidth=2]
+	}
+	c21 -> c16
+	c21 -> c17
+	c21 -> c19
+	c21 -> c20
+}
