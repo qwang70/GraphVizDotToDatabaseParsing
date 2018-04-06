@@ -1,11 +1,11 @@
-// <Lattice object of 5 atoms 11 concepts 2 coatoms at 0x10bfd1710>
+// <Lattice object of 5 atoms 11 concepts 2 coatoms at 0x10cb74b00>
 digraph Lattice {
 	node [label="" shape=circle style=filled width=.25]
 	edge [dir=none labeldistance=1.5 minlen=2]
 	subgraph cluster_0 {
 		style=filled
 		color=transparent
-		c0 ["\"\""="" fillcolor="" fontname="" label=0 peripheries=1 rankdir=LR shape="" style="" width=0.2]
+		c0 [fillcolor="" fontname="" label=0 peripheries=1 rankdir=LR shape="" style="" width=0.2]
 	}
 	subgraph cluster_1 {
 		style=filled

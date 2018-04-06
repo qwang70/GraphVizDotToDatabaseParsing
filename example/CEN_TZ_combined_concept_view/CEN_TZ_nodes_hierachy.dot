@@ -1,0 +1,39 @@
+// <Lattice object of 2 atoms 4 concepts 2 coatoms at 0x109fcd668>
+digraph Lattice {
+	node [label="" shape=circle style=filled width=.25]
+	edge [dir=none labeldistance=1.5 minlen=2]
+	subgraph cluster_0 {
+		style=filled
+		color=transparent
+		c0 [fillcolor="" fontname=helvetica label=0 shape="" style=filled]
+	}
+	subgraph cluster_1 {
+		style=filled
+		color=transparent
+		c1 [fillcolor="#CCFFCC" fontname=helvetica label=5 shape=box style=filled]
+	}
+	c1 -> c1 [label="0:\"CEN.Northeast\"	
+1:\"CEN.Midwest\"	
+2:\"CEN.South\"	
+3:\"CEN.USA\"	
+4:\"CEN.West\"" color=transparent labelangle=270]
+	c1 -> c0
+	subgraph cluster_2 {
+		style=filled
+		color=transparent
+		c2 [fillcolor="#FFFFCC" fontname=helvetica label=5 shape=note style=filled]
+	}
+	c2 -> c2 [label="5:\"TZ.USA\"	
+6:\"TZ.Eastern\"	
+7:\"TZ.Mountain\"	
+8:\"TZ.Pacific\"	
+9:\"TZ.Central\"" color=transparent labelangle=270]
+	c2 -> c0
+	subgraph cluster_3 {
+		style=filled
+		color=transparent
+		c3 [fontname=helvetica label=10 style=filled]
+	}
+	c3 -> c1
+	c3 -> c2
+}

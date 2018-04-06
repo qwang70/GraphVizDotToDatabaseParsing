@@ -1,0 +1,278 @@
+digraph{
+rankdir=LR
+node[shape=circle style=filled fillcolor="#FFFFFF"] 
+node[shape=box style=filled fillcolor="#CCFFCC" fontname="helvetica"] 
+"CEN.IL"
+"CEN.IN"
+"CEN.RI"
+"CEN.IA"
+"CEN.WV"
+"CEN.KS"
+"CEN.KY"
+"CEN.TX"
+"CEN.Northeast"
+"CEN.South"
+"CEN.ID"
+"CEN.TN"
+"CEN.WY"
+"CEN.VT"
+"CEN.MS"
+"CEN.MT"
+"CEN.MA"
+"CEN.USA"
+"CEN.ME"
+"CEN.MD"
+"CEN.MI"
+"CEN.MN"
+"CEN.DC"
+"CEN.DE"
+"CEN.OR"
+"CEN.OH"
+"CEN.VA"
+"CEN.FL"
+"CEN.AR"
+"CEN.AZ"
+"CEN.AL"
+"CEN.OK"
+"CEN.CT"
+"CEN.CO"
+"CEN.CA"
+"CEN.SD"
+"CEN.SC"
+"CEN.Midwest"
+"CEN.LA"
+"CEN.MO"
+"CEN.UT"
+"CEN.GA"
+"CEN.PA"
+"CEN.West"
+"CEN.NY"
+"CEN.NV"
+"CEN.NM"
+"CEN.WA"
+"CEN.NH"
+"CEN.NJ"
+"CEN.ND"
+"CEN.NE"
+"CEN.WI"
+"CEN.NC"
+node[shape=circle style=filled fillcolor="#FFFFFF"] 
+node[shape=note style=filled fillcolor="#FFFFCC" fontname="helvetica"] 
+"NDC.ID"
+"NDC.IA"
+"NDC.IL"
+"NDC.IN"
+"NDC.PA"
+"NDC.Southeast"
+"NDC.GA"
+"NDC.NV"
+"NDC.NY"
+"NDC.NE"
+"NDC.ND"
+"NDC.NC"
+"NDC.NM"
+"NDC.NH"
+"NDC.NJ"
+"NDC.WY"
+"NDC.WV"
+"NDC.WI"
+"NDC.WA"
+"NDC.LA"
+"NDC.UT"
+"NDC.CT"
+"NDC.CA"
+"NDC.CO"
+"NDC.West"
+"NDC.Northeast"
+"NDC.SD"
+"NDC.AZ"
+"NDC.AR"
+"NDC.AL"
+"NDC.VT"
+"NDC.VA"
+"NDC.OR"
+"NDC.OK"
+"NDC.OH"
+"NDC.TN"
+"NDC.FL"
+"NDC.ME"
+"NDC.MS"
+"NDC.MT"
+"NDC.MA"
+"NDC.MD"
+"NDC.MI"
+"NDC.TX"
+"NDC.MN"
+"NDC.MO"
+"NDC.SC"
+"NDC.Midwest"
+"NDC.RI"
+"NDC.Southwest"
+"NDC.DE"
+"NDC.DC"
+"NDC.KY"
+"NDC.KS"
+"NDC.USA"
+edge[style=solid color="#000000" constraint=true penwidth=1 dir=forward]
+edge[style=solid color="#000000" constraint=true penwidth=1 dir=forward]
+"CEN.South" -> "CEN.VA" [dir=back]
+"CEN.West" -> "CEN.UT" [dir=back]
+"CEN.South" -> "CEN.GA" [dir=back]
+"CEN.Midwest" -> "CEN.KS" [dir=back]
+"CEN.Midwest" -> "CEN.ND" [dir=back]
+"CEN.Midwest" -> "CEN.SD" [dir=back]
+"CEN.Northeast" -> "CEN.NY" [dir=back]
+"CEN.Northeast" -> "CEN.CT" [dir=back]
+"CEN.Midwest" -> "CEN.IA" [dir=back]
+"CEN.West" -> "CEN.MT" [dir=back]
+"CEN.West" -> "CEN.CO" [dir=back]
+"CEN.South" -> "CEN.TN" [dir=back]
+"CEN.Northeast" -> "CEN.PA" [dir=back]
+"CEN.Northeast" -> "CEN.VT" [dir=back]
+"CEN.West" -> "CEN.NV" [dir=back]
+"CEN.Northeast" -> "CEN.NH" [dir=back]
+"CEN.South" -> "CEN.MD" [dir=back]
+"CEN.USA" -> "CEN.Midwest" [dir=back]
+"CEN.Midwest" -> "CEN.MI" [dir=back]
+"CEN.South" -> "CEN.FL" [dir=back]
+"CEN.Northeast" -> "CEN.NJ" [dir=back]
+"CEN.Midwest" -> "CEN.MO" [dir=back]
+"CEN.South" -> "CEN.DC" [dir=back]
+"CEN.South" -> "CEN.DE" [dir=back]
+"CEN.West" -> "CEN.NM" [dir=back]
+"CEN.Midwest" -> "CEN.MN" [dir=back]
+"CEN.South" -> "CEN.MS" [dir=back]
+"CEN.South" -> "CEN.LA" [dir=back]
+"CEN.Northeast" -> "CEN.RI" [dir=back]
+"CEN.Midwest" -> "CEN.IN" [dir=back]
+"CEN.West" -> "CEN.WA" [dir=back]
+"CEN.South" -> "CEN.KY" [dir=back]
+"CEN.West" -> "CEN.CA" [dir=back]
+"CEN.West" -> "CEN.WY" [dir=back]
+"CEN.South" -> "CEN.OK" [dir=back]
+"CEN.Midwest" -> "CEN.NE" [dir=back]
+"CEN.West" -> "CEN.ID" [dir=back]
+"CEN.USA" -> "CEN.South" [dir=back]
+"CEN.South" -> "CEN.AR" [dir=back]
+"CEN.Midwest" -> "CEN.IL" [dir=back]
+"CEN.Midwest" -> "CEN.OH" [dir=back]
+"CEN.West" -> "CEN.OR" [dir=back]
+"CEN.South" -> "CEN.NC" [dir=back]
+"CEN.Northeast" -> "CEN.MA" [dir=back]
+"CEN.South" -> "CEN.WV" [dir=back]
+"CEN.Midwest" -> "CEN.WI" [dir=back]
+"CEN.South" -> "CEN.SC" [dir=back]
+"CEN.South" -> "CEN.TX" [dir=back]
+"CEN.South" -> "CEN.AL" [dir=back]
+"CEN.Northeast" -> "CEN.ME" [dir=back]
+"CEN.USA" -> "CEN.West" [dir=back]
+"CEN.USA" -> "CEN.Northeast" [dir=back]
+"CEN.West" -> "CEN.AZ" [dir=back]
+edge[style=solid color="#000000" constraint=true penwidth=1 dir=forward]
+edge[style=solid color="#000000" constraint=true penwidth=1 dir=forward]
+"NDC.VT" -> "NDC.Northeast"
+"NDC.MI" -> "NDC.Midwest"
+"NDC.TX" -> "NDC.Southwest"
+"NDC.ID" -> "NDC.West"
+"NDC.NM" -> "NDC.Southwest"
+"NDC.West" -> "NDC.USA"
+"NDC.VA" -> "NDC.Southeast"
+"NDC.SD" -> "NDC.Midwest"
+"NDC.NY" -> "NDC.Northeast"
+"NDC.AZ" -> "NDC.Southwest"
+"NDC.SC" -> "NDC.Southeast"
+"NDC.ME" -> "NDC.Northeast"
+"NDC.MT" -> "NDC.West"
+"NDC.DC" -> "NDC.Northeast"
+"NDC.WY" -> "NDC.West"
+"NDC.WV" -> "NDC.Southeast"
+"NDC.LA" -> "NDC.Southeast"
+"NDC.IL" -> "NDC.Midwest"
+"NDC.AL" -> "NDC.Southeast"
+"NDC.CT" -> "NDC.Northeast"
+"NDC.IN" -> "NDC.Midwest"
+"NDC.NV" -> "NDC.West"
+"NDC.CA" -> "NDC.West"
+"NDC.KS" -> "NDC.Midwest"
+"NDC.DE" -> "NDC.Northeast"
+"NDC.Midwest" -> "NDC.USA"
+"NDC.UT" -> "NDC.West"
+"NDC.NJ" -> "NDC.Northeast"
+"NDC.MO" -> "NDC.Midwest"
+"NDC.OK" -> "NDC.Southwest"
+"NDC.NE" -> "NDC.Midwest"
+"NDC.FL" -> "NDC.Southeast"
+"NDC.MS" -> "NDC.Southeast"
+"NDC.AR" -> "NDC.Southeast"
+"NDC.GA" -> "NDC.Southeast"
+"NDC.CO" -> "NDC.West"
+"NDC.KY" -> "NDC.Southeast"
+"NDC.TN" -> "NDC.Southeast"
+"NDC.NC" -> "NDC.Southeast"
+"NDC.WA" -> "NDC.West"
+"NDC.Northeast" -> "NDC.USA"
+"NDC.PA" -> "NDC.Northeast"
+"NDC.ND" -> "NDC.Midwest"
+"NDC.MD" -> "NDC.Northeast"
+"NDC.OH" -> "NDC.Midwest"
+"NDC.WI" -> "NDC.Midwest"
+"NDC.RI" -> "NDC.Northeast"
+"NDC.Southeast" -> "NDC.USA"
+"NDC.Southwest" -> "NDC.USA"
+"NDC.OR" -> "NDC.West"
+"NDC.MN" -> "NDC.Midwest"
+"NDC.NH" -> "NDC.Northeast"
+"NDC.IA" -> "NDC.Midwest"
+"NDC.MA" -> "NDC.Northeast"
+edge[style=solid color="#000000" constraint=true penwidth=1 dir=forward]
+edge[style=dashed color="#AA00FF" constraint=true penwidth=2 dir=both]
+"CEN.AL" -> "NDC.AL" [label="="]
+"CEN.CO" -> "NDC.CO" [label="="]
+"CEN.PA" -> "NDC.PA" [label="="]
+"CEN.ND" -> "NDC.ND" [label="="]
+"CEN.KY" -> "NDC.KY" [label="="]
+"CEN.SD" -> "NDC.SD" [label="="]
+"CEN.DC" -> "NDC.DC" [label="="]
+"CEN.WI" -> "NDC.WI" [label="="]
+"CEN.MT" -> "NDC.MT" [label="="]
+"CEN.GA" -> "NDC.GA" [label="="]
+"CEN.CT" -> "NDC.CT" [label="="]
+"CEN.NE" -> "NDC.NE" [label="="]
+"CEN.WA" -> "NDC.WA" [label="="]
+"CEN.AZ" -> "NDC.AZ" [label="="]
+"CEN.MS" -> "NDC.MS" [label="="]
+"CEN.AR" -> "NDC.AR" [label="="]
+"CEN.OR" -> "NDC.OR" [label="="]
+"CEN.MD" -> "NDC.MD" [label="="]
+"CEN.LA" -> "NDC.LA" [label="="]
+"CEN.NH" -> "NDC.NH" [label="="]
+"CEN.WV" -> "NDC.WV" [label="="]
+"CEN.MA" -> "NDC.MA" [label="="]
+"CEN.SC" -> "NDC.SC" [label="="]
+"CEN.IA" -> "NDC.IA" [label="="]
+"CEN.IL" -> "NDC.IL" [label="="]
+"CEN.TX" -> "NDC.TX" [label="="]
+"CEN.NY" -> "NDC.NY" [label="="]
+"CEN.NM" -> "NDC.NM" [label="="]
+"CEN.NC" -> "NDC.NC" [label="="]
+"CEN.TN" -> "NDC.TN" [label="="]
+"CEN.DE" -> "NDC.DE" [label="="]
+"CEN.VA" -> "NDC.VA" [label="="]
+"CEN.MO" -> "NDC.MO" [label="="]
+"CEN.IN" -> "NDC.IN" [label="="]
+"CEN.MN" -> "NDC.MN" [label="="]
+"CEN.UT" -> "NDC.UT" [label="="]
+"CEN.VT" -> "NDC.VT" [label="="]
+"CEN.WY" -> "NDC.WY" [label="="]
+"CEN.MI" -> "NDC.MI" [label="="]
+"CEN.KS" -> "NDC.KS" [label="="]
+"CEN.NV" -> "NDC.NV" [label="="]
+"CEN.ID" -> "NDC.ID" [label="="]
+"CEN.ME" -> "NDC.ME" [label="="]
+"CEN.OK" -> "NDC.OK" [label="="]
+"CEN.CA" -> "NDC.CA" [label="="]
+"CEN.FL" -> "NDC.FL" [label="="]
+"CEN.RI" -> "NDC.RI" [label="="]
+"CEN.OH" -> "NDC.OH" [label="="]
+"CEN.NJ" -> "NDC.NJ" [label="="]
+}

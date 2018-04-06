@@ -1,4 +1,4 @@
-// <Lattice object of 0 atoms 1 concepts 0 coatoms at 0x10c007588>
+// <Lattice object of 0 atoms 1 concepts 0 coatoms at 0x10cba37f0>
 digraph Lattice {
 	node [label="" shape=circle style=filled width=.25]
 	edge [dir=none labeldistance=1.5 minlen=2]
@@ -7,7 +7,7 @@ digraph Lattice {
 		color=transparent
 		c0
 		c0_end
-		c0 -> c0_end ["\"\""="" label=20]
+		c0 -> c0_end [attr=default label=20]
 	}
 	c0 -> c0 [label="0:6:AccessTweets -> TweetRead	
 5:0:Static_Tweets -> AccessTweets	

@@ -1,35 +1,35 @@
 
 digraph{
 rankdir=TB
-n0 [peripheries=1, shape=box, style=filled, fillcolor="#CCFFCC", fontname=Helvetica, label=1];
-n1 [peripheries=2, shape=box, style=filled, fillcolor="#CCFFCC", fontname=Helvetica, label=1];
-n2 [peripheries=1, shape=record, rankdir=LR, style="rounded,filled", fontname=Helvetica, fillcolor="#FFFFCC", label=1];
-n3 [peripheries=1, shape=box, style="rounded,filled", fillcolor="#FCFCFC", fontname=Helvetica, label=2];
-n4 [peripheries=1, style=filled, shape=record, fillcolor="#CCFFCC", rankdir=LR, fontname=Helvetica, label=5];
-n5 [peripheries=1, width=0.2, fillcolor="#FFFFFF", shape=circle, style="rounded,filled", fontname=Helvetica, label=7];
-n6 [peripheries=1, shape=box, style="rounded,filled", fontname=Helvetica, fillcolor="#FFFFCC", label=10];
+n0 [style=filled, fillcolor="#CCFFCC", fontname=Helvetica, shape=box, peripheries=1, label=1];
+n1 [peripheries=2, style=filled, fillcolor="#CCFFCC", fontname=Helvetica, shape=box, label=1];
+n2 [style="rounded,filled", fillcolor="#FFFFCC", fontname=Helvetica, rankdir=LR, peripheries=1, shape=record, label=1];
+n3 [fillcolor="#FCFCFC", style="rounded,filled", fontname=Helvetica, shape=box, peripheries=1, label=2];
+n4 [style=filled, fillcolor="#CCFFCC", fontname=Helvetica, rankdir=LR, peripheries=1, shape=record, label=5];
+n5 [style="rounded,filled", width=0.2, fillcolor="#FFFFFF", fontname=Helvetica, shape=circle, peripheries=1, label=7];
+n6 [style="rounded,filled", fillcolor="#FFFFCC", fontname=Helvetica, shape=box, peripheries=1, label=10];
 
 
 
-n6 -> n4 [ ""="", minlen=2, label=7 ];
+n6 -> n4 [ attr=default, minlen=2, label=7 ];
 
-n4 -> n6 [ ""="", minlen=2, label=5 ];
+n4 -> n6 [ attr=default, minlen=2, label=5 ];
 
-n3 -> n4 [ ""="", minlen=2, label=3 ];
+n3 -> n4 [ attr=default, minlen=2, label=3 ];
 
-n1 -> n6 [ ""="", minlen=2, label=1 ];
+n1 -> n6 [ attr=default, minlen=2, label=1 ];
 
-n6 -> n1 [ ""="", minlen=2, label=3 ];
+n6 -> n1 [ attr=default, minlen=2, label=3 ];
 
-n0 -> n2 [ ""="", minlen=2, label=1 ];
+n0 -> n2 [ attr=default, minlen=2, label=1 ];
 
-n6 -> n0 [ ""="", minlen=2, label=1 ];
+n6 -> n0 [ attr=default, minlen=2, label=1 ];
 
-n5 -> n6 [ ""="", minlen=2, label=4 ];
+n5 -> n6 [ attr=default, minlen=2, label=4 ];
 
-n5 -> n3 [ ""="", minlen=2, label=2 ];
+n5 -> n3 [ attr=default, minlen=2, label=2 ];
 
-n2 -> n5 [ ""="", minlen=2, label=1 ];
+n2 -> n5 [ attr=default, minlen=2, label=1 ];
 
 }
-            
+        

@@ -1,23 +1,23 @@
 
 digraph{
 rankdir=TB
-n0 [style="filled,rounded", fillcolor="#EEEEEE", shape=box, fontname="helvetica", label=1];
-n1 [style=filled, shape=box, fontname="helvetica", fillcolor="#CCFFCC", label=4];
-n2 [style=filled, fillcolor="#FFFFCC", shape=note, fontname="helvetica", label=4];
+n0 [fontname="helvetica", fillcolor="#EEEEEE", shape=box, style="filled,rounded", label=1];
+n1 [fontname="helvetica", shape=box, style=filled, fillcolor="#CCFFCC", label=4];
+n2 [fontname="helvetica", shape=note, style=filled, fillcolor="#FFFFCC", label=4];
 
 
 
-n2 -> n1 [ arrowhead=normal, style=solid, color="#FF0000", constraint=true, penwidth=1, minlen=2, label=1 ];
+n2 -> n1 [ style=solid, penwidth=1, color="#FF0000", arrowhead=normal, constraint=true, minlen=2, label=1 ];
 
-n1 -> n2 [ color="#FF0000", arrowhead=none, style=dashed, penwidth=1, constraint=false, minlen=2, label=1 ];
+n1 -> n2 [ style=dashed, penwidth=1, constraint=false, color="#FF0000", arrowhead=none, minlen=2, label=1 ];
 
-n1 -> n2 [ style=dotted, color="#0000FF", arrowhead=none, penwidth=1, constraint=false, minlen=2, label=6 ];
+n1 -> n2 [ penwidth=1, color="#0000FF", constraint=false, arrowhead=none, style=dotted, minlen=2, label=6 ];
 
-n1 -> n0 [ arrowhead=normal, color="#000000", style=solid, constraint=true, penwidth=1, minlen=2, label=3 ];
+n1 -> n0 [ style=solid, penwidth=1, color="#000000", arrowhead=normal, constraint=true, minlen=2, label=3 ];
 
-n2 -> n0 [ arrowhead=normal, color="#000000", style=solid, constraint=true, penwidth=1, minlen=2, label=3 ];
+n2 -> n0 [ style=solid, penwidth=1, color="#000000", arrowhead=normal, constraint=true, minlen=2, label=3 ];
 
-n1 -> n2 [ arrowhead=normal, color="#000000", style=solid, constraint=true, penwidth=1, minlen=2, label=1 ];
+n1 -> n2 [ style=solid, penwidth=1, color="#000000", arrowhead=normal, constraint=true, minlen=2, label=1 ];
 
 }
-            
+        

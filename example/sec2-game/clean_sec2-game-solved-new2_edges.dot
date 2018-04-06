@@ -1,82 +1,144 @@
 
-    digraph{
-    rankdir=TB
-    
-        subgraph cluster_0 {
-                    style=filled;
-                    color=transparent;
-                    node [shape = none, label = ""];
-                    e0 -> e0_end [ penwidth=2, constraint=true, style=dashed, fontsize=12, fontname=Helvetica, color="#777777", pensize=5, minlen=2, label=1 ];
-        };
-n1 [ label="\"3:(a,a,b)\" -> \"4:(a,b)\""];
-e0 -> n1 [dir=none, style=dashed];
+digraph{
+rankdir=TB
 
-        subgraph cluster_2 {
-                    style=filled;
-                    color=transparent;
-                    node [shape = none, label = ""];
-                    e2 -> e2_end [ penwidth=2, color="#AAAA00", fontsize=12, dir=back, fontname=Helvetica, pensize=5, minlen=2, label=2 ];
-        };
-n3 [ label="\"3:(b,a,b)\" -> \"1:(b,a)\""];
-e2 -> n3 [dir=none, style=dashed];
-n4 [ label="\"1:(b,a)\" -> \"3:(b,a,b)\""];
-e2 -> n4 [dir=none, style=dashed];
+subgraph cluster_0 {
+    style=filled;
+    color=transparent;
+    e0_start [style=filled, width=0.45, fontsize=14, fontname=Courier, shape=circle, fillcolor="#FFFFAA", height=0.45, label=" "];
+e0_end [width=0.51, style="filled,rounded", height=0.5, fontsize=14, fontname=Courier, fillcolor="#AAFFAA", shape=box, label=" "];
 
-        subgraph cluster_5 {
-                    style=filled;
-                    color=transparent;
-                    node [shape = none, label = ""];
-                    e5 -> e5_end [ penwidth=2, fontsize=12, fontname=Helvetica, color="#CC0000", pensize=5, minlen=2, label=3 ];
-        };
-n6 [ label="\"3:(a,b,b)\" -> \"1:(b,b)\""];
-e5 -> n6 [dir=none, style=dashed];
-n7 [ label="\"3:(a,b,b)\" -> \"4:(a,b)\""];
-e5 -> n7 [dir=none, style=dashed];
-n8 [ label="\"3:(b,b,b)\" -> \"1:(b,b)\""];
-e5 -> n8 [dir=none, style=dashed];
+    e0_start -> e0_end [ fontsize=12,pensize=5,constraint=true,style=dashed,penwidth=2,fontname=Helvetica,color="#777777", minlen=2, label=1 ];
+    e0_inv [style=invis]
+    e0_start -> e0_inv [style=invis]
+    e0_end -> e0_inv [style=invis]
+};
+            
 
-        subgraph cluster_9 {
-                    style=filled;
-                    color=transparent;
-                    node [shape = none, label = ""];
-                    e9 -> e9_end [ penwidth=2, color="#AAAA00", fontsize=12, fontname=Helvetica, pensize=5, minlen=2, label=2 ];
-        };
-n10 [ label="\"1:(a,a)\" -> \"3:(a,a,b)\""];
-e9 -> n10 [dir=none, style=dashed];
-n11 [ label="\"3:(a,a,b)\" -> \"1:(b,a)\""];
-e9 -> n11 [dir=none, style=dashed];
+subgraph cluster_1 {
+    style=filled;
+    color=transparent;
+    e1_start [style=filled, width=0.45, fontsize=14, fontname=Courier, shape=circle, fillcolor="#FFFFAA", height=0.45, label=" "];
+e1_end [style=filled, width=0.45, fontsize=14, fontname=Courier, shape=circle, fillcolor="#FFFFAA", height=0.45, label=" "];
 
-        subgraph cluster_12 {
-                    style=filled;
-                    color=transparent;
-                    node [shape = none, label = ""];
-                    e12 -> e12_end [ penwidth=2, constraint=false, style=dashed, fontsize=12, fontname=Helvetica, color="#777777", pensize=5, minlen=2, label=4 ];
-        };
-n13 [ label="\"4:(a,b)\" -> \"1:(b,a)\""];
-e12 -> n13 [dir=none, style=dashed];
-n14 [ label="\"4:(a,b)\" -> \"1:(b,b)\""];
-e12 -> n14 [dir=none, style=dashed];
-n15 [ label="\"1:(b,b)\" -> \"4:(a,b)\""];
-e12 -> n15 [dir=none, style=dashed];
-n16 [ label="\"1:(b,a)\" -> \"4:(a,b)\""];
-e12 -> n16 [dir=none, style=dashed];
+    e1_start -> e1_end [ fontsize=12,color="#AAAA00",dir=back,pensize=5,penwidth=2,fontname=Helvetica, minlen=2, label=2 ];
+    e1_inv [style=invis]
+    e1_start -> e1_inv [style=invis]
+    e1_end -> e1_inv [style=invis]
+};
+            
 
-        subgraph cluster_17 {
-                    style=filled;
-                    color=transparent;
-                    node [shape = none, label = ""];
-                    e17 -> e17_end [ penwidth=2, fontsize=12, fontname=Helvetica, color="#00BB00", pensize=5, minlen=2, label=5 ];
-        };
-n18 [ label="\"1:(a,b)\" -> \"2:(a,b)\""];
-e17 -> n18 [dir=none, style=dashed];
-n19 [ label="\"1:(b,b)\" -> \"2:(b,b)\""];
-e17 -> n19 [dir=none, style=dashed];
-n20 [ label="\"4:(a,b)\" -> \"5:(a,b)\""];
-e17 -> n20 [dir=none, style=dashed];
-n21 [ label="\"1:(a,b)\" -> \"3:(a,b,b)\""];
-e17 -> n21 [dir=none, style=dashed];
-n22 [ label="\"1:(b,b)\" -> \"3:(b,b,b)\""];
-e17 -> n22 [dir=none, style=dashed];
+subgraph cluster_2 {
+    style=filled;
+    color=transparent;
+    e2_start [shape=octagon, style=filled, fontsize=14, fillcolor="#FFAAAA", width=0, fontname=Courier, height=0, label=" "];
+e2_end [width=0.51, style="filled,rounded", height=0.5, fontsize=14, fontname=Courier, fillcolor="#AAFFAA", shape=box, label=" "];
 
-    }
+    e2_start -> e2_end [ fontsize=12,pensize=5,penwidth=2,color="#CC0000",fontname=Helvetica, minlen=2, label=3 ];
+    e2_inv [style=invis]
+    e2_start -> e2_inv [style=invis]
+    e2_end -> e2_inv [style=invis]
+};
+            
+
+subgraph cluster_3 {
+    style=filled;
+    color=transparent;
+    e3_start [style=filled, width=0.45, fontsize=14, fontname=Courier, shape=circle, fillcolor="#FFFFAA", height=0.45, label=" "];
+e3_end [style=filled, width=0.45, fontsize=14, fontname=Courier, shape=circle, fillcolor="#FFFFAA", height=0.45, label=" "];
+
+    e3_start -> e3_end [ fontsize=12,color="#AAAA00",pensize=5,penwidth=2,fontname=Helvetica, minlen=2, label=2 ];
+    e3_inv [style=invis]
+    e3_start -> e3_inv [style=invis]
+    e3_end -> e3_inv [style=invis]
+};
+            
+
+subgraph cluster_4 {
+    style=filled;
+    color=transparent;
+    e4_start [width=0.51, style="filled,rounded", height=0.5, fontsize=14, fontname=Courier, fillcolor="#AAFFAA", shape=box, label=" "];
+e4_end [style=filled, width=0.45, fontsize=14, fontname=Courier, shape=circle, fillcolor="#FFFFAA", height=0.45, label=" "];
+
+    e4_start -> e4_end [ fontsize=12,pensize=5,style=dashed,penwidth=2,constraint=false,fontname=Helvetica,color="#777777", minlen=2, label=1 ];
+    e4_inv [style=invis]
+    e4_start -> e4_inv [style=invis]
+    e4_end -> e4_inv [style=invis]
+};
+            
+
+subgraph cluster_5 {
+    style=filled;
+    color=transparent;
+    e5_start [width=0.51, style="filled,rounded", height=0.5, fontsize=14, fontname=Courier, fillcolor="#AAFFAA", shape=box, label=" "];
+e5_end [width=0.51, style="filled,rounded", height=0.5, fontsize=14, fontname=Courier, fillcolor="#AAFFAA", shape=box, label=" "];
+
+    e5_start -> e5_end [ fontsize=12,pensize=5,style=dashed,penwidth=2,constraint=false,fontname=Helvetica,color="#777777", minlen=2, label=2 ];
+    e5_inv [style=invis]
+    e5_start -> e5_inv [style=invis]
+    e5_end -> e5_inv [style=invis]
+};
+            
+
+subgraph cluster_6 {
+    style=filled;
+    color=transparent;
+    e6_start [style=filled, width=0.45, fontsize=14, fontname=Courier, shape=circle, fillcolor="#FFFFAA", height=0.45, label=" "];
+e6_end [width=0.51, style="filled,rounded", height=0.5, fontsize=14, fontname=Courier, fillcolor="#AAFFAA", shape=box, label=" "];
+
+    e6_start -> e6_end [ fontsize=12,pensize=5,style=dashed,penwidth=2,constraint=false,fontname=Helvetica,color="#777777", minlen=2, label=1 ];
+    e6_inv [style=invis]
+    e6_start -> e6_inv [style=invis]
+    e6_end -> e6_inv [style=invis]
+};
+            
+
+subgraph cluster_7 {
+    style=filled;
+    color=transparent;
+    e7_start [width=0.51, style="filled,rounded", height=0.5, fontsize=14, fontname=Courier, fillcolor="#AAFFAA", shape=box, label=" "];
+e7_end [shape=octagon, style=filled, fontsize=14, fillcolor="#FFAAAA", width=0, fontname=Courier, height=0, label=" "];
+
+    e7_start -> e7_end [ fontsize=12,color="#00BB00",pensize=5,penwidth=2,fontname=Helvetica, minlen=2, label=5 ];
+    e7_inv [style=invis]
+    e7_start -> e7_inv [style=invis]
+    e7_end -> e7_inv [style=invis]
+};
+            
+n8 [ label="\"3:(a,a,b)\" -> \"4:(a,b)\""];
+e0_inv -> n8 [dir=none, style=dashed];
+n9 [ label="\"3:(b,a,b)\" -> \"1:(b,a)\""];
+e1_inv -> n9 [dir=none, style=dashed];
+n10 [ label="\"1:(b,a)\" -> \"3:(b,a,b)\""];
+e1_inv -> n10 [dir=none, style=dashed];
+n11 [ label="\"3:(a,b,b)\" -> \"1:(b,b)\""];
+e2_inv -> n11 [dir=none, style=dashed];
+n12 [ label="\"3:(a,b,b)\" -> \"4:(a,b)\""];
+e2_inv -> n12 [dir=none, style=dashed];
+n13 [ label="\"3:(b,b,b)\" -> \"1:(b,b)\""];
+e2_inv -> n13 [dir=none, style=dashed];
+n14 [ label="\"1:(a,a)\" -> \"3:(a,a,b)\""];
+e3_inv -> n14 [dir=none, style=dashed];
+n15 [ label="\"3:(a,a,b)\" -> \"1:(b,a)\""];
+e3_inv -> n15 [dir=none, style=dashed];
+n16 [ label="\"4:(a,b)\" -> \"1:(b,a)\""];
+e4_inv -> n16 [dir=none, style=dashed];
+n17 [ label="\"4:(a,b)\" -> \"1:(b,b)\""];
+e5_inv -> n17 [dir=none, style=dashed];
+n18 [ label="\"1:(b,b)\" -> \"4:(a,b)\""];
+e5_inv -> n18 [dir=none, style=dashed];
+n19 [ label="\"1:(b,a)\" -> \"4:(a,b)\""];
+e6_inv -> n19 [dir=none, style=dashed];
+n20 [ label="\"1:(a,b)\" -> \"2:(a,b)\""];
+e7_inv -> n20 [dir=none, style=dashed];
+n21 [ label="\"1:(b,b)\" -> \"2:(b,b)\""];
+e7_inv -> n21 [dir=none, style=dashed];
+n22 [ label="\"4:(a,b)\" -> \"5:(a,b)\""];
+e7_inv -> n22 [dir=none, style=dashed];
+n23 [ label="\"1:(a,b)\" -> \"3:(a,b,b)\""];
+e7_inv -> n23 [dir=none, style=dashed];
+n24 [ label="\"1:(b,b)\" -> \"3:(b,b,b)\""];
+e7_inv -> n24 [dir=none, style=dashed];
+
+}
             

@@ -1,4 +1,4 @@
-// <Lattice object of 5 atoms 9 concepts 4 coatoms at 0x10bd74c88>
+// <Lattice object of 5 atoms 9 concepts 4 coatoms at 0x10c57eba8>
 digraph Lattice {
 	node [label="" shape=circle style=filled width=.25]
 	edge [dir=none labeldistance=1.5 minlen=2]
@@ -7,7 +7,7 @@ digraph Lattice {
 		color=transparent
 		c0
 		c0_end
-		c0 -> c0_end ["\"\""="" color="" constraint="" dir=back fontname=Helvetica fontsize=12 label=0 pensize=5 penwidth=2 style=dashed]
+		c0 -> c0_end [color="" constraint="" dir=back fontname=Helvetica fontsize=12 label=0 pensize=5 penwidth=2 style=dashed]
 	}
 	subgraph cluster_1 {
 		style=filled
