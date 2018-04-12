@@ -1,0 +1,97 @@
+// <Lattice object of 5 atoms 9 concepts 4 coatoms at 0x10e300a20>
+digraph Lattice {
+	node [label="" shape=circle style=filled width=.25]
+	edge [dir=none labeldistance=1.5 minlen=2]
+	subgraph cluster_0 {
+		style=filled
+		color=transparent
+		c0
+		c0_end
+		c0 -> c0_end [color="" constraint="" dir=back fontname=Helvetica fontsize=12 label=0 pensize=5 penwidth=2 style=dashed]
+	}
+	subgraph cluster_1 {
+		style=filled
+		color=transparent
+		c1
+		c1_end
+		c1 -> c1_end [color="#777777" constraint=true fontname=Helvetica fontsize=12 label=1 pensize=5 penwidth=2 style=dashed]
+	}
+	c1 -> c1 [label="5:2:\"3:(a,a,b)\" -> \"4:(a,b)\"" color=transparent labelangle=270]
+	c1 -> c0
+	subgraph cluster_2 {
+		style=filled
+		color=transparent
+		c2
+		c2_end
+		c2 -> c2_end [color="#AAAA00" dir=back fontname=Helvetica fontsize=12 label=2 pensize=5 penwidth=2]
+	}
+	c2 -> c2 [label="6:4:\"3:(b,a,b)\" -> \"1:(b,a)\"	
+4:6:\"1:(b,a)\" -> \"3:(b,a,b)\"" color=transparent labelangle=270]
+	c2 -> c0
+	subgraph cluster_3 {
+		style=filled
+		color=transparent
+		c3
+		c3_end
+		c3 -> c3_end [color="#CC0000" fontname=Helvetica fontsize=12 label=3 pensize=5 penwidth=2]
+	}
+	c3 -> c3 [label="9:1:\"3:(a,b,b)\" -> \"1:(b,b)\"	
+9:2:\"3:(a,b,b)\" -> \"4:(a,b)\"	
+10:1:\"3:(b,b,b)\" -> \"1:(b,b)\"" color=transparent labelangle=270]
+	c3 -> c0
+	subgraph cluster_4 {
+		style=filled
+		color=transparent
+		c4
+		c4_end
+		c4 -> c4_end [color="#AAAA00" fontname=Helvetica fontsize=12 label=4 pensize=5 penwidth=2]
+	}
+	c4 -> c4 [label="3:5:\"1:(a,a)\" -> \"3:(a,a,b)\"	
+5:4:\"3:(a,a,b)\" -> \"1:(b,a)\"" color=transparent labelangle=270]
+	c4 -> c2
+	subgraph cluster_5 {
+		style=filled
+		color=transparent
+		c5
+		c5_end
+		c5 -> c5_end [color="#777777" constraint=false fontname=Helvetica fontsize=12 label=4 pensize=5 penwidth=2 style=dashed]
+	}
+	c5 -> c5 [label="2:4:\"4:(a,b)\" -> \"1:(b,a)\"	
+2:1:\"4:(a,b)\" -> \"1:(b,b)\"	
+1:2:\"1:(b,b)\" -> \"4:(a,b)\"	
+4:2:\"1:(b,a)\" -> \"4:(a,b)\"" color=transparent labelangle=270]
+	c5 -> c0
+	subgraph cluster_6 {
+		style=filled
+		color=transparent
+		c6
+		c6_end
+		c6 -> c6_end [color="#777777" fontname=Helvetica fontsize=12 label=5 pensize=5 penwidth=2 style=dashed]
+	}
+	c6 -> c1
+	c6 -> c5
+	subgraph cluster_7 {
+		style=filled
+		color=transparent
+		c7
+		c7_end
+		c7 -> c7_end [color="#00BB00" fontname=Helvetica fontsize=12 label=5 pensize=5 penwidth=2]
+	}
+	c7 -> c7 [label="0:7:\"1:(a,b)\" -> \"2:(a,b)\"	
+1:8:\"1:(b,b)\" -> \"2:(b,b)\"	
+2:11:\"4:(a,b)\" -> \"5:(a,b)\"	
+0:9:\"1:(a,b)\" -> \"3:(a,b,b)\"	
+1:10:\"1:(b,b)\" -> \"3:(b,b,b)\"" color=transparent labelangle=270]
+	c7 -> c0
+	subgraph cluster_8 {
+		style=filled
+		color=transparent
+		c8
+		c8_end
+		c8 -> c8_end [fontname=Helvetica fontsize=12 label=17 pensize=5 penwidth=2]
+	}
+	c8 -> c3
+	c8 -> c4
+	c8 -> c6
+	c8 -> c7
+}

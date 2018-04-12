@@ -44,7 +44,7 @@ class TreeNode(object):
         return self.parent
 
 class DOTPrintListener(DOTListener):
-    def __init__(self, output_file):
+    def __init__(self):
         # can be delete
         self.numToken = 0
         self.copyTree = None
@@ -230,36 +230,40 @@ class DOTPrintListener(DOTListener):
 
 def main():
     input_file = args.infile
-    if args.outfile is None:
-        output_file = input_file.split(".")[0] + ".db"
+    base_filename = input_file.split("/")[-1].split(".")[0]
+    if args.outFolder:
+        output_folder = args.outFolder
     else:
-        output_file = args.outfile
+        output_folder = '/'.join(input_file.split("/")[:-2]) + "/output"
     # parse dot/gv file and build idbase
     input_stream = FileStream(input_file)
     lexer = DOTLexer(input_stream)
     stream = CommonTokenStream(lexer)
     parser = DOTParser(stream)
     tree = parser.graph()
-    printer = DOTPrintListener(output_file)
+    printer = DOTPrintListener()
     walker = ParseTreeWalker()
     walker.walk(printer, tree)
 
     nodePropertyList = printer.getNodeProperties().getElementList()
     edgePropertyList = printer.getEdgeProperties().getElementList()
 
-    # TODO: add node to the property list/fca that appears in edge list, but not in the node list
-    for e in edgePropertyList:
-        e.printNode()
-    if args.fca:
-        # fca node
-        fca = FCA(nodePropertyList, edgePropertyList)
-        fca.createNodesHierachyGraphviz(input_file.split(".")[0] + "_nodes_hierachy.dot")
-        fca.createEdgesHierachyGraphviz(input_file.split(".")[0] + "_edges_hierachy.dot")
-        fca.createNodesGraphviz( input_file.split(".")[0] + "_nodes.dot")
-        fca.createEdgesGraphviz( input_file.split(".")[0] + "_edges.dot")
-        fca.createGraphviz( input_file.split(".")[0] + "_full.dot")
-        fca.outputSchema(input_file.split(".")[0] + "_schema.txt")
-        fca.outputSchema(input_file.split(".")[0] + "_schema.db", format="sql")
+    # fca node
+    fca = FCA(nodePropertyList, edgePropertyList)
+    fca.createNodesHierachyGraphviz(\
+            '{}/{}{}'.format(output_folder, base_filename, "_nodes_hierachy.gv"))
+    fca.createEdgesHierachyGraphviz(\
+            '{}/{}{}'.format(output_folder, base_filename,"_edges_hierachy.gv"))
+    fca.createNodesGraphviz(\
+            '{}/{}{}'.format(output_folder, base_filename, "_nodes.gv"))
+    fca.createEdgesGraphviz(\
+            '{}/{}{}'.format(output_folder, base_filename, "_edges.gv"))
+    fca.createGraphviz(\
+            '{}/{}{}'.format(output_folder, base_filename, "_full.gv"))
+    fca.outputSchema(\
+            '{}/{}{}'.format(output_folder, base_filename, "_schema.txt"))
+    fca.outputSchema(\
+            '{}/{}{}'.format(output_folder, base_filename, "_schema.db", format="sql"))
 
     # powerset formation
     # createTypeHierachyGraph(propertyList)
@@ -294,11 +298,9 @@ def preprocessing(propertyList):
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='A GraphViz dot file to Sqlite idbase converter.')
-    parser.add_argument('-outfile', 
+    parser.add_argument('-outFolder', 
                         help='name of the output idbase file')
     parser.add_argument('infile', 
                         help='name of the input dot/gv file')
-    parser.add_argument('-fca', action='store_true')
-
     args = parser.parse_args()
     main()

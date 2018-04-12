@@ -25,7 +25,6 @@ class FCA(object):
         """
         self.fca_node, self.ctx_node = self.createFCA(nodePropertyList)
         self.mapNodeToTypeId, self.mapNodeTypeIdToCtx, self.mapNodeToName = self.helpMapNodeToType()
-        print(self.mapNodeToName)
 
         self.fca_edge, self.ctx_edge = self.createFCA(edgePropertyList, True)
 
@@ -59,13 +58,12 @@ class FCA(object):
                 if format == "prolog":
                     schema += "node({}, {}, {})\n".format(k,v, nodeName)
                 elif format == "sql":
-                    c.execute("INSERT INTO node VALUES ({},{},{})".format(k,v,nodeName))
+                    c.execute("INSERT INTO node VALUES (?,?,?)",[k,v,nodeName])
             for k, v in self.mapNodeTypeIdToCtx.items():
                 if format == "prolog":
                     schema += "nodeType({}, \"{}\")\n"\
                            .format(k, ", ".join(v.intent).replace("\"", "\\\""))
                 elif format == "sql":
-                    print(", ".join(v.intent))
                     c.execute("INSERT INTO nodeType VALUES (?,?)",
                             [k, ", ".join(v.intent)])
             # edge schema
@@ -78,8 +76,8 @@ class FCA(object):
                     schema += "edge({}, {}, {}, {})\n"\
                         .format(eid, leftIdx, rightIdx, edgeTypeIdx)
                 elif format == "sql":
-                    c.execute("INSERT INTO edge VALUES ({},{},{},{})"\
-                        .format(eid, leftIdx, rightIdx, edgeTypeIdx))
+                    c.execute("INSERT INTO edge VALUES (?,?,?,?)",\
+                        [eid, leftIdx, rightIdx, edgeTypeIdx])
                 eid += 1
             for k, v in self.mapEdgeTypeIdToCtx_EdgeOnly.items():
                 edgeTypeIdx = list(self.mapEdgeTypeIdToCtx_EdgeOnly.keys()).index(k)
@@ -274,7 +272,7 @@ subgraph cluster_{} {{
             dot =   \
             """
 digraph{{
-rankdir=TB
+rankdir=LR
 {}
 }}
             """.format(edgesdot)
@@ -308,7 +306,7 @@ rankdir=TB
             dot =   \
             """
 graph{{
-rankdir=TB
+rankdir=LR
 edge [style=dashed]
 {}
 }}
@@ -360,7 +358,7 @@ edge [style=dashed]
         dot =   \
         """
 digraph{{
-rankdir=TB
+rankdir=LR
 {}
 
 {}

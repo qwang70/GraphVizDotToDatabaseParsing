@@ -1,0 +1,80 @@
+// <Lattice object of 2 atoms 4 concepts 2 coatoms at 0x113353828>
+digraph Lattice {
+	node [label="" shape=circle style=filled width=.25]
+	edge [dir=none labeldistance=1.5 minlen=2]
+	subgraph cluster_0 {
+		style=filled
+		color=transparent
+		c0
+		c0_end
+		c0 -> c0_end [arrowhead=normal color="" constraint=true label=0 penwidth=1 style=solid]
+	}
+	subgraph cluster_1 {
+		style=filled
+		color=transparent
+		c1
+		c1_end
+		c1 -> c1_end [arrowhead=normal color="#000000" constraint=true label=6 penwidth=1 style=solid]
+	}
+	c1 -> c1 [label="3:4:\"CEN.South\" -> \"CEN.USA\nTZ.USA\"	
+6:4:\"TZ.Mountain\" -> \"CEN.USA\nTZ.USA\"	
+0:4:\"CEN.Midwest\" -> \"CEN.USA\nTZ.USA\"	
+1:4:\"CEN.West\" -> \"CEN.USA\nTZ.USA\"	
+8:4:\"TZ.Central\" -> \"CEN.USA\nTZ.USA\"	
+5:4:\"TZ.Eastern\" -> \"CEN.USA\nTZ.USA\"" color=transparent labelangle=270]
+	c1 -> c0
+	subgraph cluster_2 {
+		style=filled
+		color=transparent
+		c2
+		c2_end
+		c2 -> c2_end [arrowhead=normal color="#FF0000" constraint=true label=37 penwidth=1 style=solid]
+	}
+	c2 -> c2 [label="16:17:\"CEN.Midwest * TZ.Mountain\" -> \"TZ.Mountain \\ CEN.West\"	
+15:18:\"CEN.Midwest * TZ.Eastern\" -> \"CEN.Midwest \\ TZ.Central\"	
+16:9:\"CEN.Midwest * TZ.Mountain\" -> \"TZ.Mountain \\ CEN.South\"	
+9:6:\"TZ.Mountain \\ CEN.South\" -> \"TZ.Mountain\"	
+22:1:\"CEN.West * TZ.Mountain\" -> \"CEN.West\"	
+24:3:\"CEN.South \\ TZ.Central\" -> \"CEN.South\"	
+21:20:\"CEN.South * TZ.Eastern\" -> \"CEN.South \\ TZ.Mountain\"	
+18:0:\"CEN.Midwest \\ TZ.Central\" -> \"CEN.Midwest\"	
+22:19:\"CEN.West * TZ.Mountain\" -> \"TZ.Mountain \\ CEN.Midwest\"	
+7:1:\"TZ.Pacific\nCEN.West \\ TZ.Mountain\" -> \"CEN.West\"	
+15:13:\"CEN.Midwest * TZ.Eastern\" -> \"CEN.Midwest \\ TZ.Mountain\"	
+14:5:\"TZ.Eastern \\ CEN.Midwest\" -> \"TZ.Eastern\"	
+15:25:\"CEN.Midwest * TZ.Eastern\" -> \"TZ.Eastern \\ CEN.South\"	
+10:8:\"CEN.Midwest * TZ.Central\nTZ.Central \\ CEN.South\" -> \"TZ.Central\"	
+13:0:\"CEN.Midwest \\ TZ.Mountain\" -> \"CEN.Midwest\"	
+12:11:\"CEN.South * TZ.Mountain\" -> \"CEN.South \\ TZ.Eastern\"	
+17:6:\"TZ.Mountain \\ CEN.West\" -> \"TZ.Mountain\"	
+10:23:\"CEN.Midwest * TZ.Central\nTZ.Central \\ CEN.South\" -> \"CEN.Midwest \\ TZ.Eastern\"	
+21:14:\"CEN.South * TZ.Eastern\" -> \"TZ.Eastern \\ CEN.Midwest\"	
+26:20:\"CEN.South * TZ.Central\nTZ.Central \\ CEN.Midwest\" -> \"CEN.South \\ TZ.Mountain\"	
+2:25:\"CEN.Northeast\" -> \"TZ.Eastern \\ CEN.South\"	
+26:8:\"CEN.South * TZ.Central\nTZ.Central \\ CEN.Midwest\" -> \"TZ.Central\"	
+23:0:\"CEN.Midwest \\ TZ.Eastern\" -> \"CEN.Midwest\"	
+2:14:\"CEN.Northeast\" -> \"TZ.Eastern \\ CEN.Midwest\"	
+22:9:\"CEN.West * TZ.Mountain\" -> \"TZ.Mountain \\ CEN.South\"	
+10:13:\"CEN.Midwest * TZ.Central\nTZ.Central \\ CEN.South\" -> \"CEN.Midwest \\ TZ.Mountain\"	
+20:3:\"CEN.South \\ TZ.Mountain\" -> \"CEN.South\"	
+26:11:\"CEN.South * TZ.Central\nTZ.Central \\ CEN.Midwest\" -> \"CEN.South \\ TZ.Eastern\"	
+16:23:\"CEN.Midwest * TZ.Mountain\" -> \"CEN.Midwest \\ TZ.Eastern\"	
+16:18:\"CEN.Midwest * TZ.Mountain\" -> \"CEN.Midwest \\ TZ.Central\"	
+12:17:\"CEN.South * TZ.Mountain\" -> \"TZ.Mountain \\ CEN.West\"	
+25:5:\"TZ.Eastern \\ CEN.South\" -> \"TZ.Eastern\"	
+12:24:\"CEN.South * TZ.Mountain\" -> \"CEN.South \\ TZ.Central\"	
+11:3:\"CEN.South \\ TZ.Eastern\" -> \"CEN.South\"	
+19:6:\"TZ.Mountain \\ CEN.Midwest\" -> \"TZ.Mountain\"	
+21:24:\"CEN.South * TZ.Eastern\" -> \"CEN.South \\ TZ.Central\"	
+12:19:\"CEN.South * TZ.Mountain\" -> \"TZ.Mountain \\ CEN.Midwest\"" color=transparent labelangle=270]
+	c2 -> c0
+	subgraph cluster_3 {
+		style=filled
+		color=transparent
+		c3
+		c3_end
+		c3 -> c3_end [arrowhead=normal constraint=true label=43 penwidth=1 style=solid]
+	}
+	c3 -> c1
+	c3 -> c2
+}

@@ -1,0 +1,210 @@
+// <Lattice object of 3 atoms 6 concepts 2 coatoms at 0x10b2a22b0>
+digraph Lattice {
+	node [label="" shape=circle style=filled width=.25]
+	edge [dir=none labeldistance=1.5 minlen=2]
+	subgraph cluster_0 {
+		style=filled
+		color=transparent
+		c0
+		c0_end
+		c0 -> c0_end [color="" constraint=true dir="" label=0 penwidth="" style=""]
+	}
+	subgraph cluster_1 {
+		style=filled
+		color=transparent
+		c1
+		c1_end
+		c1 -> c1_end [color="#AA00FF" constraint=true dir=both label=49 penwidth=2 style=dashed]
+	}
+	c1 -> c1 [label="30:83:\"CEN.AL\" -> \"NDC.AL\"	
+33:77:\"CEN.CO\" -> \"NDC.CO\"	
+42:58:\"CEN.PA\" -> \"NDC.PA\"	
+50:64:\"CEN.ND\" -> \"NDC.ND\"	
+6:106:\"CEN.KY\" -> \"NDC.KY\"	
+35:80:\"CEN.SD\" -> \"NDC.SD\"	
+22:105:\"CEN.DC\" -> \"NDC.DC\"	
+52:71:\"CEN.WI\" -> \"NDC.WI\"	
+15:93:\"CEN.MT\" -> \"NDC.MT\"	
+41:60:\"CEN.GA\" -> \"NDC.GA\"	
+32:75:\"CEN.CT\" -> \"NDC.CT\"	
+51:63:\"CEN.NE\" -> \"NDC.NE\"	
+47:72:\"CEN.WA\" -> \"NDC.WA\"	
+29:81:\"CEN.AZ\" -> \"NDC.AZ\"	
+14:92:\"CEN.MS\" -> \"NDC.MS\"	
+28:82:\"CEN.AR\" -> \"NDC.AR\"	
+24:86:\"CEN.OR\" -> \"NDC.OR\"	
+19:95:\"CEN.MD\" -> \"NDC.MD\"	
+38:73:\"CEN.LA\" -> \"NDC.LA\"	
+48:67:\"CEN.NH\" -> \"NDC.NH\"	
+4:70:\"CEN.WV\" -> \"NDC.WV\"	
+16:94:\"CEN.MA\" -> \"NDC.MA\"	
+36:100:\"CEN.SC\" -> \"NDC.SC\"	
+3:55:\"CEN.IA\" -> \"NDC.IA\"	
+0:56:\"CEN.IL\" -> \"NDC.IL\"	
+7:97:\"CEN.TX\" -> \"NDC.TX\"	
+44:62:\"CEN.NY\" -> \"NDC.NY\"	
+46:66:\"CEN.NM\" -> \"NDC.NM\"	
+53:65:\"CEN.NC\" -> \"NDC.NC\"	
+11:89:\"CEN.TN\" -> \"NDC.TN\"	
+23:104:\"CEN.DE\" -> \"NDC.DE\"	
+26:85:\"CEN.VA\" -> \"NDC.VA\"	
+39:99:\"CEN.MO\" -> \"NDC.MO\"	
+1:57:\"CEN.IN\" -> \"NDC.IN\"	
+21:98:\"CEN.MN\" -> \"NDC.MN\"	
+40:74:\"CEN.UT\" -> \"NDC.UT\"	
+13:84:\"CEN.VT\" -> \"NDC.VT\"	
+12:69:\"CEN.WY\" -> \"NDC.WY\"	
+20:96:\"CEN.MI\" -> \"NDC.MI\"	
+5:107:\"CEN.KS\" -> \"NDC.KS\"	
+45:61:\"CEN.NV\" -> \"NDC.NV\"	
+10:54:\"CEN.ID\" -> \"NDC.ID\"	
+18:91:\"CEN.ME\" -> \"NDC.ME\"	
+31:87:\"CEN.OK\" -> \"NDC.OK\"	
+34:76:\"CEN.CA\" -> \"NDC.CA\"	
+27:90:\"CEN.FL\" -> \"NDC.FL\"	
+2:102:\"CEN.RI\" -> \"NDC.RI\"	
+25:88:\"CEN.OH\" -> \"NDC.OH\"	
+49:68:\"CEN.NJ\" -> \"NDC.NJ\"" color=transparent labelangle=270]
+	c1 -> c0
+	subgraph cluster_2 {
+		style=filled
+		color=transparent
+		c2
+		c2_end
+		c2 -> c2_end [color="#000000" constraint=true dir=back label=53 penwidth=1 style=solid]
+	}
+	c2 -> c2 [label="9:26:\"CEN.South\" -> \"CEN.VA\"	
+43:40:\"CEN.West\" -> \"CEN.UT\"	
+9:41:\"CEN.South\" -> \"CEN.GA\"	
+37:5:\"CEN.Midwest\" -> \"CEN.KS\"	
+37:50:\"CEN.Midwest\" -> \"CEN.ND\"	
+37:35:\"CEN.Midwest\" -> \"CEN.SD\"	
+8:44:\"CEN.Northeast\" -> \"CEN.NY\"	
+8:32:\"CEN.Northeast\" -> \"CEN.CT\"	
+37:3:\"CEN.Midwest\" -> \"CEN.IA\"	
+43:15:\"CEN.West\" -> \"CEN.MT\"	
+43:33:\"CEN.West\" -> \"CEN.CO\"	
+9:11:\"CEN.South\" -> \"CEN.TN\"	
+8:42:\"CEN.Northeast\" -> \"CEN.PA\"	
+8:13:\"CEN.Northeast\" -> \"CEN.VT\"	
+43:45:\"CEN.West\" -> \"CEN.NV\"	
+8:48:\"CEN.Northeast\" -> \"CEN.NH\"	
+9:19:\"CEN.South\" -> \"CEN.MD\"	
+17:37:\"CEN.USA\" -> \"CEN.Midwest\"	
+37:20:\"CEN.Midwest\" -> \"CEN.MI\"	
+9:27:\"CEN.South\" -> \"CEN.FL\"	
+8:49:\"CEN.Northeast\" -> \"CEN.NJ\"	
+37:39:\"CEN.Midwest\" -> \"CEN.MO\"	
+9:22:\"CEN.South\" -> \"CEN.DC\"	
+9:23:\"CEN.South\" -> \"CEN.DE\"	
+43:46:\"CEN.West\" -> \"CEN.NM\"	
+37:21:\"CEN.Midwest\" -> \"CEN.MN\"	
+9:14:\"CEN.South\" -> \"CEN.MS\"	
+9:38:\"CEN.South\" -> \"CEN.LA\"	
+8:2:\"CEN.Northeast\" -> \"CEN.RI\"	
+37:1:\"CEN.Midwest\" -> \"CEN.IN\"	
+43:47:\"CEN.West\" -> \"CEN.WA\"	
+9:6:\"CEN.South\" -> \"CEN.KY\"	
+43:34:\"CEN.West\" -> \"CEN.CA\"	
+43:12:\"CEN.West\" -> \"CEN.WY\"	
+9:31:\"CEN.South\" -> \"CEN.OK\"	
+37:51:\"CEN.Midwest\" -> \"CEN.NE\"	
+43:10:\"CEN.West\" -> \"CEN.ID\"	
+17:9:\"CEN.USA\" -> \"CEN.South\"	
+9:28:\"CEN.South\" -> \"CEN.AR\"	
+37:0:\"CEN.Midwest\" -> \"CEN.IL\"	
+37:25:\"CEN.Midwest\" -> \"CEN.OH\"	
+43:24:\"CEN.West\" -> \"CEN.OR\"	
+9:53:\"CEN.South\" -> \"CEN.NC\"	
+8:16:\"CEN.Northeast\" -> \"CEN.MA\"	
+9:4:\"CEN.South\" -> \"CEN.WV\"	
+37:52:\"CEN.Midwest\" -> \"CEN.WI\"	
+9:36:\"CEN.South\" -> \"CEN.SC\"	
+9:7:\"CEN.South\" -> \"CEN.TX\"	
+9:30:\"CEN.South\" -> \"CEN.AL\"	
+8:18:\"CEN.Northeast\" -> \"CEN.ME\"	
+17:43:\"CEN.USA\" -> \"CEN.West\"	
+17:8:\"CEN.USA\" -> \"CEN.Northeast\"	
+43:29:\"CEN.West\" -> \"CEN.AZ\"" color=transparent labelangle=270]
+	c2 -> c0
+	subgraph cluster_3 {
+		style=filled
+		color=transparent
+		c3
+		c3_end
+		c3 -> c3_end [color="#000000" constraint=true dir=forward label=54 penwidth=1 style=solid]
+	}
+	c3 -> c3 [label="84:79:\"NDC.VT\" -> \"NDC.Northeast\"	
+96:101:\"NDC.MI\" -> \"NDC.Midwest\"	
+97:103:\"NDC.TX\" -> \"NDC.Southwest\"	
+54:78:\"NDC.ID\" -> \"NDC.West\"	
+66:103:\"NDC.NM\" -> \"NDC.Southwest\"	
+78:108:\"NDC.West\" -> \"NDC.USA\"	
+85:59:\"NDC.VA\" -> \"NDC.Southeast\"	
+80:101:\"NDC.SD\" -> \"NDC.Midwest\"	
+62:79:\"NDC.NY\" -> \"NDC.Northeast\"	
+81:103:\"NDC.AZ\" -> \"NDC.Southwest\"	
+100:59:\"NDC.SC\" -> \"NDC.Southeast\"	
+91:79:\"NDC.ME\" -> \"NDC.Northeast\"	
+93:78:\"NDC.MT\" -> \"NDC.West\"	
+105:79:\"NDC.DC\" -> \"NDC.Northeast\"	
+69:78:\"NDC.WY\" -> \"NDC.West\"	
+70:59:\"NDC.WV\" -> \"NDC.Southeast\"	
+73:59:\"NDC.LA\" -> \"NDC.Southeast\"	
+56:101:\"NDC.IL\" -> \"NDC.Midwest\"	
+83:59:\"NDC.AL\" -> \"NDC.Southeast\"	
+75:79:\"NDC.CT\" -> \"NDC.Northeast\"	
+57:101:\"NDC.IN\" -> \"NDC.Midwest\"	
+61:78:\"NDC.NV\" -> \"NDC.West\"	
+76:78:\"NDC.CA\" -> \"NDC.West\"	
+107:101:\"NDC.KS\" -> \"NDC.Midwest\"	
+104:79:\"NDC.DE\" -> \"NDC.Northeast\"	
+101:108:\"NDC.Midwest\" -> \"NDC.USA\"	
+74:78:\"NDC.UT\" -> \"NDC.West\"	
+68:79:\"NDC.NJ\" -> \"NDC.Northeast\"	
+99:101:\"NDC.MO\" -> \"NDC.Midwest\"	
+87:103:\"NDC.OK\" -> \"NDC.Southwest\"	
+63:101:\"NDC.NE\" -> \"NDC.Midwest\"	
+90:59:\"NDC.FL\" -> \"NDC.Southeast\"	
+92:59:\"NDC.MS\" -> \"NDC.Southeast\"	
+82:59:\"NDC.AR\" -> \"NDC.Southeast\"	
+60:59:\"NDC.GA\" -> \"NDC.Southeast\"	
+77:78:\"NDC.CO\" -> \"NDC.West\"	
+106:59:\"NDC.KY\" -> \"NDC.Southeast\"	
+89:59:\"NDC.TN\" -> \"NDC.Southeast\"	
+65:59:\"NDC.NC\" -> \"NDC.Southeast\"	
+72:78:\"NDC.WA\" -> \"NDC.West\"	
+79:108:\"NDC.Northeast\" -> \"NDC.USA\"	
+58:79:\"NDC.PA\" -> \"NDC.Northeast\"	
+64:101:\"NDC.ND\" -> \"NDC.Midwest\"	
+95:79:\"NDC.MD\" -> \"NDC.Northeast\"	
+88:101:\"NDC.OH\" -> \"NDC.Midwest\"	
+71:101:\"NDC.WI\" -> \"NDC.Midwest\"	
+102:79:\"NDC.RI\" -> \"NDC.Northeast\"	
+59:108:\"NDC.Southeast\" -> \"NDC.USA\"	
+103:108:\"NDC.Southwest\" -> \"NDC.USA\"	
+86:78:\"NDC.OR\" -> \"NDC.West\"	
+98:101:\"NDC.MN\" -> \"NDC.Midwest\"	
+67:79:\"NDC.NH\" -> \"NDC.Northeast\"	
+55:101:\"NDC.IA\" -> \"NDC.Midwest\"	
+94:79:\"NDC.MA\" -> \"NDC.Northeast\"" color=transparent labelangle=270]
+	c3 -> c0
+	subgraph cluster_4 {
+		style=filled
+		color=transparent
+		c4
+		c4_end
+		c4 -> c4_end [color="#000000" constraint=true label=107 penwidth=1 style=solid]
+	}
+	c4 -> c2
+	c4 -> c3
+	subgraph cluster_5 {
+		style=filled
+		color=transparent
+		c5
+		c5_end
+		c5 -> c5_end [constraint=true label=156]
+	}
+	c5 -> c1
+	c5 -> c4
+}

@@ -1,0 +1,96 @@
+// <Lattice object of 4 atoms 9 concepts 3 coatoms at 0x106fc07f0>
+digraph Lattice {
+	node [label="" shape=circle style=filled width=.25]
+	edge [dir=none labeldistance=1.5 minlen=2]
+	subgraph cluster_0 {
+		style=filled
+		color=transparent
+		c0
+		c0_end
+		c0 -> c0_end [arrowhead="" color="" constraint="" label=0 penwidth=1 style=""]
+	}
+	subgraph cluster_1 {
+		style=filled
+		color=transparent
+		c1
+		c1_end
+		c1 -> c1_end [arrowhead=normal color="#FF0000" constraint=true label=1 penwidth=1 style=solid]
+	}
+	c1 -> c1 [label="6:3:\"TZ.Pacific\" -> \"CEN.West\"" color=transparent labelangle=270]
+	c1 -> c0
+	subgraph cluster_2 {
+		style=filled
+		color=transparent
+		c2
+		c2_end
+		c2 -> c2_end [arrowhead=none color="#FF0000" constraint=false label=1 penwidth=1 style=dashed]
+	}
+	c2 -> c2 [label="0:7:\"CEN.Midwest\" -> \"TZ.Central\"" color=transparent labelangle=270]
+	c2 -> c0
+	subgraph cluster_3 {
+		style=filled
+		color=transparent
+		c3
+		c3_end
+		c3 -> c3_end [color="#FF0000" label=2 penwidth=1]
+	}
+	c3 -> c1
+	c3 -> c2
+	subgraph cluster_4 {
+		style=filled
+		color=transparent
+		c4
+		c4_end
+		c4 -> c4_end [arrowhead=none color="#0000FF" constraint=false label=6 penwidth=1 style=dotted]
+	}
+	c4 -> c4 [label="1:8:\"CEN.South\" -> \"TZ.Mountain\"	
+3:8:\"CEN.West\" -> \"TZ.Mountain\"	
+0:8:\"CEN.Midwest\" -> \"TZ.Mountain\"	
+1:7:\"CEN.South\" -> \"TZ.Central\"	
+0:5:\"CEN.Midwest\" -> \"TZ.Eastern\"	
+1:5:\"CEN.South\" -> \"TZ.Eastern\"" color=transparent labelangle=270]
+	c4 -> c0
+	subgraph cluster_5 {
+		style=filled
+		color=transparent
+		c5
+		c5_end
+		c5 -> c5_end [arrowhead=normal color="#000000" constraint=true label=7 penwidth=1 style=solid]
+	}
+	c5 -> c5 [label="1:4:\"CEN.South\" -> \"CEN.USA\nTZ.USA\"	
+0:4:\"CEN.Midwest\" -> \"CEN.USA\nTZ.USA\"	
+5:4:\"TZ.Eastern\" -> \"CEN.USA\nTZ.USA\"	
+7:4:\"TZ.Central\" -> \"CEN.USA\nTZ.USA\"	
+2:5:\"CEN.Northeast\" -> \"TZ.Eastern\"	
+3:4:\"CEN.West\" -> \"CEN.USA\nTZ.USA\"	
+8:4:\"TZ.Mountain\" -> \"CEN.USA\nTZ.USA\"" color=transparent labelangle=270]
+	c5 -> c0
+	subgraph cluster_6 {
+		style=filled
+		color=transparent
+		c6
+		c6_end
+		c6 -> c6_end [arrowhead=none constraint=false label=7 penwidth=1]
+	}
+	c6 -> c2
+	c6 -> c4
+	subgraph cluster_7 {
+		style=filled
+		color=transparent
+		c7
+		c7_end
+		c7 -> c7_end [arrowhead=normal constraint=true label=8 penwidth=1 style=solid]
+	}
+	c7 -> c1
+	c7 -> c5
+	subgraph cluster_8 {
+		style=filled
+		color=transparent
+		c8
+		c8_end
+		c8 -> c8_end [label=15 penwidth=1]
+	}
+	c8 -> c3
+	c8 -> c6
+	c8 -> c7
+}
