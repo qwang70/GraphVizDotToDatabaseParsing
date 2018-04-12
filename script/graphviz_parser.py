@@ -253,12 +253,13 @@ def main():
     if args.fca:
         # fca node
         fca = FCA(nodePropertyList, edgePropertyList)
-        #fca.createNodesHierachyGraphviz(input_file.split(".")[0] + "_nodes_hierachy.dot")
-        #fca.createEdgesHierachyGraphviz(input_file.split(".")[0] + "_edges_hierachy.dot")
+        fca.createNodesHierachyGraphviz(input_file.split(".")[0] + "_nodes_hierachy.dot")
+        fca.createEdgesHierachyGraphviz(input_file.split(".")[0] + "_edges_hierachy.dot")
         fca.createNodesGraphviz( input_file.split(".")[0] + "_nodes.dot")
         fca.createEdgesGraphviz( input_file.split(".")[0] + "_edges.dot")
         fca.createGraphviz( input_file.split(".")[0] + "_full.dot")
-        # fca edge 
+        fca.outputSchema(input_file.split(".")[0] + "_schema.txt")
+        fca.outputSchema(input_file.split(".")[0] + "_schema.db", format="sql")
 
     # powerset formation
     # createTypeHierachyGraph(propertyList)
@@ -272,7 +273,7 @@ def createTypeHierachyGraph(propertyList):
 
 def outputJson(structuredDict):
     json_data = structuredDict.dumps(indent=4)
-    print(json_data)
+    # print(json_data)
 
 def preprocessing(propertyList):
     structuredDict = ObjDict()

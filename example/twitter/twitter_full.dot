@@ -1,11 +1,11 @@
 
 digraph{
 rankdir=TB
-n0 [shape=record, peripheries=1, fillcolor="#FFFFCC", fontname=Helvetica, rankdir=LR, style="rounded,filled", label=2];
-n1 [peripheries=1, shape=circle, fontname=Helvetica, fillcolor="#FFFFFF", width=0.2, style="rounded,filled", label=2];
-n2 [fillcolor="#FCFCFC", peripheries=1, shape=box, fontname=Helvetica, style="rounded,filled", label=3];
-n3 [shape=record, peripheries=1, fontname=Courier, rankdir=LR, style=filled, fillcolor="#CCFFCC", label=4];
-n4 [peripheries=1, shape=box, fillcolor="#FFFFCC", fontname=Helvetica, style="rounded,filled", label=5];
+n0 [fontname=Helvetica, rankdir=LR, style="rounded,filled", shape=record, fillcolor="#FFFFCC", peripheries=1, label=2];
+n1 [fontname=Helvetica, fillcolor="#FFFFFF", style="rounded,filled", shape=circle, width=0.2, peripheries=1, label=2];
+n2 [fontname=Helvetica, fillcolor="#FCFCFC", shape=box, style="rounded,filled", peripheries=1, label=3];
+n3 [rankdir=LR, fillcolor="#CCFFCC", fontname=Courier, shape=record, peripheries=1, style=filled, label=4];
+n4 [fontname=Helvetica, shape=box, style="rounded,filled", fillcolor="#FFFFCC", peripheries=1, label=5];
 
 
 

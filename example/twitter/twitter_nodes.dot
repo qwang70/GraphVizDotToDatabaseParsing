@@ -2,42 +2,42 @@
 graph{
 rankdir=TB
 edge [style=dashed]
-n0 [shape=record, peripheries=1, fillcolor="#FFFFCC", fontname=Helvetica, rankdir=LR, style="rounded,filled", label=2];
-n1 [shape=record, peripheries=1, fillcolor="#FFFFCC", fontname=Helvetica, rankdir=LR, style="rounded,filled", label="{<f0> Sentiment_Result |<f1> file\:Scores_NLTK.jpg}"];
+n0 [fontname=Helvetica, rankdir=LR, style="rounded,filled", shape=record, fillcolor="#FFFFCC", peripheries=1, label=2];
+n1 [fontname=Helvetica, rankdir=LR, style="rounded,filled", shape=record, fillcolor="#FFFFCC", peripheries=1, label="{<f0> Sentiment_Result |<f1> file\:Scores_NLTK.jpg}"];
 n0 -- n1;
-n2 [shape=record, peripheries=1, fillcolor="#FFFFCC", fontname=Helvetica, rankdir=LR, style="rounded,filled", label="{<f0> Static_Tweets |<f1> file\:static_tweet.csv}"];
+n2 [fontname=Helvetica, rankdir=LR, style="rounded,filled", shape=record, fillcolor="#FFFFCC", peripheries=1, label="{<f0> Static_Tweets |<f1> file\:static_tweet.csv}"];
 n0 -- n2;
-n3 [peripheries=1, shape=circle, fontname=Helvetica, fillcolor="#FFFFFF", width=0.2, style="rounded,filled", label=2];
-n4 [peripheries=1, shape=circle, fontname=Helvetica, fillcolor="#FFFFFF", width=0.2, style="rounded,filled", label=Static_Tweets_input_port];
+n3 [fontname=Helvetica, fillcolor="#FFFFFF", style="rounded,filled", shape=circle, width=0.2, peripheries=1, label=2];
+n4 [fontname=Helvetica, fillcolor="#FFFFFF", style="rounded,filled", shape=circle, width=0.2, peripheries=1, label=Static_Tweets_input_port];
 n3 -- n4;
-n5 [peripheries=1, shape=circle, fontname=Helvetica, fillcolor="#FFFFFF", width=0.2, style="rounded,filled", label=Sentiment_Result_output_port];
+n5 [fontname=Helvetica, fillcolor="#FFFFFF", style="rounded,filled", shape=circle, width=0.2, peripheries=1, label=Sentiment_Result_output_port];
 n3 -- n5;
-n6 [fillcolor="#FCFCFC", peripheries=1, shape=box, fontname=Helvetica, style="rounded,filled", label=3];
-n7 [fillcolor="#FCFCFC", peripheries=1, shape=box, fontname=Helvetica, style="rounded,filled", label=Explode];
+n6 [fontname=Helvetica, fillcolor="#FCFCFC", shape=box, style="rounded,filled", peripheries=1, label=3];
+n7 [fontname=Helvetica, fillcolor="#FCFCFC", shape=box, style="rounded,filled", peripheries=1, label=Explode];
 n6 -- n7;
-n8 [fillcolor="#FCFCFC", peripheries=1, shape=box, fontname=Helvetica, style="rounded,filled", label=Labels];
+n8 [fontname=Helvetica, fillcolor="#FCFCFC", shape=box, style="rounded,filled", peripheries=1, label=Labels];
 n6 -- n8;
-n9 [fillcolor="#FCFCFC", peripheries=1, shape=box, fontname=Helvetica, style="rounded,filled", label=Colors];
+n9 [fontname=Helvetica, fillcolor="#FCFCFC", shape=box, style="rounded,filled", peripheries=1, label=Colors];
 n6 -- n9;
-n10 [shape=record, peripheries=1, fontname=Courier, rankdir=LR, style=filled, fillcolor="#CCFFCC", label=4];
-n11 [shape=record, peripheries=1, fontname=Courier, rankdir=LR, style=filled, fillcolor="#CCFFCC", label="{<f0> AccessTweets |<f1> To read the tweets from tweet.csv file}"];
+n10 [rankdir=LR, fillcolor="#CCFFCC", fontname=Courier, shape=record, peripheries=1, style=filled, label=4];
+n11 [rankdir=LR, fillcolor="#CCFFCC", fontname=Courier, shape=record, peripheries=1, style=filled, label="{<f0> AccessTweets |<f1> To read the tweets from tweet.csv file}"];
 n10 -- n11;
-n12 [shape=record, peripheries=1, fontname=Courier, rankdir=LR, style=filled, fillcolor="#CCFFCC", label="{<f0> CountSentiments |<f1> Calculate sentiments with NLTK}"];
+n12 [rankdir=LR, fillcolor="#CCFFCC", fontname=Courier, shape=record, peripheries=1, style=filled, label="{<f0> CountSentiments |<f1> Calculate sentiments with NLTK}"];
 n10 -- n12;
-n13 [shape=record, peripheries=1, fontname=Courier, rankdir=LR, style=filled, fillcolor="#CCFFCC", label="{<f0> Measures |<f1> SetPieChartMeasures}"];
+n13 [rankdir=LR, fillcolor="#CCFFCC", fontname=Courier, shape=record, peripheries=1, style=filled, label="{<f0> Measures |<f1> SetPieChartMeasures}"];
 n10 -- n13;
-n14 [shape=record, peripheries=1, fontname=Courier, rankdir=LR, style=filled, fillcolor="#CCFFCC", label="{<f0> DrawPieChart |<f1> Pie chart saved in Scores_NLTK.jpeg}"];
+n14 [rankdir=LR, fillcolor="#CCFFCC", fontname=Courier, shape=record, peripheries=1, style=filled, label="{<f0> DrawPieChart |<f1> Pie chart saved in Scores_NLTK.jpeg}"];
 n10 -- n14;
-n15 [peripheries=1, shape=box, fillcolor="#FFFFCC", fontname=Helvetica, style="rounded,filled", label=5];
-n16 [peripheries=1, shape=box, fillcolor="#FFFFCC", fontname=Helvetica, style="rounded,filled", label=TweetRead];
+n15 [fontname=Helvetica, shape=box, style="rounded,filled", fillcolor="#FFFFCC", peripheries=1, label=5];
+n16 [fontname=Helvetica, shape=box, style="rounded,filled", fillcolor="#FFFFCC", peripheries=1, label=TweetRead];
 n15 -- n16;
-n17 [peripheries=1, shape=box, fillcolor="#FFFFCC", fontname=Helvetica, style="rounded,filled", label=PositiveCount];
+n17 [fontname=Helvetica, shape=box, style="rounded,filled", fillcolor="#FFFFCC", peripheries=1, label=PositiveCount];
 n15 -- n17;
-n18 [peripheries=1, shape=box, fillcolor="#FFFFCC", fontname=Helvetica, style="rounded,filled", label=NegativeCount];
+n18 [fontname=Helvetica, shape=box, style="rounded,filled", fillcolor="#FFFFCC", peripheries=1, label=NegativeCount];
 n15 -- n18;
-n19 [peripheries=1, shape=box, fillcolor="#FFFFCC", fontname=Helvetica, style="rounded,filled", label=NeutralCount];
+n19 [fontname=Helvetica, shape=box, style="rounded,filled", fillcolor="#FFFFCC", peripheries=1, label=NeutralCount];
 n15 -- n19;
-n20 [peripheries=1, shape=box, fillcolor="#FFFFCC", fontname=Helvetica, style="rounded,filled", label=Sizes];
+n20 [fontname=Helvetica, shape=box, style="rounded,filled", fillcolor="#FFFFCC", peripheries=1, label=Sizes];
 n15 -- n20;
 
 }

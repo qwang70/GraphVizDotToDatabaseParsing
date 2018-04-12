@@ -5,8 +5,8 @@ rankdir=TB
 subgraph cluster_0 {
     style=filled;
     color=transparent;
-    e0_start [shape=record, peripheries=1, fontname=Courier, rankdir=LR, style=filled, fillcolor="#CCFFCC", label=" "];
-e0_end [peripheries=1, shape=box, fillcolor="#FFFFCC", fontname=Helvetica, style="rounded,filled", label=" "];
+    e0_start [rankdir=LR, fillcolor="#CCFFCC", fontname=Courier, shape=record, peripheries=1, style=filled, label=" "];
+e0_end [fontname=Helvetica, shape=box, style="rounded,filled", fillcolor="#FFFFCC", peripheries=1, label=" "];
 
     e0_start -> e0_end [ attr=default, minlen=2, label=5 ];
     e0_inv [style=invis]
@@ -18,8 +18,8 @@ e0_end [peripheries=1, shape=box, fillcolor="#FFFFCC", fontname=Helvetica, style
 subgraph cluster_1 {
     style=filled;
     color=transparent;
-    e1_start [shape=record, peripheries=1, fillcolor="#FFFFCC", fontname=Helvetica, rankdir=LR, style="rounded,filled", label=" "];
-e1_end [shape=record, peripheries=1, fontname=Courier, rankdir=LR, style=filled, fillcolor="#CCFFCC", label=" "];
+    e1_start [fontname=Helvetica, rankdir=LR, style="rounded,filled", shape=record, fillcolor="#FFFFCC", peripheries=1, label=" "];
+e1_end [rankdir=LR, fillcolor="#CCFFCC", fontname=Courier, shape=record, peripheries=1, style=filled, label=" "];
 
     e1_start -> e1_end [ attr=default, minlen=2, label=1 ];
     e1_inv [style=invis]
@@ -31,8 +31,8 @@ e1_end [shape=record, peripheries=1, fontname=Courier, rankdir=LR, style=filled,
 subgraph cluster_2 {
     style=filled;
     color=transparent;
-    e2_start [peripheries=1, shape=box, fillcolor="#FFFFCC", fontname=Helvetica, style="rounded,filled", label=" "];
-e2_end [shape=record, peripheries=1, fontname=Courier, rankdir=LR, style=filled, fillcolor="#CCFFCC", label=" "];
+    e2_start [fontname=Helvetica, shape=box, style="rounded,filled", fillcolor="#FFFFCC", peripheries=1, label=" "];
+e2_end [rankdir=LR, fillcolor="#CCFFCC", fontname=Courier, shape=record, peripheries=1, style=filled, label=" "];
 
     e2_start -> e2_end [ attr=default, minlen=2, label=5 ];
     e2_inv [style=invis]
@@ -44,8 +44,8 @@ e2_end [shape=record, peripheries=1, fontname=Courier, rankdir=LR, style=filled,
 subgraph cluster_3 {
     style=filled;
     color=transparent;
-    e3_start [shape=record, peripheries=1, fontname=Courier, rankdir=LR, style=filled, fillcolor="#CCFFCC", label=" "];
-e3_end [fillcolor="#FCFCFC", peripheries=1, shape=box, fontname=Helvetica, style="rounded,filled", label=" "];
+    e3_start [rankdir=LR, fillcolor="#CCFFCC", fontname=Courier, shape=record, peripheries=1, style=filled, label=" "];
+e3_end [fontname=Helvetica, fillcolor="#FCFCFC", shape=box, style="rounded,filled", peripheries=1, label=" "];
 
     e3_start -> e3_end [ attr=default, minlen=2, label=3 ];
     e3_inv [style=invis]
@@ -57,8 +57,8 @@ e3_end [fillcolor="#FCFCFC", peripheries=1, shape=box, fontname=Helvetica, style
 subgraph cluster_4 {
     style=filled;
     color=transparent;
-    e4_start [shape=record, peripheries=1, fontname=Courier, rankdir=LR, style=filled, fillcolor="#CCFFCC", label=" "];
-e4_end [shape=record, peripheries=1, fillcolor="#FFFFCC", fontname=Helvetica, rankdir=LR, style="rounded,filled", label=" "];
+    e4_start [rankdir=LR, fillcolor="#CCFFCC", fontname=Courier, shape=record, peripheries=1, style=filled, label=" "];
+e4_end [fontname=Helvetica, rankdir=LR, style="rounded,filled", shape=record, fillcolor="#FFFFCC", peripheries=1, label=" "];
 
     e4_start -> e4_end [ attr=default, minlen=2, label=1 ];
     e4_inv [style=invis]
@@ -70,8 +70,8 @@ e4_end [shape=record, peripheries=1, fillcolor="#FFFFCC", fontname=Helvetica, ra
 subgraph cluster_5 {
     style=filled;
     color=transparent;
-    e5_start [fillcolor="#FCFCFC", peripheries=1, shape=box, fontname=Helvetica, style="rounded,filled", label=" "];
-e5_end [shape=record, peripheries=1, fontname=Courier, rankdir=LR, style=filled, fillcolor="#CCFFCC", label=" "];
+    e5_start [fontname=Helvetica, fillcolor="#FCFCFC", shape=box, style="rounded,filled", peripheries=1, label=" "];
+e5_end [rankdir=LR, fillcolor="#CCFFCC", fontname=Courier, shape=record, peripheries=1, style=filled, label=" "];
 
     e5_start -> e5_end [ attr=default, minlen=2, label=3 ];
     e5_inv [style=invis]
@@ -83,8 +83,8 @@ e5_end [shape=record, peripheries=1, fontname=Courier, rankdir=LR, style=filled,
 subgraph cluster_6 {
     style=filled;
     color=transparent;
-    e6_start [peripheries=1, shape=circle, fontname=Helvetica, fillcolor="#FFFFFF", width=0.2, style="rounded,filled", label=" "];
-e6_end [shape=record, peripheries=1, fillcolor="#FFFFCC", fontname=Helvetica, rankdir=LR, style="rounded,filled", label=" "];
+    e6_start [fontname=Helvetica, fillcolor="#FFFFFF", style="rounded,filled", shape=circle, width=0.2, peripheries=1, label=" "];
+e6_end [fontname=Helvetica, rankdir=LR, style="rounded,filled", shape=record, fillcolor="#FFFFCC", peripheries=1, label=" "];
 
     e6_start -> e6_end [ attr=default, minlen=2, label=1 ];
     e6_inv [style=invis]
@@ -96,8 +96,8 @@ e6_end [shape=record, peripheries=1, fillcolor="#FFFFCC", fontname=Helvetica, ra
 subgraph cluster_7 {
     style=filled;
     color=transparent;
-    e7_start [shape=record, peripheries=1, fillcolor="#FFFFCC", fontname=Helvetica, rankdir=LR, style="rounded,filled", label=" "];
-e7_end [peripheries=1, shape=circle, fontname=Helvetica, fillcolor="#FFFFFF", width=0.2, style="rounded,filled", label=" "];
+    e7_start [fontname=Helvetica, rankdir=LR, style="rounded,filled", shape=record, fillcolor="#FFFFCC", peripheries=1, label=" "];
+e7_end [fontname=Helvetica, fillcolor="#FFFFFF", style="rounded,filled", shape=circle, width=0.2, peripheries=1, label=" "];
 
     e7_start -> e7_end [ attr=default, minlen=2, label=1 ];
     e7_inv [style=invis]

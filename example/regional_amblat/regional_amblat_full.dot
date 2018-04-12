@@ -1,17 +1,17 @@
 
 digraph{
 rankdir=TB
-n0 [shape=box, fontname="Helvetica", style=rounded, color="#134d9c", penwidth=0.4, label=1];
-n1 [fillcolor="#df77cb", shape=octagon, style=filled, fontname="Helvetica", color="#9f1684", label=1];
-n2 [shape=box, style="rounded,filled", fontname="Helvetica", color="#134d9c", fillcolor="#68b5e3", label=12];
+n0 [color="#134d9c", fontname="Helvetica", penwidth=0.4, style=rounded, shape=box, label=1];
+n1 [fontname="Helvetica", color="#9f1684", shape=octagon, style=filled, fillcolor="#df77cb", label=1];
+n2 [color="#134d9c", fontname="Helvetica", style="rounded,filled", fillcolor="#68b5e3", shape=box, label=12];
 
 
 
-n0 -> n2 [ style=dotted, color="#134d9c", penwidth=0.4, dir=back, minlen=2, label=12 ];
+n0 -> n2 [ color="#134d9c", penwidth=0.4, dir=back, style=dotted, minlen=2, label=12 ];
 
-n2 -> n1 [ style=solid, arrowhead=none, penwidth=2, color="#0000FF", minlen=2, label=12 ];
+n2 -> n1 [ style=solid, penwidth=2, arrowhead=none, color="#0000FF", minlen=2, label=12 ];
 
-n0 -> n1 [ style=solid, arrowhead=none, penwidth=2, color="#0000FF", minlen=2, label=1 ];
+n0 -> n1 [ style=solid, penwidth=2, arrowhead=none, color="#0000FF", minlen=2, label=1 ];
 
 }
         

@@ -5,10 +5,10 @@ rankdir=TB
 subgraph cluster_0 {
     style=filled;
     color=transparent;
-    e0_start [style=filled, shape=box, fillcolor="#CCFFCC", fontname="helvetica", label=" "];
-e0_end [fillcolor="#EEEEEE", shape=box, fontname="helvetica", style="filled,rounded", label=" "];
+    e0_start [shape=box, fillcolor="#CCFFCC", style=filled, fontname="helvetica", label=" "];
+e0_end [style="filled,rounded", shape=box, fontname="helvetica", fillcolor="#EEEEEE", label=" "];
 
-    e0_start -> e0_end [ style=solid,color="#000000",arrowhead=normal,penwidth=1,constraint=true, minlen=2, label=3 ];
+    e0_start -> e0_end [ arrowhead=normal,penwidth=1,color="#000000",constraint=true,style=solid, minlen=2, label=3 ];
     e0_inv [style=invis]
     e0_start -> e0_inv [style=invis]
     e0_end -> e0_inv [style=invis]
@@ -18,10 +18,10 @@ e0_end [fillcolor="#EEEEEE", shape=box, fontname="helvetica", style="filled,roun
 subgraph cluster_1 {
     style=filled;
     color=transparent;
-    e1_start [style=filled, fontname="helvetica", fillcolor="#FFFFCC", shape=note, label=" "];
-e1_end [fillcolor="#EEEEEE", shape=box, fontname="helvetica", style="filled,rounded", label=" "];
+    e1_start [shape=note, fillcolor="#FFFFCC", style=filled, fontname="helvetica", label=" "];
+e1_end [style="filled,rounded", shape=box, fontname="helvetica", fillcolor="#EEEEEE", label=" "];
 
-    e1_start -> e1_end [ style=solid,color="#000000",arrowhead=normal,penwidth=1,constraint=true, minlen=2, label=3 ];
+    e1_start -> e1_end [ arrowhead=normal,penwidth=1,color="#000000",constraint=true,style=solid, minlen=2, label=3 ];
     e1_inv [style=invis]
     e1_start -> e1_inv [style=invis]
     e1_end -> e1_inv [style=invis]
@@ -31,10 +31,10 @@ e1_end [fillcolor="#EEEEEE", shape=box, fontname="helvetica", style="filled,roun
 subgraph cluster_2 {
     style=filled;
     color=transparent;
-    e2_start [shape=box, fillcolor="#FFE0D8", fontname="helvetica", style="filled,rounded,bold", label=" "];
-e2_end [shape=box, fillcolor="#FFE0D8", fontname="helvetica", style="filled,rounded,bold", label=" "];
+    e2_start [fillcolor="#FFE0D8", style="filled,rounded,bold", shape=box, fontname="helvetica", label=" "];
+e2_end [fillcolor="#FFE0D8", style="filled,rounded,bold", shape=box, fontname="helvetica", label=" "];
 
-    e2_start -> e2_end [ style=solid,arrowhead=normal,color="#FF0000",penwidth=1,constraint=true, minlen=2, label=20 ];
+    e2_start -> e2_end [ arrowhead=normal,color="#FF0000",penwidth=1,constraint=true,style=solid, minlen=2, label=20 ];
     e2_inv [style=invis]
     e2_start -> e2_inv [style=invis]
     e2_end -> e2_inv [style=invis]
@@ -44,10 +44,10 @@ e2_end [shape=box, fillcolor="#FFE0D8", fontname="helvetica", style="filled,roun
 subgraph cluster_3 {
     style=filled;
     color=transparent;
-    e3_start [shape=box, fillcolor="#FFE0D8", fontname="helvetica", style="filled,rounded,bold", label=" "];
-e3_end [style=filled, fontname="helvetica", fillcolor="#FFFFCC", shape=note, label=" "];
+    e3_start [fillcolor="#FFE0D8", style="filled,rounded,bold", shape=box, fontname="helvetica", label=" "];
+e3_end [shape=note, fillcolor="#FFFFCC", style=filled, fontname="helvetica", label=" "];
 
-    e3_start -> e3_end [ style=solid,arrowhead=normal,color="#FF0000",penwidth=1,constraint=true, minlen=2, label=7 ];
+    e3_start -> e3_end [ arrowhead=normal,color="#FF0000",penwidth=1,constraint=true,style=solid, minlen=2, label=7 ];
     e3_inv [style=invis]
     e3_start -> e3_inv [style=invis]
     e3_end -> e3_inv [style=invis]
@@ -57,10 +57,10 @@ e3_end [style=filled, fontname="helvetica", fillcolor="#FFFFCC", shape=note, lab
 subgraph cluster_4 {
     style=filled;
     color=transparent;
-    e4_start [shape=box, fillcolor="#FFE0D8", fontname="helvetica", style="filled,rounded,bold", label=" "];
-e4_end [style=filled, shape=box, fillcolor="#CCFFCC", fontname="helvetica", label=" "];
+    e4_start [fillcolor="#FFE0D8", style="filled,rounded,bold", shape=box, fontname="helvetica", label=" "];
+e4_end [shape=box, fillcolor="#CCFFCC", style=filled, fontname="helvetica", label=" "];
 
-    e4_start -> e4_end [ style=solid,arrowhead=normal,color="#FF0000",penwidth=1,constraint=true, minlen=2, label=7 ];
+    e4_start -> e4_end [ arrowhead=normal,color="#FF0000",penwidth=1,constraint=true,style=solid, minlen=2, label=7 ];
     e4_inv [style=invis]
     e4_start -> e4_inv [style=invis]
     e4_end -> e4_inv [style=invis]
@@ -70,10 +70,10 @@ e4_end [style=filled, shape=box, fillcolor="#CCFFCC", fontname="helvetica", labe
 subgraph cluster_5 {
     style=filled;
     color=transparent;
-    e5_start [style=filled, fontname="helvetica", fillcolor="#FFFFCC", shape=note, label=" "];
-e5_end [style=filled, shape=box, fillcolor="#CCFFCC", fontname="helvetica", label=" "];
+    e5_start [shape=note, fillcolor="#FFFFCC", style=filled, fontname="helvetica", label=" "];
+e5_end [shape=box, fillcolor="#CCFFCC", style=filled, fontname="helvetica", label=" "];
 
-    e5_start -> e5_end [ style=solid,arrowhead=normal,color="#FF0000",penwidth=1,constraint=true, minlen=2, label=1 ];
+    e5_start -> e5_end [ arrowhead=normal,color="#FF0000",penwidth=1,constraint=true,style=solid, minlen=2, label=1 ];
     e5_inv [style=invis]
     e5_start -> e5_inv [style=invis]
     e5_end -> e5_inv [style=invis]
@@ -83,10 +83,10 @@ e5_end [style=filled, shape=box, fillcolor="#CCFFCC", fontname="helvetica", labe
 subgraph cluster_6 {
     style=filled;
     color=transparent;
-    e6_start [style=filled, shape=box, fillcolor="#CCFFCC", fontname="helvetica", label=" "];
-e6_end [shape=box, fillcolor="#FFE0D8", fontname="helvetica", style="filled,rounded,bold", label=" "];
+    e6_start [shape=box, fillcolor="#CCFFCC", style=filled, fontname="helvetica", label=" "];
+e6_end [fillcolor="#FFE0D8", style="filled,rounded,bold", shape=box, fontname="helvetica", label=" "];
 
-    e6_start -> e6_end [ style=solid,arrowhead=normal,color="#FF0000",penwidth=1,constraint=true, minlen=2, label=2 ];
+    e6_start -> e6_end [ arrowhead=normal,color="#FF0000",penwidth=1,constraint=true,style=solid, minlen=2, label=2 ];
     e6_inv [style=invis]
     e6_start -> e6_inv [style=invis]
     e6_end -> e6_inv [style=invis]
