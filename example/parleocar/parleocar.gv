@@ -85,6 +85,7 @@ subgraph cluster_input_ports_group_inner { label=""; penwidth=0
 node[shape=circle style="rounded,filled" fillcolor="#FFFFFF" peripheries=1 fontname=Helvetica width=0.2]
 
 /* Nodes representing workflow input ports */
+node[color=red]
 prediction_years_input_port [label=""]
 prism_data_for_coordinates_input_port [label=""]
 itrdb_input_port [label=""]
@@ -103,7 +104,7 @@ subgraph cluster_output_ports_group_inner { label=""; penwidth=0
 node[shape=circle style="rounded,filled" fillcolor="#FFFFFF" peripheries=1 fontname=Helvetica width=0.2]
 
 /* Nodes representing workflow output ports */
-paleocar_models_output_port [label=""]
+paleocar_models_output_port [label="" color=blue]
 
 /* End of double-cluster for grouping workflow output ports */
 }}
