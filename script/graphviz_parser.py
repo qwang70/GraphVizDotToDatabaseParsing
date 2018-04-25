@@ -251,8 +251,8 @@ def main():
     edgePropertyList = printer.getEdgeProperties().getElementList()
 
     graph = Graph(nodePropertyList, edgePropertyList)
-    for n in nodePropertyList:
-        print(n.get_derived_attr())
+    #for n in nodePropertyList:
+    #    print(n.get_derived_attr())
 
     # fca node
     fca = FCA(graph)

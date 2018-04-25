@@ -6,7 +6,7 @@ for example in ${EXAMPLE_FOLDER}/**; do
     inputFolder="${example}/input"
     outputFolder="${example}/output"
     for filename in ${inputFolder}/*.gv; do
-        python3 ${SCRIPT_FOLDER}/graphviz_parser.py $filename 
+        python3 ${SCRIPT_FOLDER}/graphviz_parser.py $filename -config test.json 
         gvFileBaseName=$(basename $filename | cut -d"." -f1)
         echo $gvFileBaseName
         mkdir -p ${outputFolder}

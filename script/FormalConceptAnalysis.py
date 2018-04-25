@@ -12,6 +12,7 @@ class FCA(object):
     def __init__(self, graph):
         """
         list all self objects
+        self.graph
         self.fca_node
         self.ctx_node
         self.fca_edge
@@ -24,6 +25,7 @@ class FCA(object):
         self.mapEdgeToTypeId_EdgeOnly
         self.mapEdgeTypeIdToCtx_EdgeOnly
         """
+        self.graph = graph
         nodePropertyList = graph.vert_dict.values()
         edgePropertyList = graph.edge_dict.values()
 
@@ -66,13 +68,27 @@ class FCA(object):
         list(map(lambda x: "\"" + x + "\"", edgeTypeAttr)))))
             # node schema
             for k, v in self.mapNodeToTypeId.items():
+                valueToNodeAttr = []
                 nodeName = self.mapNodeToName[k]
+                nodeObj = self.graph.vert_dict[int(k)]
+                for key in nodeAttr:
+                    # flag to check whether the key is in the node attr
+                    exist = False
+                    for derivedAttrKey, derivedAttrVal in nodeObj.get_derived_attr().items():
+                        if derivedAttrKey == key:
+                            valueToNodeAttr.append(str(derivedAttrVal))
+                            exist = True
+                            break
+                    if not exist:
+                        valueToNodeAttr.append("default")
                 if format == "prolog":
-                    schema += "node(n{}, nt{}, {})\n".format(k,v, nodeName)
+                    schema += "node(n{}, nt{}, {}, {})\n"\
+                               .format(k,v, nodeName, ", ".join(valueToNodeAttr))
                 elif format == "sql":
-                    c.execute("INSERT INTO node VALUES (?,?,?)",[k,v,nodeName])
+                    query = "INSERT INTO node VALUES (?,?,?{})"\
+                             .format(",?"*len(nodeAttr))
+                    c.execute(query,[k,v,nodeName] + valueToNodeAttr)
             for k, v in self.mapNodeTypeIdToCtx.items():
-                print(k)
                 valueToNodeAttr = []
                 for key in nodeTypeAttr:
                     # flag to check whether the key is in the node attr
@@ -174,6 +190,7 @@ class FCA(object):
 
     def createFCA(self, propertyList, isEdge=False):
         index = self.extractIndex(propertyList, isEdge)
+        print(index)
         attrs = self.extractAttrs(propertyList)
         # create FCA
         fca = pd.DataFrame(index=index, columns=attrs)
