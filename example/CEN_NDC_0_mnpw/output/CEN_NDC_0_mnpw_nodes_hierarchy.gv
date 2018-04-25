@@ -1,4 +1,4 @@
-// <Lattice object of 3 atoms 7 concepts 2 coatoms at 0x10d207550>
+// <Lattice object of 3 atoms 7 concepts 2 coatoms at 0x114927eb8>
 digraph Lattice {
 	node [label="" shape=circle style=filled width=.25]
 	edge [dir=none labeldistance=1.5 minlen=2]
@@ -12,19 +12,12 @@ digraph Lattice {
 		color=transparent
 		c1 [fillcolor="#CCFFCC" fontname=helvetica label=3 shape=box style=filled]
 	}
-	c1 -> c1 [label="0:\"CEN.West\"	
-1:\"CEN.Northeast\"	
-2:\"CEN.South\"" color=transparent labelangle=270]
 	c1 -> c0
 	subgraph cluster_2 {
 		style=filled
 		color=transparent
 		c2 [fillcolor="#FFFFCC" fontname=helvetica label=4 shape=note style=filled]
 	}
-	c2 -> c2 [label="54:\"NDC.Southwest\"	
-55:\"NDC.Southeast\"	
-56:\"NDC.West\"	
-57:\"NDC.Northeast\"" color=transparent labelangle=270]
 	c2 -> c0
 	subgraph cluster_3 {
 		style=filled
@@ -38,57 +31,6 @@ digraph Lattice {
 		color=transparent
 		c4 [fillcolor="#EEEEEE" fontname=helvetica label=51 shape=box style="filled,rounded"]
 	}
-	c4 -> c4 [label="3:\"CEN.WA\nNDC.WA\"	
-4:\"CEN.NJ\nNDC.NJ\"	
-5:\"CEN.NM\nNDC.NM\"	
-6:\"CEN.KY\nNDC.KY\"	
-7:\"CEN.AL\nNDC.AL\"	
-8:\"CEN.IL\nNDC.IL\"	
-9:\"CEN.Midwest\nNDC.Midwest\"	
-10:\"CEN.SC\nNDC.SC\"	
-11:\"CEN.AZ\nNDC.AZ\"	
-12:\"CEN.NY\nNDC.NY\"	
-13:\"CEN.KS\nNDC.KS\"	
-14:\"CEN.UT\nNDC.UT\"	
-15:\"CEN.PA\nNDC.PA\"	
-16:\"CEN.VT\nNDC.VT\"	
-17:\"CEN.ID\nNDC.ID\"	
-18:\"CEN.CT\nNDC.CT\"	
-19:\"CEN.OR\nNDC.OR\"	
-20:\"CEN.WV\nNDC.WV\"	
-21:\"CEN.CO\nNDC.CO\"	
-22:\"CEN.CA\nNDC.CA\"	
-23:\"CEN.TX\nNDC.TX\"	
-24:\"CEN.VA\nNDC.VA\"	
-25:\"CEN.DE\nNDC.DE\"	
-26:\"CEN.ME\nNDC.ME\"	
-27:\"CEN.TN\nNDC.TN\"	
-28:\"CEN.IA\nNDC.IA\"	
-29:\"CEN.NC\nNDC.NC\"	
-30:\"CEN.IN\nNDC.IN\"	
-31:\"CEN.WY\nNDC.WY\"	
-32:\"CEN.ND\nNDC.ND\"	
-33:\"CEN.NE\nNDC.NE\"	
-34:\"CEN.LA\nNDC.LA\"	
-35:\"CEN.FL\nNDC.FL\"	
-36:\"CEN.NV\nNDC.NV\"	
-37:\"CEN.MA\nNDC.MA\"	
-38:\"CEN.SD\nNDC.SD\"	
-39:\"CEN.MI\nNDC.MI\"	
-40:\"CEN.AR\nNDC.AR\"	
-41:\"CEN.DC\nNDC.DC\"	
-42:\"CEN.GA\nNDC.GA\"	
-43:\"CEN.WI\nNDC.WI\"	
-44:\"CEN.OH\nNDC.OH\"	
-45:\"CEN.MO\nNDC.MO\"	
-46:\"CEN.MN\nNDC.MN\"	
-47:\"CEN.MD\nNDC.MD\"	
-48:\"CEN.MS\nNDC.MS\"	
-49:\"CEN.RI\nNDC.RI\"	
-50:\"CEN.OK\nNDC.OK\"	
-51:\"CEN.NH\nNDC.NH\"	
-52:\"CEN.USA\nNDC.USA\"	
-53:\"CEN.MT\nNDC.MT\"" color=transparent labelangle=270]
 	c4 -> c0
 	subgraph cluster_5 {
 		style=filled

@@ -29,15 +29,48 @@ class GraphNode(GraphObj):
     def __init__(self, id, attr_list=None):
         super().__init__(id, attr_list)
         self.name = None
-        
+
+        # fill on second iteration
+        self.adjacentEdge = []
+        self.incoming = 0
+        self.outgoing = 0
+
     def get_name(self):
         return self.name
 
     def set_name(self, x):
         self.name = x
-
+    
     def printNode(self):
         print("id:{}\nname:{}\nattr:{}\n".format(self.get_id(), self.name, self.attr))
+
+    # from second graph iteration
+    def add_neighbor(self, edge):
+        self.adjacentEdge.append(edge.get_id())
+
+    def add_neighbor_id(self, eid):
+        self.adjacentEdge.append(eid)
+
+    def get_derived_attr(self):
+        return self.derived_attr
+    def gen_derived_attr(self):
+        self.derived_attr = {}
+        if self.incoming > 0:
+            self.derived_attr["indeg>0"] = True
+        else:
+            self.derived_attr["indeg>0"] = False
+        self.derived_attr["indeg"] = self.incoming
+        if self.outgoing > 0:
+            self.derived_attr["outdeg>0"] = True
+        else:
+            self.derived_attr["outdeg>0"] = False
+        self.derived_attr["outdeg"] = self.outgoing
+        
+    def incIncoming(self):
+        self.incoming += 1
+
+    def incOutgoing(self):
+        self.outgoing += 1
 
 class GraphEdge(GraphObj):
     def __init__(self, id, attr_list=None):

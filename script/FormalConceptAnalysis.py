@@ -4,12 +4,12 @@ import numpy as np
 from fcaVisualize import *
 import sqlite3
 
-def graphviz(self, filename=None, directory=None, render=False, view=False, isEdge=False,**kwargs):
+def graphviz(self, filename=None, directory=None, render=False, view=False, isEdge=False,showLabel=True, **kwargs):
     """Return graphviz source for visualizing the lattice graph."""
-    return lattice(self, filename, directory, render, view, isEdge, **kwargs)
+    return lattice(self, filename, directory, render, view, isEdge, showLabel, **kwargs)
 
 class FCA(object):
-    def __init__(self, nodePropertyList=None, edgePropertyList=None):
+    def __init__(self, graph):
         """
         list all self objects
         self.fca_node
@@ -18,54 +18,79 @@ class FCA(object):
         self.ctx_edge
         self.mapNodeToTypeId
         self.mapNodeTypeIdToCtx
+        self.mapNodeToName
         self.mapEdgeToTypeId
         self.mapEdgeTypeIdToCtx
         self.mapEdgeToTypeId_EdgeOnly
         self.mapEdgeTypeIdToCtx_EdgeOnly
         """
+        nodePropertyList = graph.vert_dict.values()
+        edgePropertyList = graph.edge_dict.values()
+
         self.fca_node, self.ctx_node = self.createFCA(nodePropertyList)
         self.mapNodeToTypeId, self.mapNodeTypeIdToCtx, self.mapNodeToName = self.helpMapNodeToType()
 
         self.fca_edge, self.ctx_edge = self.createFCA(edgePropertyList, True)
 
-    def outputSchema(self, filename, format='prolog'):
+    def outputSchema(self, filename, format='prolog', config=None):
+        # extract node and edge type attr
+        nodeAttr = config["nodeAttr"]["include"]
+        nodeTypeAttr = config["nodeTypeAttr"]["include"]
+        edgeTypeAttr = config["edgeTypeAttr"]["include"]
         if self.mapNodeToTypeId is not None:
             if format == "prolog":
                 schema = ""
-                schema += "#node(nodeId, nodeTypeId, nodeName)\n"
-                schema += "#nodeType(nodeTypeId, nodeType)\n"
+                schema += "#node(nodeId, nodeTypeId, nodeName, {})\n".format(', '.join(nodeAttr))
+                schema += "#nodeType(nodeTypeId, {})\n".format(', '.join(nodeTypeAttr))
                 schema += "#edge(edgeId, startNodeId, endNodeId, edgeTypeId)\n"
-                schema += "#edgeType(edgeTypeId, edgeType)\n"
+                schema += "#edgeType(edgeTypeId, {})\n".format(", ".join(edgeTypeAttr))
             elif format == "sql":
                 conn = sqlite3.connect(filename)
                 c = conn.cursor()
                 c.execute("DROP TABLE IF EXISTS node")
                 c.execute('''CREATE TABLE node
-(nodeId INTEGER, nodeTypeId INTEGER, nodeName TEXT)''')
+(nodeId INTEGER, nodeTypeId INTEGER, nodeName TEXT, {})'''\
+                .format(' TEXT, '.join(\
+        list(map(lambda x: "\"" + x + "\"", nodeAttr)))))
                 c.execute("DROP TABLE IF EXISTS nodeType")
                 c.execute('''CREATE TABLE nodeType
-(nodeTypeId INTEGER, nodeType TEXT)''')
+(nodeTypeId INTEGER, {})'''.format(' TEXT, '.join(\
+        list(map(lambda x: "\"" + x + "\"", nodeTypeAttr)))))
 
                 c.execute("DROP TABLE IF EXISTS edge")
                 c.execute('''CREATE TABLE edge
 (edgeId INTEGER, startNodeId INTEGER, endNodeId INTEGER, edgeTypeId INTEGER)''')
                 c.execute("DROP TABLE IF EXISTS edgeType")
                 c.execute('''CREATE TABLE edgeType
-(edgeTypeId INTEGER, edgeType TEXT)''')
+(edgeTypeId INTEGER, {})'''.format(' TEXT, '.join(\
+        list(map(lambda x: "\"" + x + "\"", edgeTypeAttr)))))
             # node schema
             for k, v in self.mapNodeToTypeId.items():
                 nodeName = self.mapNodeToName[k]
                 if format == "prolog":
-                    schema += "node({}, {}, {})\n".format(k,v, nodeName)
+                    schema += "node(n{}, nt{}, {})\n".format(k,v, nodeName)
                 elif format == "sql":
                     c.execute("INSERT INTO node VALUES (?,?,?)",[k,v,nodeName])
             for k, v in self.mapNodeTypeIdToCtx.items():
+                print(k)
+                valueToNodeAttr = []
+                for key in nodeTypeAttr:
+                    # flag to check whether the key is in the node attr
+                    exist = False
+                    for nodeAttr in v.intent:
+                        nodeAttrKey, nodeAttrVal = nodeAttr.split("=")
+                        if nodeAttrKey == key:
+                            valueToNodeAttr.append(nodeAttrVal)
+                            exist = True
+                            break
+                    if not exist:
+                        valueToNodeAttr.append("default")
                 if format == "prolog":
-                    schema += "nodeType({}, \"{}\")\n"\
-                           .format(k, ", ".join(v.intent).replace("\"", "\\\""))
+                    schema += "nodeType(nt{}, {})\n"\
+                           .format(k, ", ".join(valueToNodeAttr))
                 elif format == "sql":
-                    c.execute("INSERT INTO nodeType VALUES (?,?)",
-                            [k, ", ".join(v.intent)])
+                    query = "INSERT INTO nodeType VALUES (?{})".format(",?"*len(nodeTypeAttr))
+                    c.execute(query,[k] + valueToNodeAttr)
             # edge schema
             eid = 0
             for k, v in self.mapEdgeToTypeId.items():
@@ -73,20 +98,34 @@ class FCA(object):
                 leftTypeIdx, rightTypeIdx, _ = v.split(":", 2)
                 edgeTypeIdx = self.mapEdgeToTypeId_EdgeOnly[k]
                 if format == "prolog":
-                    schema += "edge({}, {}, {}, {})\n"\
+                    schema += "edge(e{}, n{}, n{}, et{})\n"\
                         .format(eid, leftIdx, rightIdx, edgeTypeIdx)
                 elif format == "sql":
                     c.execute("INSERT INTO edge VALUES (?,?,?,?)",\
                         [eid, leftIdx, rightIdx, edgeTypeIdx])
                 eid += 1
             for k, v in self.mapEdgeTypeIdToCtx_EdgeOnly.items():
+                # get value from intent
+                valueToEdgeAttr = []
+                for key in edgeTypeAttr:
+                    # flag to check whether the key is in the node attr
+                    exist = False
+                    for edgeAttr in v.intent:
+                        edgeAttrKey, edgeAttrVal = edgeAttr.split("=")
+                        if edgeAttrKey == key:
+                            valueToEdgeAttr.append(edgeAttrVal)
+                            exist = True
+                            break
+                    if not exist:
+                        valueToEdgeAttr.append("default")
+                # get edge type idx
                 edgeTypeIdx = list(self.mapEdgeTypeIdToCtx_EdgeOnly.keys()).index(k)
                 if format == "prolog":
-                    schema += "edgeType({}, \"{}\")\n"\
-                           .format(edgeTypeIdx, ", ".join(v.intent).replace("\"", "\\\""))
+                    schema += "edgeType(et{}, {})\n"\
+                           .format(edgeTypeIdx, ", ".join(valueToEdgeAttr))
                 elif format == "sql":
-                    c.execute("INSERT INTO edgeType VALUES (?,?)",
-                        [edgeTypeIdx, ", ".join(v.intent)])
+                    query = "INSERT INTO edgeType VALUES (?{})".format(",?"*len(edgeTypeAttr))
+                    c.execute(query, [edgeTypeIdx] + valueToEdgeAttr)
             if format == "prolog":
                 with open(filename, 'w') as file:
                     file.write(schema)
@@ -166,14 +205,14 @@ class FCA(object):
             ctx = Context.fromstring(ctx_string,frmat='csv')
         return (fca, ctx)
 
-    def createNodesHierachyGraphviz(self, filename):
+    def createNodesHierarchyGraphviz(self, filename, showLabel = True):
         if self.ctx_node is not None:
-            dot = graphviz(self.ctx_node.lattice, isEdge = False)
+            dot = graphviz(self.ctx_node.lattice, isEdge = False, showLabel = showLabel)
             dot.render(filename)
 
-    def createEdgesHierachyGraphviz(self, filename):
+    def createEdgesHierarchyGraphviz(self, filename, showLabel=True):
         if self.ctx_edge is not None:
-            dot = graphviz(self.ctx_edge.lattice, isEdge = True)
+            dot = graphviz(self.ctx_edge.lattice, isEdge = True, showLabel = showLabel)
             dot.render(filename)
 
     def getDictKey(self, edge, concept):

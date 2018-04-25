@@ -13,7 +13,7 @@ SORTKEYS = [lambda c: c.index]
 NAME_GETTERS = [lambda c: 'c%d' % c.index]
 
 
-def lattice(lattice, filename, directory, render, view, isEdge, **kwargs):
+def lattice(lattice, filename, directory, render, view, isEdge, showLabel, **kwargs):
     """Return graphviz source for visualizing the lattice graph."""
     dot = graphviz.Digraph(
         name=lattice.__class__.__name__,
@@ -41,6 +41,7 @@ def lattice(lattice, filename, directory, render, view, isEdge, **kwargs):
                 node_attr[key] = val.replace("\"","")
 
         name = node_name(concept)
+        # draw cluster
         with dot.subgraph(name='cluster_{}'.format(sortkey(concept))) as c:
             c.attr(style='filled')
             c.attr(color='transparent')
@@ -50,19 +51,15 @@ def lattice(lattice, filename, directory, render, view, isEdge, **kwargs):
                 c.node(name, _attributes=node_attr)
             else:
                 # edge hierachy
-                # c.node_attr.update(shape = 'none', label="")
-                # print(isEdge, name)
-                # c.node_attr.update(shape = 'none')
                 c.node(name)
                 c.node('{}_end'.format(name))
                 c.edge(name, '{}_end'.format(name), _attributes=node_attr)
 
-        if concept.objects:
+        # draw edge with label
+        if showLabel and concept.objects:
             dot.edge(name, name,
                 label='\t\n'.join(concept.objects),
                 labelangle='270', color='transparent')
-            """
-            """
 
         dot.edges((name, node_name(c))
             for c in sorted(concept.lower_neighbors, key=sortkey))

@@ -15,6 +15,8 @@ import json
 from GraphProperties import *
 from PowersetObj import *
 from FormalConceptAnalysis import *
+from parse_json import *
+from Graph import *
 
 class TreeNode(object):
     def __init__(self, id):
@@ -248,36 +250,43 @@ def main():
     nodePropertyList = printer.getNodeProperties().getElementList()
     edgePropertyList = printer.getEdgeProperties().getElementList()
 
+    graph = Graph(nodePropertyList, edgePropertyList)
+    for n in nodePropertyList:
+        print(n.get_derived_attr())
+
     # fca node
-    fca = FCA(nodePropertyList, edgePropertyList)
-    fca.createNodesHierachyGraphviz(\
-            '{}/{}{}'.format(output_folder, base_filename, "_nodes_hierachy.gv"))
-    fca.createEdgesHierachyGraphviz(\
-            '{}/{}{}'.format(output_folder, base_filename,"_edges_hierachy.gv"))
+    fca = FCA(graph)
+    fca.createNodesHierarchyGraphviz(\
+            '{}/{}{}'.format(output_folder, base_filename, "_nodes_hierarchy.gv"), showLabel=False)
+    fca.createEdgesHierarchyGraphviz(\
+            '{}/{}{}'.format(output_folder, base_filename,"_edges_hierarchy.gv"))
     fca.createNodesGraphviz(\
             '{}/{}{}'.format(output_folder, base_filename, "_nodes.gv"))
     fca.createEdgesGraphviz(\
             '{}/{}{}'.format(output_folder, base_filename, "_edges.gv"))
     fca.createGraphviz(\
             '{}/{}{}'.format(output_folder, base_filename, "_full.gv"))
+
+    # parse json file
+    config = parse_json(args.config)
     fca.outputSchema(\
-            '{}/{}{}'.format(output_folder, base_filename, "_schema.txt"))
+            '{}/{}{}'.format(output_folder, base_filename, "_schema.txt"), config =config )
     fca.outputSchema(\
-            '{}/{}{}'.format(output_folder, base_filename, "_schema.db", format="sql"))
+            '{}/{}{}'.format(output_folder, base_filename, "_schema.db"), format="sql", config = config )
 
     # powerset formation
-    # createTypeHierachyGraph(propertyList)
+    # createTypeHierarchyGraph(nodePropertyList)
 
-def createTypeHierachyGraph(propertyList):
+def createTypeHierarchyGraph(propertyList):
     # powerset construction
     commonKeys, structuredDict = preprocessing(propertyList)
-    # outputJson(structuredDict)
+    outputJson(structuredDict)
 
-    # typeHierachy = TypeHierachy(structuredDict)
+    # typeHierarchy = TypeHierarchy(structuredDict)
 
 def outputJson(structuredDict):
     json_data = structuredDict.dumps(indent=4)
-    # print(json_data)
+    print(json_data)
 
 def preprocessing(propertyList):
     structuredDict = ObjDict()
@@ -300,6 +309,8 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='A GraphViz dot file to Sqlite idbase converter.')
     parser.add_argument('-outFolder', 
                         help='name of the output idbase file')
+    parser.add_argument('-config', 
+                        help='name of the configuration json file')
     parser.add_argument('infile', 
                         help='name of the input dot/gv file')
     args = parser.parse_args()
