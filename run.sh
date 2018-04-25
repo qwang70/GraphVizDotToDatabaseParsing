@@ -8,8 +8,6 @@ for example in ${EXAMPLE_FOLDER}/**; do
     for filename in ${inputFolder}/*.gv; do
         python3 ${SCRIPT_FOLDER}/graphviz_parser.py $filename 
         gvFileBaseName=$(basename $filename | cut -d"." -f1)
-        echo "basename"
-        echo $filename
         echo $gvFileBaseName
         mkdir -p ${outputFolder}
         gvNodeFileName="${outputFolder}/${gvFileBaseName}_nodes.gv"
@@ -18,16 +16,16 @@ for example in ${EXAMPLE_FOLDER}/**; do
         gvEdgeFilePng="${outputFolder}/${gvFileBaseName}_edges.png"
         gvFullFileName="${outputFolder}/${gvFileBaseName}_full.gv"
         gvFullFilePng="${outputFolder}/${gvFileBaseName}_full.png"
-        gvNodeHierachyFileName="${outputFolder}/${gvFileBaseName}_nodes_hierachy.gv"
-        gvNodeHierachyFilePng="${outputFolder}/${gvFileBaseName}_nodes_hierachy.png"
-        gvEdgeHierachyFileName="${outputFolder}/${gvFileBaseName}_edges_hierachy.gv"
-        gvEdgeHierachyFilePng="${outputFolder}/${gvFileBaseName}_edges_hierachy.png"
+        gvNodeHierarchyFileName="${outputFolder}/${gvFileBaseName}_nodes_hierarchy.gv"
+        gvNodeHierarchyFilePng="${outputFolder}/${gvFileBaseName}_nodes_hierarchy.png"
+        gvEdgeHierarchyFileName="${outputFolder}/${gvFileBaseName}_edges_hierarchy.gv"
+        gvEdgeHierarchyFilePng="${outputFolder}/${gvFileBaseName}_edges_hierarchy.png"
         schema="${outputFolder}/${gvFileBaseName}_schema.db"
         dot -Tpng $gvNodeFileName -o $gvNodeFilePng
         dot -Tpng $gvEdgeFileName -o $gvEdgeFilePng
         dot -Tpng $gvFullFileName -o $gvFullFilePng
-        dot -Tpng $gvNodeHierachyFileName -o $gvNodeHierachyFilePng
-        dot -Tpng $gvEdgeHierachyFileName -o $gvEdgeHierachyFilePng
-#sqlite3 $schema < script/rpqView.sql
+        dot -Tpng $gvNodeHierarchyFileName -o $gvNodeHierarchyFilePng
+        dot -Tpng $gvEdgeHierarchyFileName -o $gvEdgeHierarchyFilePng
+        sqlite3 $schema < script/rpqView.sql
     done
 done
