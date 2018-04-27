@@ -251,21 +251,23 @@ def main():
     edgePropertyList = printer.getEdgeProperties().getElementList()
 
     graph = Graph(nodePropertyList, edgePropertyList)
-    #for n in nodePropertyList:
-    #    print(n.get_derived_attr())
 
     # fca node
     fca = FCA(graph)
     # create hierarchy graph
     hierarchyFolder = "{}/HierarchyGraph".format(output_folder)
-    os.mkdir( hierarchyFolder,exist_ok=True )
+    os.makedirs( hierarchyFolder,exist_ok=True )
     fca.createNodesHierarchyGraphviz(\
             '{}/{}{}'.format(hierarchyFolder, base_filename, "_nodes_hierarchy.gv"), showLabel=False)
     fca.createEdgesHierarchyGraphviz(\
             '{}/{}{}'.format(hierarchyFolder, base_filename,"_edges_hierarchy.gv"), showLabel=False)
+    fca.createNodesHierarchyGraphviz(\
+            '{}/{}{}'.format(hierarchyFolder, base_filename, "_nodes_hierarchy_with_name.gv"))
+    fca.createEdgesHierarchyGraphviz(\
+            '{}/{}{}'.format(hierarchyFolder, base_filename,"_edges_hierarchy_with_name.gv"))
     # create type graph
     typeGraphFolder = "{}/TypeGraph".format(output_folder)
-    os.mkdir( typeGraphFolder, exist_ok=True )
+    os.makedirs( typeGraphFolder, exist_ok=True )
     fca.createNodesGraphviz(\
             '{}/{}{}'.format(typeGraphFolder, base_filename, "_nodes.gv"))
     fca.createEdgesGraphviz(\

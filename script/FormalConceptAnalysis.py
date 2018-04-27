@@ -4,9 +4,9 @@ import numpy as np
 from fcaVisualize import *
 import sqlite3
 
-def graphviz(self, filename=None, directory=None, render=False, view=False, isEdge=False,showLabel=True, **kwargs):
+def graphviz(self, filename=None, directory=None, isEdge=False,showLabel=True, **kwargs):
     """Return graphviz source for visualizing the lattice graph."""
-    return lattice(self, filename, directory, render, view, isEdge, showLabel, **kwargs)
+    return lattice(self, filename, directory, isEdge, showLabel, **kwargs)
 
 class FCA(object):
     def __init__(self, graph):
@@ -224,12 +224,12 @@ class FCA(object):
     def createNodesHierarchyGraphviz(self, filename, showLabel = True):
         if self.ctx_node is not None:
             dot = graphviz(self.ctx_node.lattice, isEdge = False, showLabel = showLabel)
-            dot.render(filename)
+            dot.save(filename)
 
     def createEdgesHierarchyGraphviz(self, filename, showLabel=True):
         if self.ctx_edge is not None:
             dot = graphviz(self.ctx_edge.lattice, isEdge = True, showLabel = showLabel)
-            dot.render(filename)
+            dot.save(filename)
 
     def getDictKey(self, edge, concept):
 

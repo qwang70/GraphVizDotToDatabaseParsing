@@ -1,0 +1,144 @@
+// <Lattice object of 3 atoms 7 concepts 2 coatoms at 0x112191ac8>
+digraph Lattice {
+	node [label="" shape=circle style=filled width=.25]
+	edge [dir=none labeldistance=1.5 minlen=2]
+	subgraph cluster_0 {
+		color=blue
+		c0_start
+		c0_end
+		c0 [style=invis]
+		c0_start -> c0_end [arrowhead="" color="" constraint="" label=0 penwidth=1 style=""]
+		c0_start -> c0 [style=invis]
+		c0_end -> c0 [style=invis]
+	}
+	subgraph cluster_1 {
+		color=blue
+		c1_start
+		c1_end
+		c1 [style=invis]
+		c1_start -> c1_end [arrowhead=none color="#FF0000" constraint=false label=3 penwidth=1 style=dashed]
+		c1_start -> c1 [style=invis]
+		c1_end -> c1 [style=invis]
+	}
+	c1 -> c1 [label="\"CEN.South\" -> \"NDC.Northeast\"	
+\"CEN.West\" -> \"NDC.Southwest\"	
+\"CEN.South\" -> \"NDC.Southwest\"" color=transparent labelangle=270]
+	c1 -> c0
+	subgraph cluster_2 {
+		color=blue
+		c2_start
+		c2_end
+		c2 [style=invis]
+		c2_start -> c2_end [arrowhead=normal color="#FF0000" constraint=true label=3 penwidth=1 style=solid]
+		c2_start -> c2 [style=invis]
+		c2_end -> c2 [style=invis]
+	}
+	c2 -> c2 [label="\"NDC.West\" -> \"CEN.West\"	
+\"CEN.Northeast\" -> \"NDC.Northeast\"	
+\"NDC.Southeast\" -> \"CEN.South\"" color=transparent labelangle=270]
+	c2 -> c0
+	subgraph cluster_3 {
+		color=blue
+		c3_start
+		c3_end
+		c3 [style=invis]
+		c3_start -> c3_end [color="#FF0000" label=6 penwidth=1]
+		c3_start -> c3 [style=invis]
+		c3_end -> c3 [style=invis]
+	}
+	c3 -> c1
+	c3 -> c2
+	subgraph cluster_4 {
+		color=blue
+		c4_start
+		c4_end
+		c4 [style=invis]
+		c4_start -> c4_end [arrowhead=normal color="#000000" constraint=true label=61 penwidth=1 style=solid]
+		c4_start -> c4 [style=invis]
+		c4_end -> c4 [style=invis]
+	}
+	c4 -> c4 [label="\"CEN.CT\nNDC.CT\" -> \"CEN.Northeast\"	
+\"CEN.KS\nNDC.KS\" -> \"CEN.Midwest\nNDC.Midwest\"	
+\"CEN.LA\nNDC.LA\" -> \"NDC.Southeast\"	
+\"CEN.PA\nNDC.PA\" -> \"CEN.Northeast\"	
+\"CEN.GA\nNDC.GA\" -> \"NDC.Southeast\"	
+\"CEN.IN\nNDC.IN\" -> \"CEN.Midwest\nNDC.Midwest\"	
+\"CEN.VA\nNDC.VA\" -> \"NDC.Southeast\"	
+\"CEN.NE\nNDC.NE\" -> \"CEN.Midwest\nNDC.Midwest\"	
+\"CEN.TX\nNDC.TX\" -> \"NDC.Southwest\"	
+\"CEN.TN\nNDC.TN\" -> \"NDC.Southeast\"	
+\"CEN.IL\nNDC.IL\" -> \"CEN.Midwest\nNDC.Midwest\"	
+\"CEN.RI\nNDC.RI\" -> \"CEN.Northeast\"	
+\"CEN.NV\nNDC.NV\" -> \"NDC.West\"	
+\"CEN.AZ\nNDC.AZ\" -> \"NDC.Southwest\"	
+\"CEN.KY\nNDC.KY\" -> \"NDC.Southeast\"	
+\"CEN.IA\nNDC.IA\" -> \"CEN.Midwest\nNDC.Midwest\"	
+\"CEN.WY\nNDC.WY\" -> \"NDC.West\"	
+\"CEN.NM\nNDC.NM\" -> \"NDC.Southwest\"	
+\"CEN.DC\nNDC.DC\" -> \"NDC.Northeast\"	
+\"CEN.TX\nNDC.TX\" -> \"CEN.South\"	
+\"CEN.MT\nNDC.MT\" -> \"NDC.West\"	
+\"CEN.NC\nNDC.NC\" -> \"NDC.Southeast\"	
+\"CEN.South\" -> \"CEN.USA\nNDC.USA\"	
+\"CEN.MD\nNDC.MD\" -> \"CEN.South\"	
+\"CEN.WI\nNDC.WI\" -> \"CEN.Midwest\nNDC.Midwest\"	
+\"CEN.MA\nNDC.MA\" -> \"CEN.Northeast\"	
+\"CEN.SC\nNDC.SC\" -> \"NDC.Southeast\"	
+\"CEN.MO\nNDC.MO\" -> \"CEN.Midwest\nNDC.Midwest\"	
+\"CEN.SD\nNDC.SD\" -> \"CEN.Midwest\nNDC.Midwest\"	
+\"CEN.NH\nNDC.NH\" -> \"CEN.Northeast\"	
+\"CEN.DC\nNDC.DC\" -> \"CEN.South\"	
+\"CEN.ME\nNDC.ME\" -> \"CEN.Northeast\"	
+\"CEN.MS\nNDC.MS\" -> \"NDC.Southeast\"	
+\"CEN.WV\nNDC.WV\" -> \"NDC.Southeast\"	
+\"CEN.VT\nNDC.VT\" -> \"CEN.Northeast\"	
+\"CEN.MI\nNDC.MI\" -> \"CEN.Midwest\nNDC.Midwest\"	
+\"CEN.DE\nNDC.DE\" -> \"CEN.South\"	
+\"CEN.NJ\nNDC.NJ\" -> \"CEN.Northeast\"	
+\"CEN.NY\nNDC.NY\" -> \"CEN.Northeast\"	
+\"CEN.ND\nNDC.ND\" -> \"CEN.Midwest\nNDC.Midwest\"	
+\"CEN.CO\nNDC.CO\" -> \"NDC.West\"	
+\"CEN.FL\nNDC.FL\" -> \"NDC.Southeast\"	
+\"CEN.NM\nNDC.NM\" -> \"CEN.West\"	
+\"CEN.CA\nNDC.CA\" -> \"NDC.West\"	
+\"CEN.AL\nNDC.AL\" -> \"NDC.Southeast\"	
+\"NDC.Northeast\" -> \"CEN.USA\nNDC.USA\"	
+\"CEN.OR\nNDC.OR\" -> \"NDC.West\"	
+\"CEN.MD\nNDC.MD\" -> \"NDC.Northeast\"	
+\"CEN.Midwest\nNDC.Midwest\" -> \"CEN.USA\nNDC.USA\"	
+\"CEN.AR\nNDC.AR\" -> \"NDC.Southeast\"	
+\"CEN.WA\nNDC.WA\" -> \"NDC.West\"	
+\"CEN.West\" -> \"CEN.USA\nNDC.USA\"	
+\"CEN.OK\nNDC.OK\" -> \"NDC.Southwest\"	
+\"CEN.OK\nNDC.OK\" -> \"CEN.South\"	
+\"NDC.Southwest\" -> \"CEN.USA\nNDC.USA\"	
+\"CEN.DE\nNDC.DE\" -> \"NDC.Northeast\"	
+\"CEN.UT\nNDC.UT\" -> \"NDC.West\"	
+\"CEN.MN\nNDC.MN\" -> \"CEN.Midwest\nNDC.Midwest\"	
+\"CEN.ID\nNDC.ID\" -> \"NDC.West\"	
+\"CEN.AZ\nNDC.AZ\" -> \"CEN.West\"	
+\"CEN.OH\nNDC.OH\" -> \"CEN.Midwest\nNDC.Midwest\"" color=transparent labelangle=270]
+	c4 -> c0
+	subgraph cluster_5 {
+		color=blue
+		c5_start
+		c5_end
+		c5 [style=invis]
+		c5_start -> c5_end [arrowhead=normal constraint=true label=64 penwidth=1 style=solid]
+		c5_start -> c5 [style=invis]
+		c5_end -> c5 [style=invis]
+	}
+	c5 -> c2
+	c5 -> c4
+	subgraph cluster_6 {
+		color=blue
+		c6_start
+		c6_end
+		c6 [style=invis]
+		c6_start -> c6_end [label=67 penwidth=1]
+		c6_start -> c6 [style=invis]
+		c6_end -> c6 [style=invis]
+	}
+	c6 -> c3
+	c6 -> c5
+}

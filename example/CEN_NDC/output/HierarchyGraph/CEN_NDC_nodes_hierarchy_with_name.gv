@@ -1,0 +1,134 @@
+// <Lattice object of 2 atoms 4 concepts 2 coatoms at 0x115241a58>
+digraph Lattice {
+	node [label="" shape=circle style=filled width=.25]
+	edge [dir=none labeldistance=1.5 minlen=2]
+	subgraph cluster_0 {
+		color=transparent
+		c0 [fillcolor="" fontname=helvetica label=0 shape="" style=filled]
+	}
+	subgraph cluster_1 {
+		color=transparent
+		c1 [fillcolor="#CCFFCC" fontname=helvetica label=54 shape=box style=filled]
+	}
+	c1 -> c1 [label="\"CEN.IL\"	
+\"CEN.IN\"	
+\"CEN.RI\"	
+\"CEN.IA\"	
+\"CEN.WV\"	
+\"CEN.KS\"	
+\"CEN.KY\"	
+\"CEN.TX\"	
+\"CEN.Northeast\"	
+\"CEN.South\"	
+\"CEN.ID\"	
+\"CEN.TN\"	
+\"CEN.WY\"	
+\"CEN.VT\"	
+\"CEN.MS\"	
+\"CEN.MT\"	
+\"CEN.MA\"	
+\"CEN.USA\"	
+\"CEN.ME\"	
+\"CEN.MD\"	
+\"CEN.MI\"	
+\"CEN.MN\"	
+\"CEN.DC\"	
+\"CEN.DE\"	
+\"CEN.OR\"	
+\"CEN.OH\"	
+\"CEN.VA\"	
+\"CEN.FL\"	
+\"CEN.AR\"	
+\"CEN.AZ\"	
+\"CEN.AL\"	
+\"CEN.OK\"	
+\"CEN.CT\"	
+\"CEN.CO\"	
+\"CEN.CA\"	
+\"CEN.SD\"	
+\"CEN.SC\"	
+\"CEN.Midwest\"	
+\"CEN.LA\"	
+\"CEN.MO\"	
+\"CEN.UT\"	
+\"CEN.GA\"	
+\"CEN.PA\"	
+\"CEN.West\"	
+\"CEN.NY\"	
+\"CEN.NV\"	
+\"CEN.NM\"	
+\"CEN.WA\"	
+\"CEN.NH\"	
+\"CEN.NJ\"	
+\"CEN.ND\"	
+\"CEN.NE\"	
+\"CEN.WI\"	
+\"CEN.NC\"" color=transparent labelangle=270]
+	c1 -> c0
+	subgraph cluster_2 {
+		color=transparent
+		c2 [fillcolor="#FFFFCC" fontname=helvetica label=55 shape=note style=filled]
+	}
+	c2 -> c2 [label="\"NDC.ID\"	
+\"NDC.IA\"	
+\"NDC.IL\"	
+\"NDC.IN\"	
+\"NDC.PA\"	
+\"NDC.Southeast\"	
+\"NDC.GA\"	
+\"NDC.NV\"	
+\"NDC.NY\"	
+\"NDC.NE\"	
+\"NDC.ND\"	
+\"NDC.NC\"	
+\"NDC.NM\"	
+\"NDC.NH\"	
+\"NDC.NJ\"	
+\"NDC.WY\"	
+\"NDC.WV\"	
+\"NDC.WI\"	
+\"NDC.WA\"	
+\"NDC.LA\"	
+\"NDC.UT\"	
+\"NDC.CT\"	
+\"NDC.CA\"	
+\"NDC.CO\"	
+\"NDC.West\"	
+\"NDC.Northeast\"	
+\"NDC.SD\"	
+\"NDC.AZ\"	
+\"NDC.AR\"	
+\"NDC.AL\"	
+\"NDC.VT\"	
+\"NDC.VA\"	
+\"NDC.OR\"	
+\"NDC.OK\"	
+\"NDC.OH\"	
+\"NDC.TN\"	
+\"NDC.FL\"	
+\"NDC.ME\"	
+\"NDC.MS\"	
+\"NDC.MT\"	
+\"NDC.MA\"	
+\"NDC.MD\"	
+\"NDC.MI\"	
+\"NDC.TX\"	
+\"NDC.MN\"	
+\"NDC.MO\"	
+\"NDC.SC\"	
+\"NDC.Midwest\"	
+\"NDC.RI\"	
+\"NDC.Southwest\"	
+\"NDC.DE\"	
+\"NDC.DC\"	
+\"NDC.KY\"	
+\"NDC.KS\"	
+\"NDC.USA\"" color=transparent labelangle=270]
+	c2 -> c0
+	subgraph cluster_3 {
+		color=transparent
+		c3 [fontname=helvetica label=109 style=filled]
+	}
+	c3 -> c1
+	c3 -> c2
+}

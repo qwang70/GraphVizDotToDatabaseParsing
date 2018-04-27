@@ -1,0 +1,17 @@
+
+digraph{
+rankdir=LR
+n0 [penwidth=0.4, color="#134d9c", shape=box, fontname="Helvetica", style=rounded, label=1];
+n1 [color="#9f1684", style=filled, fontname="Helvetica", fillcolor="#df77cb", shape=octagon, label=1];
+n2 [style="rounded,filled", color="#134d9c", shape=box, fontname="Helvetica", fillcolor="#68b5e3", label=12];
+
+
+
+n0 -> n2 [ dir=back, penwidth=0.4, color="#134d9c", style=dotted, minlen=2, label=12 ];
+
+n2 -> n1 [ color="#0000FF", arrowhead=none, penwidth=2, style=solid, minlen=2, label=12 ];
+
+n0 -> n1 [ color="#0000FF", arrowhead=none, penwidth=2, style=solid, minlen=2, label=1 ];
+
+}
+        

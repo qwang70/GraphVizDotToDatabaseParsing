@@ -1,0 +1,42 @@
+// <Lattice object of 0 atoms 1 concepts 0 coatoms at 0x1075fa2e8>
+digraph Lattice {
+	node [label="" shape=circle style=filled width=.25]
+	edge [dir=none labeldistance=1.5 minlen=2]
+	subgraph cluster_0 {
+		color=blue
+		c0_start
+		c0_end
+		c0 [style=invis]
+		c0_start -> c0_end [attr=default label=28]
+		c0_start -> c0 [style=invis]
+		c0_end -> c0 [style=invis]
+	}
+	c0 -> c0 [label="verbose -> print_message	
+get_predictor_matrix -> predictor_matrix	
+get_predictor_matrix -> max_preds	
+itrdb -> get_predictor_matrix	
+calibration_years -> get_predictor_matrix	
+min_width -> get_predictor_matrix	
+get_reconstruction_matrix -> reconstruction_matrix	
+itrdb -> get_reconstruction_matrix	
+prediction_years -> get_reconstruction_matrix	
+min_width -> get_reconstruction_matrix	
+get_predlist -> predlist	
+reconstruction_matrix -> get_predlist	
+get_carscores -> carscores	
+prism_data_for_coordinates -> get_carscores	
+predictor_matrix -> get_carscores	
+calculate_Models -> linear_models	
+predlist -> calculate_Models	
+carscores -> calculate_Models	
+max_preds -> calculate_Models	
+optimizeModels -> paleocar_models	
+linear_models -> optimizeModels	
+prediction_years_input_port -> prediction_years	
+prism_data_for_coordinates_input_port -> prism_data_for_coordinates	
+itrdb_input_port -> itrdb	
+calibration_years_input_port -> calibration_years	
+min_width_input_port -> min_width	
+verbose_input_port -> verbose	
+paleocar_models -> paleocar_models_output_port" color=transparent labelangle=270]
+}
