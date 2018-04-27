@@ -5,10 +5,10 @@ rankdir=LR
 subgraph cluster_0 {
     style=filled;
     color=transparent;
-    e0_start [fontname=Courier, fillcolor="#FFFFAA", fontsize=14, shape=circle, style=filled, width=0.45, height=0.45, label=" "];
-e0_end [fontname=Courier, fillcolor="#AAFFAA", height=0.5, fontsize=14, style="filled,rounded", width=0.51, shape=box, label=" "];
+    e0_start [fillcolor="#FFFFAA", fontname=Courier, style=filled, fontsize=14, height=0.45, shape=circle, width=0.45, label=" "];
+e0_end [fontname=Courier, style="filled,rounded", fontsize=14, height=0.5, width=0.51, fillcolor="#AAFFAA", shape=box, label=" "];
 
-    e0_start -> e0_end [ fontname=Helvetica,style=dashed,pensize=5,penwidth=2,constraint=true,fontsize=12,color="#777777", minlen=2, label=1 ];
+    e0_start -> e0_end [ style=dashed,constraint=true,color="#777777",penwidth=2,fontname=Helvetica,pensize=5,fontsize=12, minlen=2, label=1 ];
     e0_inv [style=invis]
     e0_start -> e0_inv [style=invis]
     e0_end -> e0_inv [style=invis]
@@ -18,10 +18,10 @@ e0_end [fontname=Courier, fillcolor="#AAFFAA", height=0.5, fontsize=14, style="f
 subgraph cluster_1 {
     style=filled;
     color=transparent;
-    e1_start [fontname=Courier, fillcolor="#FFFFAA", fontsize=14, shape=circle, style=filled, width=0.45, height=0.45, label=" "];
-e1_end [fontname=Courier, fillcolor="#FFFFAA", fontsize=14, shape=circle, style=filled, width=0.45, height=0.45, label=" "];
+    e1_start [fillcolor="#FFFFAA", fontname=Courier, style=filled, fontsize=14, height=0.45, shape=circle, width=0.45, label=" "];
+e1_end [fillcolor="#FFFFAA", fontname=Courier, style=filled, fontsize=14, height=0.45, shape=circle, width=0.45, label=" "];
 
-    e1_start -> e1_end [ color="#AAAA00",fontname=Helvetica,pensize=5,penwidth=2,fontsize=12,dir=back, minlen=2, label=2 ];
+    e1_start -> e1_end [ dir=back,penwidth=2,fontname=Helvetica,pensize=5,fontsize=12,color="#AAAA00", minlen=2, label=2 ];
     e1_inv [style=invis]
     e1_start -> e1_inv [style=invis]
     e1_end -> e1_inv [style=invis]
@@ -31,10 +31,10 @@ e1_end [fontname=Courier, fillcolor="#FFFFAA", fontsize=14, shape=circle, style=
 subgraph cluster_2 {
     style=filled;
     color=transparent;
-    e2_start [fontname=Courier, width=0, fontsize=14, style=filled, shape=octagon, height=0, fillcolor="#FFAAAA", label=" "];
-e2_end [fontname=Courier, fillcolor="#AAFFAA", height=0.5, fontsize=14, style="filled,rounded", width=0.51, shape=box, label=" "];
+    e2_start [fontname=Courier, shape=octagon, style=filled, fontsize=14, fillcolor="#FFAAAA", height=0, width=0, label=" "];
+e2_end [fontname=Courier, style="filled,rounded", fontsize=14, height=0.5, width=0.51, fillcolor="#AAFFAA", shape=box, label=" "];
 
-    e2_start -> e2_end [ fontname=Helvetica,pensize=5,penwidth=2,color="#CC0000",fontsize=12, minlen=2, label=3 ];
+    e2_start -> e2_end [ penwidth=2,fontname=Helvetica,pensize=5,fontsize=12,color="#CC0000", minlen=2, label=3 ];
     e2_inv [style=invis]
     e2_start -> e2_inv [style=invis]
     e2_end -> e2_inv [style=invis]
@@ -44,10 +44,10 @@ e2_end [fontname=Courier, fillcolor="#AAFFAA", height=0.5, fontsize=14, style="f
 subgraph cluster_3 {
     style=filled;
     color=transparent;
-    e3_start [fontname=Courier, fillcolor="#FFFFAA", fontsize=14, shape=circle, style=filled, width=0.45, height=0.45, label=" "];
-e3_end [fontname=Courier, fillcolor="#FFFFAA", fontsize=14, shape=circle, style=filled, width=0.45, height=0.45, label=" "];
+    e3_start [fillcolor="#FFFFAA", fontname=Courier, style=filled, fontsize=14, height=0.45, shape=circle, width=0.45, label=" "];
+e3_end [fillcolor="#FFFFAA", fontname=Courier, style=filled, fontsize=14, height=0.45, shape=circle, width=0.45, label=" "];
 
-    e3_start -> e3_end [ color="#AAAA00",fontname=Helvetica,pensize=5,penwidth=2,fontsize=12, minlen=2, label=2 ];
+    e3_start -> e3_end [ penwidth=2,fontname=Helvetica,pensize=5,fontsize=12,color="#AAAA00", minlen=2, label=2 ];
     e3_inv [style=invis]
     e3_start -> e3_inv [style=invis]
     e3_end -> e3_inv [style=invis]
@@ -57,10 +57,10 @@ e3_end [fontname=Courier, fillcolor="#FFFFAA", fontsize=14, shape=circle, style=
 subgraph cluster_4 {
     style=filled;
     color=transparent;
-    e4_start [fontname=Courier, fillcolor="#AAFFAA", height=0.5, fontsize=14, style="filled,rounded", width=0.51, shape=box, label=" "];
-e4_end [fontname=Courier, fillcolor="#FFFFAA", fontsize=14, shape=circle, style=filled, width=0.45, height=0.45, label=" "];
+    e4_start [fontname=Courier, style="filled,rounded", fontsize=14, height=0.5, width=0.51, fillcolor="#AAFFAA", shape=box, label=" "];
+e4_end [fillcolor="#FFFFAA", fontname=Courier, style=filled, fontsize=14, height=0.45, shape=circle, width=0.45, label=" "];
 
-    e4_start -> e4_end [ fontname=Helvetica,style=dashed,pensize=5,penwidth=2,constraint=false,fontsize=12,color="#777777", minlen=2, label=1 ];
+    e4_start -> e4_end [ style=dashed,constraint=false,color="#777777",penwidth=2,fontname=Helvetica,pensize=5,fontsize=12, minlen=2, label=1 ];
     e4_inv [style=invis]
     e4_start -> e4_inv [style=invis]
     e4_end -> e4_inv [style=invis]
@@ -70,10 +70,10 @@ e4_end [fontname=Courier, fillcolor="#FFFFAA", fontsize=14, shape=circle, style=
 subgraph cluster_5 {
     style=filled;
     color=transparent;
-    e5_start [fontname=Courier, fillcolor="#AAFFAA", height=0.5, fontsize=14, style="filled,rounded", width=0.51, shape=box, label=" "];
-e5_end [fontname=Courier, fillcolor="#AAFFAA", height=0.5, fontsize=14, style="filled,rounded", width=0.51, shape=box, label=" "];
+    e5_start [fontname=Courier, style="filled,rounded", fontsize=14, height=0.5, width=0.51, fillcolor="#AAFFAA", shape=box, label=" "];
+e5_end [fontname=Courier, style="filled,rounded", fontsize=14, height=0.5, width=0.51, fillcolor="#AAFFAA", shape=box, label=" "];
 
-    e5_start -> e5_end [ fontname=Helvetica,style=dashed,pensize=5,penwidth=2,constraint=false,fontsize=12,color="#777777", minlen=2, label=2 ];
+    e5_start -> e5_end [ style=dashed,constraint=false,color="#777777",penwidth=2,fontname=Helvetica,pensize=5,fontsize=12, minlen=2, label=2 ];
     e5_inv [style=invis]
     e5_start -> e5_inv [style=invis]
     e5_end -> e5_inv [style=invis]
@@ -83,10 +83,10 @@ e5_end [fontname=Courier, fillcolor="#AAFFAA", height=0.5, fontsize=14, style="f
 subgraph cluster_6 {
     style=filled;
     color=transparent;
-    e6_start [fontname=Courier, fillcolor="#FFFFAA", fontsize=14, shape=circle, style=filled, width=0.45, height=0.45, label=" "];
-e6_end [fontname=Courier, fillcolor="#AAFFAA", height=0.5, fontsize=14, style="filled,rounded", width=0.51, shape=box, label=" "];
+    e6_start [fillcolor="#FFFFAA", fontname=Courier, style=filled, fontsize=14, height=0.45, shape=circle, width=0.45, label=" "];
+e6_end [fontname=Courier, style="filled,rounded", fontsize=14, height=0.5, width=0.51, fillcolor="#AAFFAA", shape=box, label=" "];
 
-    e6_start -> e6_end [ fontname=Helvetica,style=dashed,pensize=5,penwidth=2,constraint=false,fontsize=12,color="#777777", minlen=2, label=1 ];
+    e6_start -> e6_end [ style=dashed,constraint=false,color="#777777",penwidth=2,fontname=Helvetica,pensize=5,fontsize=12, minlen=2, label=1 ];
     e6_inv [style=invis]
     e6_start -> e6_inv [style=invis]
     e6_end -> e6_inv [style=invis]
@@ -96,10 +96,10 @@ e6_end [fontname=Courier, fillcolor="#AAFFAA", height=0.5, fontsize=14, style="f
 subgraph cluster_7 {
     style=filled;
     color=transparent;
-    e7_start [fontname=Courier, fillcolor="#AAFFAA", height=0.5, fontsize=14, style="filled,rounded", width=0.51, shape=box, label=" "];
-e7_end [fontname=Courier, width=0, fontsize=14, style=filled, shape=octagon, height=0, fillcolor="#FFAAAA", label=" "];
+    e7_start [fontname=Courier, style="filled,rounded", fontsize=14, height=0.5, width=0.51, fillcolor="#AAFFAA", shape=box, label=" "];
+e7_end [fontname=Courier, shape=octagon, style=filled, fontsize=14, fillcolor="#FFAAAA", height=0, width=0, label=" "];
 
-    e7_start -> e7_end [ color="#00BB00",fontname=Helvetica,pensize=5,penwidth=2,fontsize=12, minlen=2, label=5 ];
+    e7_start -> e7_end [ color="#00BB00",penwidth=2,fontname=Helvetica,pensize=5,fontsize=12, minlen=2, label=5 ];
     e7_inv [style=invis]
     e7_start -> e7_inv [style=invis]
     e7_end -> e7_inv [style=invis]

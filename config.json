@@ -1,0 +1,21 @@
+{
+"nodeAttr":
+    [
+    "+indeg>0",
+    "+outdeg>0",
+    "indeg",
+    "-outdeg"
+    ],
+"nodeTypeAttr":
+     [ "fillcolor",
+        "style",
+        "+shape",
+        "-label",
+
+     "+circle",
+     "-blue",
+     "box"],
+"edgeTypeAttr":
+    ["color", "style"]
+}
+
