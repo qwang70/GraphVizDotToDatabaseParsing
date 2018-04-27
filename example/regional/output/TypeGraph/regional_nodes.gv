@@ -2,26 +2,26 @@
 graph{
 rankdir=LR
 edge [style=dashed]
-n0 [shape=box, fillcolor="#EEEEEE", fontname="helvetica", style="filled,rounded", label=1];
-n1 [shape=box, fillcolor="#EEEEEE", fontname="helvetica", style="filled,rounded", label="CEN.USA\nTZ.USA"];
+n0 [fillcolor="#EEEEEE", style="filled,rounded", fontname="helvetica", shape=box, label=1];
+n1 [fillcolor="#EEEEEE", style="filled,rounded", fontname="helvetica", shape=box, label="CEN.USA\nTZ.USA"];
 n0 -- n1;
-n2 [shape=box, style=filled, fontname="helvetica", fillcolor="#CCFFCC", label=4];
-n3 [shape=box, style=filled, fontname="helvetica", fillcolor="#CCFFCC", label="CEN.Midwest"];
+n2 [fillcolor="#CCFFCC", fontname="helvetica", style=filled, shape=box, label=4];
+n3 [fillcolor="#CCFFCC", fontname="helvetica", style=filled, shape=box, label="CEN.Midwest"];
 n2 -- n3;
-n4 [shape=box, style=filled, fontname="helvetica", fillcolor="#CCFFCC", label="CEN.South"];
+n4 [fillcolor="#CCFFCC", fontname="helvetica", style=filled, shape=box, label="CEN.South"];
 n2 -- n4;
-n5 [shape=box, style=filled, fontname="helvetica", fillcolor="#CCFFCC", label="CEN.Northeast"];
+n5 [fillcolor="#CCFFCC", fontname="helvetica", style=filled, shape=box, label="CEN.Northeast"];
 n2 -- n5;
-n6 [shape=box, style=filled, fontname="helvetica", fillcolor="#CCFFCC", label="CEN.West"];
+n6 [fillcolor="#CCFFCC", fontname="helvetica", style=filled, shape=box, label="CEN.West"];
 n2 -- n6;
-n7 [fillcolor="#FFFFCC", shape=note, style=filled, fontname="helvetica", label=4];
-n8 [fillcolor="#FFFFCC", shape=note, style=filled, fontname="helvetica", label="TZ.Eastern"];
+n7 [fillcolor="#FFFFCC", fontname="helvetica", style=filled, shape=note, label=4];
+n8 [fillcolor="#FFFFCC", fontname="helvetica", style=filled, shape=note, label="TZ.Eastern"];
 n7 -- n8;
-n9 [fillcolor="#FFFFCC", shape=note, style=filled, fontname="helvetica", label="TZ.Pacific"];
+n9 [fillcolor="#FFFFCC", fontname="helvetica", style=filled, shape=note, label="TZ.Pacific"];
 n7 -- n9;
-n10 [fillcolor="#FFFFCC", shape=note, style=filled, fontname="helvetica", label="TZ.Central"];
+n10 [fillcolor="#FFFFCC", fontname="helvetica", style=filled, shape=note, label="TZ.Central"];
 n7 -- n10;
-n11 [fillcolor="#FFFFCC", shape=note, style=filled, fontname="helvetica", label="TZ.Mountain"];
+n11 [fillcolor="#FFFFCC", fontname="helvetica", style=filled, shape=note, label="TZ.Mountain"];
 n7 -- n11;
 
 }
