@@ -1,14 +1,14 @@
 
 digraph{
 rankdir=LR
-n0 [fillcolor="#CCFFCC", shape=box, fontname=Helvetica, peripheries=1, style=filled, label=1];
-n1 [fillcolor="#CCFFCC", shape=box, fontname=Helvetica, peripheries=2, style=filled, label=1];
-n2 [shape=record, fontname=Helvetica, rankdir=LR, fillcolor="#FFFFCC", peripheries=1, style="rounded,filled", label=1];
-n3 [width=0.2, fillcolor="#FFFFFF", color=blue, fontname=Helvetica, shape=circle, peripheries=1, style="rounded,filled", label=1];
-n4 [fillcolor="#FCFCFC", shape=box, fontname=Helvetica, peripheries=1, style="rounded,filled", label=2];
-n5 [shape=record, fillcolor="#CCFFCC", fontname=Helvetica, rankdir=LR, peripheries=1, style=filled, label=5];
-n6 [width=0.2, fillcolor="#FFFFFF", fontname=Helvetica, shape=circle, color=red, peripheries=1, style="rounded,filled", label=6];
-n7 [shape=box, fontname=Helvetica, fillcolor="#FFFFCC", peripheries=1, style="rounded,filled", label=10];
+n0 [shape=box, fontname=Helvetica, fillcolor="#CCFFCC", style=filled, peripheries=1, label=1];
+n1 [shape=box, fontname=Helvetica, peripheries=2, fillcolor="#CCFFCC", style=filled, label=1];
+n2 [rankdir=LR, fillcolor="#FFFFCC", style="rounded,filled", fontname=Helvetica, shape=record, peripheries=1, label=1];
+n3 [shape=circle, fillcolor="#FFFFFF", style="rounded,filled", fontname=Helvetica, width=0.2, peripheries=1, color=blue, label=1];
+n4 [shape=box, fillcolor="#FCFCFC", style="rounded,filled", fontname=Helvetica, peripheries=1, label=2];
+n5 [rankdir=LR, fontname=Helvetica, shape=record, fillcolor="#CCFFCC", style=filled, peripheries=1, label=5];
+n6 [shape=circle, fillcolor="#FFFFFF", color=red, style="rounded,filled", fontname=Helvetica, width=0.2, peripheries=1, label=6];
+n7 [shape=box, fillcolor="#FFFFCC", style="rounded,filled", fontname=Helvetica, peripheries=1, label=10];
 
 
 

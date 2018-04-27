@@ -1,129 +1,76 @@
-// <Lattice object of 3 atoms 7 concepts 2 coatoms at 0x112746cc0>
+// <Lattice object of 3 atoms 7 concepts 2 coatoms at 0x110af0cf8>
 digraph Lattice {
 	node [label="" shape=circle style=filled width=.25]
 	edge [dir=none labeldistance=1.5 minlen=2]
 	subgraph cluster_0 {
-		style=filled
-		color=transparent
-		c0
+		color=blue
+		c0_start
 		c0_end
-		c0 -> c0_end [arrowhead="" color="" constraint="" label=0 penwidth=1 style=""]
+		c0 [style=invis]
+		c0_start -> c0_end [arrowhead="" color="" constraint="" label=0 penwidth=1 style=""]
+		c0_start -> c0 [style=invis]
+		c0_end -> c0 [style=invis]
 	}
 	subgraph cluster_1 {
-		style=filled
-		color=transparent
-		c1
+		color=blue
+		c1_start
 		c1_end
-		c1 -> c1_end [arrowhead=none color="#FF0000" constraint=false label=3 penwidth=1 style=dashed]
+		c1 [style=invis]
+		c1_start -> c1_end [arrowhead=none color="#FF0000" constraint=false label=3 penwidth=1 style=dashed]
+		c1_start -> c1 [style=invis]
+		c1_end -> c1 [style=invis]
 	}
-	c1 -> c1 [label="2:57:\"CEN.South\" -> \"NDC.Northeast\"	
-0:54:\"CEN.West\" -> \"NDC.Southwest\"	
-2:54:\"CEN.South\" -> \"NDC.Southwest\"" color=transparent labelangle=270]
 	c1 -> c0
 	subgraph cluster_2 {
-		style=filled
-		color=transparent
-		c2
+		color=blue
+		c2_start
 		c2_end
-		c2 -> c2_end [arrowhead=normal color="#FF0000" constraint=true label=3 penwidth=1 style=solid]
+		c2 [style=invis]
+		c2_start -> c2_end [arrowhead=normal color="#FF0000" constraint=true label=3 penwidth=1 style=solid]
+		c2_start -> c2 [style=invis]
+		c2_end -> c2 [style=invis]
 	}
-	c2 -> c2 [label="56:0:\"NDC.West\" -> \"CEN.West\"	
-1:57:\"CEN.Northeast\" -> \"NDC.Northeast\"	
-55:2:\"NDC.Southeast\" -> \"CEN.South\"" color=transparent labelangle=270]
 	c2 -> c0
 	subgraph cluster_3 {
-		style=filled
-		color=transparent
-		c3
+		color=blue
+		c3_start
 		c3_end
-		c3 -> c3_end [color="#FF0000" label=6 penwidth=1]
+		c3 [style=invis]
+		c3_start -> c3_end [color="#FF0000" label=6 penwidth=1]
+		c3_start -> c3 [style=invis]
+		c3_end -> c3 [style=invis]
 	}
 	c3 -> c1
 	c3 -> c2
 	subgraph cluster_4 {
-		style=filled
-		color=transparent
-		c4
+		color=blue
+		c4_start
 		c4_end
-		c4 -> c4_end [arrowhead=normal color="#000000" constraint=true label=61 penwidth=1 style=solid]
+		c4 [style=invis]
+		c4_start -> c4_end [arrowhead=normal color="#000000" constraint=true label=61 penwidth=1 style=solid]
+		c4_start -> c4 [style=invis]
+		c4_end -> c4 [style=invis]
 	}
-	c4 -> c4 [label="18:1:\"CEN.CT\nNDC.CT\" -> \"CEN.Northeast\"	
-13:9:\"CEN.KS\nNDC.KS\" -> \"CEN.Midwest\nNDC.Midwest\"	
-34:55:\"CEN.LA\nNDC.LA\" -> \"NDC.Southeast\"	
-15:1:\"CEN.PA\nNDC.PA\" -> \"CEN.Northeast\"	
-42:55:\"CEN.GA\nNDC.GA\" -> \"NDC.Southeast\"	
-30:9:\"CEN.IN\nNDC.IN\" -> \"CEN.Midwest\nNDC.Midwest\"	
-24:55:\"CEN.VA\nNDC.VA\" -> \"NDC.Southeast\"	
-33:9:\"CEN.NE\nNDC.NE\" -> \"CEN.Midwest\nNDC.Midwest\"	
-23:54:\"CEN.TX\nNDC.TX\" -> \"NDC.Southwest\"	
-27:55:\"CEN.TN\nNDC.TN\" -> \"NDC.Southeast\"	
-8:9:\"CEN.IL\nNDC.IL\" -> \"CEN.Midwest\nNDC.Midwest\"	
-49:1:\"CEN.RI\nNDC.RI\" -> \"CEN.Northeast\"	
-36:56:\"CEN.NV\nNDC.NV\" -> \"NDC.West\"	
-11:54:\"CEN.AZ\nNDC.AZ\" -> \"NDC.Southwest\"	
-6:55:\"CEN.KY\nNDC.KY\" -> \"NDC.Southeast\"	
-28:9:\"CEN.IA\nNDC.IA\" -> \"CEN.Midwest\nNDC.Midwest\"	
-31:56:\"CEN.WY\nNDC.WY\" -> \"NDC.West\"	
-5:54:\"CEN.NM\nNDC.NM\" -> \"NDC.Southwest\"	
-41:57:\"CEN.DC\nNDC.DC\" -> \"NDC.Northeast\"	
-23:2:\"CEN.TX\nNDC.TX\" -> \"CEN.South\"	
-53:56:\"CEN.MT\nNDC.MT\" -> \"NDC.West\"	
-29:55:\"CEN.NC\nNDC.NC\" -> \"NDC.Southeast\"	
-2:52:\"CEN.South\" -> \"CEN.USA\nNDC.USA\"	
-47:2:\"CEN.MD\nNDC.MD\" -> \"CEN.South\"	
-43:9:\"CEN.WI\nNDC.WI\" -> \"CEN.Midwest\nNDC.Midwest\"	
-37:1:\"CEN.MA\nNDC.MA\" -> \"CEN.Northeast\"	
-10:55:\"CEN.SC\nNDC.SC\" -> \"NDC.Southeast\"	
-45:9:\"CEN.MO\nNDC.MO\" -> \"CEN.Midwest\nNDC.Midwest\"	
-38:9:\"CEN.SD\nNDC.SD\" -> \"CEN.Midwest\nNDC.Midwest\"	
-51:1:\"CEN.NH\nNDC.NH\" -> \"CEN.Northeast\"	
-41:2:\"CEN.DC\nNDC.DC\" -> \"CEN.South\"	
-26:1:\"CEN.ME\nNDC.ME\" -> \"CEN.Northeast\"	
-48:55:\"CEN.MS\nNDC.MS\" -> \"NDC.Southeast\"	
-20:55:\"CEN.WV\nNDC.WV\" -> \"NDC.Southeast\"	
-16:1:\"CEN.VT\nNDC.VT\" -> \"CEN.Northeast\"	
-39:9:\"CEN.MI\nNDC.MI\" -> \"CEN.Midwest\nNDC.Midwest\"	
-25:2:\"CEN.DE\nNDC.DE\" -> \"CEN.South\"	
-4:1:\"CEN.NJ\nNDC.NJ\" -> \"CEN.Northeast\"	
-12:1:\"CEN.NY\nNDC.NY\" -> \"CEN.Northeast\"	
-32:9:\"CEN.ND\nNDC.ND\" -> \"CEN.Midwest\nNDC.Midwest\"	
-21:56:\"CEN.CO\nNDC.CO\" -> \"NDC.West\"	
-35:55:\"CEN.FL\nNDC.FL\" -> \"NDC.Southeast\"	
-5:0:\"CEN.NM\nNDC.NM\" -> \"CEN.West\"	
-22:56:\"CEN.CA\nNDC.CA\" -> \"NDC.West\"	
-7:55:\"CEN.AL\nNDC.AL\" -> \"NDC.Southeast\"	
-57:52:\"NDC.Northeast\" -> \"CEN.USA\nNDC.USA\"	
-19:56:\"CEN.OR\nNDC.OR\" -> \"NDC.West\"	
-47:57:\"CEN.MD\nNDC.MD\" -> \"NDC.Northeast\"	
-9:52:\"CEN.Midwest\nNDC.Midwest\" -> \"CEN.USA\nNDC.USA\"	
-40:55:\"CEN.AR\nNDC.AR\" -> \"NDC.Southeast\"	
-3:56:\"CEN.WA\nNDC.WA\" -> \"NDC.West\"	
-0:52:\"CEN.West\" -> \"CEN.USA\nNDC.USA\"	
-50:54:\"CEN.OK\nNDC.OK\" -> \"NDC.Southwest\"	
-50:2:\"CEN.OK\nNDC.OK\" -> \"CEN.South\"	
-54:52:\"NDC.Southwest\" -> \"CEN.USA\nNDC.USA\"	
-25:57:\"CEN.DE\nNDC.DE\" -> \"NDC.Northeast\"	
-14:56:\"CEN.UT\nNDC.UT\" -> \"NDC.West\"	
-46:9:\"CEN.MN\nNDC.MN\" -> \"CEN.Midwest\nNDC.Midwest\"	
-17:56:\"CEN.ID\nNDC.ID\" -> \"NDC.West\"	
-11:0:\"CEN.AZ\nNDC.AZ\" -> \"CEN.West\"	
-44:9:\"CEN.OH\nNDC.OH\" -> \"CEN.Midwest\nNDC.Midwest\"" color=transparent labelangle=270]
 	c4 -> c0
 	subgraph cluster_5 {
-		style=filled
-		color=transparent
-		c5
+		color=blue
+		c5_start
 		c5_end
-		c5 -> c5_end [arrowhead=normal constraint=true label=64 penwidth=1 style=solid]
+		c5 [style=invis]
+		c5_start -> c5_end [arrowhead=normal constraint=true label=64 penwidth=1 style=solid]
+		c5_start -> c5 [style=invis]
+		c5_end -> c5 [style=invis]
 	}
 	c5 -> c2
 	c5 -> c4
 	subgraph cluster_6 {
-		style=filled
-		color=transparent
-		c6
+		color=blue
+		c6_start
 		c6_end
-		c6 -> c6_end [label=67 penwidth=1]
+		c6 [style=invis]
+		c6_start -> c6_end [label=67 penwidth=1]
+		c6_start -> c6 [style=invis]
+		c6_end -> c6 [style=invis]
 	}
 	c6 -> c3
 	c6 -> c5

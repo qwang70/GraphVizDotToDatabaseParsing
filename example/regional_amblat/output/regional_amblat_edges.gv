@@ -5,10 +5,10 @@ rankdir=LR
 subgraph cluster_0 {
     style=filled;
     color=transparent;
-    e0_start [fontname="Helvetica", color="#134d9c", penwidth=0.4, style=rounded, shape=box, label=" "];
-e0_end [fontname="Helvetica", style="rounded,filled", color="#134d9c", fillcolor="#68b5e3", shape=box, label=" "];
+    e0_start [shape=box, color="#134d9c", penwidth=0.4, style=rounded, fontname="Helvetica", label=" "];
+e0_end [shape=box, style="rounded,filled", color="#134d9c", fontname="Helvetica", fillcolor="#68b5e3", label=" "];
 
-    e0_start -> e0_end [ style=dotted,color="#134d9c",penwidth=0.4,dir=back, minlen=2, label=12 ];
+    e0_start -> e0_end [ dir=back,style=dotted,color="#134d9c",penwidth=0.4, minlen=2, label=12 ];
     e0_inv [style=invis]
     e0_start -> e0_inv [style=invis]
     e0_end -> e0_inv [style=invis]
@@ -18,10 +18,10 @@ e0_end [fontname="Helvetica", style="rounded,filled", color="#134d9c", fillcolor
 subgraph cluster_1 {
     style=filled;
     color=transparent;
-    e1_start [fontname="Helvetica", style="rounded,filled", color="#134d9c", fillcolor="#68b5e3", shape=box, label=" "];
-e1_end [fontname="Helvetica", shape=octagon, fillcolor="#df77cb", style=filled, color="#9f1684", label=" "];
+    e1_start [shape=box, style="rounded,filled", color="#134d9c", fontname="Helvetica", fillcolor="#68b5e3", label=" "];
+e1_end [shape=octagon, color="#9f1684", fillcolor="#df77cb", style=filled, fontname="Helvetica", label=" "];
 
-    e1_start -> e1_end [ style=solid,color="#0000FF",penwidth=2,arrowhead=none, minlen=2, label=12 ];
+    e1_start -> e1_end [ arrowhead=none,style=solid,penwidth=2,color="#0000FF", minlen=2, label=12 ];
     e1_inv [style=invis]
     e1_start -> e1_inv [style=invis]
     e1_end -> e1_inv [style=invis]
@@ -31,10 +31,10 @@ e1_end [fontname="Helvetica", shape=octagon, fillcolor="#df77cb", style=filled, 
 subgraph cluster_2 {
     style=filled;
     color=transparent;
-    e2_start [fontname="Helvetica", color="#134d9c", penwidth=0.4, style=rounded, shape=box, label=" "];
-e2_end [fontname="Helvetica", shape=octagon, fillcolor="#df77cb", style=filled, color="#9f1684", label=" "];
+    e2_start [shape=box, color="#134d9c", penwidth=0.4, style=rounded, fontname="Helvetica", label=" "];
+e2_end [shape=octagon, color="#9f1684", fillcolor="#df77cb", style=filled, fontname="Helvetica", label=" "];
 
-    e2_start -> e2_end [ style=solid,color="#0000FF",penwidth=2,arrowhead=none, minlen=2, label=1 ];
+    e2_start -> e2_end [ arrowhead=none,style=solid,penwidth=2,color="#0000FF", minlen=2, label=1 ];
     e2_inv [style=invis]
     e2_start -> e2_inv [style=invis]
     e2_end -> e2_inv [style=invis]

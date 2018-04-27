@@ -5,7 +5,7 @@ from antlr4 import *
 from DOTLexer import DOTLexer
 from DOTListener import DOTListener
 from DOTParser import DOTParser
-import sys
+import os, sys
 import argparse
 
 from objdict import ObjDict
@@ -256,16 +256,22 @@ def main():
 
     # fca node
     fca = FCA(graph)
+    # create hierarchy graph
+    hierarchyFolder = "{}/HierarchyGraph".format(output_folder)
+    os.mkdir( hierarchyFolder,exist_ok=True )
     fca.createNodesHierarchyGraphviz(\
-            '{}/{}{}'.format(output_folder, base_filename, "_nodes_hierarchy.gv"), showLabel=False)
+            '{}/{}{}'.format(hierarchyFolder, base_filename, "_nodes_hierarchy.gv"), showLabel=False)
     fca.createEdgesHierarchyGraphviz(\
-            '{}/{}{}'.format(output_folder, base_filename,"_edges_hierarchy.gv"))
+            '{}/{}{}'.format(hierarchyFolder, base_filename,"_edges_hierarchy.gv"), showLabel=False)
+    # create type graph
+    typeGraphFolder = "{}/TypeGraph".format(output_folder)
+    os.mkdir( typeGraphFolder, exist_ok=True )
     fca.createNodesGraphviz(\
-            '{}/{}{}'.format(output_folder, base_filename, "_nodes.gv"))
+            '{}/{}{}'.format(typeGraphFolder, base_filename, "_nodes.gv"))
     fca.createEdgesGraphviz(\
-            '{}/{}{}'.format(output_folder, base_filename, "_edges.gv"))
+            '{}/{}{}'.format(typeGraphFolder, base_filename, "_edges.gv"))
     fca.createGraphviz(\
-            '{}/{}{}'.format(output_folder, base_filename, "_full.gv"))
+            '{}/{}{}'.format(typeGraphFolder, base_filename, "_full.gv"))
 
     # parse json file
     config = parse_json(args.config)

@@ -2,36 +2,36 @@
 graph{
 rankdir=LR
 edge [style=dashed]
-n0 [fontname="Helvetica", color="#134d9c", penwidth=0.4, style=rounded, shape=box, label=1];
-n1 [fontname="Helvetica", color="#134d9c", penwidth=0.4, style=rounded, shape=box, label="AllOtherGreen"];
+n0 [shape=box, color="#134d9c", penwidth=0.4, style=rounded, fontname="Helvetica", label=1];
+n1 [shape=box, color="#134d9c", penwidth=0.4, style=rounded, fontname="Helvetica", label="AllOtherGreen"];
 n0 -- n1;
-n2 [fontname="Helvetica", shape=octagon, fillcolor="#df77cb", style=filled, color="#9f1684", label=1];
-n3 [fontname="Helvetica", shape=octagon, fillcolor="#df77cb", style=filled, color="#9f1684", label="1,2,3,4,5,6,7,8,9,10,11,12\n(1)"];
+n2 [shape=octagon, color="#9f1684", fillcolor="#df77cb", style=filled, fontname="Helvetica", label=1];
+n3 [shape=octagon, color="#9f1684", fillcolor="#df77cb", style=filled, fontname="Helvetica", label="1,2,3,4,5,6,7,8,9,10,11,12\n(1)"];
 n2 -- n3;
-n4 [fontname="Helvetica", style="rounded,filled", color="#134d9c", fillcolor="#68b5e3", shape=box, label=12];
-n5 [fontname="Helvetica", style="rounded,filled", color="#134d9c", fillcolor="#68b5e3", shape=box, label="1,3,4,5,6,7,8,9,10,11,12\n(2)"];
+n4 [shape=box, style="rounded,filled", color="#134d9c", fontname="Helvetica", fillcolor="#68b5e3", label=12];
+n5 [shape=box, style="rounded,filled", color="#134d9c", fontname="Helvetica", fillcolor="#68b5e3", label="1,3,4,5,6,7,8,9,10,11,12\n(2)"];
 n4 -- n5;
-n6 [fontname="Helvetica", style="rounded,filled", color="#134d9c", fillcolor="#68b5e3", shape=box, label="1,2,3,4,5,6,7,8,9,10,11\n(2)"];
+n6 [shape=box, style="rounded,filled", color="#134d9c", fontname="Helvetica", fillcolor="#68b5e3", label="1,2,3,4,5,6,7,8,9,10,11\n(2)"];
 n4 -- n6;
-n7 [fontname="Helvetica", style="rounded,filled", color="#134d9c", fillcolor="#68b5e3", shape=box, label="1,2,3,4,5,6,7,8,10,11,12\n(240)"];
+n7 [shape=box, style="rounded,filled", color="#134d9c", fontname="Helvetica", fillcolor="#68b5e3", label="1,2,3,4,5,6,7,8,10,11,12\n(240)"];
 n4 -- n7;
-n8 [fontname="Helvetica", style="rounded,filled", color="#134d9c", fillcolor="#68b5e3", shape=box, label="1,2,4,5,6,7,8,9,10,11,12\n(2)"];
+n8 [shape=box, style="rounded,filled", color="#134d9c", fontname="Helvetica", fillcolor="#68b5e3", label="1,2,4,5,6,7,8,9,10,11,12\n(2)"];
 n4 -- n8;
-n9 [fontname="Helvetica", style="rounded,filled", color="#134d9c", fillcolor="#68b5e3", shape=box, label="1,2,3,4,6,7,8,9,10,11,12\n(2)"];
+n9 [shape=box, style="rounded,filled", color="#134d9c", fontname="Helvetica", fillcolor="#68b5e3", label="1,2,3,4,6,7,8,9,10,11,12\n(2)"];
 n4 -- n9;
-n10 [fontname="Helvetica", style="rounded,filled", color="#134d9c", fillcolor="#68b5e3", shape=box, label="1,2,3,4,5,6,7,8,9,11,12\n(3)"];
+n10 [shape=box, style="rounded,filled", color="#134d9c", fontname="Helvetica", fillcolor="#68b5e3", label="1,2,3,4,5,6,7,8,9,11,12\n(3)"];
 n4 -- n10;
-n11 [fontname="Helvetica", style="rounded,filled", color="#134d9c", fillcolor="#68b5e3", shape=box, label="1,2,3,4,5,7,8,9,10,11,12\n(3)"];
+n11 [shape=box, style="rounded,filled", color="#134d9c", fontname="Helvetica", fillcolor="#68b5e3", label="1,2,3,4,5,7,8,9,10,11,12\n(3)"];
 n4 -- n11;
-n12 [fontname="Helvetica", style="rounded,filled", color="#134d9c", fillcolor="#68b5e3", shape=box, label="1,2,3,4,5,6,7,8,9,10,12\n(2)"];
+n12 [shape=box, style="rounded,filled", color="#134d9c", fontname="Helvetica", fillcolor="#68b5e3", label="1,2,3,4,5,6,7,8,9,10,12\n(2)"];
 n4 -- n12;
-n13 [fontname="Helvetica", style="rounded,filled", color="#134d9c", fillcolor="#68b5e3", shape=box, label="1,2,3,4,5,6,8,9,10,11,12\n(2)"];
+n13 [shape=box, style="rounded,filled", color="#134d9c", fontname="Helvetica", fillcolor="#68b5e3", label="1,2,3,4,5,6,8,9,10,11,12\n(2)"];
 n4 -- n13;
-n14 [fontname="Helvetica", style="rounded,filled", color="#134d9c", fillcolor="#68b5e3", shape=box, label="1,2,3,4,5,6,7,9,10,11,12\n(2)"];
+n14 [shape=box, style="rounded,filled", color="#134d9c", fontname="Helvetica", fillcolor="#68b5e3", label="1,2,3,4,5,6,7,9,10,11,12\n(2)"];
 n4 -- n14;
-n15 [fontname="Helvetica", style="rounded,filled", color="#134d9c", fillcolor="#68b5e3", shape=box, label="1,2,3,5,6,7,8,9,10,11,12\n(23)"];
+n15 [shape=box, style="rounded,filled", color="#134d9c", fontname="Helvetica", fillcolor="#68b5e3", label="1,2,3,5,6,7,8,9,10,11,12\n(23)"];
 n4 -- n15;
-n16 [fontname="Helvetica", style="rounded,filled", color="#134d9c", fillcolor="#68b5e3", shape=box, label="2,3,4,5,6,7,8,9,10,11,12\n(2)"];
+n16 [shape=box, style="rounded,filled", color="#134d9c", fontname="Helvetica", fillcolor="#68b5e3", label="2,3,4,5,6,7,8,9,10,11,12\n(2)"];
 n4 -- n16;
 
 }

@@ -42,10 +42,6 @@ class FCA(object):
         if self.mapNodeToTypeId is not None:
             if format == "prolog":
                 schema = ""
-                schema += "#node(nodeId, nodeTypeId, nodeName, {})\n".format(', '.join(nodeAttr))
-                schema += "#nodeType(nodeTypeId, {})\n".format(', '.join(nodeTypeAttr))
-                schema += "#edge(edgeId, startNodeId, endNodeId, edgeTypeId)\n"
-                schema += "#edgeType(edgeTypeId, {})\n".format(", ".join(edgeTypeAttr))
             elif format == "sql":
                 conn = sqlite3.connect(filename)
                 c = conn.cursor()
@@ -82,6 +78,7 @@ class FCA(object):
                     if not exist:
                         valueToNodeAttr.append("default")
                 if format == "prolog":
+                    schema += "#node(nodeId, nodeTypeId, nodeName, {})\n".format(', '.join(nodeAttr))
                     schema += "node(n{}, nt{}, {}, {})\n"\
                                .format(k,v, nodeName, ", ".join(valueToNodeAttr))
                 elif format == "sql":
@@ -102,6 +99,7 @@ class FCA(object):
                     if not exist:
                         valueToNodeAttr.append("default")
                 if format == "prolog":
+                    schema += "#nodeType(nodeTypeId, {})\n".format(', '.join(nodeTypeAttr))
                     schema += "nodeType(nt{}, {})\n"\
                            .format(k, ", ".join(valueToNodeAttr))
                 elif format == "sql":
@@ -114,6 +112,7 @@ class FCA(object):
                 leftTypeIdx, rightTypeIdx, _ = v.split(":", 2)
                 edgeTypeIdx = self.mapEdgeToTypeId_EdgeOnly[k]
                 if format == "prolog":
+                    schema += "#edge(edgeId, startNodeId, endNodeId, edgeTypeId)\n"
                     schema += "edge(e{}, n{}, n{}, et{})\n"\
                         .format(eid, leftIdx, rightIdx, edgeTypeIdx)
                 elif format == "sql":
@@ -137,6 +136,7 @@ class FCA(object):
                 # get edge type idx
                 edgeTypeIdx = list(self.mapEdgeTypeIdToCtx_EdgeOnly.keys()).index(k)
                 if format == "prolog":
+                    schema += "#edgeType(edgeTypeId, {})\n".format(", ".join(edgeTypeAttr))
                     schema += "edgeType(et{}, {})\n"\
                            .format(edgeTypeIdx, ", ".join(valueToEdgeAttr))
                 elif format == "sql":
@@ -190,7 +190,6 @@ class FCA(object):
 
     def createFCA(self, propertyList, isEdge=False):
         index = self.extractIndex(propertyList, isEdge)
-        print(index)
         attrs = self.extractAttrs(propertyList)
         # create FCA
         fca = pd.DataFrame(index=index, columns=attrs)

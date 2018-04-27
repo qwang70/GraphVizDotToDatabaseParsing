@@ -2,32 +2,32 @@
 graph{
 rankdir=LR
 edge [style=dashed]
-n0 [style="filled,rounded", fontname=Courier, fontsize=14, width=0.51, height=0.5, shape=box, fillcolor="#AAFFAA", label=3];
-n1 [style="filled,rounded", fontname=Courier, fontsize=14, width=0.51, height=0.5, shape=box, fillcolor="#AAFFAA", label="a"];
+n0 [height=0.5, fontsize=14, width=0.51, fontname=Courier, shape=box, fillcolor="#AAFFAA", style="filled,rounded", label=3];
+n1 [height=0.5, fontsize=14, width=0.51, fontname=Courier, shape=box, fillcolor="#AAFFAA", style="filled,rounded", label="a"];
 n0 -- n1;
-n2 [style="filled,rounded", fontname=Courier, fontsize=14, width=0.51, height=0.5, shape=box, fillcolor="#AAFFAA", label="d"];
+n2 [height=0.5, fontsize=14, width=0.51, fontname=Courier, shape=box, fillcolor="#AAFFAA", style="filled,rounded", label="d"];
 n0 -- n2;
-n3 [style="filled,rounded", fontname=Courier, fontsize=14, width=0.51, height=0.5, shape=box, fillcolor="#AAFFAA", label="e"];
+n3 [height=0.5, fontsize=14, width=0.51, fontname=Courier, shape=box, fillcolor="#AAFFAA", style="filled,rounded", label="e"];
 n0 -- n3;
-n4 [fontname=Courier, fontsize=14, fillcolor="#FFFFAA", width=0.45, shape=circle, style=filled, height=0.45, label=4];
-n5 [fontname=Courier, fontsize=14, fillcolor="#FFFFAA", width=0.45, shape=circle, style=filled, height=0.45, label="k"];
+n4 [shape=circle, height=0.45, fontsize=14, style=filled, fontname=Courier, fillcolor="#FFFFAA", width=0.45, label=4];
+n5 [shape=circle, height=0.45, fontsize=14, style=filled, fontname=Courier, fillcolor="#FFFFAA", width=0.45, label="k"];
 n4 -- n5;
-n6 [fontname=Courier, fontsize=14, fillcolor="#FFFFAA", width=0.45, shape=circle, style=filled, height=0.45, label="m"];
+n6 [shape=circle, height=0.45, fontsize=14, style=filled, fontname=Courier, fillcolor="#FFFFAA", width=0.45, label="m"];
 n4 -- n6;
-n7 [fontname=Courier, fontsize=14, fillcolor="#FFFFAA", width=0.45, shape=circle, style=filled, height=0.45, label="l"];
+n7 [shape=circle, height=0.45, fontsize=14, style=filled, fontname=Courier, fillcolor="#FFFFAA", width=0.45, label="l"];
 n4 -- n7;
-n8 [fontname=Courier, fontsize=14, fillcolor="#FFFFAA", width=0.45, shape=circle, style=filled, height=0.45, label="n"];
+n8 [shape=circle, height=0.45, fontsize=14, style=filled, fontname=Courier, fillcolor="#FFFFAA", width=0.45, label="n"];
 n4 -- n8;
-n9 [fillcolor="#FFAAAA", fontname=Courier, fontsize=14, height=0, width=0, shape=octagon, style=filled, label=5];
-n10 [fillcolor="#FFAAAA", fontname=Courier, fontsize=14, height=0, width=0, shape=octagon, style=filled, label="b"];
+n9 [width=0, shape=octagon, fontsize=14, style=filled, fontname=Courier, height=0, fillcolor="#FFAAAA", label=5];
+n10 [width=0, shape=octagon, fontsize=14, style=filled, fontname=Courier, height=0, fillcolor="#FFAAAA", label="b"];
 n9 -- n10;
-n11 [fillcolor="#FFAAAA", fontname=Courier, fontsize=14, height=0, width=0, shape=octagon, style=filled, label="f"];
+n11 [width=0, shape=octagon, fontsize=14, style=filled, fontname=Courier, height=0, fillcolor="#FFAAAA", label="f"];
 n9 -- n11;
-n12 [fillcolor="#FFAAAA", fontname=Courier, fontsize=14, height=0, width=0, shape=octagon, style=filled, label="c"];
+n12 [width=0, shape=octagon, fontsize=14, style=filled, fontname=Courier, height=0, fillcolor="#FFAAAA", label="c"];
 n9 -- n12;
-n13 [fillcolor="#FFAAAA", fontname=Courier, fontsize=14, height=0, width=0, shape=octagon, style=filled, label="g"];
+n13 [width=0, shape=octagon, fontsize=14, style=filled, fontname=Courier, height=0, fillcolor="#FFAAAA", label="g"];
 n9 -- n13;
-n14 [fillcolor="#FFAAAA", fontname=Courier, fontsize=14, height=0, width=0, shape=octagon, style=filled, label="h"];
+n14 [width=0, shape=octagon, fontsize=14, style=filled, fontname=Courier, height=0, fillcolor="#FFAAAA", label="h"];
 n9 -- n14;
 
 }

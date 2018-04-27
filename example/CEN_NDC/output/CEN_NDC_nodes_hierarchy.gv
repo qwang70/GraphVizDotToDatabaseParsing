@@ -1,26 +1,22 @@
-// <Lattice object of 2 atoms 4 concepts 2 coatoms at 0x113cd9c18>
+// <Lattice object of 2 atoms 4 concepts 2 coatoms at 0x115ea1c88>
 digraph Lattice {
 	node [label="" shape=circle style=filled width=.25]
 	edge [dir=none labeldistance=1.5 minlen=2]
 	subgraph cluster_0 {
-		style=filled
 		color=transparent
 		c0 [fillcolor="" fontname=helvetica label=0 shape="" style=filled]
 	}
 	subgraph cluster_1 {
-		style=filled
 		color=transparent
 		c1 [fillcolor="#CCFFCC" fontname=helvetica label=54 shape=box style=filled]
 	}
 	c1 -> c0
 	subgraph cluster_2 {
-		style=filled
 		color=transparent
 		c2 [fillcolor="#FFFFCC" fontname=helvetica label=55 shape=note style=filled]
 	}
 	c2 -> c0
 	subgraph cluster_3 {
-		style=filled
 		color=transparent
 		c3 [fontname=helvetica label=109 style=filled]
 	}

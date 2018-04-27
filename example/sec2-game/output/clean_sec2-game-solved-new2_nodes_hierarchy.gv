@@ -1,39 +1,33 @@
-// <Lattice object of 3 atoms 6 concepts 2 coatoms at 0x1085180f0>
+// <Lattice object of 3 atoms 6 concepts 2 coatoms at 0x10ec65390>
 digraph Lattice {
 	node [label="" shape=circle style=filled width=.25]
 	edge [dir=none labeldistance=1.5 minlen=2]
 	subgraph cluster_0 {
-		style=filled
 		color=transparent
 		c0 [fillcolor="" fontname=Courier fontsize=14 height="" label=0 shape="" style="" width=""]
 	}
 	subgraph cluster_1 {
-		style=filled
 		color=transparent
 		c1 [fillcolor="#AAFFAA" fontname=Courier fontsize=14 height=0.5 label=3 shape=box style="filled,rounded" width=0.51]
 	}
 	c1 -> c0
 	subgraph cluster_2 {
-		style=filled
 		color=transparent
 		c2 [fillcolor="#FFFFAA" fontname=Courier fontsize=14 height=0.45 label=4 shape=circle style=filled width=0.45]
 	}
 	c2 -> c0
 	subgraph cluster_3 {
-		style=filled
 		color=transparent
 		c3 [fillcolor="#FFAAAA" fontname=Courier fontsize=14 height=0 label=5 shape=octagon style=filled width=0]
 	}
 	c3 -> c0
 	subgraph cluster_4 {
-		style=filled
 		color=transparent
 		c4 [fontname=Courier fontsize=14 label=9 style=filled]
 	}
 	c4 -> c2
 	c4 -> c3
 	subgraph cluster_5 {
-		style=filled
 		color=transparent
 		c5 [fontname=Courier fontsize=14 label=12]
 	}
