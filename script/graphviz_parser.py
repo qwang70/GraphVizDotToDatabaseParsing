@@ -8,9 +8,6 @@ from DOTParser import DOTParser
 import os, sys
 import argparse
 
-from objdict import ObjDict
-import json
-
 # class
 from GraphProperties import *
 from PowersetObj import *
@@ -251,7 +248,9 @@ def main():
     edgePropertyList = printer.getEdgeProperties().getElementList()
 
     graph = Graph(nodePropertyList, edgePropertyList)
+    outputFcaFrmGraph(graph)
 
+def outputFcaFrmGraph(graph):
     # fca node
     fca = FCA(graph)
     # create hierarchy graph
@@ -281,37 +280,6 @@ def main():
             '{}/{}{}'.format(output_folder, base_filename, "_schema.txt"), config =config )
     fca.outputSchema(\
             '{}/{}{}'.format(output_folder, base_filename, "_schema.db"), format="sql", config = config )
-
-    # powerset formation
-    # createTypeHierarchyGraph(nodePropertyList)
-
-def createTypeHierarchyGraph(propertyList):
-    # powerset construction
-    commonKeys, structuredDict = preprocessing(propertyList)
-    outputJson(structuredDict)
-
-    # typeHierarchy = TypeHierarchy(structuredDict)
-
-def outputJson(structuredDict):
-    json_data = structuredDict.dumps(indent=4)
-    print(json_data)
-
-def preprocessing(propertyList):
-    structuredDict = ObjDict()
-    for num, elem in enumerate(propertyList):
-        attr = elem.getAttr()
-        if num == 0:
-            commonKeys = set(attr.keys())
-        else:
-            commonKeys = commonKeys & set(attr.keys())
-        for key, val in attr.items():
-            if key not in structuredDict:
-                structuredDict[key] = ObjDict() 
-            if val not in structuredDict[key]:
-                structuredDict[key][val] = [elem.get_name()]
-            else:
-                structuredDict[key][val].append(elem.get_name())
-    return commonKeys, structuredDict
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='A GraphViz dot file to Sqlite idbase converter.')
