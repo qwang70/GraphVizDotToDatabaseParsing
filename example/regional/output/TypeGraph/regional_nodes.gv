@@ -1,0 +1,28 @@
+
+graph{
+rankdir=LR
+edge [style=dashed]
+n0 [fillcolor="#EEEEEE", fontname="helvetica", style="filled,rounded", shape=box, label=1];
+n1 [fillcolor="#EEEEEE", fontname="helvetica", style="filled,rounded", shape=box, label="CEN.USA\nTZ.USA"];
+n0 -- n1;
+n2 [style=filled, fontname="helvetica", fillcolor="#CCFFCC", shape=box, label=4];
+n3 [style=filled, fontname="helvetica", fillcolor="#CCFFCC", shape=box, label="CEN.Midwest"];
+n2 -- n3;
+n4 [style=filled, fontname="helvetica", fillcolor="#CCFFCC", shape=box, label="CEN.South"];
+n2 -- n4;
+n5 [style=filled, fontname="helvetica", fillcolor="#CCFFCC", shape=box, label="CEN.Northeast"];
+n2 -- n5;
+n6 [style=filled, fontname="helvetica", fillcolor="#CCFFCC", shape=box, label="CEN.West"];
+n2 -- n6;
+n7 [style=filled, fillcolor="#FFFFCC", fontname="helvetica", shape=note, label=4];
+n8 [style=filled, fillcolor="#FFFFCC", fontname="helvetica", shape=note, label="TZ.Eastern"];
+n7 -- n8;
+n9 [style=filled, fillcolor="#FFFFCC", fontname="helvetica", shape=note, label="TZ.Pacific"];
+n7 -- n9;
+n10 [style=filled, fillcolor="#FFFFCC", fontname="helvetica", shape=note, label="TZ.Central"];
+n7 -- n10;
+n11 [style=filled, fillcolor="#FFFFCC", fontname="helvetica", shape=note, label="TZ.Mountain"];
+n7 -- n11;
+
+}
+            

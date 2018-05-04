@@ -1,0 +1,36 @@
+
+digraph{
+rankdir=LR
+n0 [style=filled, peripheries=1, shape=box, fontname=Helvetica, fillcolor="#CCFFCC", label=1];
+n1 [style=filled, shape=box, peripheries=2, fontname=Helvetica, fillcolor="#CCFFCC", label=1];
+n2 [style="rounded,filled", fillcolor="#FFFFCC", peripheries=1, shape=record, fontname=Helvetica, rankdir=LR, label=1];
+n3 [style="rounded,filled", shape=circle, peripheries=1, color=blue, fontname=Helvetica, width=0.2, fillcolor="#FFFFFF", label=1];
+n4 [style="rounded,filled", fillcolor="#FCFCFC", peripheries=1, shape=box, fontname=Helvetica, label=2];
+n5 [style=filled, peripheries=1, shape=record, fontname=Helvetica, fillcolor="#CCFFCC", rankdir=LR, label=5];
+n6 [style="rounded,filled", shape=circle, peripheries=1, color=red, fontname=Helvetica, width=0.2, fillcolor="#FFFFFF", label=6];
+n7 [style="rounded,filled", fillcolor="#FFFFCC", peripheries=1, shape=box, fontname=Helvetica, label=10];
+
+
+
+n7 -> n5 [ attr=default, minlen=2, label=7 ];
+
+n5 -> n7 [ attr=default, minlen=2, label=5 ];
+
+n4 -> n5 [ attr=default, minlen=2, label=3 ];
+
+n1 -> n7 [ attr=default, minlen=2, label=1 ];
+
+n7 -> n1 [ attr=default, minlen=2, label=3 ];
+
+n0 -> n2 [ attr=default, minlen=2, label=1 ];
+
+n7 -> n0 [ attr=default, minlen=2, label=1 ];
+
+n6 -> n7 [ attr=default, minlen=2, label=4 ];
+
+n6 -> n4 [ attr=default, minlen=2, label=2 ];
+
+n2 -> n3 [ attr=default, minlen=2, label=1 ];
+
+}
+        

@@ -1,0 +1,125 @@
+// <Lattice object of 8 atoms 21 concepts 3 coatoms at 0x106b59fd0>
+digraph Lattice {
+	node [label="" shape=circle style=filled width=.25]
+	edge [dir=none labeldistance=1.5 minlen=2]
+	subgraph cluster_0 {
+		color=transparent
+		c0 [color="" fillcolor="" fontname=Helvetica label=0 peripheries="" rankdir=LR shape="" style="" width=0.2]
+	}
+	subgraph cluster_1 {
+		color=transparent
+		c1 [fillcolor="#CCFFCC" fontname=Helvetica label=1 peripheries=1 shape=box style=filled]
+	}
+	c1 -> c0
+	subgraph cluster_2 {
+		color=transparent
+		c2 [fillcolor="#CCFFCC" fontname=Helvetica label=1 peripheries=2 shape=box style=filled]
+	}
+	c2 -> c0
+	subgraph cluster_3 {
+		color=transparent
+		c3 [fillcolor="#FFFFCC" fontname=Helvetica label=1 peripheries=1 rankdir=LR shape=record style="rounded,filled"]
+	}
+	c3 -> c0
+	subgraph cluster_4 {
+		color=transparent
+		c4 [color=blue fillcolor="#FFFFFF" fontname=Helvetica label=1 peripheries=1 shape=circle style="rounded,filled" width=0.2]
+	}
+	c4 -> c0
+	subgraph cluster_5 {
+		color=transparent
+		c5 [fillcolor="#CCFFCC" fontname=Helvetica label=2 shape=box style=filled]
+	}
+	c5 -> c1
+	c5 -> c2
+	subgraph cluster_6 {
+		color=transparent
+		c6 [fillcolor="#FCFCFC" fontname=Helvetica label=2 peripheries=1 shape=box style="rounded,filled"]
+	}
+	c6 -> c0
+	subgraph cluster_7 {
+		color=transparent
+		c7 [fillcolor="#CCFFCC" fontname=Helvetica label=5 peripheries=1 rankdir=LR shape=record style=filled]
+	}
+	c7 -> c0
+	subgraph cluster_8 {
+		color=transparent
+		c8 [fillcolor="#CCFFCC" fontname=Helvetica label=6 peripheries=1 style=filled]
+	}
+	c8 -> c1
+	c8 -> c7
+	subgraph cluster_9 {
+		color=transparent
+		c9 [fontname=Helvetica label=6 peripheries=1 rankdir=LR shape=record]
+	}
+	c9 -> c3
+	c9 -> c7
+	subgraph cluster_10 {
+		color=transparent
+		c10 [color=red fillcolor="#FFFFFF" fontname=Helvetica label=6 peripheries=1 shape=circle style="rounded,filled" width=0.2]
+	}
+	c10 -> c0
+	subgraph cluster_11 {
+		color=transparent
+		c11 [fillcolor="#CCFFCC" fontname=Helvetica label=7 style=filled]
+	}
+	c11 -> c5
+	c11 -> c8
+	subgraph cluster_12 {
+		color=transparent
+		c12 [fillcolor="#FFFFFF" fontname=Helvetica label=7 peripheries=1 shape=circle style="rounded,filled" width=0.2]
+	}
+	c12 -> c4
+	c12 -> c10
+	subgraph cluster_13 {
+		color=transparent
+		c13 [fillcolor="#FFFFCC" fontname=Helvetica label=10 peripheries=1 shape=box style="rounded,filled"]
+	}
+	c13 -> c0
+	subgraph cluster_14 {
+		color=transparent
+		c14 [fillcolor="#FFFFCC" fontname=Helvetica label=11 peripheries=1 style="rounded,filled"]
+	}
+	c14 -> c3
+	c14 -> c13
+	subgraph cluster_15 {
+		color=transparent
+		c15 [fontname=Helvetica label=12 peripheries=1 shape=box style="rounded,filled"]
+	}
+	c15 -> c6
+	c15 -> c13
+	subgraph cluster_16 {
+		color=transparent
+		c16 [fontname=Helvetica label=13 peripheries=1 shape=box]
+	}
+	c16 -> c1
+	c16 -> c15
+	subgraph cluster_17 {
+		color=transparent
+		c17 [fontname=Helvetica label=14 shape=box]
+	}
+	c17 -> c5
+	c17 -> c16
+	subgraph cluster_18 {
+		color=transparent
+		c18 [fontname=Helvetica label=20 peripheries=1 style="rounded,filled"]
+	}
+	c18 -> c12
+	c18 -> c14
+	c18 -> c15
+	subgraph cluster_19 {
+		color=transparent
+		c19 [fontname=Helvetica label=26 peripheries=1]
+	}
+	c19 -> c8
+	c19 -> c9
+	c19 -> c16
+	c19 -> c18
+	subgraph cluster_20 {
+		color=transparent
+		c20 [fontname=Helvetica label=27]
+	}
+	c20 -> c11
+	c20 -> c17
+	c20 -> c19
+}

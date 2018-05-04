@@ -12,6 +12,16 @@ Graphviz is an application for drawing graph specified in DOT script languange. 
 Although DOT script language specifies how the graph should be drawn and output, it does not imply any structure information of a graph. Out tool reveals the underlying structure of the graph. Specifically, it classifies different types of nodes, edges, and the formal concept analysis based hierarchic structure of each type.
 
 
+### Architecture Walkthrough:
+
+- We first parsed the DOT script language with ANTLR based parser
+
+- The parser record the attributes of each node and edge
+
+- Based on the attributes of nodes and edges, we use formal concept analysis(FCA) to create the hierarchy of the node and edge types
+
+- In the hierarchy graph
+
 ## Installation
 
 1. Test the installation of Python 3 works by running the command to check the version
@@ -67,10 +77,10 @@ The sample example folder structure is as following:
 
 #### Example
 
-To compute and output the  hierarchy and type graph of `parleocar.gv`:
+To compute and output the  hierarchy and type graph of `paelocar.gv`:
 
 ```
-$ python3 script/graphviz_parser.py example/parleocar.gv -config config.json
+$ python3 script/graphviz_parser.py example/paelocar.gv -config config.json
 ```
 
 ### Configure file structure

@@ -1,0 +1,77 @@
+// <Lattice object of 3 atoms 7 concepts 2 coatoms at 0x10cabbcf8>
+digraph Lattice {
+	node [label="" shape=circle style=filled width=.25]
+	edge [dir=none labeldistance=1.5 minlen=2]
+	subgraph cluster_0 {
+		color=blue
+		c0_start
+		c0_end
+		c0 [style=invis]
+		c0_start -> c0_end [arrowhead="" color="" constraint="" label=0 penwidth=1 style=""]
+		c0_start -> c0 [style=invis]
+		c0_end -> c0 [style=invis]
+	}
+	subgraph cluster_1 {
+		color=blue
+		c1_start
+		c1_end
+		c1 [style=invis]
+		c1_start -> c1_end [arrowhead=none color="#FF0000" constraint=false label=3 penwidth=1 style=dashed]
+		c1_start -> c1 [style=invis]
+		c1_end -> c1 [style=invis]
+	}
+	c1 -> c0
+	subgraph cluster_2 {
+		color=blue
+		c2_start
+		c2_end
+		c2 [style=invis]
+		c2_start -> c2_end [arrowhead=normal color="#FF0000" constraint=true label=3 penwidth=1 style=solid]
+		c2_start -> c2 [style=invis]
+		c2_end -> c2 [style=invis]
+	}
+	c2 -> c0
+	subgraph cluster_3 {
+		color=blue
+		c3_start
+		c3_end
+		c3 [style=invis]
+		c3_start -> c3_end [color="#FF0000" label=6 penwidth=1]
+		c3_start -> c3 [style=invis]
+		c3_end -> c3 [style=invis]
+	}
+	c3 -> c1
+	c3 -> c2
+	subgraph cluster_4 {
+		color=blue
+		c4_start
+		c4_end
+		c4 [style=invis]
+		c4_start -> c4_end [arrowhead=normal color="#000000" constraint=true label=61 penwidth=1 style=solid]
+		c4_start -> c4 [style=invis]
+		c4_end -> c4 [style=invis]
+	}
+	c4 -> c0
+	subgraph cluster_5 {
+		color=blue
+		c5_start
+		c5_end
+		c5 [style=invis]
+		c5_start -> c5_end [arrowhead=normal constraint=true label=64 penwidth=1 style=solid]
+		c5_start -> c5 [style=invis]
+		c5_end -> c5 [style=invis]
+	}
+	c5 -> c2
+	c5 -> c4
+	subgraph cluster_6 {
+		color=blue
+		c6_start
+		c6_end
+		c6 [style=invis]
+		c6_start -> c6_end [label=67 penwidth=1]
+		c6_start -> c6 [style=invis]
+		c6_end -> c6 [style=invis]
+	}
+	c6 -> c3
+	c6 -> c5
+}

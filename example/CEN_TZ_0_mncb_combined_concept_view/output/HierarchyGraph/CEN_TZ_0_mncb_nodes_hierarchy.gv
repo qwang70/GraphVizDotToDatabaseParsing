@@ -1,0 +1,48 @@
+// <Lattice object of 4 atoms 8 concepts 2 coatoms at 0x1073d08d0>
+digraph Lattice {
+	node [label="" shape=circle style=filled width=.25]
+	edge [dir=none labeldistance=1.5 minlen=2]
+	subgraph cluster_0 {
+		color=transparent
+		c0 [fillcolor="" fontname=helvetica label=0 shape="" style=""]
+	}
+	subgraph cluster_1 {
+		color=transparent
+		c1 [fillcolor="#EEEEEE" fontname=helvetica label=1 shape=box style="filled,rounded"]
+	}
+	c1 -> c0
+	subgraph cluster_2 {
+		color=transparent
+		c2 [fillcolor="#CCFFCC" fontname=helvetica label=4 shape=box style=filled]
+	}
+	c2 -> c0
+	subgraph cluster_3 {
+		color=transparent
+		c3 [fillcolor="#FFFFCC" fontname=helvetica label=4 shape=note style=filled]
+	}
+	c3 -> c0
+	subgraph cluster_4 {
+		color=transparent
+		c4 [fontname=helvetica label=8 style=filled]
+	}
+	c4 -> c2
+	c4 -> c3
+	subgraph cluster_5 {
+		color=transparent
+		c5 [fillcolor="#FFE0D8" fontname=helvetica label=18 shape=box style="filled,rounded,bold"]
+	}
+	c5 -> c0
+	subgraph cluster_6 {
+		color=transparent
+		c6 [fontname=helvetica label=23 shape=box]
+	}
+	c6 -> c1
+	c6 -> c2
+	c6 -> c5
+	subgraph cluster_7 {
+		color=transparent
+		c7 [fontname=helvetica label=27]
+	}
+	c7 -> c4
+	c7 -> c6
+}

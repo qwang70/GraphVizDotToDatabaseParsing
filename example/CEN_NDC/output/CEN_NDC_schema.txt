@@ -1,0 +1,274 @@
+%node(nodeId, nodeTypeId, nodeName, indeg>0, outdeg>0, indeg).
+node(n0, nt0, "CEN.IL", true, true, 1).
+node(n1, nt0, "CEN.IN", true, true, 1).
+node(n2, nt0, "CEN.RI", true, true, 1).
+node(n3, nt0, "CEN.IA", true, true, 1).
+node(n4, nt0, "CEN.WV", true, true, 1).
+node(n5, nt0, "CEN.KS", true, true, 1).
+node(n6, nt0, "CEN.KY", true, true, 1).
+node(n7, nt0, "CEN.TX", true, true, 1).
+node(n8, nt0, "CEN.Northeast", true, true, 1).
+node(n9, nt0, "CEN.South", true, true, 1).
+node(n10, nt0, "CEN.ID", true, true, 1).
+node(n11, nt0, "CEN.TN", true, true, 1).
+node(n12, nt0, "CEN.WY", true, true, 1).
+node(n13, nt0, "CEN.VT", true, true, 1).
+node(n14, nt0, "CEN.MS", true, true, 1).
+node(n15, nt0, "CEN.MT", true, true, 1).
+node(n16, nt0, "CEN.MA", true, true, 1).
+node(n17, nt0, "CEN.USA", false, true, 0).
+node(n18, nt0, "CEN.ME", true, true, 1).
+node(n19, nt0, "CEN.MD", true, true, 1).
+node(n20, nt0, "CEN.MI", true, true, 1).
+node(n21, nt0, "CEN.MN", true, true, 1).
+node(n22, nt0, "CEN.DC", true, true, 1).
+node(n23, nt0, "CEN.DE", true, true, 1).
+node(n24, nt0, "CEN.OR", true, true, 1).
+node(n25, nt0, "CEN.OH", true, true, 1).
+node(n26, nt0, "CEN.VA", true, true, 1).
+node(n27, nt0, "CEN.FL", true, true, 1).
+node(n28, nt0, "CEN.AR", true, true, 1).
+node(n29, nt0, "CEN.AZ", true, true, 1).
+node(n30, nt0, "CEN.AL", true, true, 1).
+node(n31, nt0, "CEN.OK", true, true, 1).
+node(n32, nt0, "CEN.CT", true, true, 1).
+node(n33, nt0, "CEN.CO", true, true, 1).
+node(n34, nt0, "CEN.CA", true, true, 1).
+node(n35, nt0, "CEN.SD", true, true, 1).
+node(n36, nt0, "CEN.SC", true, true, 1).
+node(n37, nt0, "CEN.Midwest", true, true, 1).
+node(n38, nt0, "CEN.LA", true, true, 1).
+node(n39, nt0, "CEN.MO", true, true, 1).
+node(n40, nt0, "CEN.UT", true, true, 1).
+node(n41, nt0, "CEN.GA", true, true, 1).
+node(n42, nt0, "CEN.PA", true, true, 1).
+node(n43, nt0, "CEN.West", true, true, 1).
+node(n44, nt0, "CEN.NY", true, true, 1).
+node(n45, nt0, "CEN.NV", true, true, 1).
+node(n46, nt0, "CEN.NM", true, true, 1).
+node(n47, nt0, "CEN.WA", true, true, 1).
+node(n48, nt0, "CEN.NH", true, true, 1).
+node(n49, nt0, "CEN.NJ", true, true, 1).
+node(n50, nt0, "CEN.ND", true, true, 1).
+node(n51, nt0, "CEN.NE", true, true, 1).
+node(n52, nt0, "CEN.WI", true, true, 1).
+node(n53, nt0, "CEN.NC", true, true, 1).
+node(n54, nt1, "NDC.ID", true, true, 1).
+node(n55, nt1, "NDC.IA", true, true, 1).
+node(n56, nt1, "NDC.IL", true, true, 1).
+node(n57, nt1, "NDC.IN", true, true, 1).
+node(n58, nt1, "NDC.PA", true, true, 1).
+node(n59, nt1, "NDC.Southeast", true, true, 12).
+node(n60, nt1, "NDC.GA", true, true, 1).
+node(n61, nt1, "NDC.NV", true, true, 1).
+node(n62, nt1, "NDC.NY", true, true, 1).
+node(n63, nt1, "NDC.NE", true, true, 1).
+node(n64, nt1, "NDC.ND", true, true, 1).
+node(n65, nt1, "NDC.NC", true, true, 1).
+node(n66, nt1, "NDC.NM", true, true, 1).
+node(n67, nt1, "NDC.NH", true, true, 1).
+node(n68, nt1, "NDC.NJ", true, true, 1).
+node(n69, nt1, "NDC.WY", true, true, 1).
+node(n70, nt1, "NDC.WV", true, true, 1).
+node(n71, nt1, "NDC.WI", true, true, 1).
+node(n72, nt1, "NDC.WA", true, true, 1).
+node(n73, nt1, "NDC.LA", true, true, 1).
+node(n74, nt1, "NDC.UT", true, true, 1).
+node(n75, nt1, "NDC.CT", true, true, 1).
+node(n76, nt1, "NDC.CA", true, true, 1).
+node(n77, nt1, "NDC.CO", true, true, 1).
+node(n78, nt1, "NDC.West", true, true, 9).
+node(n79, nt1, "NDC.Northeast", true, true, 12).
+node(n80, nt1, "NDC.SD", true, true, 1).
+node(n81, nt1, "NDC.AZ", true, true, 1).
+node(n82, nt1, "NDC.AR", true, true, 1).
+node(n83, nt1, "NDC.AL", true, true, 1).
+node(n84, nt1, "NDC.VT", true, true, 1).
+node(n85, nt1, "NDC.VA", true, true, 1).
+node(n86, nt1, "NDC.OR", true, true, 1).
+node(n87, nt1, "NDC.OK", true, true, 1).
+node(n88, nt1, "NDC.OH", true, true, 1).
+node(n89, nt1, "NDC.TN", true, true, 1).
+node(n90, nt1, "NDC.FL", true, true, 1).
+node(n91, nt1, "NDC.ME", true, true, 1).
+node(n92, nt1, "NDC.MS", true, true, 1).
+node(n93, nt1, "NDC.MT", true, true, 1).
+node(n94, nt1, "NDC.MA", true, true, 1).
+node(n95, nt1, "NDC.MD", true, true, 1).
+node(n96, nt1, "NDC.MI", true, true, 1).
+node(n97, nt1, "NDC.TX", true, true, 1).
+node(n98, nt1, "NDC.MN", true, true, 1).
+node(n99, nt1, "NDC.MO", true, true, 1).
+node(n100, nt1, "NDC.SC", true, true, 1).
+node(n101, nt1, "NDC.Midwest", true, true, 12).
+node(n102, nt1, "NDC.RI", true, true, 1).
+node(n103, nt1, "NDC.Southwest", true, true, 4).
+node(n104, nt1, "NDC.DE", true, true, 1).
+node(n105, nt1, "NDC.DC", true, true, 1).
+node(n106, nt1, "NDC.KY", true, true, 1).
+node(n107, nt1, "NDC.KS", true, true, 1).
+node(n108, nt1, "NDC.USA", true, false, 5).
+%nodeType(nodeTypeId, fillcolor, style, shape).
+nodeType(nt0, "#CCFFCC", filled, box).
+nodeType(nt1, "#FFFFCC", filled, note).
+%edge(edgeId, startNodeId, endNodeId, edgeTypeId).
+edge(e0, n30, n83, et1).
+edge(e1, n33, n77, et1).
+edge(e2, n42, n58, et1).
+edge(e3, n50, n64, et1).
+edge(e4, n6, n106, et1).
+edge(e5, n35, n80, et1).
+edge(e6, n22, n105, et1).
+edge(e7, n52, n71, et1).
+edge(e8, n15, n93, et1).
+edge(e9, n41, n60, et1).
+edge(e10, n32, n75, et1).
+edge(e11, n51, n63, et1).
+edge(e12, n47, n72, et1).
+edge(e13, n29, n81, et1).
+edge(e14, n14, n92, et1).
+edge(e15, n28, n82, et1).
+edge(e16, n24, n86, et1).
+edge(e17, n19, n95, et1).
+edge(e18, n38, n73, et1).
+edge(e19, n48, n67, et1).
+edge(e20, n4, n70, et1).
+edge(e21, n16, n94, et1).
+edge(e22, n36, n100, et1).
+edge(e23, n3, n55, et1).
+edge(e24, n0, n56, et1).
+edge(e25, n7, n97, et1).
+edge(e26, n44, n62, et1).
+edge(e27, n46, n66, et1).
+edge(e28, n53, n65, et1).
+edge(e29, n11, n89, et1).
+edge(e30, n23, n104, et1).
+edge(e31, n26, n85, et1).
+edge(e32, n39, n99, et1).
+edge(e33, n1, n57, et1).
+edge(e34, n21, n98, et1).
+edge(e35, n40, n74, et1).
+edge(e36, n13, n84, et1).
+edge(e37, n12, n69, et1).
+edge(e38, n20, n96, et1).
+edge(e39, n5, n107, et1).
+edge(e40, n45, n61, et1).
+edge(e41, n10, n54, et1).
+edge(e42, n18, n91, et1).
+edge(e43, n31, n87, et1).
+edge(e44, n34, n76, et1).
+edge(e45, n27, n90, et1).
+edge(e46, n2, n102, et1).
+edge(e47, n25, n88, et1).
+edge(e48, n49, n68, et1).
+edge(e49, n9, n26, et2).
+edge(e50, n43, n40, et2).
+edge(e51, n9, n41, et2).
+edge(e52, n37, n5, et2).
+edge(e53, n37, n50, et2).
+edge(e54, n37, n35, et2).
+edge(e55, n8, n44, et2).
+edge(e56, n8, n32, et2).
+edge(e57, n37, n3, et2).
+edge(e58, n43, n15, et2).
+edge(e59, n43, n33, et2).
+edge(e60, n9, n11, et2).
+edge(e61, n8, n42, et2).
+edge(e62, n8, n13, et2).
+edge(e63, n43, n45, et2).
+edge(e64, n8, n48, et2).
+edge(e65, n9, n19, et2).
+edge(e66, n17, n37, et2).
+edge(e67, n37, n20, et2).
+edge(e68, n9, n27, et2).
+edge(e69, n8, n49, et2).
+edge(e70, n37, n39, et2).
+edge(e71, n9, n22, et2).
+edge(e72, n9, n23, et2).
+edge(e73, n43, n46, et2).
+edge(e74, n37, n21, et2).
+edge(e75, n9, n14, et2).
+edge(e76, n9, n38, et2).
+edge(e77, n8, n2, et2).
+edge(e78, n37, n1, et2).
+edge(e79, n43, n47, et2).
+edge(e80, n9, n6, et2).
+edge(e81, n43, n34, et2).
+edge(e82, n43, n12, et2).
+edge(e83, n9, n31, et2).
+edge(e84, n37, n51, et2).
+edge(e85, n43, n10, et2).
+edge(e86, n17, n9, et2).
+edge(e87, n9, n28, et2).
+edge(e88, n37, n0, et2).
+edge(e89, n37, n25, et2).
+edge(e90, n43, n24, et2).
+edge(e91, n9, n53, et2).
+edge(e92, n8, n16, et2).
+edge(e93, n9, n4, et2).
+edge(e94, n37, n52, et2).
+edge(e95, n9, n36, et2).
+edge(e96, n9, n7, et2).
+edge(e97, n9, n30, et2).
+edge(e98, n8, n18, et2).
+edge(e99, n17, n43, et2).
+edge(e100, n17, n8, et2).
+edge(e101, n43, n29, et2).
+edge(e102, n84, n79, et3).
+edge(e103, n96, n101, et3).
+edge(e104, n97, n103, et3).
+edge(e105, n54, n78, et3).
+edge(e106, n66, n103, et3).
+edge(e107, n78, n108, et3).
+edge(e108, n85, n59, et3).
+edge(e109, n80, n101, et3).
+edge(e110, n62, n79, et3).
+edge(e111, n81, n103, et3).
+edge(e112, n100, n59, et3).
+edge(e113, n91, n79, et3).
+edge(e114, n93, n78, et3).
+edge(e115, n105, n79, et3).
+edge(e116, n69, n78, et3).
+edge(e117, n70, n59, et3).
+edge(e118, n73, n59, et3).
+edge(e119, n56, n101, et3).
+edge(e120, n83, n59, et3).
+edge(e121, n75, n79, et3).
+edge(e122, n57, n101, et3).
+edge(e123, n61, n78, et3).
+edge(e124, n76, n78, et3).
+edge(e125, n107, n101, et3).
+edge(e126, n104, n79, et3).
+edge(e127, n101, n108, et3).
+edge(e128, n74, n78, et3).
+edge(e129, n68, n79, et3).
+edge(e130, n99, n101, et3).
+edge(e131, n87, n103, et3).
+edge(e132, n63, n101, et3).
+edge(e133, n90, n59, et3).
+edge(e134, n92, n59, et3).
+edge(e135, n82, n59, et3).
+edge(e136, n60, n59, et3).
+edge(e137, n77, n78, et3).
+edge(e138, n106, n59, et3).
+edge(e139, n89, n59, et3).
+edge(e140, n65, n59, et3).
+edge(e141, n72, n78, et3).
+edge(e142, n79, n108, et3).
+edge(e143, n58, n79, et3).
+edge(e144, n64, n101, et3).
+edge(e145, n95, n79, et3).
+edge(e146, n88, n101, et3).
+edge(e147, n71, n101, et3).
+edge(e148, n102, n79, et3).
+edge(e149, n59, n108, et3).
+edge(e150, n103, n108, et3).
+edge(e151, n86, n78, et3).
+edge(e152, n98, n101, et3).
+edge(e153, n67, n79, et3).
+edge(e154, n55, n101, et3).
+edge(e155, n94, n79, et3).
+%edgeType(edgeTypeId, color, style).
+edgeType(et0, "#AA00FF", dashed).
+edgeType(et1, "#000000", solid).
+edgeType(et2, "#000000", solid).
