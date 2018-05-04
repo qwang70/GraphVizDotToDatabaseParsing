@@ -1,5 +1,16 @@
 # GVA System (GV-Analyzer)
 
+## What is GVA System
+
+GVA System stands for Graphviz Analyer System, which consumes a Graphviz file and output the underlying feature of the graph.
+
+
+### Why GVA System
+
+Graphviz is an application for drawing graph specified in DOT script languange. It is common for many applications to generate GV files that can then be converted to PNG/PDF/SVG files with Graphviz.
+
+Although DOT script language specifies how the graph should be drawn and output, it does not imply any structure information of a graph. Out tool reveals the underlying structure of the graph. Specifically, it classifies different types of nodes, edges, and the formal concept analysis based hierarchic structure of each type.
+
 
 ## Installation
 
