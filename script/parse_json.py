@@ -1,6 +1,6 @@
 import json 
 import sys
-nodeAttrSet = {"indeg>0", "outdeg>0", "indeg", "outdeg"}
+querySet = {"indeg>0", "outdeg>0", "indeg", "outdeg"}
 nodeTypeAttrSet = {"fillcolor", "style", "shape", \
     "label", "fontsize", "width", "fontname", "height"}
 edgeTypeAttrSet = {"style",  \
@@ -18,14 +18,14 @@ def parse_json(filename):
     includeETA = []
     excludeETA = []
 
-    if "nodeAttr" in json_obj:
-        for attr in json_obj["nodeAttr"]:
+    if "query" in json_obj:
+        for attr in json_obj["query"]:
             if attr:
-                if attr[0] == "+" and attr[1:] in nodeAttrSet:
+                if attr[0] == "+" and attr[1:] in querySet:
                     includeNA.append(attr[1:])
-                elif attr[0] == "-" and attr[1:] in nodeAttrSet:
+                elif attr[0] == "-" and attr[1:] in querySet:
                     excludeNA.append(attr[1:])
-                elif attr in nodeAttrSet:
+                elif attr in querySet:
                     includeNA.append(attr)
     if "nodeTypeAttr" in json_obj:
         for attr in json_obj["nodeTypeAttr"]:
@@ -47,7 +47,7 @@ def parse_json(filename):
                     includeETA.append(attr)
     return {"nodeTypeAttr": {"include": includeNTA, "exclude": excludeNTA},\
             "edgeTypeAttr": {"include": includeETA, "exclude": excludeETA},\
-            "nodeAttr" : {"include": includeNA, "exclude": excludeNA}}
+            "query" : {"include": includeNA, "exclude": excludeNA}}
 
 
 

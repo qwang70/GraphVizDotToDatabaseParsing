@@ -10,7 +10,6 @@ import argparse
 
 # class
 from GraphProperties import *
-from PowersetObj import *
 from FormalConceptAnalysis import *
 from parse_json import *
 from Graph import *
@@ -248,9 +247,9 @@ def main():
     edgePropertyList = printer.getEdgeProperties().getElementList()
 
     graph = Graph(nodePropertyList, edgePropertyList)
-    outputFcaFrmGraph(graph)
+    outputFcaFrmGraph(graph, base_filename, output_folder)
 
-def outputFcaFrmGraph(graph):
+def outputFcaFrmGraph(graph, base_filename, output_folder):
     # fca node
     fca = FCA(graph)
     # create hierarchy graph
@@ -284,7 +283,7 @@ def outputFcaFrmGraph(graph):
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='A GraphViz dot file to Sqlite idbase converter.')
     parser.add_argument('-outFolder', 
-                        help='name of the output idbase file')
+                        help='path of the output folder')
     parser.add_argument('-config', 
                         help='name of the configuration json file')
     parser.add_argument('infile', 

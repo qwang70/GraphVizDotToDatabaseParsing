@@ -1,0 +1,115 @@
+// <Lattice object of 5 atoms 9 concepts 4 coatoms at 0x1064b34e0>
+digraph Lattice {
+	node [label="" shape=circle style=filled width=.25]
+	edge [dir=none labeldistance=1.5 minlen=2]
+	subgraph cluster_0 {
+		color=blue
+		c0_start
+		c0_end
+		c0 [style=invis]
+		c0_start -> c0_end [color="" constraint="" dir=back fontname=Helvetica fontsize=12 label=0 pensize=5 penwidth=2 style=dashed]
+		c0_start -> c0 [style=invis]
+		c0_end -> c0 [style=invis]
+	}
+	subgraph cluster_1 {
+		color=blue
+		c1_start
+		c1_end
+		c1 [style=invis]
+		c1_start -> c1_end [color="#777777" constraint=true fontname=Helvetica fontsize=12 label=1 pensize=5 penwidth=2 style=dashed]
+		c1_start -> c1 [style=invis]
+		c1_end -> c1 [style=invis]
+	}
+	c1 -> c1 [label="(a,b)\"" color=transparent labelangle=270]
+	c1 -> c0
+	subgraph cluster_2 {
+		color=blue
+		c2_start
+		c2_end
+		c2 [style=invis]
+		c2_start -> c2_end [color="#AAAA00" dir=back fontname=Helvetica fontsize=12 label=2 pensize=5 penwidth=2]
+		c2_start -> c2 [style=invis]
+		c2_end -> c2 [style=invis]
+	}
+	c2 -> c2 [label="(b,a)\"	
+(b,a,b)\"" color=transparent labelangle=270]
+	c2 -> c0
+	subgraph cluster_3 {
+		color=blue
+		c3_start
+		c3_end
+		c3 [style=invis]
+		c3_start -> c3_end [color="#CC0000" fontname=Helvetica fontsize=12 label=3 pensize=5 penwidth=2]
+		c3_start -> c3 [style=invis]
+		c3_end -> c3 [style=invis]
+	}
+	c3 -> c3 [label="(b,b)\"	
+(a,b)\"	
+(b,b)\"" color=transparent labelangle=270]
+	c3 -> c0
+	subgraph cluster_4 {
+		color=blue
+		c4_start
+		c4_end
+		c4 [style=invis]
+		c4_start -> c4_end [color="#AAAA00" fontname=Helvetica fontsize=12 label=4 pensize=5 penwidth=2]
+		c4_start -> c4 [style=invis]
+		c4_end -> c4 [style=invis]
+	}
+	c4 -> c4 [label="(a,a,b)\"	
+(b,a)\"" color=transparent labelangle=270]
+	c4 -> c2
+	subgraph cluster_5 {
+		color=blue
+		c5_start
+		c5_end
+		c5 [style=invis]
+		c5_start -> c5_end [color="#777777" constraint=false fontname=Helvetica fontsize=12 label=4 pensize=5 penwidth=2 style=dashed]
+		c5_start -> c5 [style=invis]
+		c5_end -> c5 [style=invis]
+	}
+	c5 -> c5 [label="(b,a)\"	
+(b,b)\"	
+(a,b)\"	
+(a,b)\"" color=transparent labelangle=270]
+	c5 -> c0
+	subgraph cluster_6 {
+		color=blue
+		c6_start
+		c6_end
+		c6 [style=invis]
+		c6_start -> c6_end [color="#777777" fontname=Helvetica fontsize=12 label=5 pensize=5 penwidth=2 style=dashed]
+		c6_start -> c6 [style=invis]
+		c6_end -> c6 [style=invis]
+	}
+	c6 -> c1
+	c6 -> c5
+	subgraph cluster_7 {
+		color=blue
+		c7_start
+		c7_end
+		c7 [style=invis]
+		c7_start -> c7_end [color="#00BB00" fontname=Helvetica fontsize=12 label=5 pensize=5 penwidth=2]
+		c7_start -> c7 [style=invis]
+		c7_end -> c7 [style=invis]
+	}
+	c7 -> c7 [label="(a,b)\"	
+(b,b)\"	
+(a,b)\"	
+(a,b,b)\"	
+(b,b,b)\"" color=transparent labelangle=270]
+	c7 -> c0
+	subgraph cluster_8 {
+		color=blue
+		c8_start
+		c8_end
+		c8 [style=invis]
+		c8_start -> c8_end [fontname=Helvetica fontsize=12 label=17 pensize=5 penwidth=2]
+		c8_start -> c8 [style=invis]
+		c8_end -> c8 [style=invis]
+	}
+	c8 -> c3
+	c8 -> c4
+	c8 -> c6
+	c8 -> c7
+}

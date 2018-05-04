@@ -1,5 +1,5 @@
 {
-"nodeAttr":
+"query":
     [
     "+indeg>0",
     "+outdeg>0",

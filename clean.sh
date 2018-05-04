@@ -1,6 +1,7 @@
 #!/bin/bash
-EXAMPLE_FOLDER="example"
-SCRIPT_FOLDER="script"
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+EXAMPLE_FOLDER="$DIR/example"
+SCRIPT_FOLDER="$DIR/script"
 for example in ${EXAMPLE_FOLDER}/**; do
     # input and output folders
     outputFolder="${example}/output"

@@ -36,7 +36,7 @@ class FCA(object):
 
     def outputSchema(self, filename, format='prolog', config=None):
         # extract node and edge type attr
-        nodeAttr = config["nodeAttr"]["include"]
+        query = config["query"]["include"]
         nodeTypeAttr = config["nodeTypeAttr"]["include"]
         edgeTypeAttr = config["edgeTypeAttr"]["include"]
         if self.mapNodeToTypeId is not None:
@@ -49,7 +49,7 @@ class FCA(object):
                 c.execute('''CREATE TABLE node
 (nodeId INTEGER, nodeTypeId INTEGER, nodeName TEXT, {})'''\
                 .format(' TEXT, '.join(\
-        list(map(lambda x: "\"" + x + "\"", nodeAttr)))))
+        list(map(lambda x: "\"" + x + "\"", query)))))
                 c.execute("DROP TABLE IF EXISTS nodeType")
                 c.execute('''CREATE TABLE nodeType
 (nodeTypeId INTEGER, {})'''.format(' TEXT, '.join(\
@@ -64,30 +64,30 @@ class FCA(object):
         list(map(lambda x: "\"" + x + "\"", edgeTypeAttr)))))
             # node schema
             if format == "prolog":
-                schema += "#node(nodeId, nodeTypeId, nodeName, {})\n".format(', '.join(nodeAttr))
+                schema += "%node(nodeId, nodeTypeId, nodeName, {}).\n".format(', '.join(query))
             for k, v in self.mapNodeToTypeId.items():
                 valueToNodeAttr = []
                 nodeName = self.mapNodeToName[k]
                 nodeObj = self.graph.vert_dict[int(k)]
-                for key in nodeAttr:
+                for key in query:
                     # flag to check whether the key is in the node attr
                     exist = False
                     for derivedAttrKey, derivedAttrVal in nodeObj.get_derived_attr().items():
                         if derivedAttrKey == key:
-                            valueToNodeAttr.append(str(derivedAttrVal))
+                            valueToNodeAttr.append(str(derivedAttrVal).lower())
                             exist = True
                             break
                     if not exist:
                         valueToNodeAttr.append("default")
                 if format == "prolog":
-                    schema += "node(n{}, nt{}, {}, {})\n"\
+                    schema += "node(n{}, nt{}, {}, {}).\n"\
                                .format(k,v, nodeName, ", ".join(valueToNodeAttr))
                 elif format == "sql":
-                    query = "INSERT INTO node VALUES (?,?,?{})"\
-                             .format(",?"*len(nodeAttr))
-                    c.execute(query,[k,v,nodeName] + valueToNodeAttr)
+                    q = "INSERT INTO node VALUES (?,?,?{})"\
+                             .format(",?"*len(query))
+                    c.execute(q,[k,v,nodeName] + valueToNodeAttr)
             if format == "prolog":
-                schema += "#nodeType(nodeTypeId, {})\n".format(', '.join(nodeTypeAttr))
+                schema += "%nodeType(nodeTypeId, {}).\n".format(', '.join(nodeTypeAttr))
             for k, v in self.mapNodeTypeIdToCtx.items():
                 valueToNodeAttr = []
                 for key in nodeTypeAttr:
@@ -102,7 +102,7 @@ class FCA(object):
                     if not exist:
                         valueToNodeAttr.append("default")
                 if format == "prolog":
-                    schema += "nodeType(nt{}, {})\n"\
+                    schema += "nodeType(nt{}, {}).\n"\
                            .format(k, ", ".join(valueToNodeAttr))
                 elif format == "sql":
                     query = "INSERT INTO nodeType VALUES (?{})".format(",?"*len(nodeTypeAttr))
@@ -110,20 +110,20 @@ class FCA(object):
             # edge schema
             eid = 0
             if format == "prolog":
-                schema += "#edge(edgeId, startNodeId, endNodeId, edgeTypeId)\n"
+                schema += "%edge(edgeId, startNodeId, endNodeId, edgeTypeId).\n"
             for k, v in self.mapEdgeToTypeId.items():
                 leftIdx, rightIdx, _ = k.split(":", 2)
                 leftTypeIdx, rightTypeIdx, _ = v.split(":", 2)
                 edgeTypeIdx = self.mapEdgeToTypeId_EdgeOnly[k]
                 if format == "prolog":
-                    schema += "edge(e{}, n{}, n{}, et{})\n"\
+                    schema += "edge(e{}, n{}, n{}, et{}).\n"\
                         .format(eid, leftIdx, rightIdx, edgeTypeIdx)
                 elif format == "sql":
                     c.execute("INSERT INTO edge VALUES (?,?,?,?)",\
                         [eid, leftIdx, rightIdx, edgeTypeIdx])
                 eid += 1
             if format == "prolog":
-                schema += "#edgeType(edgeTypeId, {})\n".format(", ".join(edgeTypeAttr))
+                schema += "%edgeType(edgeTypeId, {}).\n".format(", ".join(edgeTypeAttr))
             for k, v in self.mapEdgeTypeIdToCtx_EdgeOnly.items():
                 # get value from intent
                 valueToEdgeAttr = []
@@ -141,7 +141,7 @@ class FCA(object):
                 # get edge type idx
                 edgeTypeIdx = list(self.mapEdgeTypeIdToCtx_EdgeOnly.keys()).index(k)
                 if format == "prolog":
-                    schema += "edgeType(et{}, {})\n"\
+                    schema += "edgeType(et{}, {}).\n"\
                            .format(edgeTypeIdx, ", ".join(valueToEdgeAttr))
                 elif format == "sql":
                     query = "INSERT INTO edgeType VALUES (?{})".format(",?"*len(edgeTypeAttr))
