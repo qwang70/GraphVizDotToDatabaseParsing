@@ -20,7 +20,9 @@ Although DOT script language specifies how the graph should be drawn and output,
 
 - Based on the attributes of nodes and edges, we use formal concept analysis(FCA) to create the hierarchy of the node and edge types
 
-- In the hierarchy graph
+- In the hierarchy graph, the node and edge attributes are represented as a Graphviz node/edge visually.
+
+- Different types of nodes and edges are being recognized and grouped. The node type graph and edge type graph has an instance of different types of nodes and edges that linking with the  node/edge labels in the original graph with the same type.
 
 ## Installation
 
@@ -62,17 +64,17 @@ optional arguments:
 The sample example folder structure is as following:
 ```
 - folderName
-- input
-- .gv file
-- output
-- HierarchyGraph
-- edge hierarchy gv file
-- nodes hierarchy gv file
-- TypeGraph
-- edge type gv file
-- node type gv file
-- combination of edge and node type relation gv file
-- schema file
+  - input
+    - .gv file
+  - output
+    - HierarchyGraph
+      - edge hierarchy gv file
+      - nodes hierarchy gv file
+    - TypeGraph
+      - edge type gv file
+      - node type gv file
+      - combination of edge and node type relation gv file
+    - schema file
 ```
 
 #### Example
