@@ -11,6 +11,12 @@ Graphviz is an application for drawing graph specified in DOT script languange. 
 
 Although DOT script language specifies how the graph should be drawn and output, it does not imply any structure information of a graph. Out tool reveals the underlying structure of the graph. Specifically, it classifies different types of nodes, edges, and the formal concept analysis based hierarchic structure of each type.
 
+### What is FCA
+
+FCA stands for Formal concept analysis. It is useful to describe relationships between a
+ set of objects and a set of attributes. In GVA System, a set of objects is a set of nodes/edges in the graphviz generated image, and a set of attributes is a set of graphviz attributes for nodes/edges. 
+ 
+ FCA produces a concept lattice: a collection of formal concepts that are hierarchically ordered by a subconcept-superconcept relation.
 
 ### Architecture Walkthrough:
 
@@ -274,3 +280,13 @@ Notice that in the edges hierarchy graph, we don't distinguish the edge hierarch
 2. Composite Type Graph: The composite type graph combines the two types of nodes, and three types of edge relations into one graph. A green box node can direct to a green box node by a backward edge; a yellow note-shape node can direct to a yellow note-shape node by a forward edge; a green box node and a yellow note-shape node can be bi-directed with a purple dashed edge.
 
 ![full_graph](https://raw.githubusercontent.com/qwang70/GraphVizDotToDatabaseParsing/master/example/CEN_NDC/output/TypeGraph/CEN_NDC_full.png)
+
+## Reference
+
+Belohlavek, Radim. "Introduction to formal concept analysis." *Palacky University, Department of Computer Science, Olomouc* (2008): 47.
+
+Shrivastava, Pratik. Wt-Prov-Summer-2017, (2017), GitHub repository, https://github.com/idaks/wt-prov-summer-2017.
+
+Cheng, Jessica. EulerProject, (2017), GitHub repository, https://github.com/EulerProject/ASIST17.
+
+Ludaescher, Bertram. Which one doesn't belong, GitHub repository, https://github.com/ludaesch/wodb.
