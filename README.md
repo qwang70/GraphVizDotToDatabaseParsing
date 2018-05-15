@@ -108,10 +108,10 @@ The sample example folder structure is as following:
 
 #### Example
 
-To compute and output the  hierarchy and type graph of `paleocar.gv`:
+To compute and output the  hierarchy and type graph of `PaleoCAR`:
 
 ```
-$ python3 script/graphviz_parser.py example/paleocar.gv -config config.json
+$ python3 script/graphviz_parser.py example/PaleoCAR/input/paleocar.gv -config config.json
 ```
 
 ### Configure file structure

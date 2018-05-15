@@ -2,16 +2,16 @@
 graph{
 rankdir=LR
 edge [style=dashed]
-n0 [shape=box, fontname="helvetica", style=filled, fillcolor="#CCFFCC", label=5];
-n1 [shape=box, fontname="helvetica", style=filled, fillcolor="#CCFFCC", label="CEN.Northeast"];
+n0 [fontname="helvetica", shape=box, fillcolor="#CCFFCC", style=filled, label=5];
+n1 [fontname="helvetica", shape=box, fillcolor="#CCFFCC", style=filled, label="CEN.Northeast"];
 n0 -- n1;
-n2 [shape=box, fontname="helvetica", style=filled, fillcolor="#CCFFCC", label="CEN.Midwest"];
+n2 [fontname="helvetica", shape=box, fillcolor="#CCFFCC", style=filled, label="CEN.Midwest"];
 n0 -- n2;
-n3 [shape=box, fontname="helvetica", style=filled, fillcolor="#CCFFCC", label="CEN.South"];
+n3 [fontname="helvetica", shape=box, fillcolor="#CCFFCC", style=filled, label="CEN.South"];
 n0 -- n3;
-n4 [shape=box, fontname="helvetica", style=filled, fillcolor="#CCFFCC", label="CEN.USA"];
+n4 [fontname="helvetica", shape=box, fillcolor="#CCFFCC", style=filled, label="CEN.USA"];
 n0 -- n4;
-n5 [shape=box, fontname="helvetica", style=filled, fillcolor="#CCFFCC", label="CEN.West"];
+n5 [fontname="helvetica", shape=box, fillcolor="#CCFFCC", style=filled, label="CEN.West"];
 n0 -- n5;
 n6 [fillcolor="#FFFFCC", fontname="helvetica", shape=note, style=filled, label=5];
 n7 [fillcolor="#FFFFCC", fontname="helvetica", shape=note, style=filled, label="TZ.USA"];

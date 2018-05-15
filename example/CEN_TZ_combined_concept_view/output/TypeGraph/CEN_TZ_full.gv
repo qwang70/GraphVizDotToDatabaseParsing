@@ -1,16 +1,16 @@
 
 digraph{
 rankdir=LR
-n0 [shape=box, fontname="helvetica", style=filled, fillcolor="#CCFFCC", label=5];
+n0 [fontname="helvetica", shape=box, fillcolor="#CCFFCC", style=filled, label=5];
 n1 [fillcolor="#FFFFCC", fontname="helvetica", shape=note, style=filled, label=5];
 
 
 
-n0 -> n0 [ penwidth=1, style=solid, constraint=true, color="#000000", dir=back, minlen=2, label=4 ];
+n0 -> n0 [ style=solid, constraint=true, penwidth=1, dir=back, color="#000000", minlen=2, label=4 ];
 
-n1 -> n1 [ penwidth=1, style=solid, constraint=true, color="#000000", dir=forward, minlen=2, label=4 ];
+n1 -> n1 [ style=solid, constraint=true, dir=forward, penwidth=1, color="#000000", minlen=2, label=4 ];
 
-n0 -> n1 [ style=dashed, penwidth=2, constraint=true, dir=both, color="#AA00FF", minlen=2, label=12 ];
+n0 -> n1 [ penwidth=2, color="#AA00FF", style=dashed, constraint=true, dir=both, minlen=2, label=12 ];
 
 }
         

@@ -5,10 +5,10 @@ rankdir=LR
 subgraph cluster_0 {
     style=filled;
     color=transparent;
-    e0_start [shape=box, fontname="helvetica", style=filled, fillcolor="#CCFFCC", label=" "];
-e0_end [shape=box, fontname="helvetica", style=filled, fillcolor="#CCFFCC", label=" "];
+    e0_start [fontname="helvetica", shape=box, fillcolor="#CCFFCC", style=filled, label=" "];
+e0_end [fontname="helvetica", shape=box, fillcolor="#CCFFCC", style=filled, label=" "];
 
-    e0_start -> e0_end [ penwidth=1,style=solid,constraint=true,color="#000000",dir=back, minlen=2, label=4 ];
+    e0_start -> e0_end [ style=solid,constraint=true,penwidth=1,dir=back,color="#000000", minlen=2, label=4 ];
     e0_inv [style=invis]
     e0_start -> e0_inv [style=invis]
     e0_end -> e0_inv [style=invis]
@@ -21,7 +21,7 @@ subgraph cluster_1 {
     e1_start [fillcolor="#FFFFCC", fontname="helvetica", shape=note, style=filled, label=" "];
 e1_end [fillcolor="#FFFFCC", fontname="helvetica", shape=note, style=filled, label=" "];
 
-    e1_start -> e1_end [ penwidth=1,style=solid,constraint=true,color="#000000",dir=forward, minlen=2, label=4 ];
+    e1_start -> e1_end [ style=solid,constraint=true,dir=forward,penwidth=1,color="#000000", minlen=2, label=4 ];
     e1_inv [style=invis]
     e1_start -> e1_inv [style=invis]
     e1_end -> e1_inv [style=invis]
@@ -31,10 +31,10 @@ e1_end [fillcolor="#FFFFCC", fontname="helvetica", shape=note, style=filled, lab
 subgraph cluster_2 {
     style=filled;
     color=transparent;
-    e2_start [shape=box, fontname="helvetica", style=filled, fillcolor="#CCFFCC", label=" "];
+    e2_start [fontname="helvetica", shape=box, fillcolor="#CCFFCC", style=filled, label=" "];
 e2_end [fillcolor="#FFFFCC", fontname="helvetica", shape=note, style=filled, label=" "];
 
-    e2_start -> e2_end [ style=dashed,penwidth=2,constraint=true,dir=both,color="#AA00FF", minlen=2, label=12 ];
+    e2_start -> e2_end [ penwidth=2,color="#AA00FF",style=dashed,constraint=true,dir=both, minlen=2, label=12 ];
     e2_inv [style=invis]
     e2_start -> e2_inv [style=invis]
     e2_end -> e2_inv [style=invis]

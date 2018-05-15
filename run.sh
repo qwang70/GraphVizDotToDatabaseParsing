@@ -66,11 +66,9 @@ else
               exit 0
               ;;
           -config)
-              echo "in config"
               if [ $# -ne 0 ]; then
                 CONFIG_FILE="$2"
               fi
-              echo $CONFIG_FILE
               shift 2
               ;;
 
