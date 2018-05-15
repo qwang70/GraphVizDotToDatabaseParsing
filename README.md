@@ -108,10 +108,10 @@ The sample example folder structure is as following:
 
 #### Example
 
-To compute and output the  hierarchy and type graph of `paleocar.gv.gv`:
+To compute and output the  hierarchy and type graph of `paleocar.gv`:
 
 ```
-$ python3 script/graphviz_parser.py example/paleocar.gv.gv -config config.json
+$ python3 script/graphviz_parser.py example/paleocar.gv -config config.json
 ```
 
 ### Configure file structure
@@ -216,7 +216,7 @@ To run all the examples:
 
 ### Example Workthrough
 
-We will work through an example using paleocar.gv example.
+We will work through an example using paleocar example.
 
 #### Call GVA System using `run.sh` shortcut:
 
