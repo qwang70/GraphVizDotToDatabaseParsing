@@ -205,8 +205,8 @@ Under the output directory `example/CEN_NDC/output`,  there should be 2 schema f
 
 <table style="width:100%">
     <tr>
-        <th>CEN_NDC_nodes_hierarchy.png</th>
-        <th>CEN_NDC_nodes_hierarchy_with_name.png</th> 
+        <th style="width:50%">CEN_NDC_nodes_hierarchy.png</th>
+        <th style="width:50%">CEN_NDC_nodes_hierarchy_with_name.png</th> 
     </tr>
     <tr>
     <td>
@@ -228,8 +228,8 @@ The nodes hierarchy graph implies that there are 109 vertices in the graphviz fi
 
 <table style="width:100%">
     <tr>
-        <th>CEN_NDC_edges_hierarchy.png</th>
-        <th>CEN_NDC_edges_hierarchy_with_name.png</th> 
+        <th style="width:50%">CEN_NDC_edges_hierarchy.png</th>
+        <th style="width:50%">CEN_NDC_edges_hierarchy_with_name.png</th> 
     </tr>
     <tr>
     <td>
@@ -254,8 +254,8 @@ Notice that in the edges hierarchy graph, we don't distinguish the edge hierarch
 1. Nodes and Edges Type Graph: Nodes Type Graph lists 2 types of nodes, and Edges Type Graph lists 3 types of nodes and edges relationships.
 <table style="width:100%">
     <tr>
-        <th>CEN_NDC_nodes.png</th>
-        <th>CEN_NDC_edges.png</th> 
+        <th style="width:50%">CEN_NDC_nodes.png</th>
+        <th style="width:50%">CEN_NDC_edges.png</th> 
     </tr>
     <tr>
         <td>
