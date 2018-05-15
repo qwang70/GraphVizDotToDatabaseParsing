@@ -64,7 +64,7 @@ Python 3.6.4
 
 2. Clone the repo to local
 
-3. Install the requried 
+3. Install the pre-requiresite 
 
 ```
 $ pip3 install antlr4-python3-runtime concepts numpy pandas graphviz
@@ -108,10 +108,10 @@ The sample example folder structure is as following:
 
 #### Example
 
-To compute and output the  hierarchy and type graph of `paelocar.gv`:
+To compute and output the  hierarchy and type graph of `paleocar.gv.gv`:
 
 ```
-$ python3 script/graphviz_parser.py example/paelocar.gv -config config.json
+$ python3 script/graphviz_parser.py example/paleocar.gv.gv -config config.json
 ```
 
 ### Configure file structure
@@ -192,7 +192,7 @@ Shortcut script that runs the python scipt to generate all gv files, and convert
 #### Example:
 
 ```
-./run.sh example/PaeloCAR/input/paelocar.gv -outFolder example/PaeloCAR/output -config config.json
+./run.sh example/PaleoCAR/input/paleocar.gv.gv -outFolder example/PaleoCAR/output -config config.json
 ```
 
 To run all the examples:
@@ -216,7 +216,7 @@ To run all the examples:
 
 ### Example Workthrough
 
-We will work through an example using PaeloCAR example.
+We will work through an example using paleocar.gv example.
 
 #### Call GVA System using `run.sh` shortcut:
 

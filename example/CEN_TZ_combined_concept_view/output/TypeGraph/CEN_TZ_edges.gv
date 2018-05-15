@@ -5,10 +5,10 @@ rankdir=LR
 subgraph cluster_0 {
     style=filled;
     color=transparent;
-    e0_start [fillcolor="#CCFFCC", shape=box, fontname="helvetica", style=filled, label=" "];
-e0_end [fillcolor="#CCFFCC", shape=box, fontname="helvetica", style=filled, label=" "];
+    e0_start [shape=box, fontname="helvetica", style=filled, fillcolor="#CCFFCC", label=" "];
+e0_end [shape=box, fontname="helvetica", style=filled, fillcolor="#CCFFCC", label=" "];
 
-    e0_start -> e0_end [ penwidth=1,dir=back,color="#000000",constraint=true,style=solid, minlen=2, label=4 ];
+    e0_start -> e0_end [ penwidth=1,style=solid,constraint=true,color="#000000",dir=back, minlen=2, label=4 ];
     e0_inv [style=invis]
     e0_start -> e0_inv [style=invis]
     e0_end -> e0_inv [style=invis]
@@ -18,10 +18,10 @@ e0_end [fillcolor="#CCFFCC", shape=box, fontname="helvetica", style=filled, labe
 subgraph cluster_1 {
     style=filled;
     color=transparent;
-    e1_start [fontname="helvetica", shape=note, style=filled, fillcolor="#FFFFCC", label=" "];
-e1_end [fontname="helvetica", shape=note, style=filled, fillcolor="#FFFFCC", label=" "];
+    e1_start [fillcolor="#FFFFCC", fontname="helvetica", shape=note, style=filled, label=" "];
+e1_end [fillcolor="#FFFFCC", fontname="helvetica", shape=note, style=filled, label=" "];
 
-    e1_start -> e1_end [ penwidth=1,dir=forward,color="#000000",constraint=true,style=solid, minlen=2, label=4 ];
+    e1_start -> e1_end [ penwidth=1,style=solid,constraint=true,color="#000000",dir=forward, minlen=2, label=4 ];
     e1_inv [style=invis]
     e1_start -> e1_inv [style=invis]
     e1_end -> e1_inv [style=invis]
@@ -31,10 +31,10 @@ e1_end [fontname="helvetica", shape=note, style=filled, fillcolor="#FFFFCC", lab
 subgraph cluster_2 {
     style=filled;
     color=transparent;
-    e2_start [fillcolor="#CCFFCC", shape=box, fontname="helvetica", style=filled, label=" "];
-e2_end [fontname="helvetica", shape=note, style=filled, fillcolor="#FFFFCC", label=" "];
+    e2_start [shape=box, fontname="helvetica", style=filled, fillcolor="#CCFFCC", label=" "];
+e2_end [fillcolor="#FFFFCC", fontname="helvetica", shape=note, style=filled, label=" "];
 
-    e2_start -> e2_end [ dir=both,color="#AA00FF",style=dashed,penwidth=2,constraint=true, minlen=2, label=12 ];
+    e2_start -> e2_end [ style=dashed,penwidth=2,constraint=true,dir=both,color="#AA00FF", minlen=2, label=12 ];
     e2_inv [style=invis]
     e2_start -> e2_inv [style=invis]
     e2_end -> e2_inv [style=invis]

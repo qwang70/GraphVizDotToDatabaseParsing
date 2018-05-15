@@ -1,27 +1,27 @@
 
 digraph{
 rankdir=LR
-n0 [fontname="helvetica", fillcolor="#CCFFCC", shape=box, style=filled, label=3];
-n1 [fillcolor="#FFFFCC", shape=note, fontname="helvetica", style=filled, label=4];
-n2 [fillcolor="#EEEEEE", style="filled,rounded", fontname="helvetica", shape=box, label=51];
+n0 [fontname="helvetica", fillcolor="#CCFFCC", style=filled, shape=box, label=3];
+n1 [fontname="helvetica", shape=note, fillcolor="#FFFFCC", style=filled, label=4];
+n2 [fontname="helvetica", style="filled,rounded", fillcolor="#EEEEEE", shape=box, label=51];
 
 
 
-n0 -> n1 [ style=dashed, color="#FF0000", constraint=false, arrowhead=none, penwidth=1, minlen=2, label=3 ];
+n0 -> n1 [ arrowhead=none, penwidth=1, constraint=false, style=dashed, color="#FF0000", minlen=2, label=3 ];
 
-n1 -> n0 [ arrowhead=normal, color="#FF0000", style=solid, penwidth=1, constraint=true, minlen=2, label=2 ];
+n1 -> n0 [ arrowhead=normal, constraint=true, penwidth=1, style=solid, color="#FF0000", minlen=2, label=2 ];
 
-n0 -> n1 [ arrowhead=normal, color="#FF0000", style=solid, penwidth=1, constraint=true, minlen=2, label=1 ];
+n0 -> n1 [ arrowhead=normal, constraint=true, penwidth=1, style=solid, color="#FF0000", minlen=2, label=1 ];
 
-n2 -> n0 [ arrowhead=normal, color="#000000", style=solid, penwidth=1, constraint=true, minlen=2, label=16 ];
+n2 -> n0 [ arrowhead=normal, color="#000000", constraint=true, penwidth=1, style=solid, minlen=2, label=16 ];
 
-n2 -> n2 [ arrowhead=normal, color="#000000", style=solid, penwidth=1, constraint=true, minlen=2, label=13 ];
+n2 -> n2 [ arrowhead=normal, color="#000000", constraint=true, penwidth=1, style=solid, minlen=2, label=13 ];
 
-n2 -> n1 [ arrowhead=normal, color="#000000", style=solid, penwidth=1, constraint=true, minlen=2, label=28 ];
+n2 -> n1 [ arrowhead=normal, color="#000000", constraint=true, penwidth=1, style=solid, minlen=2, label=28 ];
 
-n0 -> n2 [ arrowhead=normal, color="#000000", style=solid, penwidth=1, constraint=true, minlen=2, label=2 ];
+n0 -> n2 [ arrowhead=normal, color="#000000", constraint=true, penwidth=1, style=solid, minlen=2, label=2 ];
 
-n1 -> n2 [ arrowhead=normal, color="#000000", style=solid, penwidth=1, constraint=true, minlen=2, label=2 ];
+n1 -> n2 [ arrowhead=normal, color="#000000", constraint=true, penwidth=1, style=solid, minlen=2, label=2 ];
 
 }
         
