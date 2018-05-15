@@ -192,7 +192,7 @@ Shortcut script that runs the python scipt to generate all gv files, and convert
 #### Example:
 
 ```
-./run.sh example/PaleoCAR/input/paleocar.gv.gv -outFolder example/PaleoCAR/output -config config.json
+./run.sh example/PaleoCAR/input/paleocar.gv -outFolder example/PaleoCAR/output -config config.json
 ```
 
 To run all the examples:
