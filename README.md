@@ -251,7 +251,7 @@ Notice that in the edges hierarchy graph, we don't distinguish the edge hierarch
 
 ##### TypeGraph Directory
 
-1. Nodes and Edges Type Graph
+1. Nodes and Edges Type Graph: Nodes Type Graph lists 2 types of nodes, and Edges Type Graph lists 3 types of nodes and edges relationships.
 <table style="width:100%">
     <tr>
         <th>CEN_NDC_nodes.png</th>
@@ -270,3 +270,7 @@ Notice that in the edges hierarchy graph, we don't distinguish the edge hierarch
         </td>
     </tr>
 </table>
+
+2. Composite Type Graph: The composite type graph combines the two types of nodes, and three types of edge relations into one graph. A green box node can direct to a green box node by a backward edge; a yellow note-shape node can direct to a yellow note-shape node by a forward edge; a green box node and a yellow note-shape node can be bi-directed with a purple dashed edge.
+
+![full_graph](https://raw.githubusercontent.com/qwang70/GraphVizDotToDatabaseParsing/master/example/CEN_NDC/output/TypeGraph/CEN_NDC_full.png)
