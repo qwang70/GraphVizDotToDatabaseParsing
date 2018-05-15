@@ -163,7 +163,7 @@ Shortcut script that runs the python scipt to generate all gv files, and convert
 #### Example:
 
 ```
-./run.sh example/game-provenance/input/clean_sec2-game-solved-new2.gv -outFolder example/game-provenance/output -config config.json
+./run.sh example/PaeloCAR/input/paelocar.gv -outFolder example/PaeloCAR/output -config config.json
 ```
 
 To run all the examples:
@@ -184,3 +184,89 @@ To run all the examples:
 ```
 ./run.sh
 ```
+
+### Example Workthrough
+
+We will work through an example using PaeloCAR example.
+
+#### Call GVA System using `run.sh` shortcut:
+
+```
+./run.sh example/CEN_NDC/input/CEN_NDC.gv -outFolder example/CEN_NDC/output -config config.json
+```
+
+#### Check the output of GVA System
+
+Under the output directory `example/CEN_NDC/output`,  there should be 2 schema files, one in XSB format (.txt extension), and another one in Sqlite format (.db extension). There should be two directories named "HierarchyGraph" and "TypeGraph".
+
+##### HierarchyGraph Directory
+
+1. Nodes Hierarchy Graph
+
+<table style="width:100%">
+    <tr>
+        <th>CEN_NDC_nodes_hierarchy.png</th>
+        <th>CEN_NDC_nodes_hierarchy_with_name.png</th> 
+    </tr>
+    <tr>
+    <td>
+        <p align="center">
+        <img src="https://raw.githubusercontent.com/qwang70/GraphVizDotToDatabaseParsing/master/example/CEN_NDC/output/HierarchyGraph/CEN_NDC_nodes_hierarchy.png"   width="100%" title="CEN_NDC_nodes_hierarchy.png">
+        </p>
+    </td>
+    <td>
+        <p align="center">
+        <img src="https://raw.githubusercontent.com/qwang70/GraphVizDotToDatabaseParsing/master/example/CEN_NDC/output/HierarchyGraph/CEN_NDC_nodes_hierarchy_with_name.png"   width="100%" title="CEN_NDC_nodes_hierarchy_with_name.png">
+        </p>
+    </td>
+    </tr>
+</table>
+
+The nodes hierarchy graph implies that there are 109 vertices in the graphviz file in total. Among the 109 vertices, 54 of them are green and box type vertices, and 55 of them are yellow and note type vertices. These two type vertices distinguish themselves by color and shape in FCA.
+
+2. Edges Hierarchy Graph
+
+<table style="width:100%">
+    <tr>
+        <th>CEN_NDC_edges_hierarchy.png</th>
+        <th>CEN_NDC_edges_hierarchy_with_name.png</th> 
+    </tr>
+    <tr>
+    <td>
+        <p align="center">
+        <img src="https://raw.githubusercontent.com/qwang70/GraphVizDotToDatabaseParsing/master/example/CEN_NDC/output/HierarchyGraph/CEN_NDC_edges_hierarchy.png"  width="100%" title="CEN_NDC_edges_hierarchy.png">
+        </p>
+    </td>
+    <td>
+        <p align="center">
+        <img src="https://raw.githubusercontent.com/qwang70/GraphVizDotToDatabaseParsing/master/example/CEN_NDC/output/HierarchyGraph/CEN_NDC_edges_hierarchy_with_name.png"  width="100%" title="CEN_NDC_edges_hierarchy_with_name.png">
+        </p>
+    </td>
+    </tr>
+</table>
+
+The edges hierarchy graph implies that there are 156 edges in the graphviz file. On the left side of the edge representing all the edges, the purple dashed bi-directed edge represents 49 such type edges in the graphviz file; on the right side, the black solid edge represents 107 such type edges in the graphviz file. Among 107 black solid edges, 53 of them are directed backward, and 54 of them are directed forward. 
+
+Notice that in the edges hierarchy graph, we don't distinguish the edge hierarchy by two nodes on the edge endpoints, but only distinguish the edge hierarchy by the property of graphviz edge itself.
+
+##### TypeGraph Directory
+
+1. Nodes and Edges Type Graph
+<table style="width:100%">
+    <tr>
+        <th>CEN_NDC_nodes.png</th>
+        <th>CEN_NDC_edges.png</th> 
+    </tr>
+    <tr>
+        <td>
+            <p align="center">
+            <img src="https://raw.githubusercontent.com/qwang70/GraphVizDotToDatabaseParsing/master/example/CEN_NDC/output/TypeGraph/CEN_NDC_nodes.png"  width="100%" title="CEN_NDC_edges.png">
+            </p>
+        </td>
+        <td>
+            <p align="center">
+            <img src="https://raw.githubusercontent.com/qwang70/GraphVizDotToDatabaseParsing/master/example/CEN_NDC/output/TypeGraph/CEN_NDC_edges.png"  width="100%" title="CEN_NDC_edges.png">
+            </p>
+        </td>
+    </tr>
+</table>

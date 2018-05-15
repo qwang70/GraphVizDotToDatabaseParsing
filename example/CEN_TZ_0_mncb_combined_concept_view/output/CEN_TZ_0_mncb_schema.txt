@@ -76,5 +76,5 @@ edge(e40, n19, n6, et2).
 edge(e41, n21, n24, et2).
 edge(e42, n12, n19, et2).
 %edgeType(edgeTypeId, color, style).
-edgeType(et0, "#000000", solid).
-edgeType(et1, "#FF0000", solid).
+edgeType(et1, "#000000", solid).
+edgeType(et2, "#FF0000", solid).

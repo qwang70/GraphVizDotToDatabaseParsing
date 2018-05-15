@@ -34,9 +34,9 @@ edge(e14, n2, n11, et7).
 edge(e15, n0, n9, et7).
 edge(e16, n1, n10, et7).
 %edgeType(edgeTypeId, color, style).
-edgeType(et0, "#777777", dashed).
-edgeType(et1, "#AAAA00", default).
-edgeType(et2, "#CC0000", default).
-edgeType(et3, "#AAAA00", default).
-edgeType(et4, "#777777", dashed).
-edgeType(et5, "#00BB00", default).
+edgeType(et1, "#777777", dashed).
+edgeType(et2, "#AAAA00", default).
+edgeType(et3, "#CC0000", default).
+edgeType(et4, "#AAAA00", default).
+edgeType(et5, "#777777", dashed).
+edgeType(et7, "#00BB00", default).

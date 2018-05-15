@@ -269,6 +269,6 @@ edge(e153, n67, n79, et3).
 edge(e154, n55, n101, et3).
 edge(e155, n94, n79, et3).
 %edgeType(edgeTypeId, color, style).
-edgeType(et0, "#AA00FF", dashed).
-edgeType(et1, "#000000", solid).
+edgeType(et1, "#AA00FF", dashed).
 edgeType(et2, "#000000", solid).
+edgeType(et3, "#000000", solid).

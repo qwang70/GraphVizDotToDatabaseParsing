@@ -29,7 +29,7 @@ edge(e12, n2, n5, et5).
 edge(e13, n3, n4, et5).
 edge(e14, n8, n4, et5).
 %edgeType(edgeTypeId, color, style).
-edgeType(et0, "#FF0000", solid).
-edgeType(et1, "#FF0000", dashed).
-edgeType(et2, "#0000FF", dotted).
-edgeType(et3, "#000000", solid).
+edgeType(et1, "#FF0000", solid).
+edgeType(et2, "#FF0000", dashed).
+edgeType(et4, "#0000FF", dotted).
+edgeType(et5, "#000000", solid).

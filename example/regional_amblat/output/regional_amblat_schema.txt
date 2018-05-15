@@ -44,5 +44,5 @@ edge(e22, n2, n1, et2).
 edge(e23, n13, n1, et2).
 edge(e24, n0, n1, et2).
 %edgeType(edgeTypeId, color, style).
-edgeType(et0, "#134d9c", dotted).
-edgeType(et1, "#0000FF", solid).
+edgeType(et1, "#134d9c", dotted).
+edgeType(et2, "#0000FF", solid).

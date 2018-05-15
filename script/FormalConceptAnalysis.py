@@ -139,13 +139,12 @@ class FCA(object):
                     if not exist:
                         valueToEdgeAttr.append("default")
                 # get edge type idx
-                edgeTypeIdx = list(self.mapEdgeTypeIdToCtx_EdgeOnly.keys()).index(k)
                 if format == "prolog":
                     schema += "edgeType(et{}, {}).\n"\
-                           .format(edgeTypeIdx, ", ".join(valueToEdgeAttr))
+                           .format(k, ", ".join(valueToEdgeAttr))
                 elif format == "sql":
                     query = "INSERT INTO edgeType VALUES (?{})".format(",?"*len(edgeTypeAttr))
-                    c.execute(query, [edgeTypeIdx] + valueToEdgeAttr)
+                    c.execute(query, [k] + valueToEdgeAttr)
             if format == "prolog":
                 with open(filename, 'w') as file:
                     file.write(schema)
